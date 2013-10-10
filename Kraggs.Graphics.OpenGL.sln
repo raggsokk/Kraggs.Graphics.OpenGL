@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraggs.Graphics.OpenGL.Core", "Kraggs.Graphics.OpenGL.Core\Kraggs.Graphics.OpenGL.Core.csproj", "{A38F7A6F-180E-4B74-B7EE-53E7E47046C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraggs.Graphics.OpenGL.Compatibility", "Kraggs.Graphics.OpenGL.Compatibility\Kraggs.Graphics.OpenGL.Compatibility.csproj", "{845C0FF5-DE24-47B4-9DD8-EEABBB4337A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4} = {A38F7A6F-180E-4B74-B7EE-53E7E47046C4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraggs.Graphics.OpenGL.DSA", "Kraggs.Graphics.OpenGL.DSA\Kraggs.Graphics.OpenGL.DSA.csproj", "{B35C7F3A-F709-40E9-8714-163B42099868}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4} = {A38F7A6F-180E-4B74-B7EE-53E7E47046C4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraggs.Graphics.OpenGL.ARB", "Kraggs.Graphics.OpenGL.ARB\Kraggs.Graphics.OpenGL.ARB.csproj", "{AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4} = {A38F7A6F-180E-4B74-B7EE-53E7E47046C4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraggs.Graphics.OpenGL.EXT", "Kraggs.Graphics.OpenGL.EXT\Kraggs.Graphics.OpenGL.EXT.csproj", "{5B0FBA09-F5CD-4A06-A899-878C6A1FEEB6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2} = {AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2}
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4} = {A38F7A6F-180E-4B74-B7EE-53E7E47046C4}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{845C0FF5-DE24-47B4-9DD8-EEABBB4337A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{845C0FF5-DE24-47B4-9DD8-EEABBB4337A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35C7F3A-F709-40E9-8714-163B42099868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35C7F3A-F709-40E9-8714-163B42099868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35C7F3A-F709-40E9-8714-163B42099868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35C7F3A-F709-40E9-8714-163B42099868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0FBA09-F5CD-4A06-A899-878C6A1FEEB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0FBA09-F5CD-4A06-A899-878C6A1FEEB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
