@@ -47,6 +47,8 @@
     <Compile Include="absOpenTKLoader.cs" />
     <Compile Include="Core\GL_v11.cs" />
     <Compile Include="Core\GL_v12.cs" />
+    <Compile Include="Core\GL_v13.cs" />
+    <Compile Include="Core\GL_v44.cs" />
     <Compile Include="Enums\ActiveSubroutineUniformParameters.cs" />
     <Compile Include="Enums\All.cs" />
     <Compile Include="Enums\AttachmentParameters.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="Enums\FramebufferStatus.cs" />
     <Compile Include="Enums\FramebufferTarget.cs" />
     <Compile Include="Enums\FrontFaceMode.cs" />
+    <Compile Include="Enums\GenericCompressedInternalFormat.cs" />
     <Compile Include="Enums\GetInternalformatParameters.cs" />
     <Compile Include="Enums\GetParameters.cs" />
     <Compile Include="Enums\GetPointerName.cs" />
@@ -125,6 +128,7 @@
     <Compile Include="Enums\SamplerParameters.cs" />
     <Compile Include="Enums\ShaderParameters.cs" />
     <Compile Include="Enums\ShaderType.cs" />
+    <Compile Include="Enums\SizedCompressedInternalFormat.cs" />
     <Compile Include="Enums\SizedInternalFormat.cs" />
     <Compile Include="Enums\StencilFunction.cs" />
     <Compile Include="Enums\StencilOperation.cs" />

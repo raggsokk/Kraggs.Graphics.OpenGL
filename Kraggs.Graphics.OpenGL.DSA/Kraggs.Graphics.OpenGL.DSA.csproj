@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DSA.cs" />
+    <Compile Include="DSA\DSA_v11.cs" />
+    <Compile Include="DSA\DSA_v12.cs" />
+    <Compile Include="DSA\DSA_v13.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
