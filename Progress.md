@@ -71,13 +71,13 @@ A list of work todo to track progress.
 	Implement ARB_vertex_shader
 	Implement ARB_fragment_shader
 	Implement EXT_blend_equation_separate
-	Implement EXT_stenctil_two_side
+	Implement EXT_stencil_two_side
 	Implement ATI_separate_stencil
 
 ### Milestone 8, gl 2.1
 	Implement ARB_pixel_buffer_object
 	Implement EXT_texture_sRGB
-	
+
 ### Milestone 9, gl 3.0
 	Implement APPLE_flush_buffer_range
 	Implement APPLE_vertex_array_object
