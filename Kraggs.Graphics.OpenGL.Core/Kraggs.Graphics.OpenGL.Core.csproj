@@ -48,6 +48,7 @@
     <Compile Include="Core\GL_v11.cs" />
     <Compile Include="Core\GL_v12.cs" />
     <Compile Include="Core\GL_v13.cs" />
+    <Compile Include="Core\GL_v14.cs" />
     <Compile Include="Core\GL_v44.cs" />
     <Compile Include="Enums\ActiveSubroutineUniformParameters.cs" />
     <Compile Include="Enums\All.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Enums\AttributeType.cs" />
     <Compile Include="Enums\BaseInternalFormat.cs" />
     <Compile Include="Enums\BeginMode.cs" />
+    <Compile Include="Enums\BlendEquationMode.cs" />
     <Compile Include="Enums\BlendFactorDst.cs" />
     <Compile Include="Enums\BlendFactorSrc.cs" />
     <Compile Include="Enums\BlitFramebufferFilter.cs" />

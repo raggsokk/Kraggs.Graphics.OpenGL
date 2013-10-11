@@ -34,31 +34,8 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    // template class until gl 4.4 where its not neede for another year.
-    partial class GL
+    public enum BlendEquationMode
     {
-        #region Delegate Class
-
-        partial class Delegates
-        {
-
-            #region Delegates
-
-
-
-            #endregion
-
-            #region GL Fields
-
-            #endregion
-        }
-
-        #endregion
-
-        #region Public functions.
-
-
-
-        #endregion
+        NoneAddedYet,
     }
 }
