@@ -7,7 +7,7 @@
     <ProjectGuid>{B35C7F3A-F709-40E9-8714-163B42099868}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kraggs.Graphics.OpenGL.DSA</RootNamespace>
+    <RootNamespace>Kraggs.Graphics.OpenGL</RootNamespace>
     <AssemblyName>Kraggs.Graphics.OpenGL.DSA</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>..\\Kraggs.Graphics.OpenGL.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>  
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,7 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="..\\Kraggs.Graphics.OpenGL.snk" />
-  </ItemGroup>  
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kraggs.Graphics.OpenGL.Core\Kraggs.Graphics.OpenGL.Core.csproj">
+      <Project>{a38f7a6f-180e-4b74-b7ee-53e7e47046c4}</Project>
+      <Name>Kraggs.Graphics.OpenGL.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
