@@ -86,17 +86,17 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delUniform4f(uint location, float v1, float v2, float v3, float v4);
             public delegate void delUniform4i(uint location, int v1, int v2, int v3, int v4);
 
-            public delegate void delUniform1fv(uint location, ref float v);
-            public delegate void delUniform1iv(uint location, ref int v);
+            public delegate void delUniform1fv(uint location, int count, ref float v);
+            public delegate void delUniform1iv(uint location, int count, ref int v);
 
-            public delegate void delUniform2fv(uint location, ref float v);
-            public delegate void delUniform2iv(uint location, ref int v);
+            public delegate void delUniform2fv(uint location, int count, ref float v);
+            public delegate void delUniform2iv(uint location, int count, ref int v);
 
-            public delegate void delUniform3fv(uint location, ref float v);
-            public delegate void delUniform3iv(uint location, ref int v);
+            public delegate void delUniform3fv(uint location, int count, ref float v);
+            public delegate void delUniform3iv(uint location, int count, ref int v);
 
-            public delegate void delUniform4fv(uint location, ref float v);
-            public delegate void delUniform4iv(uint location, ref int v);
+            public delegate void delUniform4fv(uint location, int count, ref float v);
+            public delegate void delUniform4iv(uint location, int count, ref int v);
 
             public delegate void delUniformMatrix2fv(uint location, int count, bool transpose, ref float matrix);
             public delegate void delUniformMatrix3fv(uint location, int count, bool transpose, ref float matrix);
@@ -691,10 +691,25 @@ namespace Kraggs.Graphics.OpenGL
             return tmp;
         }
 
+        /// <summary>
+        /// Specify the value of a uniform variable for the current program object
+        /// glUniform1i and glUniform1iv are the only two functions that may be used to load uniform variables defined as sampler types. Loading samplers with any other function will result in a GL_INVALID_OPERATION error.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="v1"></param>
         public static void Uniform1f(uint location, float v1)
         {
             Delegates.glUniform1f(location, v1);
         }
+        /// <summary>
+        /// Specify the value of a uniform variable for the current program object
+        /// glUniform1i and glUniform1iv are the only two functions that may be used to load uniform variables defined as sampler types. Loading samplers with any other function will result in a GL_INVALID_OPERATION error.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="v1"></param>
+        /// <remarks>
+        /// If location is a value other than -1 and it does not represent a valid uniform variable location in the current program object, an error will be generated, and no changes will be made to the uniform variable storage of the current program object. If location is equal to -1, the data passed in will be silently ignored and the specified uniform variable will not be changed.
+        /// </remarks>
         public static void Uniform1i(uint location, int v1)
         {
             Delegates.glUniform1i(location, v1);
@@ -727,107 +742,115 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glUniform4i(location, v1, v2, v3, v4);
         }
 
-        public static void Uniform1fv(uint location, ref float v)
+        public static void Uniform1fv(uint location, ref float v, int count = 1)
         {
-            Delegates.glUniform1fv(location, ref v);
+            Delegates.glUniform1fv(location, count, ref v);
         }
-        public static void Uniform1fv(uint location, float[] v)
+        public static void Uniform1fv(uint location, float[] v, int count = 1)
         {
-            Delegates.glUniform1fv(location, ref v[0]);
+            Delegates.glUniform1fv(location, count, ref v[0]);
         }
 
-        public static void Uniform1iv(uint location, ref int v)
+        /// <summary>
+        /// Specify the value of a uniform variable for the current program object
+        /// glUniform1i and glUniform1iv are the only two functions that may be used to load uniform variables defined as sampler types. Loading samplers with any other function will result in a GL_INVALID_OPERATION error.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="v"></param>
+        public static void Uniform1iv(uint location, ref int v, int count = 1)
         {
-            Delegates.glUniform1iv(location, ref v);
+            Delegates.glUniform1iv(location, count, ref v);
         }
+        /// <summary>
+        /// Specify the value of a uniform variable for the current program object
+        /// glUniform1i and glUniform1iv are the only two functions that may be used to load uniform variables defined as sampler types. Loading samplers with any other function will result in a GL_INVALID_OPERATION error.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="v"></param>
         public static void Uniform1iv(uint location, int[] v)
         {
-            Delegates.glUniform1iv(location, ref v[0]);
+            Delegates.glUniform1iv(location, v.Length, ref v[0]);
         }
 
-        public static void Uniform2fv(uint location, ref float v)
+        public static void Uniform2fv(uint location, ref float v, int count = 1)
         {
-            Delegates.glUniform2fv(location, ref v);
+            Delegates.glUniform2fv(location, count, ref v);
         }
         public static void Uniform2fv(uint location, float[] v)
         {
-            Delegates.glUniform2fv(location, ref v[0]);
+            Delegates.glUniform2fv(location, v.Length / 2, ref v[0]);
         }
 
-        public static void Uniform2iv(uint location, ref int v)
+        public static void Uniform2iv(uint location, ref int v, int count = 1)
         {
-            Delegates.glUniform2iv(location, ref v);
+            Delegates.glUniform2iv(location, count, ref v);
         }
         public static void Uniform2iv(uint location, int[] v)
         {
-            Delegates.glUniform2iv(location, ref v[0]);
+            Delegates.glUniform2iv(location, v.Length / 2, ref v[0]);
         }
 
-        public static void Uniform3fv(uint location, float v)
+        public static void Uniform3fv(uint location, ref float v, int count = 1)
         {
-            Delegates.glUniform3fv(location, ref v);
+            Delegates.glUniform3fv(location, count, ref v);
         }
         public static void Uniform3fv(uint location, float[] v)
         {
-            Delegates.glUniform3fv(location, ref v[0]);
+            Delegates.glUniform3fv(location, v.Length / 3, ref v[0]);
         }
 
-        public static void Uniform3iv(uint location, int v)
+        public static void Uniform3iv(uint location, ref int v, int count = 1)
         {
-            Delegates.glUniform3iv(location, ref v);
+            Delegates.glUniform3iv(location, count, ref v);
         }
         public static void Uniform3iv(uint location, int[] v)
         {
-            Delegates.glUniform3iv(location, ref v[0]);
+            Delegates.glUniform3iv(location, v.Length / 3, ref v[0]);
         }
 
-        public static void Uniform4fv(uint location, float v)
+        public static void Uniform4fv(uint location, ref float v, int count = 1)
         {
-            Delegates.glUniform4fv(location, ref v);
+            Delegates.glUniform4fv(location, count, ref v);
         }
         public static void Uniform4fv(uint location, float[] v)
         {
-            Delegates.glUniform4fv(location, ref v[0]);
+            Delegates.glUniform4fv(location, v.Length / 4, ref v[0]);
         }
 
-        public static void Uniform4iv(uint location, ref int v)
+        public static void Uniform4iv(uint location, ref int v, int count = 1)
         {
-            Delegates.glUniform4iv(location, ref v);
+            Delegates.glUniform4iv(location, count, ref v);
         }
         public static void Uniform4iv(uint location, int[] v)
         {
-            Delegates.glUniform4iv(location, ref v[0]);
+            Delegates.glUniform4iv(location, v.Length / 4, ref v[0]);
         }
 
-        public static void UniformMatrix2fv(uint location, int count, bool transpose, ref float matrix)
-        {
-            Delegates.glUniformMatrix2fv(location, count, transpose, ref matrix);
-        }
+        //public static void UniformMatrix2fv(uint location, int count, bool transpose, ref float matrix)
+        //{
+        //    Delegates.glUniformMatrix2fv(location, count, transpose, ref matrix);
+        //}
         public static void UniformMatrix2fv(uint location, ref float matrix, int count = 1, bool transpose = false)
         {
             Delegates.glUniformMatrix2fv(location, count, transpose, ref matrix);
         }
 
-        public static void UniformMatrix3fv(uint location, int count, bool transpose, ref float matrix)
-        {
-            Delegates.glUniformMatrix3fv(location, count, transpose, ref matrix);
-        }
+        //public static void UniformMatrix3fv(uint location, int count, bool transpose, ref float matrix)
+        //{
+        //    Delegates.glUniformMatrix3fv(location, count, transpose, ref matrix);
+        //}
         public static void UniformMatrix3fv(uint location, ref float matrix, int count = 1, bool transpose = false)
         {
             Delegates.glUniformMatrix3fv(location, count, transpose, ref matrix);
         }
-        public static void UniformMatrix4fv(uint location, int count, bool transpose, ref float matrix)
-        {
-            Delegates.glUniformMatrix4fv(location, count, transpose, ref matrix);
-        }
+        //public static void UniformMatrix4fv(uint location, int count, bool transpose, ref float matrix)
+        //{
+        //    Delegates.glUniformMatrix4fv(location, count, transpose, ref matrix);
+        //}
         public static void UniformMatrix4fv(uint location, ref float matrix, int count = 1, bool transpose = false)
         {
             Delegates.glUniformMatrix4fv(location, count, transpose, ref matrix);
         }
-
-
-
-
 
         /// <summary>
         /// Enables the vertex attribute for currently bound VertexArrayObject.
@@ -929,10 +952,6 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glGetVertexAttribPointerv(index, pname, out ptr);
             return ptr;
         }
-
-
-
-
 
         #endregion
     }
