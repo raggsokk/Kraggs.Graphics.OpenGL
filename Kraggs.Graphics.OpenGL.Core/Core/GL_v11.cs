@@ -60,6 +60,12 @@ namespace Kraggs.Graphics.OpenGL
             public static extern void glCullFace(CullMode mode);
 
             [DllImport(OPENGL_LIBRARY)]
+            public static extern void glCopyTexSubImage1D(TextureTarget target, int level, int xoffset, int x, int y, int width);            
+
+            [DllImport(OPENGL_LIBRARY)]
+            public static extern void glCopyTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
+
+            [DllImport(OPENGL_LIBRARY)]
             public unsafe static extern void glDeleteTextures(int number, ref uint textures);
 
             [DllImport(OPENGL_LIBRARY)]
@@ -228,6 +234,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delClear(ClearBufferFlags flags);
             public delegate void delClearColor(float red, float green, float blue, float alpha);
             public delegate void delColorMask(bool red, bool green, bool blue, bool alpha);
+            public delegate void delCopyTexSubImage1D(TextureTarget target, int level, int xoffset, int x, int y, int width);
+            public delegate void delCopyTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
             public delegate void delCullFace(CullMode mode);
             public delegate void delDeleteTextures(int number, ref uint textures);
             public delegate void delDepthFunc(DepthFunction function);
@@ -293,6 +301,8 @@ namespace Kraggs.Graphics.OpenGL
             public static delClear glClear;
             public static delClearColor glClearColor;
             public static delColorMask glColorMask;
+            public static delCopyTexSubImage1D glCopyTexSubImage1D;
+            public static delCopyTexSubImage2D glCopyTexSubImage2D;
             public static delCullFace glCullFace;
             public static delDeleteTextures glDeleteTextures;
 
@@ -430,6 +440,52 @@ namespace Kraggs.Graphics.OpenGL
         public static void ColorMask(bool red, bool green, bool blue, bool alpha)
         {
             Delegates.glColorMask(red, green, blue, alpha);
+        }
+
+        /// <summary>
+        /// copy a one-dimensional texture subimage
+        /// glCopyTexSubImage1D replaces a portion of a one-dimensional texture image with pixels from the current GL_READ_BUFFER (rather than from main memory, as is the case for glTexSubImage1D).
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_1D.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies the texel offset within the texture array.</param>
+        /// <param name="x">Specify the window coordinates of the left corner of the row of pixels to be copied.</param>
+        /// <param name="y">Specify the window coordinates of the left corner of the row of pixels to be copied.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <remarks>
+        /// The screen-aligned pixel row with left corner at (x,\ y), and with length width replaces the portion of the texture array with x indices xoffset through xoffset + width - 1 , inclusive. The destination in the texture array may not include any texels outside the texture array as it was originally specified.
+        /// The pixels in the row are processed exactly as if glReadPixels had been called, but the process stops just before final conversion. At this point, all pixel component values are clamped to the range 0 1 and then converted to the texture's internal format for storage in the texel array.
+        /// It is not an error to specify a subtexture with zero width, but such a specification has no effect. If any of the pixels within the specified row of the current GL_READ_BUFFER are outside the read window associated with the current rendering context, then the values obtained for those pixels are undefined.
+        /// No change is made to the internalformat or width parameters of the specified texture array or to texel values outside the specified subregion.
+        /// </remarks>
+        public static void CopyTexSubImage1D(TextureTarget target, int level, int xoffset, int x, int y, int width)
+        {
+            Delegates.glCopyTexSubImage1D(target, level, xoffset, x, y, width);
+        }
+
+        /// <summary>
+        /// copy a two-dimensional texture subimage
+        /// glCopyTexSubImage2D replaces a rectangular portion of a two-dimensional texture image, cube-map texture image or a linear portion of a number of slices of a one-dimensional array texture with pixels from the current GL_READ_BUFFER (rather than from main memory, as is the case for glTexSubImage2D).
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, or GL_TEXTURE_1D_ARRAY.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
+        /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
+        /// <param name="x">Specify the window coordinates of the lower left corner of the rectangular region of pixels to be copied.</param>
+        /// <param name="y">Specify the window coordinates of the lower left corner of the rectangular region of pixels to be copied.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <remarks>
+        /// The screen-aligned pixel rectangle with lower left corner at x y and with width width and height height replaces the portion of the texture array with x indices xoffset through xoffset + width - 1 , inclusive, and y indices yoffset through yoffset + height - 1 , inclusive, at the mipmap level specified by level.
+        /// The pixels in the rectangle are processed exactly as if glReadPixels had been called, but the process stops just before final conversion. At this point, all pixel component values are clamped to the range 0 1 and then converted to the texture's internal format for storage in the texel array.
+        /// The destination rectangle in the texture array may not include any texels outside the texture array as it was originally specified. It is not an error to specify a subtexture with zero width or height, but such a specification has no effect.
+        /// When target is GL_TEXTURE_1D_ARRAY then the y coordinate and height are treated as the start slice and number of slices to modify.
+        /// If any of the pixels within the specified rectangle of the current GL_READ_BUFFER are outside the read window associated with the current rendering context, then the values obtained for those pixels are undefined.
+        /// No change is made to the internalformat, width, or height, parameters of the specified texture array or to texel values outside the specified subregion.
+        /// </remarks>
+        public static void CopyTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height)
+        {
+            Delegates.glCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
         }
 
         /// <summary>
@@ -810,10 +866,51 @@ namespace Kraggs.Graphics.OpenGL
         {
             Delegates.glStencilOp(fail, zfail, zpass);
         }
+        /// <summary>
+        /// specify a one-dimensional texture image
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_1D or GL_PROXY_TEXTURE_1D.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="piformat">Specifies the number of color components in the texture. Must be one of base internal formats given in Table 1, one of the sized internal formats given in Table 2, or one of the compressed internal formats given in Table 3, below.</param>
+        /// <param name="width">Specifies the width of the texture image. All implementations support texture images that are at least 1024 texels wide. The height of the 1D texture image is 1.</param>
+        /// <param name="format">Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED, GL_RG, GL_RGB, GL_BGR, GL_RGBA, GL_BGRA, GL_RED_INTEGER, GL_RG_INTEGER, GL_RGB_INTEGER, GL_BGR_INTEGER, GL_RGBA_INTEGER, GL_BGRA_INTEGER, GL_STENCIL_INDEX, GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL.</param>
+        /// <param name="type">Specifies the data type of the pixel data. The following symbolic values are accepted: GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_FLOAT, GL_UNSIGNED_BYTE_3_3_2, GL_UNSIGNED_BYTE_2_3_3_REV, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_5_6_5_REV, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_4_4_4_4_REV, GL_UNSIGNED_SHORT_5_5_5_1, GL_UNSIGNED_SHORT_1_5_5_5_REV, GL_UNSIGNED_INT_8_8_8_8, GL_UNSIGNED_INT_8_8_8_8_REV, GL_UNSIGNED_INT_10_10_10_2, and GL_UNSIGNED_INT_2_10_10_10_REV.</param>
+        /// <param name="data">Specifies a pointer to the image data in memory.</param>
+        /// <remarks>
+        /// Texturing maps a portion of a specified texture image onto each graphical primitive for which texturing is enabled. To enable and disable one-dimensional texturing, call glEnable and glDisable with argument GL_TEXTURE_1D.
+        /// Texture images are defined with glTexImage1D. The arguments describe the parameters of the texture image, such as width, width of the border, level-of-detail number (see glTexParameter), and the internal resolution and format used to store the image. The last three arguments describe how the image is represented in memory.
+        /// If target is GL_PROXY_TEXTURE_1D, no data is read from data, but all of the texture image state is recalculated, checked for consistency, and checked against the implementation's capabilities. If the implementation cannot handle a texture of the requested texture size, it sets all of the image state to 0, but does not generate an error (see glGetError). To query for an entire mipmap array, use an image array level greater than or equal to 1.
+        /// If target is GL_TEXTURE_1D, data is read from data as a sequence of signed or unsigned bytes, shorts, or longs, or single-precision floating-point values, depending on type. These values are grouped into sets of one, two, three, or four values, depending on format, to form elements. Each data byte is treated as eight 1-bit elements, with bit ordering determined by GL_UNPACK_LSB_FIRST (see glPixelStore).
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// The first element corresponds to the left end of the texture array. Subsequent elements progress left-to-right through the remaining texels in the texture array. The final element corresponds to the right end of the texture array.
+        /// </remarks>
         public static void TexImage1D(TextureTarget target, int level, PixelInternalFormat piformat, int width, PixelFormat format, PixelType type, IntPtr data)
         {
             Delegates.glTexImage1D(target, level, piformat, width, 0, format, type, data);
         }
+        /// <summary>
+        /// specify a two-dimensional texture image
+        /// To define texture images, call glTexImage2D. The arguments describe the parameters of the texture image, such as height, width, width of the border, level-of-detail number (see glTexParameter), and number of color components provided. The last three arguments describe how the image is represented in memory.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_2D, GL_PROXY_TEXTURE_2D, GL_TEXTURE_1D_ARRAY, GL_PROXY_TEXTURE_1D_ARRAY, GL_TEXTURE_RECTANGLE, GL_PROXY_TEXTURE_RECTANGLE, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, or GL_PROXY_TEXTURE_CUBE_MAP.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image. If target is GL_TEXTURE_RECTANGLE or GL_PROXY_TEXTURE_RECTANGLE, level must be 0.</param>
+        /// <param name="piformat">Specifies the number of color components in the texture. Must be one of base internal formats given in Table 1, one of the sized internal formats given in Table 2, or one of the compressed internal formats given in Table 3, below.</param>
+        /// <param name="width">Specifies the width of the texture image. All implementations support texture images that are at least 1024 texels wide.</param>
+        /// <param name="height">Specifies the height of the texture image, or the number of layers in a texture array, in the case of the GL_TEXTURE_1D_ARRAY and GL_PROXY_TEXTURE_1D_ARRAY targets. All implementations support 2D texture images that are at least 1024 texels high, and texture arrays that are at least 256 layers deep.</param>
+        /// <param name="format">Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED, GL_RG, GL_RGB, GL_BGR, GL_RGBA, GL_BGRA, GL_RED_INTEGER, GL_RG_INTEGER, GL_RGB_INTEGER, GL_BGR_INTEGER, GL_RGBA_INTEGER, GL_BGRA_INTEGER, GL_STENCIL_INDEX, GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL.</param>
+        /// <param name="type">Specifies the data type of the pixel data. The following symbolic values are accepted: GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_FLOAT, GL_UNSIGNED_BYTE_3_3_2, GL_UNSIGNED_BYTE_2_3_3_REV, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_5_6_5_REV, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_4_4_4_4_REV, GL_UNSIGNED_SHORT_5_5_5_1, GL_UNSIGNED_SHORT_1_5_5_5_REV, GL_UNSIGNED_INT_8_8_8_8, GL_UNSIGNED_INT_8_8_8_8_REV, GL_UNSIGNED_INT_10_10_10_2, and GL_UNSIGNED_INT_2_10_10_10_REV.</param>
+        /// <param name="data">Specifies a pointer to the image data in memory.</param>
+        /// <remarks>
+        /// Texturing allows elements of an image array to be read by shaders.
+        /// To define texture images, call glTexImage2D. The arguments describe the parameters of the texture image, such as height, width, width of the border, level-of-detail number (see glTexParameter), and number of color components provided. The last three arguments describe how the image is represented in memory.
+        /// If target is GL_PROXY_TEXTURE_2D, GL_PROXY_TEXTURE_1D_ARRAY, GL_PROXY_TEXTURE_CUBE_MAP, or GL_PROXY_TEXTURE_RECTANGLE, no data is read from data, but all of the texture image state is recalculated, checked for consistency, and checked against the implementation's capabilities. If the implementation cannot handle a texture of the requested texture size, it sets all of the image state to 0, but does not generate an error (see glGetError). To query for an entire mipmap array, use an image array level greater than or equal to 1.
+        /// If target is GL_TEXTURE_2D, GL_TEXTURE_RECTANGLE or one of the GL_TEXTURE_CUBE_MAP targets, data is read from data as a sequence of signed or unsigned bytes, shorts, or longs, or single-precision floating-point values, depending on type. These values are grouped into sets of one, two, three, or four values, depending on format, to form elements. Each data byte is treated as eight 1-bit elements, with bit ordering determined by GL_UNPACK_LSB_FIRST (see glPixelStore).
+        /// If target is GL_TEXTURE_1D_ARRAY, data is interpreted as an array of one-dimensional images.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// The first element corresponds to the lower left corner of the texture image. Subsequent elements progress left-to-right through the remaining texels in the lowest row of the texture image, and then in successively higher rows of the texture image. The final element corresponds to the upper right corner of the texture image.
+        /// </remarks>
         public static void TexImage2D(TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, PixelFormat format, PixelType type, IntPtr data)
         {
             Delegates.glTexImage2D(target, level, piformat, width, height, 0, format, type, data);
@@ -850,6 +947,22 @@ namespace Kraggs.Graphics.OpenGL
         {
             Delegates.glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, data);
         }
+        /// <summary>
+        /// set the viewport
+        /// glViewport specifies the affine transformation of x and y from normalized device coordinates to window coordinates.
+        /// </summary>
+        /// <param name="x">Specify the lower left corner of the viewport rectangle, in pixels. The initial value is (0,0).</param>
+        /// <param name="y">Specify the lower left corner of the viewport rectangle, in pixels. The initial value is (0,0).</param>
+        /// <param name="width">Specify the width and height of the viewport. When a GL context is first attached to a window, width and height are set to the dimensions of that window.</param>
+        /// <param name="height">Specify the width and height of the viewport. When a GL context is first attached to a window, width and height are set to the dimensions of that window.</param>
+        /// <remarks>
+        /// glViewport specifies the affine transformation of x and y from normalized device coordinates to window coordinates. Let x nd y nd be normalized device coordinates. Then the window coordinates x w y w are computed as follows:
+        /// 
+        /// x w = x nd + 1 ⁢ width 2 + x
+        /// y w = y nd + 1 ⁢ height 2 + y
+        /// 
+        /// Viewport width and height are silently clamped to a range that depends on the implementation. To query this range, call glGet with argument GL_MAX_VIEWPORT_DIMS.
+        /// </remarks>
         public static void Viewport(int x, int y, int width, int height)
         {
             Delegates.glViewport(x, y, width, height);

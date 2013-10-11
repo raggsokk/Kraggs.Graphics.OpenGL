@@ -46,6 +46,7 @@
     <Compile Include="absOpenTKDllImportLoader.cs" />
     <Compile Include="absOpenTKLoader.cs" />
     <Compile Include="Core\GL_v11.cs" />
+    <Compile Include="Core\GL_v12.cs" />
     <Compile Include="Enums\ActiveSubroutineUniformParameters.cs" />
     <Compile Include="Enums\All.cs" />
     <Compile Include="Enums\AttachmentParameters.cs" />
