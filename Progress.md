@@ -10,6 +10,7 @@ A list of work todo to track progress.
 	Implement OpenTK Loader.
 	Add Enums
 	Add Structs
+
 ### Milestone 2, gl 1.0/1.1	
 	~~Implement EXT_vertex_array~~ 				(Depricated)
 	Implement EXT_polygon_offset
@@ -18,6 +19,7 @@ A list of work todo to track progress.
 	Implement EXT_copy_texture
 	Implement EXT_subtexture
 	Implement EXT_texture_object
+
 ### Milestone 3, gl 1.2
 	Implement EXT_texture3D
 	Implement EXT_bgra							(No Functions)
@@ -27,6 +29,7 @@ A list of work todo to track progress.
 	Implement SGIS_texture_edge_clamp			(No Functions)
 	Implenent SGIS_texture_lod					(No Functions)
 	Implement EXT_draw_range_elements
+
 ### Milestone 4, gl 1.3
 	Implement ARB_texture_compression
 	Implement ARB_texture_cube_map 				(No Functions)
@@ -37,6 +40,7 @@ A list of work todo to track progress.
 	~~Implement ARB_texture_env_dot3~~ 			(Depricated)
 	~~Implement ARB_texture_border_clamp~~		(Depricated?)
 	~~Implement ARB_transpose_matrix~~ 			(Depricated)
+
 ### Milestone 5, gl 1.4
 	~~Implement SGIS_generate_mipmap~~ 			(Depricated)
 	Implement NV_blend_square					(No Functions)
@@ -54,10 +58,12 @@ A list of work todo to track progress.
 	~~Implement ARB_texture_env_crossbar~~ 		(Depricated)
 	Implement ARB_texture_mirrored_repeat		(No Functions)
 	Implement ARB_window_pos
+
 ### Milestone 6, gl 1.5
 	Implement ARB_vertex_buffer_object
 	Implement ARB_occlusion_query
 	Implement EXT_shadow_funcs
+
 ### Milestone 7, gl 2.0
 	Implement ARB_draw_buffers
 	Implement ARB_point_sprite	
@@ -67,9 +73,11 @@ A list of work todo to track progress.
 	Implement EXT_blend_equation_separate
 	Implement EXT_stenctil_two_side
 	Implement ATI_separate_stencil
+
 ### Milestone 8, gl 2.1
 	Implement ARB_pixel_buffer_object
 	Implement EXT_texture_sRGB
+	
 ### Milestone 9, gl 3.0
 	Implement APPLE_flush_buffer_range
 	Implement APPLE_vertex_array_object
