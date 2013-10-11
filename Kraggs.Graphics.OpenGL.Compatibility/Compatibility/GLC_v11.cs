@@ -34,30 +34,45 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum TextureLevelParameters
+    partial class GLC
     {
-        Width = All.TEXTURE_WIDTH,
-        Height = All.TEXTURE_HEIGHT,
-        Depth = All.TEXTURE_DEPTH,
-        InternalFormat = All.TEXTURE_INTERNAL_FORMAT,
-        //BorderColor = All.TEXTURE_BORDER_COLOR
+        #region DllImports
 
-        RedSize = All.TEXTURE_RED_SIZE,
-        GreenSize = All.TEXTURE_GREEN_SIZE,
-        BlueSize = All.TEXTURE_BLUE_SIZE,
-        AlphaSize = All.TEXTURE_ALPHA_SIZE,
-        DepthSize = All.TEXTURE_DEPTH_SIZE,
-        StencilSize = All.TEXTURE_STENCIL_SIZE,
+        partial class DllImports
+        {
+            [DllImport(OPENGL_LIBRARY)]
+            public static extern void glLoadIdentity();        
+        }
 
-        RedType = All.TEXTURE_RED_TYPE,
-        GreenType = All.TEXTURE_GREEN_TYPE,
-        BlueType = All.TEXTURE_BLUE_TYPE,
-        AlphaType = All.TEXTURE_ALPHA_TYPE,
-        DepthType = All.TEXTURE_DEPTH_TYPE,
+        #endregion
 
-        Compressed = All.TEXTURE_COMPRESSED,
-        CompressedImageSize = All.TEXTURE_COMPRESSED_IMAGE_SIZE,
+        #region Delegates
 
-        TextureBufferOffset = All.TEXTURE_BUFFER_OFFSET,
+        partial class Delegates
+        {
+            #region Delegate signature
+
+            public delegate void delLoadIdentity();
+
+            #endregion
+
+            #region Delegate Fields
+
+            public static delLoadIdentity glLoadIdentity;
+
+            #endregion
+
+        }
+
+        #endregion
+
+        #region Public Functions
+
+        public void LoadIdentity()
+        {
+            Delegates.glLoadIdentity();
+        }
+
+        #endregion
     }
 }

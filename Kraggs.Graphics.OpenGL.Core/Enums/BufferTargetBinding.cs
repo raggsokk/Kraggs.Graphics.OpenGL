@@ -35,8 +35,7 @@ using System.Runtime.CompilerServices;
 namespace Kraggs.Graphics.OpenGL
 {
     /// <summary>
-    /// Contains the corresponding binding parameter name to BufferTarget.
-    /// Basically all buffertargets has a binding parameter name except TextureBuffer.
+    /// Contains the corresponding binding parameter name to BufferTarget.    
     /// </summary>
     public enum BufferTargetBinding
     {
@@ -50,8 +49,8 @@ namespace Kraggs.Graphics.OpenGL
         PixelPackBinding = All.PIXEL_PACK_BUFFER_BINDING,
         PixelUnpackBinding = All.PIXEL_UNPACK_BUFFER_BINDING,
         QueryBinding = All.QUERY_BUFFER_BINDING,
-        ShaderStorageBinding = All.SHADER_STORAGE_BUFFER_BINDING,
-        //TextureBinding
+        ShaderStorageBinding = All.SHADER_STORAGE_BUFFER_BINDING,        
+        //TextureBinding = All.TEXTURE_BINDING_BUFFER,
         UniformBinding = All.UNIFORM_BUFFER_BINDING,
 
         IndicesArrayBinding = ElementArrayBinding,

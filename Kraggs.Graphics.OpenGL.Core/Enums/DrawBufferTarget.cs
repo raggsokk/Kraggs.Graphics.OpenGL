@@ -34,8 +34,52 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
+    /// <summary>
+    /// When colors are written to the frame buffer, they are written into the color buffers specified by glDrawBuffer. The specifications are as follows:
+    /// </summary>
     public enum DrawBufferTarget
     {
-        DontAddedYet,
+        /// <summary>
+        /// No color buffers are written.
+        /// </summary>
+        None = All.NONE,
+
+        /// <summary>
+        /// Only the front left color buffer is written.
+        /// </summary>
+        FrontLeft = All.FRONT_LEFT,
+        /// <summary>
+        /// Only the front right color buffer is written.
+        /// </summary>
+        FrontRight = All.FRONT_RIGHT,
+        /// <summary>
+        /// Only the back left color buffer is written.
+        /// </summary>
+        BackLeft = All.BACK_LEFT,
+        /// <summary>
+        /// Only the back right color buffer is written.
+        /// </summary>
+        BackRight = All.BACK_RIGHT,
+        /// <summary>
+        /// Only the front left and front right color buffers are written. If there is no front right color buffer, only the front left color buffer is written.
+        /// </summary>
+        Front = All.FRONT,
+        /// <summary>
+        /// Only the back left and back right color buffers are written. If there is no back right color buffer, only the back left color buffer is written.
+        /// </summary>
+        Back = All.BACK,
+        /// <summary>
+        /// Only the front left and back left color buffers are written. If there is no back left color buffer, only the front left color buffer is written.
+        /// </summary>
+        Left = All.LEFT,
+        /// <summary>
+        /// Only the front right and back right color buffers are written. If there is no back right color buffer, only the front right color buffer is written.
+        /// </summary>
+        Right = All.RIGHT,
+        /// <summary>
+        /// All the front and back color buffers (front left, front right, back left, back right) are written. If there are no back color buffers, only the front left and front right color buffers are written. If there are no right color buffers, only the front left and back left color buffers are written. If there are no right or back color buffers, only the front left color buffer is written.
+        /// </summary>
+        FrontAndBack = All.FRONT_AND_BACK,
+
     }
 }

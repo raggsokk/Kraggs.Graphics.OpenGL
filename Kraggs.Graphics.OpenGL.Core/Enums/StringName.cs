@@ -34,12 +34,39 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
+    /// <summary>
+    /// glGetString[i] can be called with these name constants.
+    /// Copyright © 1991-2006 Silicon Graphics, Inc. Copyright © 2010 Khronos Group. This document is licensed under the SGI Free Software B License. For details, see http://oss.sgi.com/projects/FreeB/.
+    /// </summary>
     public enum StringName
     {
+        /// <summary>
+        /// Returns the company responsible for this GL implementation. This name does not change from release to release.
+        /// Strings GL_VENDOR and GL_RENDERER together uniquely specify a platform. They do not change from release to release and should be used by platform-recognition algorithms.
+        /// </summary>
         Vendor = All.VENDOR,
+        /// <summary>
+        /// Returns the name of the renderer. This name is typically specific to a particular configuration of a hardware platform. It does not change from release to release.
+        /// Strings GL_VENDOR and GL_RENDERER together uniquely specify a platform. They do not change from release to release and should be used by platform-recognition algorithms.
+        /// </summary>
         Renderer = All.RENDERER,
+        /// <summary>
+        /// Returns a version or release number.
+        /// The GL_VERSION and GL_SHADING_LANGUAGE_VERSION strings begin with a version number. The version number uses one of these forms:
+        /// major_number.minor_number major_number.minor_number.release_number
+        /// Vendor-specific information may follow the version number. Its format depends on the implementation, but a space always separates the version number and the vendor-specific information.
+        /// </summary>
         Version = All.VERSION,
+        /// <summary>
+        /// Returns a version or release number for the shading language.
+        /// The GL_VERSION and GL_SHADING_LANGUAGE_VERSION strings begin with a version number. The version number uses one of these forms:
+        /// major_number.minor_number major_number.minor_number.release_number
+        /// Vendor-specific information may follow the version number. Its format depends on the implementation, but a space always separates the version number and the vendor-specific information.
+        /// </summary>
         ShadingLanguageVersion = All.SHADING_LANGUAGE_VERSION,
+        /// <summary>
+        /// For glGetStringi only, returns the extension string supported by the implementation at index.
+        /// </summary>
         Extensions = All.EXTENSIONS,
     }
 }

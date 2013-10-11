@@ -35,6 +35,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compatibility\GLC_v11.cs" />
     <Compile Include="GLC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

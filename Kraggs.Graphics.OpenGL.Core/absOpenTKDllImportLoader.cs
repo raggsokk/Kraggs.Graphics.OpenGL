@@ -70,6 +70,10 @@ namespace Kraggs.Graphics.OpenGL
                 if (d != null)
                     f.SetValue(null, d);
             }
+
+#if DEBUG
+            Marshal.PrelinkAll(pDllImportClass);
+#endif
         }
     }
 }
