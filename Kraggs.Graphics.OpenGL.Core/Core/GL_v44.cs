@@ -34,8 +34,31 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum VertexAttribPointerParameters
+    // template class until gl 4.4 where its not neede for another year.
+    partial class GL
     {
-        ArrayPointer = All.VERTEX_ATTRIB_ARRAY_POINTER,        
+        #region Delegate Class
+
+        partial class Delegates
+        {
+
+            #region Delegates
+
+
+
+            #endregion
+
+            #region GL Fields
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Public functions.
+
+
+
+        #endregion
     }
 }

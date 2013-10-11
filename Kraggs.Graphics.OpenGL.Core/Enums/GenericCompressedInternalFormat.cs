@@ -34,8 +34,15 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum VertexAttribPointerParameters
+    public enum GenericCompressedInternalFormat
     {
-        ArrayPointer = All.VERTEX_ATTRIB_ARRAY_POINTER,        
+        // Generic
+        Red_Generic = All.COMPRESSED_RED,
+        RG_Generic = All.COMPRESSED_RG,
+        RGB_Generic = All.COMPRESSED_RGB,
+        RGBA_Generic = All.COMPRESSED_RGBA,
+        SRGB_Generic = All.COMPRESSED_SRGB,
+        SRGBAlpha_Generic = All.COMPRESSED_SRGB_ALPHA,
+
     }
 }

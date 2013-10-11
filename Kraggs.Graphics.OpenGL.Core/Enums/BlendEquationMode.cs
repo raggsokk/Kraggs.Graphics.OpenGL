@@ -34,8 +34,8 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum VertexAttribPointerParameters
+    public enum BlendEquationMode
     {
-        ArrayPointer = All.VERTEX_ATTRIB_ARRAY_POINTER,        
+        NoneAddedYet,
     }
 }

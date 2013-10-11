@@ -34,8 +34,33 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum VertexAttribPointerParameters
+    /// <summary>
+    /// 
+    /// </summary>
+    public enum SizedCompressedInternalFormat
     {
-        ArrayPointer = All.VERTEX_ATTRIB_ARRAY_POINTER,        
+        //TODO: find a better name for this enum
+
+        // Specific
+        Red_RGTC1 = All.COMPRESSED_RED_RGTC1,
+        Signed_Red_RGTC1 = All.COMPRESSED_SIGNED_RED_RGTC1,
+        RG_RGTC2 = All.COMPRESSED_RG_RGTC2,
+        Signed_RG_RGTC2 = All.COMPRESSED_SIGNED_RG_RGTC2,
+
+        //RGBA_BPTC_UNorm = All.
+        //SRGB_Alpha_BPTC_UNorm = All.
+        //RGB_BPTC_Signed_Float = All.
+        //RGB_BTTC_Unsigned_Float = All.
+        RGB8_ETC2 = All.COMPRESSED_RGB8_ETC2,
+        SRGB8_ETC2 = All.COMPRESSED_SRGB8_ETC2,
+        RGB8_PunchThrough_Alpha1_ETC2 = All.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2,
+        SRGB8_PunchThrough_Alpha1_ETC2 = All.COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2,
+        RGBA8_ETC2_EAC = All.COMPRESSED_RGBA8_ETC2_EAC,
+        SRGB8_Alpha9_ETC2_EAC = All.COMPRESSED_SRGB8_ALPHA8_ETC2_EAC,
+        R11_EAC = All.COMPRESSED_RG11_EAC,
+        Signed_R11_EAC = All.COMPRESSED_SIGNED_R11_EAC,
+        RG11_EAC = All.COMPRESSED_RG11_EAC,
+        Signed_RG11_EAC = All.COMPRESSED_SIGNED_RG11_EAC,
+
     }
 }
