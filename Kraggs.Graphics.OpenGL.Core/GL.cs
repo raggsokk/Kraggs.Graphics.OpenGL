@@ -47,5 +47,11 @@ namespace Kraggs.Graphics.OpenGL
         [SuppressUnmanagedCodeSecurity()]
         internal static partial class Delegates
         { }
+
+        #region Public Const
+
+        public const ulong TIMEOUT_IGNORED = 0xFFFFFFFFFFFFFFFF;
+
+        #endregion
     }
 }

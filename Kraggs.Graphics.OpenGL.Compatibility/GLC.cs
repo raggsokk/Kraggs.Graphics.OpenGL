@@ -34,9 +34,13 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public sealed partial class GLC
+    public sealed partial class GLC : absOpenTKDllImportLoader
     {
         internal const string OPENGL_LIBRARY = "opengl32.dll";
+
+        public GLC()
+            : base(typeof(GLC))
+        { }
 
         [SuppressUnmanagedCodeSecurity()]
         internal static partial class DllImports

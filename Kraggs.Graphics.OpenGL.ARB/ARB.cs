@@ -34,8 +34,15 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public sealed partial class ARB
+    /// <summary>
+    /// Contains the ARB functions from OpenGL Core 3.0 to OpenGL Core 4.4
+    /// </summary>
+    public sealed partial class ARB : absOpenTKLoader
     {
+        //public ARB()
+        //    : base()
+        //{ }
+
         [SuppressUnmanagedCodeSecurity()]
         internal static partial class Delegates
         { }

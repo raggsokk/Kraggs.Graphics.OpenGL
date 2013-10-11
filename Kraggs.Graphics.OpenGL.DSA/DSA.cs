@@ -34,8 +34,15 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public sealed partial class DSA
+    /// <summary>
+    /// Contains all DSA style functions from OpenGL Core 3.0 to OpenGL Core 4.4
+    /// </summary>
+    public sealed partial class DSA : absOpenTKLoader
     {
+        //public DSA()
+        //    : base()
+        //{ }
+
         [SuppressUnmanagedCodeSecurity()]
         internal static partial class Delegates
         { }
