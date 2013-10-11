@@ -54,17 +54,17 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delProgramUniform4fEXT(uint ProgramID, uint location, float v1, float v2, float v3, float v4);
             public delegate void delProgramUniform4iEXT(uint ProgramID, uint location, int v1, int v2, int v3, int v4);
 
-            public delegate void delProgramUniform1fvEXT(uint ProgramID, uint location, ref float v);
-            public delegate void delProgramUniform1ivEXT(uint ProgramID, uint location, ref int v);
+            public delegate void delProgramUniform1fvEXT(uint ProgramID, uint location, int count, ref float v);
+            public delegate void delProgramUniform1ivEXT(uint ProgramID, uint location, int count, ref int v);
 
-            public delegate void delProgramUniform2fvEXT(uint ProgramID, uint location, ref float v);
-            public delegate void delProgramUniform2ivEXT(uint ProgramID, uint location, ref int v);
+            public delegate void delProgramUniform2fvEXT(uint ProgramID, uint location, int count, ref float v);
+            public delegate void delProgramUniform2ivEXT(uint ProgramID, uint location, int count, ref int v);
 
-            public delegate void delProgramUniform3fvEXT(uint ProgramID, uint location, ref float v);
-            public delegate void delProgramUniform3ivEXT(uint ProgramID, uint location, ref int v);
+            public delegate void delProgramUniform3fvEXT(uint ProgramID, uint location, int count, ref float v);
+            public delegate void delProgramUniform3ivEXT(uint ProgramID, uint location, int count, ref int v);
 
-            public delegate void delProgramUniform4fvEXT(uint ProgramID, uint location, ref float v);
-            public delegate void delProgramUniform4ivEXT(uint ProgramID, uint location, ref int v);
+            public delegate void delProgramUniform4fvEXT(uint ProgramID, uint location, int count, ref float v);
+            public delegate void delProgramUniform4ivEXT(uint ProgramID, uint location, int count, ref int v);
 
             public delegate void delProgramUniformMatrix2fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix);
             public delegate void delProgramUniformMatrix3fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix);
@@ -145,64 +145,64 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glProgramUniform4iEXT(ProgramID, location, v1, v2, v3, v4);
         }
 
-        public static void ProgramUniform1fvEXT(uint ProgramID, uint location, ref float v)
+        public static void ProgramUniform1fvEXT(uint ProgramID, uint location, ref float v, int count = 1)
         {
-            Delegates.glProgramUniform1fvEXT(ProgramID, location, ref v);
+            Delegates.glProgramUniform1fvEXT(ProgramID, location, count, ref v);
         }
-        public static void ProgramUniform1ivEXT(uint ProgramID, uint location, ref int v)
+        public static void ProgramUniform1ivEXT(uint ProgramID, uint location, ref int v, int count = 1)
         {
-            Delegates.glProgramUniform1ivEXT(ProgramID, location, ref v);
-        }
-
-        public static void ProgramUniform2fvEXT(uint ProgramID, uint location, ref float v)
-        {
-            Delegates.glProgramUniform2fvEXT(ProgramID, location, ref v);
-        }
-        public static void ProgramUniform2ivEXT(uint ProgramID, uint location, ref int v)
-        {
-            Delegates.glProgramUniform2ivEXT(ProgramID, location, ref v);
+            Delegates.glProgramUniform1ivEXT(ProgramID, location, count, ref v);
         }
 
-        public static void ProgramUniform3fvEXT(uint ProgramID, uint location, ref float v)
+        public static void ProgramUniform2fvEXT(uint ProgramID, uint location, ref float v, int count = 1)
         {
-            Delegates.glProgramUniform3fvEXT(ProgramID, location, ref v);
+            Delegates.glProgramUniform2fvEXT(ProgramID, location, count, ref v);
         }
-        public static void ProgramUniform3ivEXT(uint ProgramID, uint location, ref int v)
+        public static void ProgramUniform2ivEXT(uint ProgramID, uint location, ref int v, int count = 1)
         {
-            Delegates.glProgramUniform3ivEXT(ProgramID, location, ref v);
-        }
-
-        public static void ProgramUniform4fvEXT(uint ProgramID, uint location, ref float v)
-        {
-            Delegates.glProgramUniform4fvEXT(ProgramID, location, ref v);
-        }
-        public static void ProgramUniform4ivEXT(uint ProgramID, uint location, ref int v)
-        {
-            Delegates.glProgramUniform4ivEXT(ProgramID, location, ref v);
+            Delegates.glProgramUniform2ivEXT(ProgramID, location, count, ref v);
         }
 
-        public static void ProgramUniformMatrix2fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix)
+        public static void ProgramUniform3fvEXT(uint ProgramID, uint location, ref float v, int count = 1)
         {
-            Delegates.glProgramUniformMatrix2fvEXT(ProgramID, location, count, transpose, ref matrix);
+            Delegates.glProgramUniform3fvEXT(ProgramID, location, count, ref v);
         }
+        public static void ProgramUniform3ivEXT(uint ProgramID, uint location, ref int v, int count = 1)
+        {
+            Delegates.glProgramUniform3ivEXT(ProgramID, location, count, ref v);
+        }
+
+        public static void ProgramUniform4fvEXT(uint ProgramID, uint location, ref float v, int count = 1)
+        {
+            Delegates.glProgramUniform4fvEXT(ProgramID, location, count, ref v);
+        }
+        public static void ProgramUniform4ivEXT(uint ProgramID, uint location, ref int v, int count = 1)
+        {
+            Delegates.glProgramUniform4ivEXT(ProgramID, location, count, ref v);
+        }
+
+        //public static void ProgramUniformMatrix2fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix)
+        //{
+        //    Delegates.glProgramUniformMatrix2fvEXT(ProgramID, location, count, transpose, ref matrix);
+        //}
         public static void ProgramUniformMatrix2fvEXT(uint ProgramID, uint location, ref float matrix, int count = 1, bool transpose = false)
         {
             Delegates.glProgramUniformMatrix2fvEXT(ProgramID, location, count, transpose, ref matrix);
         }
 
-        public static void ProgramUniformMatrix3fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix)
-        {
-            Delegates.glProgramUniformMatrix3fvEXT(ProgramID, location, count, transpose, ref matrix);
-        }
+        //public static void ProgramUniformMatrix3fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix)
+        //{
+        //    Delegates.glProgramUniformMatrix3fvEXT(ProgramID, location, count, transpose, ref matrix);
+        //}
         public static void ProgramUniformMatrix3fvEXT(uint ProgramID, uint location, ref float matrix, int count = 1, bool transpose = false)
         {
             Delegates.glProgramUniformMatrix3fvEXT(ProgramID, location, count, transpose, ref matrix);
         }
 
-        public static void ProgramUniformMatrix4fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix)
-        {
-            Delegates.glProgramUniformMatrix4fvEXT(ProgramID, location, count, transpose, ref matrix);
-        }
+        //public static void ProgramUniformMatrix4fvEXT(uint ProgramID, uint location, int count, bool transpose, ref float matrix)
+        //{
+        //    Delegates.glProgramUniformMatrix4fvEXT(ProgramID, location, count, transpose, ref matrix);
+        //}
         public static void ProgramUniformMatrix4fvEXT(uint ProgramID, uint location, ref float matrix, int count = 1, bool transpose = false)
         {
             Delegates.glProgramUniformMatrix4fvEXT(ProgramID, location, count, transpose, ref matrix);
