@@ -34,8 +34,16 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public sealed partial class EXT
+    /// <summary>
+    /// Contains all the EXT functions from OpenGL Core 3.0 to OpenGL Core 4.4.
+    /// It will also contain other opengl extensions but that will be on a nice to have basis.
+    /// </summary>
+    public sealed partial class EXT : absOpenTKLoader
     {
+        //public EXT()
+        //    : base()
+        //{ }
+
         [SuppressUnmanagedCodeSecurity()]
         internal static partial class Delegates
         { }
