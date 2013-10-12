@@ -36,9 +36,10 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum ProgramStageParameters
     {
-        Uniforms = All.ACTIVE_SUBROUTINE_UNIFORMS,
-        MaxLength = All.ACTIVE_SUBROUTINE_MAX_LENGTH,
-        UniformLocations = All.ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS,
-        UniformMaxLength = All.ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH
+        Subroutines = All.ACTIVE_SUBROUTINES,
+        SubroutineUniforms = All.ACTIVE_SUBROUTINE_UNIFORMS,
+        SubroutineMaxLength = All.ACTIVE_SUBROUTINE_MAX_LENGTH,
+        SubroutineUniformLocations = All.ACTIVE_SUBROUTINE_UNIFORM_LOCATIONS,
+        SubroutineUniformMaxLength = All.ACTIVE_SUBROUTINE_UNIFORM_MAX_LENGTH
     }
 }

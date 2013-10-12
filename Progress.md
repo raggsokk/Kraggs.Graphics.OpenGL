@@ -134,19 +134,19 @@ A list of work todo to track progress.
 	Implement ARB_vertex_type_2_10_10_10_rev 	(No Functions we want :) )
 
 ### Milestone 13, gl 4.0
-	Implement ARB_draw_buffers_blend
-	Implement ARB_draw_indirect
-	Implement ARB_gpu_shader5
-	Implement ARB_gpu_shader_fp64
-	Implement ARB_sample_shading
-	Implement ARB_shader_subroutine
-	Implement ARB_tessellation_shader
-	Implement ARB_texture_buffer_object_rgb32
-	Implement ARB_texture_cube_map_array
-	Implement ARB_texture_gather
-	Implement ARB_texture_query_lod
-	Implement ARB_transform_feedback2
-	Implement ARB_transform_feedback3
+	Implement ARB_draw_buffers_blend			(No DSA)
+	Implement ARB_draw_indirect 				(No DSA)
+	Implement ARB_gpu_shader5 					(No Functions)
+	Implement ARB_gpu_shader_fp64 				(DSA, oh yes!)
+	Implement ARB_sample_shading				(No DSA)
+	Implement ARB_shader_subroutine 			(No DSA)
+	Implement ARB_tessellation_shader  			(No DSA)
+	Implement ARB_texture_buffer_object_rgb32  	(No Functions)
+	Implement ARB_texture_cube_map_array 		(No Functions)
+	Implement ARB_texture_gather  				(No Functions)
+	Implement ARB_texture_query_lod 			(No Functions)
+	Implement ARB_transform_feedback2 			(No DSA)
+	Implement ARB_transform_feedback3 			(No DSA)
 
 ### Milestone 14, gl 4.1
 	Implement ARB_get_program_binary

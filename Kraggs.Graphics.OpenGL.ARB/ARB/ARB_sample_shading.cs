@@ -34,9 +34,35 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum ActiveSubroutineUniformParameters
+    partial class ARB
     {
-        NumCompatibleSubroutines = All.NUM_COMPATIBLE_SUBROUTINES,
-        CompatibleSubroutines = All.COMPATIBLE_SUBROUTINES,
+        #region Delegate Class
+
+        partial class Delegates
+        {
+
+            #region Delegates
+
+            public delegate void delMinSampleShadingARB(float value);
+
+            #endregion
+
+            #region GL Fields
+
+            public static delMinSampleShadingARB glMinSampleShadingARB;
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Public functions.
+
+        public static void MinSampleShadingARB(float value)
+        {
+            Delegates.glMinSampleShadingARB(value);
+        }
+
+        #endregion
     }
 }

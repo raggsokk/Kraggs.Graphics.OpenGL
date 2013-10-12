@@ -34,16 +34,11 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    [StructLayout(LayoutKind.Sequential)]
-    public struct DrawElementsIndirectCommand
+    public enum SubroutineUniformParameters
     {
-        public uint count;
-        public uint primCount;
-        public uint firstIndex;
-        public int baseVertex;
-        /// <summary>
-        /// The baseInstance member of the DrawElementsIndirectCommand structure is defined only if the GL version is 4.2 or greater. For versions of the GL less than 4.2, this parameter is present but is reserved and should be set to zero. On earlier versions of the GL, behavior is undefined if it is non-zero.
-        /// </summary>
-        public uint baseInstance;
+        NumCompatibleSubroutines = All.NUM_COMPATIBLE_SUBROUTINES,
+        CompatibleSubroutines = All.COMPATIBLE_SUBROUTINES,
+        UniformSize = All.UNIFORM_SIZE,
+        UniformNameLength = All.UNIFORM_NAME_LENGTH,
     }
-} 
+}

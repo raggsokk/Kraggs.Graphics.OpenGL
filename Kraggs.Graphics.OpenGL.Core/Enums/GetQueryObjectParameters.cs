@@ -36,8 +36,17 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum GetQueryObjectParameters
     {
+        /// <summary>
+        /// params returns the value of the query object's passed samples counter. The initial value is 0.
+        /// </summary>
         Result = All.QUERY_RESULT,
+        /// <summary>
+        /// params returns whether the passed samples counter is immediately available. If a delay would occur waiting for the query result, GL_FALSE is returned. Otherwise, GL_TRUE is returned, which also indicates that the results of all previous queries are available as well.
+        /// </summary>
         IsResultAvailable = All.QUERY_RESULT_AVAILABLE,
+        /// <summary>
+        /// If the result of the query is available (that is, a query of GL_QUERY_RESULT_AVAILABLE would return non-zero), then params returns the value of the query object's passed samples counter, otherwise, the data referred to by params is not modified. The initial value is 0.
+        /// </summary>
         ResultNoWait = All.QUERY_RESULT_NO_WAIT,
     }
 }

@@ -63,26 +63,24 @@ namespace Kraggs.Graphics.OpenGL
         //Vec4b = All.BOOL_VEC4,
 
         Mat2d = All.DOUBLE_MAT2,
+        Mat3d = All.DOUBLE_MAT3,
+        Mat4d = All.DOUBLE_MAT4,
+
         Mat2x3d = All.DOUBLE_MAT2x3,
         Mat2x4d = All.DOUBLE_MAT2x4,
-
-        Mat3d = All.DOUBLE_MAT3,
-        Mat3x2 = All.DOUBLE_MAT3x2,
-        Mat3x4 = All.DOUBLE_MAT3x4,
-
-        Mat4d = All.DOUBLE_MAT4,
+        Mat3x2d = All.DOUBLE_MAT3x2,
+        Mat3x4d = All.DOUBLE_MAT3x4,
         Mat4x2d = All.DOUBLE_MAT4x2,
         Mat4x3d = All.DOUBLE_MAT4x3,
 
         Mat2f = All.FLOAT_MAT2,
-        Mat2x3f = All.FLOAT_MAT2x3,
-        Mat2x4f = All.FLOAT_MAT2x4,
-
         Mat3f = All.FLOAT_MAT3,
+        Mat4f = All.FLOAT_MAT4,
+
         Mat3x2f = All.FLOAT_MAT3x2,
         Mat3x4f = All.FLOAT_MAT3x4,
-
-        Mat4f = All.FLOAT_MAT4,
+        Mat2x3f = All.FLOAT_MAT2x3,
+        Mat2x4f = All.FLOAT_MAT2x4,
         Mat4x2f = All.FLOAT_MAT4x2,
         Mat4x3f = All.FLOAT_MAT4x3,
 

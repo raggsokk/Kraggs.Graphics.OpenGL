@@ -34,7 +34,7 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    // template class until gl 4.4 where its not neede for another year.
+    
     partial class GL
     {
         #region Delegate Class

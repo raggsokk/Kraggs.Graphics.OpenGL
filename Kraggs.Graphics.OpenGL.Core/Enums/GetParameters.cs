@@ -963,6 +963,65 @@ namespace Kraggs.Graphics.OpenGL
 
         QueryBufferBinding = All.QUERY_BUFFER_BINDING,
 
+        #region OpenGL 4.0 Additions.
+
+        // opengl 4.0 / ARB_gpu_shader5
+        MaxGeometryShaderInvocations = All.MAX_GEOMETRY_SHADER_INVOCATIONS,
+        MinFragmentInterpolationOffset = All.MIN_FRAGMENT_INTERPOLATION_OFFSET,
+        MaxFragmentInterpolationOffset = All.MAX_FRAGMENT_INTERPOLATION_OFFSET,
+        FragmentInterpolationOffsetBits = All.FRAGMENT_INTERPOLATION_OFFSET_BITS,
+        //MaxVertexStreams = All.MAX_VERTEX_STREAMS, also part of ARB_transform_feedback3
+
+        // opengl 4.0 / ARB_sample_shading
+        SampleShading = All.SAMPLE_SHADING,
+        MinSampleShadingValue = All.MIN_SAMPLE_SHADING_VALUE,
+
+        // opengl 4.0 / ARB_shader_subroutine
+        MaxSubroutines = All.MAX_SUBROUTINES,
+        MaxSubroutineUniformLocations = All.MAX_SUBROUTINE_UNIFORM_LOCATIONS,
+
+        // opengl 4.0 / ARB_tessellation_shader
+        DefaultInnerLevel = All.PATCH_DEFAULT_INNER_LEVEL,
+        DefaultOuterLevel = All.PATCH_DEFAULT_OUTER_LEVEL,
+        MaxPatchVertices = All.MAX_PATCH_VERTICES,
+        MaxTessGenLevel = All.MAX_TESS_GEN_LEVEL,
+        MaxTessControlUniformComponents = All.MAX_TESS_CONTROL_UNIFORM_COMPONENTS,
+        MaxTessControlTextureImageUnits = All.MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS,
+        MaxTessControlOutputComponents = All.MAX_TESS_CONTROL_OUTPUT_COMPONENTS,
+        MaxTessPatchComponents = All.MAX_TESS_PATCH_COMPONENTS,
+        MaxTessControlTotalOutputComponents = All.MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS,
+        MaxTessControlUniformBlocks = All.MAX_TESS_CONTROL_UNIFORM_BLOCKS,
+        MaxTessControlInputComponents = All.MAX_TESS_CONTROL_INPUT_COMPONENTS,
+        MaxCombinedTessControlUniformComponents = All.MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS,
+
+        MaxTessEvaluationUniformComponents = All.MAX_TESS_EVALUATION_UNIFORM_COMPONENTS,
+        MaxTessEvaluationTextureImageUnits = All.MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS,
+        MaxTessEvaluationOutputComponents = All.MAX_TESS_EVALUATION_OUTPUT_COMPONENTS,
+        MaxTessEvaluationUniformBlocks = All.MAX_TESS_EVALUATION_UNIFORM_BLOCKS,
+        MaxTessEvaluationInputComponents = All.MAX_TESS_EVALUATION_INPUT_COMPONENTS,
+        MaxCombinedTessEvaluationUniformComponents = All.MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS,
+
+        // opengl 4.0 / ARB_texture_gather
+        MinProgramTextureGatherOffset = All.MIN_PROGRAM_TEXTURE_GATHER_OFFSET,
+        MaxProgramTextureGatherOffset  = All.MAX_PROGRAM_TEXTURE_GATHER_OFFSET,
+        //MaxProgramTextureGatherComponents = 0x8F9F,
+    
+        // opengl 4.0 / ARB_transform_feedback3
+        MaxTransformFeedbackBuffers = All.MAX_TRANSFORM_FEEDBACK_BUFFERS,
+        MaxTransformFeedbackBindings = MaxTransformFeedbackBuffers,
+        MaxVertexStreams = All.MAX_VERTEX_STREAMS,
+
+
+
+        #endregion
+
+
+
+
+
+
+
+
 
 
 
