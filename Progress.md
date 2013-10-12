@@ -197,7 +197,8 @@ A list of work todo to track progress.
 	Implement ARB_vertex_type_10f_11f_11f_rev
 	New implementation-dependent state MAX_VERTEX_ATTRIB_STRIDE
 
-
+### Milestone x++, math3d integration.
+	Determine best way to do this?
 
 ## Releases based on milestones.
 
