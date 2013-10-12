@@ -123,15 +123,15 @@ A list of work todo to track progress.
 	Implement ARB_vertex_array_bgra 			(No Functions)
 
 ### Milestone 12, gl 3.3
-	Implement ARB_blend_func_extended
-	Implement ARB_explicit_attrib_location
+	Implement ARB_blend_func_extended 			(No DSA)
+	Implement ARB_explicit_attrib_location 		(No Functions)
 	Implement ARB_instanced_arrays
-	Implement ARB_occlusion_query2
-	Implement ARB_sampler_objects
-	Implement ARB_texture_rgb10_a2ui
-	Implement ARB_texture_swizzle
-	Implement ARB_timer_query
-	Implement ARB_vertex_type_2_10_10_10_rev
+	Implement ARB_occlusion_query2				(No Functions)
+	Implement ARB_sampler_objects				(No DSA)
+	Implement ARB_texture_rgb10_a2ui			(No Functions)
+	Implement ARB_texture_swizzle 				(No Functions)
+	Implement ARB_timer_query 					(No DSA)
+	Implement ARB_vertex_type_2_10_10_10_rev 	(No Functions we want :) )
 
 ### Milestone 13, gl 4.0
 	Implement ARB_draw_buffers_blend
