@@ -222,3 +222,20 @@ A list of work todo to track progress.
 	Milestone 15
 	Milestone 16
 	Milestone 17
+
+
+
+## Open Issues which needs to be clarified.
+
+### Drawbuffers
+	Some opengl calls expect drawbuffers of GL_Back type and other of type 
+	GL_DRAWBUFFERS[0,MaxDrawBuffers]. Right now only the first is present 
+	in an enum. We need more info on when and where to use them correctly.
+
+### PixelInternalFormat
+	This enum is caotic. To make things worse a lot of opengl calls expect
+	a subset of this enum and there enums like BaseInternalFormat,SizedInternalFormat,
+	CompressedInternalFormat,SizedCompressedInternalFormat and GenericCompressedInternalFormat
+	has appeared. To use this calls you need to cast your PixelInternalFormat into one of those.
+	We need to clarify the usage of PixelInternalFormat.
+
