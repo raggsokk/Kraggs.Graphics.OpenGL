@@ -54,6 +54,7 @@
     <Compile Include="Core\GL_v21.cs" />
     <Compile Include="Core\GL_v30.cs" />
     <Compile Include="Core\GL_v31.cs" />
+    <Compile Include="Core\GL_v32.cs" />
     <Compile Include="Core\GL_v44.cs" />
     <Compile Include="Enums\ActiveSubroutineUniformParameters.cs" />
     <Compile Include="Enums\All.cs" />

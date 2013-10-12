@@ -50,5 +50,8 @@ namespace Kraggs.Graphics.OpenGL
         Int_2_10_10_10_Rev = All.INT_2_10_10_10_REV,
         UInt_2_10_10_10_Rev = All.UNSIGNED_INT_2_10_10_10_REV,
         UInt_10F_11F_11F_Rev = All.UNSIGNED_INT_10F_11F_11F_REV,
+
+        //ARB_vertex_array_bgra or GL 3.2
+
     }
 }

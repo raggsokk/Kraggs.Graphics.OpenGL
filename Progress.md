@@ -111,16 +111,16 @@ A list of work todo to track progress.
 	Implement ARB_uniform_buffer_object
 	Implement NV_primitive_restart
 
-### Milestone 11, gl 3.2
-	Implement ARB_depth_clamp
-	Implement ARB_draw_elements_base_vertex
-	Implement ARB_fragment_coord_conventions
+### Milestone 11, gl 3.2 						
+	Implement ARB_depth_clamp					(No Functions)
+	Implement ARB_draw_elements_base_vertex		(No DSA)
+	Implement ARB_fragment_coord_conventions 	(No Functions)
 	Implement ARB_geometry_shader4
-	Implement ARB_provoking_vertex
-	Implement ARB_seamless_cube_map
-	Implement ARB_sync
-	Implement ARB_texture_multisample
-	Implement ARB_vertex_array_bgra
+	Implement ARB_provoking_vertex 				(No DSA)
+	Implement ARB_seamless_cube_map 			(No Functions)
+	Implement ARB_sync							(No DSA)
+	Implement ARB_texture_multisample 			
+	Implement ARB_vertex_array_bgra 			(No Functions)
 
 ### Milestone 12, gl 3.3
 	Implement ARB_blend_func_extended
