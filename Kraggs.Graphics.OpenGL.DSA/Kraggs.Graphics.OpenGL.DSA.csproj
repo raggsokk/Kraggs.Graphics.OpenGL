@@ -49,6 +49,7 @@
     <Compile Include="DSA\DSA_v20.cs" />
     <Compile Include="DSA\DSA_v21.cs" />
     <Compile Include="DSA\DSA_v30.cs" />
+    <Compile Include="DSA\DSA_v31.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

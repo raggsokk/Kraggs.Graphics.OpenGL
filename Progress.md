@@ -239,3 +239,13 @@ A list of work todo to track progress.
 	has appeared. To use this calls you need to cast your PixelInternalFormat into one of those.
 	We need to clarify the usage of PixelInternalFormat.
 
+### Kraggs.Graphics.OpenGL.ARB
+	It seems my understanding of arb functions was not correct.
+	From what I can see all ARB extensions have their functionnames without arb postfix,
+	and therefore Kraggs.Graphics.OpenGL.Core will load them correctly anyway.
+
+### Kraggs.Graphics.OpenGL.ARB and Kraggs.Graphics.OpenGL.EXT
+	In most cases where your not running full core 4.4 context you will need both
+	of these anyway. Why seperate them? And all opengl version post 3.0 don't use 
+	EXT but all are ARB Extensions. So Kraggs.Graphics.OpenGL.EXT have limited use
+	and from issue one above clearly Kraggs.Graphics.OpenGL.ARB have also limited use.
