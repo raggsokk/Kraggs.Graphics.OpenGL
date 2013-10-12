@@ -34,7 +34,7 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    
+
     partial class DSA
     {
         #region Delegate Class
@@ -44,14 +44,13 @@ namespace Kraggs.Graphics.OpenGL
 
             #region Delegates
 
-            //ARB_instanced_arrays
-            public delegate void delVertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor);
+            public delegate void delVertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, VertexAttribLFormat type, int stride, IntPtr offset); 
 
             #endregion
 
             #region GL Fields
 
-            public static delVertexArrayVertexAttribDivisorEXT glVertexArrayVertexAttribDivisorEXT;
+            public static delVertexArrayVertexAttribLOffsetEXT glVertexArrayVertexAttribLOffsetEXT;
 
             #endregion
         }
@@ -61,15 +60,18 @@ namespace Kraggs.Graphics.OpenGL
         #region Public functions.
 
         /// <summary>
-        /// Sets the divisor for an Attribute Index on named VertexArrayObject.
-        /// If the divisor is zero, the corresponding attributesadvance once per vertex. Otherwise, attributes advance once per divisor instances of the set(s) of vertices being rendered. A generic attribute is referred to as in-stanced if its corresponding divisor value is non-zero.
+        /// Sets up Vertex Declaration for a shader attribute variable declared with 64-bit double precision.
         /// </summary>
-        /// <param name="vaobj">id of VertexArrayObject to set divisor for.</param>
-        /// <param name="index">AttributeIndex to set divisor for.</param>
-        /// <param name="divisor">Divisor.</param>
-        public static void VertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor)
+        /// <param name="vaobj">identifies a vertex array object used instead of the currently bound one</param>
+        /// <param name="buffer">buffer is used in place of the buffer object bound to ARRAY_BUFFER</param>
+        /// <param name="index">Attribute Index to declare vertex specification for.</param>
+        /// <param name="size">size may be one, two, three or four</param>
+        /// <param name="type">type must be DOUBLE</param>
+        /// <param name="stride">the length in bytes between two vertices.</param>
+        /// <param name="offset">offset in bytes in named buffer to retrive vertices from.</param>
+        public static void VertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, VertexAttribLFormat type = VertexAttribLFormat.Double, int stride = 0, long offset = 0)
         {
-            Delegates.glVertexArrayVertexAttribDivisorEXT(vaobj, index, divisor);
+            Delegates.glVertexArrayVertexAttribLOffsetEXT(vaobj, buffer, index, size, type, stride, (IntPtr)offset);
         }
 
         #endregion

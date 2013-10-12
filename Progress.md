@@ -149,11 +149,12 @@ A list of work todo to track progress.
 	Implement ARB_transform_feedback3 			(No DSA)
 
 ### Milestone 14, gl 4.1
-	Implement ARB_get_program_binary
-	Implement ARB_separate_shader_objects
-	Implement ARB_shader_precision
-	Implement ARB_vertex_attrib_64bit
-	Implement ARB_viewport_array
+	Implement ARB_ES2_compatibility
+	Implement ARB_get_program_binary 			(No DSA)
+	Implement ARB_separate_shader_objects 		(No DSA)
+	Implement ARB_shader_precision 				(No Functions)
+	Implement ARB_vertex_attrib_64bit 			(DSA: 1)
+	Implement ARB_viewport_array 				(No DSA)
 
 ### Milestone 15, gl 4.2
 	Implement ARB_base_instance

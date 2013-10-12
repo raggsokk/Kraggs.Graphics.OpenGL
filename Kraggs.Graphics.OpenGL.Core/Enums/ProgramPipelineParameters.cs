@@ -34,9 +34,8 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum ProgramParameters
+    public enum ProgramPipelineParameters
     {
-        ProgramSeparable = All.PROGRAM_SEPARABLE,
-        ProgramBinaryRetrievableHint = All.PROGRAM_BINARY_RETRIEVABLE_HINT,
+        ActiveProgram = All.ACTIVE_PROGRAM,
     }
 }

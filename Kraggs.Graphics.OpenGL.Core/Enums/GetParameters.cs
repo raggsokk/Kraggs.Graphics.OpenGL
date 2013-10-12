@@ -1011,13 +1011,12 @@ namespace Kraggs.Graphics.OpenGL
         MaxTransformFeedbackBindings = MaxTransformFeedbackBuffers,
         MaxVertexStreams = All.MAX_VERTEX_STREAMS,
 
-
-
         #endregion
 
+        #region OpenGL 4.2 Additions.
+             
 
-
-
+        #endregion
 
 
 

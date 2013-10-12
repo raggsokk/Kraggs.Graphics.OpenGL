@@ -77,5 +77,8 @@ namespace Kraggs.Graphics.OpenGL
         /// Returned by GetProgramiv when <pname> is TESS_GEN_POINT_MODE: FALSE, TRUE
         /// </summary>
         TessGenPointMode = All.TESS_GEN_POINT_MODE,
+
+        ProgramBinaryLength = All.PROGRAM_BINARY_LENGTH,
+        ProgramSeparable = All.PROGRAM_SEPARABLE,
     }
 }

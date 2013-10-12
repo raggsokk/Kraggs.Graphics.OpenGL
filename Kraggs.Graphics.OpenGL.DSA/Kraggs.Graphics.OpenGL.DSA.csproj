@@ -53,6 +53,7 @@
     <Compile Include="DSA\DSA_v32.cs" />
     <Compile Include="DSA\DSA_v33.cs" />
     <Compile Include="DSA\DSA_v40.cs" />
+    <Compile Include="DSA\DSA_v41.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
