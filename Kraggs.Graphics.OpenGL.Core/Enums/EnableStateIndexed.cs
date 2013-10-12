@@ -34,14 +34,21 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum GetPointerName
+    /// <summary>
+    /// For use in Enablei/Disablei.
+    /// Contains the availible indexed state caps to switch.
+    /// </summary>
+    public enum EnableStateIndexed
     {
-        DebugDelegatePointer = All.DEBUG_CALLBACK_FUNCTION,
-        DebugDelegateUserParam = All.DEBUG_CALLBACK_USER_PARAM,
-
         /// <summary>
-        /// Used at least by DSA.GetVertexArrayPointeri_vEXT
+        /// Enables/disables scissor test on indexed viewports.
+        /// Note that index must be in range [0, MaxViewports]
         /// </summary>
-        VertexAttributeArrayPointer = All.VERTEX_ATTRIB_ARRAY_POINTER,        
+        ScissorTest,
+        /// <summary>
+        /// Enables/disables blending on indexed drawbuffers.
+        /// Note that index must be in range [0, MaxDrawBuffers]
+        /// </summary>
+        Blend,
     }
 }

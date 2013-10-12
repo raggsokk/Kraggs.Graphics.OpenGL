@@ -873,12 +873,12 @@ namespace Kraggs.Graphics.OpenGL
         /// Defines the vertex specification for an Attribute Index on the current bound VertexArrayObject.
         /// </summary>
         /// <param name="index">Attribute Index to specify vertex data for.</param>
-        /// <param name="Size">Number of components of type.</param>
+        /// <param name="Size">Number of components of type. or BGRA if ARB_vertex_array_bgra/gl3.2 is supported.</param>
         /// <param name="type">The opengl base type of data to set.</param>
         /// <param name="normalized">Is data normalized</param>
         /// <param name="stride">The stride between vertices.</param>
         /// <param name="offset">offset in current bound buffer object to start sourcing at.</param>
-        public static void VertexAttribPointer(uint index, int Size, VertexAttribFormat type, bool normalized, int stride, long offset)
+        public static void VertexAttribPointer(uint index, int Size, VertexAttribFormat type, int stride, long offset, bool normalized = false)
         {
             Delegates.glVertexAttribPointer(index, Size, type, normalized, stride, (IntPtr)offset);
         }

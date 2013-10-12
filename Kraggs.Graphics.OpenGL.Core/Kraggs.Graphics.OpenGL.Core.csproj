@@ -52,6 +52,10 @@
     <Compile Include="Core\GL_v15.cs" />
     <Compile Include="Core\GL_v20.cs" />
     <Compile Include="Core\GL_v21.cs" />
+    <Compile Include="Core\GL_v30.cs" />
+    <Compile Include="Core\GL_v31.cs" />
+    <Compile Include="Core\GL_v32.cs" />
+    <Compile Include="Core\GL_v33.cs" />
     <Compile Include="Core\GL_v44.cs" />
     <Compile Include="Enums\ActiveSubroutineUniformParameters.cs" />
     <Compile Include="Enums\All.cs" />
@@ -88,6 +92,7 @@
     <Compile Include="Enums\DepthFunction.cs" />
     <Compile Include="Enums\DrawBufferTarget.cs" />
     <Compile Include="Enums\EnableState.cs" />
+    <Compile Include="Enums\EnableStateIndexed.cs" />
     <Compile Include="Enums\ErrorCode.cs" />
     <Compile Include="Enums\FramebufferAttachmentType.cs" />
     <Compile Include="Enums\FramebufferParameters.cs" />

@@ -36,12 +36,12 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum FramebufferAttachmentType
     {
-        Depth = All.DEPTH,
-        FrontLeft = All.FRONT_LEFT,
-        FrontRight = All.FRONT_RIGHT,
-        Stencil = All.STENCIL,
-        BackLeft = All.BACK_LEFT,
-        BackRight = All.BACK_RIGHT,
+        //Depth = All.DEPTH,
+        //FrontLeft = All.FRONT_LEFT,
+        //FrontRight = All.FRONT_RIGHT,
+        //Stencil = All.STENCIL,
+        //BackLeft = All.BACK_LEFT,
+        //BackRight = All.BACK_RIGHT,
 
         DepthAttachment = All.DEPTH_ATTACHMENT,
         StencilAttachment = All.STENCIL_ATTACHMENT,

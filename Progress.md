@@ -111,27 +111,27 @@ A list of work todo to track progress.
 	Implement ARB_uniform_buffer_object
 	Implement NV_primitive_restart
 
-### Milestone 11, gl 3.2
-	Implement ARB_depth_clamp
-	Implement ARB_draw_elements_base_vertex
-	Implement ARB_fragment_coord_conventions
+### Milestone 11, gl 3.2 						
+	Implement ARB_depth_clamp					(No Functions)
+	Implement ARB_draw_elements_base_vertex		(No DSA)
+	Implement ARB_fragment_coord_conventions 	(No Functions)
 	Implement ARB_geometry_shader4
-	Implement ARB_provoking_vertex
-	Implement ARB_seamless_cube_map
-	Implement ARB_sync
-	Implement ARB_texture_multisample
-	Implement ARB_vertex_array_bgra
+	Implement ARB_provoking_vertex 				(No DSA)
+	Implement ARB_seamless_cube_map 			(No Functions)
+	Implement ARB_sync							(No DSA)
+	Implement ARB_texture_multisample 			
+	Implement ARB_vertex_array_bgra 			(No Functions)
 
 ### Milestone 12, gl 3.3
-	Implement ARB_blend_func_extended
-	Implement ARB_explicit_attrib_location
+	Implement ARB_blend_func_extended 			(No DSA)
+	Implement ARB_explicit_attrib_location 		(No Functions)
 	Implement ARB_instanced_arrays
-	Implement ARB_occlusion_query2
-	Implement ARB_sampler_objects
-	Implement ARB_texture_rgb10_a2ui
-	Implement ARB_texture_swizzle
-	Implement ARB_timer_query
-	Implement ARB_vertex_type_2_10_10_10_rev
+	Implement ARB_occlusion_query2				(No Functions)
+	Implement ARB_sampler_objects				(No DSA)
+	Implement ARB_texture_rgb10_a2ui			(No Functions)
+	Implement ARB_texture_swizzle 				(No Functions)
+	Implement ARB_timer_query 					(No DSA)
+	Implement ARB_vertex_type_2_10_10_10_rev 	(No Functions we want :) )
 
 ### Milestone 13, gl 4.0
 	Implement ARB_draw_buffers_blend
@@ -197,7 +197,8 @@ A list of work todo to track progress.
 	Implement ARB_vertex_type_10f_11f_11f_rev
 	New implementation-dependent state MAX_VERTEX_ATTRIB_STRIDE
 
-
+### Milestone x++, math3d integration.
+	Determine best way to do this?
 
 ## Releases based on milestones.
 
@@ -222,3 +223,30 @@ A list of work todo to track progress.
 	Milestone 15
 	Milestone 16
 	Milestone 17
+
+
+
+## Open Issues which needs to be clarified.
+
+### Drawbuffers
+	Some opengl calls expect drawbuffers of GL_Back type and other of type 
+	GL_DRAWBUFFERS[0,MaxDrawBuffers]. Right now only the first is present 
+	in an enum. We need more info on when and where to use them correctly.
+
+### PixelInternalFormat
+	This enum is caotic. To make things worse a lot of opengl calls expect
+	a subset of this enum and there enums like BaseInternalFormat,SizedInternalFormat,
+	CompressedInternalFormat,SizedCompressedInternalFormat and GenericCompressedInternalFormat
+	has appeared. To use this calls you need to cast your PixelInternalFormat into one of those.
+	We need to clarify the usage of PixelInternalFormat.
+
+### Kraggs.Graphics.OpenGL.ARB
+	It seems my understanding of arb functions was not correct.
+	From what I can see all ARB extensions have their functionnames without arb postfix,
+	and therefore Kraggs.Graphics.OpenGL.Core will load them correctly anyway.
+
+### Kraggs.Graphics.OpenGL.ARB and Kraggs.Graphics.OpenGL.EXT
+	In most cases where your not running full core 4.4 context you will need both
+	of these anyway. Why seperate them? And all opengl version post 3.0 don't use 
+	EXT but all are ARB Extensions. So Kraggs.Graphics.OpenGL.EXT have limited use
+	and from issue one above clearly Kraggs.Graphics.OpenGL.ARB have also limited use.
