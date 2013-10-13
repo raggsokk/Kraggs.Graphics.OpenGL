@@ -188,14 +188,14 @@ A list of work todo to track progress.
 	Implement KHR_debug
 
 ### Milestone 17, gl 4.4
-	Implement ARB_buffer_storage
-	Implement ARB_clear_texture
-	Implement ARB_enhanced_layouts
-	Implement ARB_multi_bind
-	Implement ARB_query_buffer_object
-	Implement ARB_texture_mirror_clamp_to_edge
-	Implement ARB_texture_stencil8
-	Implement ARB_vertex_type_10f_11f_11f_rev
+	Implement ARB_buffer_storage 
+	Implement ARB_clear_texture 				(No DSA)
+	Implement ARB_enhanced_layouts 				(No Functions)
+	Implement ARB_multi_bind 					(No DSA)
+	Implement ARB_query_buffer_object 			(No Functions)
+	Implement ARB_texture_mirror_clamp_to_edge 	(No Functions)
+	Implement ARB_texture_stencil8 				(No Functions)
+	Implement ARB_vertex_type_10f_11f_11f_rev 	(No Functions)
 	New implementation-dependent state MAX_VERTEX_ATTRIB_STRIDE
 
 

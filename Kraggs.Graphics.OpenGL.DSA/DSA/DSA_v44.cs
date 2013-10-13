@@ -34,31 +34,46 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    [DebuggerNonUserCode()]
-    [SuppressUnmanagedCodeSecurity()]
-    public sealed partial class GL
+
+    partial class DSA
     {
-        internal const string OPENGL_LIBRARY = "opengl32.dll";
+        #region Delegate Class
 
-        [SuppressUnmanagedCodeSecurity()]
-        internal static partial class DllImports
-        { }
+        partial class Delegates
+        {
 
-        [SuppressUnmanagedCodeSecurity()]
-        internal static partial class Delegates
-        { }
+            #region Delegates
 
-        #region Public Const
+            //ARB_buffer_storage
+            public delegate void delNamedBufferStorageEXT(uint buffer, IntPtr size, IntPtr data, BufferStorageFlags flags);
 
-        public const ulong TIMEOUT_IGNORED = 0xFFFFFFFFFFFFFFFF;
+            #endregion
+
+            #region GL Fields
+
+            //ARB_buffer_storage
+            public static delNamedBufferStorageEXT glNamedBufferStorageEXT;
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Public functions.
+
+        //ARB_buffer_storage
+        /// <summary>
+        /// Allocates a buffer with immutable storage.
+        /// </summary>
+        /// <param name="buffer">Buffer id to allocate storage for.</param>
+        /// <param name="size">Size in bytes of buffer.</param>
+        /// <param name="data">Pointer to the data to upload or null.</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        public static void NamedBufferStorageEXT(uint buffer, long size, IntPtr data, BufferStorageFlags flags)
+        {
+            Delegates.glNamedBufferStorageEXT(buffer, (IntPtr)size, data, flags);
+        }
 
         #endregion
     }
-
-    #region Public Delegates
-
-    public delegate void DebugMessageDelegate(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string message, IntPtr userParam);
-
-    #endregion
-
 }

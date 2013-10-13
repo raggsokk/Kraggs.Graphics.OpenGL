@@ -35,6 +35,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AMD\AMD_debug_output.cs" />
+    <Compile Include="Enums\DebugCategoryAMD.cs" />
     <Compile Include="EXT.cs" />
     <Compile Include="EXT\EXT_draw_buffers2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

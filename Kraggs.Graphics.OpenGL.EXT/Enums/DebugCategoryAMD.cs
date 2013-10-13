@@ -34,31 +34,15 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    [DebuggerNonUserCode()]
-    [SuppressUnmanagedCodeSecurity()]
-    public sealed partial class GL
+    public enum DebugCategoryAMD
     {
-        internal const string OPENGL_LIBRARY = "opengl32.dll";
-
-        [SuppressUnmanagedCodeSecurity()]
-        internal static partial class DllImports
-        { }
-
-        [SuppressUnmanagedCodeSecurity()]
-        internal static partial class Delegates
-        { }
-
-        #region Public Const
-
-        public const ulong TIMEOUT_IGNORED = 0xFFFFFFFFFFFFFFFF;
-
-        #endregion
+        API_ERROR_AMD = 0x9149,
+        WINDOW_SYSTEM_AMD = 0x914A,
+        DEPRECATION_AMD = 0x914B,
+        UNDEFINED_BEHAVIOR_AMD = 0x914C,
+        PERFORMANCE_AMD = 0x914D,
+        SHADER_COMPILER_AMD = 0x914E,
+        APPLICATION_AMD = 0x914F,
+        OTHER_AMD = 0x9150,
     }
-
-    #region Public Delegates
-
-    public delegate void DebugMessageDelegate(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string message, IntPtr userParam);
-
-    #endregion
-
 }
