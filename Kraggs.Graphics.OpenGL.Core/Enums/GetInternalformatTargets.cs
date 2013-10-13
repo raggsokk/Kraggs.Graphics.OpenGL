@@ -39,6 +39,16 @@ namespace Kraggs.Graphics.OpenGL
     /// </summary>
     public enum GetInternalformatTargets
     {
+        Texture1D = All.TEXTURE_1D,
+        Texture1DArray = All.TEXTURE_1D_ARRAY,
+        Texture2D = All.TEXTURE_2D,
+        Texture2DArray = All.TEXTURE_2D_ARRAY,
+        Texture3D = All.TEXTURE_3D,
+        TextureCubemap = All.TEXTURE_CUBE_MAP,
+        TextureCubemapArray = All.TEXTURE_CUBE_MAP_ARRAY,
+        TextureRectangle = All.TEXTURE_RECTANGLE,
+        TextureBuffer = All.TEXTURE_BUFFER,
+
         Renderbuffer = All.RENDERBUFFER,
         Texture2DMultisample = All.TEXTURE_2D_MULTISAMPLE,
         Texture2DMultisampleArray = All.TEXTURE_2D_MULTISAMPLE_ARRAY,

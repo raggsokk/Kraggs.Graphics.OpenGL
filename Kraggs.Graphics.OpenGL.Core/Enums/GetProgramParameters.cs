@@ -80,5 +80,8 @@ namespace Kraggs.Graphics.OpenGL
 
         ProgramBinaryLength = All.PROGRAM_BINARY_LENGTH,
         ProgramSeparable = All.PROGRAM_SEPARABLE,
+
+        ComputeWorkGroupSize = All.COMPUTE_WORK_GROUP_SIZE,
+
     }
 }

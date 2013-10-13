@@ -53,5 +53,11 @@ namespace Kraggs.Graphics.OpenGL
         public const ulong TIMEOUT_IGNORED = 0xFFFFFFFFFFFFFFFF;
 
         #endregion
+
+        #region Public Delegates
+
+        public delegate void DebugMessageDelegate(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string message, IntPtr userParam);
+
+        #endregion
     }
 }

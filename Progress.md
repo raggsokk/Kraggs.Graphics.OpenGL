@@ -169,23 +169,23 @@ A list of work todo to track progress.
 	Implement ARB_texture_storage
 	Implement ARB_transform_feedback_instanced
 
-### Milestone 16, gl 4.3
-	Implement KHR_debug
+### Milestone 16, gl 4.3	
 	Implement ARB_clear_buffer_object
-	Implement ARB_compute_shader
-	Implement ARB_copy_image
-	Implement ARB_internalformat_query2
-	Implement ARB_invalidate_subdata
-	Implement ARB_multi_draw_indirect
-	Implement ARB_program_interface_query
-	Implement ARB_shader_storage_buffer_object
-	Implement ARB_stencil_texturing
+	Implement ARB_compute_shader 				(No DSA)
+	Implement ARB_copy_image 					(No DSA)
+	Implement ARB_internalformat_query2 		(No DSA)
+	Implement ARB_invalidate_subdata 			(No DSA)
+	Implement ARB_multi_draw_indirect 			(No DSA)
+	Implement ARB_program_interface_query 		(No DSA)
+	Implement ARB_shader_storage_buffer_object  (No DSA)
+	Implement ARB_stencil_texturing 			(No Functions)
 	Implement ARB_texture_buffer_range
-	Implement ARB_texture_query_levels
-	Implement ARB_texture_storage_multisample
-	Implement ARB_texture_view
-	Implement ARB_vertex_attrib_binding
+	Implement ARB_texture_query_levels 			(No Functions)
+	Implement ARB_texture_storage_multisample 	
+	Implement ARB_texture_view 					(No DSA)
+	Implement ARB_vertex_attrib_binding 
 	Implement ARB_framebuffer_no_attachments
+	Implement KHR_debug
 
 ### Milestone 17, gl 4.4
 	Implement ARB_buffer_storage

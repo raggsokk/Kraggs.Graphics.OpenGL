@@ -1068,9 +1068,30 @@ namespace Kraggs.Graphics.OpenGL
 
         #endregion
 
+        #region OpenGL 4.3 Additions.
 
+        // ARB_compute_shader
+        MaxComputeImageUniforms = All.MAX_COMPUTE_IMAGE_UNIFORMS,
+        MaxComputeSharedMemorySize = All.MAX_COMPUTE_SHARED_MEMORY_SIZE,
+        MaxComputeWorkGroupInvocations = All.MAX_COMPUTE_WORK_GROUP_INVOCATIONS,
 
+        // Accepted by the <pname> parameter of GetIntegeri_v, GetBooleani_v, GetFloati_v, GetDoublei_v and GetInteger64i_v:
+        //MaxComputeWorkGroupCount = All.MAX_COMPUTE_WORK_GROUP_COUNT,
+        MaxComputeworkGroupSize = All.MAX_COMPUTE_WORK_GROUP_SIZE,
 
+        //ARB_shader_storage_buffer_object
+        MaxShaderStorageBlockSize = All.MAX_SHADER_STORAGE_BLOCK_SIZE,
+        MaxCombinedShaderOutputResources = All.MAX_COMBINED_SHADER_OUTPUT_RESOURCES,
+
+        //KHR_debug
+        //ContextFlags = All.CONTEXT_FLAGS,
+        MaxDebugMessageLength = All.MAX_DEBUG_MESSAGE_LENGTH,
+        MaxDebugLoggedMessages = All.MAX_DEBUG_LOGGED_MESSAGES,
+        DebugLoggedMessages = All.DEBUG_LOGGED_MESSAGES,
+        DebugNextLoggedMessageLength = All.DEBUG_NEXT_LOGGED_MESSAGE_LENGTH,
+        
+
+        #endregion
 
 
 

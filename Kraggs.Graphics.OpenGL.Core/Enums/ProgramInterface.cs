@@ -43,17 +43,17 @@ namespace Kraggs.Graphics.OpenGL
         BufferVariable = All.BUFFER_VARIABLE,
         ShaderStorageBlock = All.SHADER_STORAGE_BLOCK,
         AtomicCounterBuffer = All.ATOMIC_COUNTER_BUFFER,
-        GeometrySubroutine = All.GEOMETRY_SUBROUTINE,
         VertexSubroutine = All.VERTEX_SUBROUTINE,
         TessControlSubroutine = All.TESS_CONTROL_SUBROUTINE,
         TessEvaluationSubroutine = All.TESS_EVALUATION_SUBROUTINE,
+        GeometrySubroutine = All.GEOMETRY_SUBROUTINE,        
         FragmentSubroutine = All.FRAGMENT_SUBROUTINE,
         ComputeSubroutine = All.COMPUTE_SUBROUTINE,
-
-        GeometrySubroutineUniform = All.GEOMETRY_SUBROUTINE_UNIFORM,
+        
         VertexSubroutineUniform = All.VERTEX_SUBROUTINE_UNIFORM,
         TessControlSubroutineUniform = All.TESS_CONTROL_SUBROUTINE_UNIFORM,
         TessEvaluationSubroutineUniform = All.TESS_EVALUATION_SUBROUTINE_UNIFORM,
+        GeometrySubroutineUniform = All.GEOMETRY_SUBROUTINE_UNIFORM,
         FragmentSubroutineUniform = All.FRAGMENT_SUBROUTINE_UNIFORM,
         ComputeSubroutineUniform = All.COMPUTE_SUBROUTINE_UNIFORM,
 
