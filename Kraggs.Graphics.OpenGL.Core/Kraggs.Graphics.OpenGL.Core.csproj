@@ -58,7 +58,10 @@
     <Compile Include="Core\GL_v33.cs" />
     <Compile Include="Core\GL_v40.cs" />
     <Compile Include="Core\GL_v41.cs" />
+    <Compile Include="Core\GL_v42.cs" />
     <Compile Include="Core\GL_v44.cs" />
+    <Compile Include="Enums\AtomicCounterBufferParameters.cs" />
+    <Compile Include="Enums\GetInternalformatTargets.cs" />
     <Compile Include="Enums\ProgramPipelineParameters.cs" />
     <Compile Include="Enums\SubroutineUniformParameters.cs" />
     <Compile Include="Enums\All.cs" />

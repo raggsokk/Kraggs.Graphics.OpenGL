@@ -54,6 +54,11 @@ namespace Kraggs.Graphics.OpenGL
         //SRGB_Alpha_BPTC_UNorm = All.
         //RGB_BPTC_Signed_Float = All.
         //RGB_BTTC_Unsigned_Float = All.
+        RGBA_BPTC_UNorm = All.COMPRESSED_RGBA_BPTC_UNORM_ARB,
+        SRGBAlpha_BPTC_UNorm = All.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB,
+        Signed_RGB_BPTC_Float = All.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB,
+        Unsigned_RGB_BPTC_Float = All.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB,
+
         RGB8_ETC2 = All.COMPRESSED_RGB8_ETC2,
         SRGB8_ETC2 = All.COMPRESSED_SRGB8_ETC2,
         RGB8_PunchThrough_Alpha1_ETC2 = All.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2,
@@ -64,5 +69,7 @@ namespace Kraggs.Graphics.OpenGL
         Signed_R11_EAC = All.COMPRESSED_SIGNED_R11_EAC,
         RG11_EAC = All.COMPRESSED_RG11_EAC,
         Signed_RG11_EAC = All.COMPRESSED_SIGNED_RG11_EAC,
+
+
     }
 }

@@ -157,15 +157,15 @@ A list of work todo to track progress.
 	Implement ARB_viewport_array 				(No DSA)
 
 ### Milestone 15, gl 4.2
-	Implement ARB_base_instance
-	Implement ARB_compressed_texture_pixel_storage
-	Implement ARB_conservative_depth
-	Implement ARB_internalformat_query
-	Implement ARB_map_buffer_alignment
-	Implement ARB_shader_atomic_counters
-	Implement ARB_shader_image_load_store
-	Implement ARB_shading_language_420pack
-	Implement ARB_texture_compression_bptc
+	Implement ARB_base_instance					(No DSA)
+	Implement ARB_compressed_texture_pixel_storage (No Functions)
+	Implement ARB_conservative_depth 			(No Functions)
+	Implement ARB_internalformat_query 			(No DSA)
+	Implement ARB_map_buffer_alignment 			(No Functions)
+	Implement ARB_shader_atomic_counters 		(No DSA)
+	Implement ARB_shader_image_load_store 		(No DSA)
+	Implement ARB_shading_language_420pack 		(No Functions)
+	Implement ARB_texture_compression_bptc 		(No Functions)
 	Implement ARB_texture_storage
 	Implement ARB_transform_feedback_instanced
 
@@ -197,6 +197,10 @@ A list of work todo to track progress.
 	Implement ARB_texture_stencil8
 	Implement ARB_vertex_type_10f_11f_11f_rev
 	New implementation-dependent state MAX_VERTEX_ATTRIB_STRIDE
+
+
+### Milestone x++, PixelInternalFormat_v2
+	Fix this MESS!
 
 ### Milestone x++, math3d integration.
 	Determine best way to do this?
@@ -241,10 +245,17 @@ A list of work todo to track progress.
 	has appeared. To use this calls you need to cast your PixelInternalFormat into one of those.
 	We need to clarify the usage of PixelInternalFormat.
 
+	Update 1:
+	Just added compressed BPTC format. All the PixelInternalFormat enums are a MESS!
+
 ### Kraggs.Graphics.OpenGL.ARB
 	It seems my understanding of arb functions was not correct.
 	From what I can see all ARB extensions have their functionnames without arb postfix,
 	and therefore Kraggs.Graphics.OpenGL.Core will load them correctly anyway.
+
+	Update 1:
+	glMinSampleShadingARB was added and was found and working correctly. It might be
+	that glCopyBufferSubDataARB is mispelled somehow. I've experienced that before....
 
 ### Kraggs.Graphics.OpenGL.ARB and Kraggs.Graphics.OpenGL.EXT
 	In most cases where your not running full core 4.4 context you will need both

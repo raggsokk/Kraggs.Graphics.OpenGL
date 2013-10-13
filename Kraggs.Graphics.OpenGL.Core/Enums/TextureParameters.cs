@@ -63,5 +63,12 @@ namespace Kraggs.Graphics.OpenGL
         ViewMinLevel = All.TEXTURE_VIEW_MIN_LEVEL,
         ViewNumLayers = All.TEXTURE_VIEW_NUM_LAYERS,
         ViewNumLevels = All.TEXTURE_VIEW_NUM_LEVELS,
+
+        // image_load_Store
+        /// <summary>
+        /// Returned in the <data> parameter of GetTexParameteriv, GetTexParameterfv, GetTexParameterIiv, and GetTexParameterIuiv when <value> is IMAGE_FORMAT_COMPATIBILITY_TYPE:
+        /// IMAGE_FORMAT_COMPATIBILITY_BY_SIZE, IMAGE_FORMAT_COMPATIBILITY_BY_CLASS
+        /// </summary>
+        ImageFormatCompatibility = All.IMAGE_FORMAT_COMPATIBILITY_TYPE,
     }
 }

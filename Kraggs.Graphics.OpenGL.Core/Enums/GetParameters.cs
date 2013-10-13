@@ -1014,7 +1014,57 @@ namespace Kraggs.Graphics.OpenGL
         #endregion
 
         #region OpenGL 4.2 Additions.
-             
+
+        // opengl 4.2 / ARB_compressed_texture_pixel_storage
+
+        PackCompressedBlockWidth = All.PACK_COMPRESSED_BLOCK_WIDTH,
+        PackCompressedBlockHeight = All.PACK_COMPRESSED_BLOCK_HEIGHT,
+        PackCompressedBlockDepth = All.PACK_COMPRESSED_BLOCK_DEPTH,
+        PackCompressedBlockSize = All.PACK_COMPRESSED_BLOCK_SIZE,
+
+        UnpackCompressedBlockWidth = All.UNPACK_COMPRESSED_BLOCK_WIDTH,
+        UnpackCompressedBlockHeight = All.UNPACK_COMPRESSED_BLOCK_HEIGHT,
+        UnpackCompressedBlockDepth = All.UNPACK_COMPRESSED_BLOCK_DEPTH,
+        UnpackCompressedBlockSize = All.UNPACK_COMPRESSED_BLOCK_SIZE,
+
+        // OpenGL 4.2 / ARB_shader_atomic_counters
+        AtomicCounterBufferBinding = All.ATOMIC_COUNTER_BUFFER_BINDING,
+        /// <summary>
+        /// GetIntegeri_64v
+        /// </summary>
+        AtomicCounterBufferStart = All.ATOMIC_COUNTER_BUFFER_START,
+        /// <summary>
+        /// GetIntegeri_64v
+        /// </summary>
+        AtomicCounterBufferSize = All.ATOMIC_COUNTER_BUFFER_SIZE,
+
+        MaxVertexAtomicCounterBuffers = All.MAX_VERTEX_ATOMIC_COUNTER_BUFFERS,
+        MaxFragmentAtomicCounterBuffers = All.MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS,
+        MaxGeometryAtomicCounterBuffers = All.MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS,
+        MaxTessControlAtomicCounterBuffers = All.MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS,
+        MaxTessEvaluationAtomicCounterBuffers = All.MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS,
+
+        MaxAtomicCounterBufferSize = All.MAX_ATOMIC_COUNTER_BUFFER_SIZE,
+        MaxAtomicCounterBufferBindings = All.MAX_ATOMIC_COUNTER_BUFFER_BINDINGS,
+
+        // OpenGL 4.2 / ARB_shader_image_load_store
+        MaxImageUnits = All.MAX_IMAGE_UNITS,
+        MaxCombinedImageUnitsAndFragmentOutputs = All.MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS,
+        MaxImageSamples = All.MAX_IMAGE_SAMPLES,
+        MaxVertexImageUniforms = All.MAX_VERTEX_IMAGE_UNIFORMS,
+        MaxFragmentImageUniforms = All.MAX_FRAGMENT_IMAGE_UNIFORMS,
+        MaxGeometryImageUniforms = All.MAX_GEOMETRY_IMAGE_UNIFORMS,
+        MaxTessControlImageUniforms = All.MAX_TESS_CONTROL_IMAGE_UNIFORMS,
+        MaxTessEvaluationImageUniforms = All.MAX_TESS_EVALUATION_IMAGE_UNIFORMS,
+        MaxCombinedImageUniforms = All.MAX_COMBINED_IMAGE_UNIFORMS,
+
+        //GetIntegeri_v and GetBooleani_v
+        ImageBindingName = All.IMAGE_BINDING_NAME,
+        ImageBindingLevel = All.IMAGE_BINDING_LEVEL,
+        ImageBindingLayered = All.IMAGE_BINDING_LAYERED,
+        ImageBindingLayer = All.IMAGE_BINDING_LAYER,
+        ImageBindingAccess = All.IMAGE_BINDING_ACCESS,
+        ImageBindingFormat = All.IMAGE_BINDING_FORMAT,
 
         #endregion
 

@@ -34,34 +34,13 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum PixelStoreParameters
+    /// <summary>
+    /// Used by GetInternalformativ to retrive target and internalformat combo information.
+    /// </summary>
+    public enum GetInternalformatTargets
     {
-        PackSwapBytes = All.PACK_SWAP_BYTES,
-        PackLsbFirst = All.PACK_LSB_FIRST,
-        PackRowLength = All.PACK_ROW_LENGTH,
-        PackImageHeight = All.PACK_IMAGE_HEIGHT,
-        PackSkipPixels = All.PACK_SKIP_PIXELS,
-        PackSkipRows = All.PACK_SKIP_ROWS,
-        PackSkipImages = All.PACK_SKIP_IMAGES,
-        PackAlignment = All.PACK_ALIGNMENT,
-
-        UnpackSwapBytes = All.UNPACK_SWAP_BYTES,
-        UnpackLsbFirst = All.UNPACK_LSB_FIRST,
-        UnpackRowLength = All.UNPACK_ROW_LENGTH,
-        UnpackImageHeight = All.UNPACK_IMAGE_HEIGHT,
-        UnpackSkipPixels = All.UNPACK_SKIP_PIXELS,
-        UnpackSkipRows = All.UNPACK_SKIP_ROWS,
-        UnpackSkipImages = All.UNPACK_SKIP_IMAGES,
-        UnpackAlignment = All.UNPACK_ALIGNMENT,
-
-        PackCompressedBlockWidth = All.PACK_COMPRESSED_BLOCK_WIDTH,
-        PackCompressedBlockHeight = All.PACK_COMPRESSED_BLOCK_HEIGHT,
-        PackCompressedBlockDepth = All.PACK_COMPRESSED_BLOCK_DEPTH,
-        PackCompressedBlockSize = All.PACK_COMPRESSED_BLOCK_SIZE,
-
-        UnpackCompressedBlockWidth = All.UNPACK_COMPRESSED_BLOCK_WIDTH,
-        UnpackCompressedBlockHeight = All.UNPACK_COMPRESSED_BLOCK_HEIGHT,
-        UnpackCompressedBlockDepth = All.UNPACK_COMPRESSED_BLOCK_DEPTH,
-        UnpackCompressedBlockSize = All.UNPACK_COMPRESSED_BLOCK_SIZE,
+        Renderbuffer = All.RENDERBUFFER,
+        Texture2DMultisample = All.TEXTURE_2D_MULTISAMPLE,
+        Texture2DMultisampleArray = All.TEXTURE_2D_MULTISAMPLE_ARRAY,
     }
 }

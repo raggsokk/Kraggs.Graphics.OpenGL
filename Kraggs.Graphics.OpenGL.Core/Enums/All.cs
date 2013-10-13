@@ -36,7 +36,7 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum All
     {
-        #region new code from xml-registry-22513 23 juli 2013.
+        #region new code from xml-registry-22513 23 juli 2013. (remember: manuall additions is at end.)
 
         DEPTH_BUFFER_BIT = 0x00000100,
         STENCIL_BUFFER_BIT = 0x00000400,
@@ -1329,6 +1329,17 @@ namespace Kraggs.Graphics.OpenGL
         TRANSFORM_FEEDBACK_BUFFER_STRIDE = 0x934C,
         CLEAR_TEXTURE = 0x9365,
         NUM_SAMPLE_COUNTS = 0x9380,
+
+        #endregion
+
+        #region manuall additions. Need to remember this before next gen.
+
+        // manuall additions. Need to remember this before next gen.
+        COMPRESSED_RGBA_BPTC_UNORM_ARB = 0x8E8C,
+        COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB = 0x8E8D,
+        COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB = 0x8E8E,
+        COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB = 0x8E8F,
+
 
 
         #endregion
