@@ -34,31 +34,23 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum ProgramInterface
+    /// <summary>
+    /// Used by GetInternalformativ to retrive target and internalformat combo information.
+    /// </summary>
+    public enum GetInternalformatTargets
     {
-        Uniform = All.UNIFORM,
-        UniformBlock = All.UNIFORM_BLOCK,
-        ProgramInput = All.PROGRAM_INPUT,
-        ProgramOutput = All.PROGRAM_OUTPUT,
-        BufferVariable = All.BUFFER_VARIABLE,
-        ShaderStorageBlock = All.SHADER_STORAGE_BLOCK,
-        AtomicCounterBuffer = All.ATOMIC_COUNTER_BUFFER,
-        VertexSubroutine = All.VERTEX_SUBROUTINE,
-        TessControlSubroutine = All.TESS_CONTROL_SUBROUTINE,
-        TessEvaluationSubroutine = All.TESS_EVALUATION_SUBROUTINE,
-        GeometrySubroutine = All.GEOMETRY_SUBROUTINE,        
-        FragmentSubroutine = All.FRAGMENT_SUBROUTINE,
-        ComputeSubroutine = All.COMPUTE_SUBROUTINE,
-        
-        VertexSubroutineUniform = All.VERTEX_SUBROUTINE_UNIFORM,
-        TessControlSubroutineUniform = All.TESS_CONTROL_SUBROUTINE_UNIFORM,
-        TessEvaluationSubroutineUniform = All.TESS_EVALUATION_SUBROUTINE_UNIFORM,
-        GeometrySubroutineUniform = All.GEOMETRY_SUBROUTINE_UNIFORM,
-        FragmentSubroutineUniform = All.FRAGMENT_SUBROUTINE_UNIFORM,
-        ComputeSubroutineUniform = All.COMPUTE_SUBROUTINE_UNIFORM,
+        Texture1D = All.TEXTURE_1D,
+        Texture1DArray = All.TEXTURE_1D_ARRAY,
+        Texture2D = All.TEXTURE_2D,
+        Texture2DArray = All.TEXTURE_2D_ARRAY,
+        Texture3D = All.TEXTURE_3D,
+        TextureCubemap = All.TEXTURE_CUBE_MAP,
+        TextureCubemapArray = All.TEXTURE_CUBE_MAP_ARRAY,
+        TextureRectangle = All.TEXTURE_RECTANGLE,
+        TextureBuffer = All.TEXTURE_BUFFER,
 
-
-        TransformFeedbackVarying = All.TRANSFORM_FEEDBACK_VARYING,
-        TransformFeedbackBuffer = All.TRANSFORM_FEEDBACK_BUFFER,
+        Renderbuffer = All.RENDERBUFFER,
+        Texture2DMultisample = All.TEXTURE_2D_MULTISAMPLE,
+        Texture2DMultisampleArray = All.TEXTURE_2D_MULTISAMPLE_ARRAY,
     }
 }

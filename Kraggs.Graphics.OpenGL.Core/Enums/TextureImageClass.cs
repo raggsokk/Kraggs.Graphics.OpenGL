@@ -34,6 +34,9 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
+    /// <summary>
+    /// Should this be named ImageClass only?
+    /// </summary>
     public enum TextureImageClass
     {
         ImageClass4X32 = 0x82B9,

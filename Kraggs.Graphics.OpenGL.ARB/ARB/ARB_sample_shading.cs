@@ -34,31 +34,35 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum ProgramInterface
+    partial class ARB
     {
-        Uniform = All.UNIFORM,
-        UniformBlock = All.UNIFORM_BLOCK,
-        ProgramInput = All.PROGRAM_INPUT,
-        ProgramOutput = All.PROGRAM_OUTPUT,
-        BufferVariable = All.BUFFER_VARIABLE,
-        ShaderStorageBlock = All.SHADER_STORAGE_BLOCK,
-        AtomicCounterBuffer = All.ATOMIC_COUNTER_BUFFER,
-        VertexSubroutine = All.VERTEX_SUBROUTINE,
-        TessControlSubroutine = All.TESS_CONTROL_SUBROUTINE,
-        TessEvaluationSubroutine = All.TESS_EVALUATION_SUBROUTINE,
-        GeometrySubroutine = All.GEOMETRY_SUBROUTINE,        
-        FragmentSubroutine = All.FRAGMENT_SUBROUTINE,
-        ComputeSubroutine = All.COMPUTE_SUBROUTINE,
-        
-        VertexSubroutineUniform = All.VERTEX_SUBROUTINE_UNIFORM,
-        TessControlSubroutineUniform = All.TESS_CONTROL_SUBROUTINE_UNIFORM,
-        TessEvaluationSubroutineUniform = All.TESS_EVALUATION_SUBROUTINE_UNIFORM,
-        GeometrySubroutineUniform = All.GEOMETRY_SUBROUTINE_UNIFORM,
-        FragmentSubroutineUniform = All.FRAGMENT_SUBROUTINE_UNIFORM,
-        ComputeSubroutineUniform = All.COMPUTE_SUBROUTINE_UNIFORM,
+        #region Delegate Class
 
+        partial class Delegates
+        {
 
-        TransformFeedbackVarying = All.TRANSFORM_FEEDBACK_VARYING,
-        TransformFeedbackBuffer = All.TRANSFORM_FEEDBACK_BUFFER,
+            #region Delegates
+
+            public delegate void delMinSampleShadingARB(float value);
+
+            #endregion
+
+            #region GL Fields
+
+            public static delMinSampleShadingARB glMinSampleShadingARB;
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Public functions.
+
+        public static void MinSampleShadingARB(float value)
+        {
+            Delegates.glMinSampleShadingARB(value);
+        }
+
+        #endregion
     }
 }

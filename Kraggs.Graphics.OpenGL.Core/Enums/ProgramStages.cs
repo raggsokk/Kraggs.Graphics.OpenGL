@@ -37,12 +37,13 @@ namespace Kraggs.Graphics.OpenGL
     [Flags]
     public enum ProgramStages
     {
-        TessControl = All.TESS_CONTROL_SHADER_BIT,
-        TessEvaluation = All.TESS_EVALUATION_SHADER_BIT,
         Vertex = All.VERTEX_SHADER_BIT,
         Geometry = All.GEOMETRY_SHADER_BIT,
         Fragment = All.FRAGMENT_SHADER_BIT,
-        //Compute = All.COMPUTE_SHADER_BIT
+        
+        TessControl = All.TESS_CONTROL_SHADER_BIT,
+        TessEvaluation = All.TESS_EVALUATION_SHADER_BIT,
+        Compute = All.COMPUTE_SHADER_BIT,
 
         AllShaderBits = All.ALL_SHADER_BITS,
     }

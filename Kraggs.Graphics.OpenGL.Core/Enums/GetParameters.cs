@@ -963,6 +963,135 @@ namespace Kraggs.Graphics.OpenGL
 
         QueryBufferBinding = All.QUERY_BUFFER_BINDING,
 
+        #region OpenGL 4.0 Additions.
+
+        // opengl 4.0 / ARB_gpu_shader5
+        MaxGeometryShaderInvocations = All.MAX_GEOMETRY_SHADER_INVOCATIONS,
+        MinFragmentInterpolationOffset = All.MIN_FRAGMENT_INTERPOLATION_OFFSET,
+        MaxFragmentInterpolationOffset = All.MAX_FRAGMENT_INTERPOLATION_OFFSET,
+        FragmentInterpolationOffsetBits = All.FRAGMENT_INTERPOLATION_OFFSET_BITS,
+        //MaxVertexStreams = All.MAX_VERTEX_STREAMS, also part of ARB_transform_feedback3
+
+        // opengl 4.0 / ARB_sample_shading
+        SampleShading = All.SAMPLE_SHADING,
+        MinSampleShadingValue = All.MIN_SAMPLE_SHADING_VALUE,
+
+        // opengl 4.0 / ARB_shader_subroutine
+        MaxSubroutines = All.MAX_SUBROUTINES,
+        MaxSubroutineUniformLocations = All.MAX_SUBROUTINE_UNIFORM_LOCATIONS,
+
+        // opengl 4.0 / ARB_tessellation_shader
+        DefaultInnerLevel = All.PATCH_DEFAULT_INNER_LEVEL,
+        DefaultOuterLevel = All.PATCH_DEFAULT_OUTER_LEVEL,
+        MaxPatchVertices = All.MAX_PATCH_VERTICES,
+        MaxTessGenLevel = All.MAX_TESS_GEN_LEVEL,
+        MaxTessControlUniformComponents = All.MAX_TESS_CONTROL_UNIFORM_COMPONENTS,
+        MaxTessControlTextureImageUnits = All.MAX_TESS_CONTROL_TEXTURE_IMAGE_UNITS,
+        MaxTessControlOutputComponents = All.MAX_TESS_CONTROL_OUTPUT_COMPONENTS,
+        MaxTessPatchComponents = All.MAX_TESS_PATCH_COMPONENTS,
+        MaxTessControlTotalOutputComponents = All.MAX_TESS_CONTROL_TOTAL_OUTPUT_COMPONENTS,
+        MaxTessControlUniformBlocks = All.MAX_TESS_CONTROL_UNIFORM_BLOCKS,
+        MaxTessControlInputComponents = All.MAX_TESS_CONTROL_INPUT_COMPONENTS,
+        MaxCombinedTessControlUniformComponents = All.MAX_COMBINED_TESS_CONTROL_UNIFORM_COMPONENTS,
+
+        MaxTessEvaluationUniformComponents = All.MAX_TESS_EVALUATION_UNIFORM_COMPONENTS,
+        MaxTessEvaluationTextureImageUnits = All.MAX_TESS_EVALUATION_TEXTURE_IMAGE_UNITS,
+        MaxTessEvaluationOutputComponents = All.MAX_TESS_EVALUATION_OUTPUT_COMPONENTS,
+        MaxTessEvaluationUniformBlocks = All.MAX_TESS_EVALUATION_UNIFORM_BLOCKS,
+        MaxTessEvaluationInputComponents = All.MAX_TESS_EVALUATION_INPUT_COMPONENTS,
+        MaxCombinedTessEvaluationUniformComponents = All.MAX_COMBINED_TESS_EVALUATION_UNIFORM_COMPONENTS,
+
+        // opengl 4.0 / ARB_texture_gather
+        MinProgramTextureGatherOffset = All.MIN_PROGRAM_TEXTURE_GATHER_OFFSET,
+        MaxProgramTextureGatherOffset  = All.MAX_PROGRAM_TEXTURE_GATHER_OFFSET,
+        //MaxProgramTextureGatherComponents = 0x8F9F,
+    
+        // opengl 4.0 / ARB_transform_feedback3
+        MaxTransformFeedbackBuffers = All.MAX_TRANSFORM_FEEDBACK_BUFFERS,
+        MaxTransformFeedbackBindings = MaxTransformFeedbackBuffers,
+        MaxVertexStreams = All.MAX_VERTEX_STREAMS,
+
+        #endregion
+
+        #region OpenGL 4.2 Additions.
+
+        // opengl 4.2 / ARB_compressed_texture_pixel_storage
+
+        PackCompressedBlockWidth = All.PACK_COMPRESSED_BLOCK_WIDTH,
+        PackCompressedBlockHeight = All.PACK_COMPRESSED_BLOCK_HEIGHT,
+        PackCompressedBlockDepth = All.PACK_COMPRESSED_BLOCK_DEPTH,
+        PackCompressedBlockSize = All.PACK_COMPRESSED_BLOCK_SIZE,
+
+        UnpackCompressedBlockWidth = All.UNPACK_COMPRESSED_BLOCK_WIDTH,
+        UnpackCompressedBlockHeight = All.UNPACK_COMPRESSED_BLOCK_HEIGHT,
+        UnpackCompressedBlockDepth = All.UNPACK_COMPRESSED_BLOCK_DEPTH,
+        UnpackCompressedBlockSize = All.UNPACK_COMPRESSED_BLOCK_SIZE,
+
+        // OpenGL 4.2 / ARB_shader_atomic_counters
+        AtomicCounterBufferBinding = All.ATOMIC_COUNTER_BUFFER_BINDING,
+        /// <summary>
+        /// GetIntegeri_64v
+        /// </summary>
+        AtomicCounterBufferStart = All.ATOMIC_COUNTER_BUFFER_START,
+        /// <summary>
+        /// GetIntegeri_64v
+        /// </summary>
+        AtomicCounterBufferSize = All.ATOMIC_COUNTER_BUFFER_SIZE,
+
+        MaxVertexAtomicCounterBuffers = All.MAX_VERTEX_ATOMIC_COUNTER_BUFFERS,
+        MaxFragmentAtomicCounterBuffers = All.MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS,
+        MaxGeometryAtomicCounterBuffers = All.MAX_GEOMETRY_ATOMIC_COUNTER_BUFFERS,
+        MaxTessControlAtomicCounterBuffers = All.MAX_TESS_CONTROL_ATOMIC_COUNTER_BUFFERS,
+        MaxTessEvaluationAtomicCounterBuffers = All.MAX_TESS_EVALUATION_ATOMIC_COUNTER_BUFFERS,
+
+        MaxAtomicCounterBufferSize = All.MAX_ATOMIC_COUNTER_BUFFER_SIZE,
+        MaxAtomicCounterBufferBindings = All.MAX_ATOMIC_COUNTER_BUFFER_BINDINGS,
+
+        // OpenGL 4.2 / ARB_shader_image_load_store
+        MaxImageUnits = All.MAX_IMAGE_UNITS,
+        MaxCombinedImageUnitsAndFragmentOutputs = All.MAX_COMBINED_IMAGE_UNITS_AND_FRAGMENT_OUTPUTS,
+        MaxImageSamples = All.MAX_IMAGE_SAMPLES,
+        MaxVertexImageUniforms = All.MAX_VERTEX_IMAGE_UNIFORMS,
+        MaxFragmentImageUniforms = All.MAX_FRAGMENT_IMAGE_UNIFORMS,
+        MaxGeometryImageUniforms = All.MAX_GEOMETRY_IMAGE_UNIFORMS,
+        MaxTessControlImageUniforms = All.MAX_TESS_CONTROL_IMAGE_UNIFORMS,
+        MaxTessEvaluationImageUniforms = All.MAX_TESS_EVALUATION_IMAGE_UNIFORMS,
+        MaxCombinedImageUniforms = All.MAX_COMBINED_IMAGE_UNIFORMS,
+
+        //GetIntegeri_v and GetBooleani_v
+        ImageBindingName = All.IMAGE_BINDING_NAME,
+        ImageBindingLevel = All.IMAGE_BINDING_LEVEL,
+        ImageBindingLayered = All.IMAGE_BINDING_LAYERED,
+        ImageBindingLayer = All.IMAGE_BINDING_LAYER,
+        ImageBindingAccess = All.IMAGE_BINDING_ACCESS,
+        ImageBindingFormat = All.IMAGE_BINDING_FORMAT,
+
+        #endregion
+
+        #region OpenGL 4.3 Additions.
+
+        // ARB_compute_shader
+        MaxComputeImageUniforms = All.MAX_COMPUTE_IMAGE_UNIFORMS,
+        MaxComputeSharedMemorySize = All.MAX_COMPUTE_SHARED_MEMORY_SIZE,
+        MaxComputeWorkGroupInvocations = All.MAX_COMPUTE_WORK_GROUP_INVOCATIONS,
+
+        // Accepted by the <pname> parameter of GetIntegeri_v, GetBooleani_v, GetFloati_v, GetDoublei_v and GetInteger64i_v:
+        //MaxComputeWorkGroupCount = All.MAX_COMPUTE_WORK_GROUP_COUNT,
+        MaxComputeworkGroupSize = All.MAX_COMPUTE_WORK_GROUP_SIZE,
+
+        //ARB_shader_storage_buffer_object
+        MaxShaderStorageBlockSize = All.MAX_SHADER_STORAGE_BLOCK_SIZE,
+        MaxCombinedShaderOutputResources = All.MAX_COMBINED_SHADER_OUTPUT_RESOURCES,
+
+        //KHR_debug
+        //ContextFlags = All.CONTEXT_FLAGS,
+        MaxDebugMessageLength = All.MAX_DEBUG_MESSAGE_LENGTH,
+        MaxDebugLoggedMessages = All.MAX_DEBUG_LOGGED_MESSAGES,
+        DebugLoggedMessages = All.DEBUG_LOGGED_MESSAGES,
+        DebugNextLoggedMessageLength = All.DEBUG_NEXT_LOGGED_MESSAGE_LENGTH,
+        
+
+        #endregion
 
 
 

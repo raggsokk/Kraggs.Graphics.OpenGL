@@ -47,10 +47,10 @@ namespace Kraggs.Graphics.OpenGL
         RG_RGTC2 = All.COMPRESSED_RG_RGTC2,
         Signed_RG_RGTC2 = All.COMPRESSED_SIGNED_RG_RGTC2,
 
-        //RGBA_BPTC_UNorm = All.
-        //SRGB_Alpha_BPTC_UNorm = All.
-        //RGB_BPTC_Signed_Float = All.
-        //RGB_BTTC_Unsigned_Float = All.
+        RGBA_BPTC_UNorm = All.COMPRESSED_RGBA_BPTC_UNORM_ARB,
+        SRGBAlpha_BPTC_UNorm = All.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB,
+        Signed_RGB_BPTC_Float = All.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB,
+        Unsigned_RGB_BPTC_Float = All.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB,
         RGB8_ETC2 = All.COMPRESSED_RGB8_ETC2,
         SRGB8_ETC2 = All.COMPRESSED_SRGB8_ETC2,
         RGB8_PunchThrough_Alpha1_ETC2 = All.COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2,

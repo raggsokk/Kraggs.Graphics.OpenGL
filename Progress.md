@@ -134,68 +134,73 @@ A list of work todo to track progress.
 	Implement ARB_vertex_type_2_10_10_10_rev 	(No Functions we want :) )
 
 ### Milestone 13, gl 4.0
-	Implement ARB_draw_buffers_blend
-	Implement ARB_draw_indirect
-	Implement ARB_gpu_shader5
-	Implement ARB_gpu_shader_fp64
-	Implement ARB_sample_shading
-	Implement ARB_shader_subroutine
-	Implement ARB_tessellation_shader
-	Implement ARB_texture_buffer_object_rgb32
-	Implement ARB_texture_cube_map_array
-	Implement ARB_texture_gather
-	Implement ARB_texture_query_lod
-	Implement ARB_transform_feedback2
-	Implement ARB_transform_feedback3
+	Implement ARB_draw_buffers_blend			(No DSA)
+	Implement ARB_draw_indirect 				(No DSA)
+	Implement ARB_gpu_shader5 					(No Functions)
+	Implement ARB_gpu_shader_fp64 				(DSA, oh yes!)
+	Implement ARB_sample_shading				(No DSA)
+	Implement ARB_shader_subroutine 			(No DSA)
+	Implement ARB_tessellation_shader  			(No DSA)
+	Implement ARB_texture_buffer_object_rgb32  	(No Functions)
+	Implement ARB_texture_cube_map_array 		(No Functions)
+	Implement ARB_texture_gather  				(No Functions)
+	Implement ARB_texture_query_lod 			(No Functions)
+	Implement ARB_transform_feedback2 			(No DSA)
+	Implement ARB_transform_feedback3 			(No DSA)
 
 ### Milestone 14, gl 4.1
-	Implement ARB_get_program_binary
-	Implement ARB_separate_shader_objects
-	Implement ARB_shader_precision
-	Implement ARB_vertex_attrib_64bit
-	Implement ARB_viewport_array
+	Implement ARB_ES2_compatibility
+	Implement ARB_get_program_binary 			(No DSA)
+	Implement ARB_separate_shader_objects 		(No DSA)
+	Implement ARB_shader_precision 				(No Functions)
+	Implement ARB_vertex_attrib_64bit 			(DSA: 1)
+	Implement ARB_viewport_array 				(No DSA)
 
 ### Milestone 15, gl 4.2
-	Implement ARB_base_instance
-	Implement ARB_compressed_texture_pixel_storage
-	Implement ARB_conservative_depth
-	Implement ARB_internalformat_query
-	Implement ARB_map_buffer_alignment
-	Implement ARB_shader_atomic_counters
-	Implement ARB_shader_image_load_store
-	Implement ARB_shading_language_420pack
-	Implement ARB_texture_compression_bptc
+	Implement ARB_base_instance					(No DSA)
+	Implement ARB_compressed_texture_pixel_storage (No Functions)
+	Implement ARB_conservative_depth 			(No Functions)
+	Implement ARB_internalformat_query 			(No DSA)
+	Implement ARB_map_buffer_alignment 			(No Functions)
+	Implement ARB_shader_atomic_counters 		(No DSA)
+	Implement ARB_shader_image_load_store 		(No DSA)
+	Implement ARB_shading_language_420pack 		(No Functions)
+	Implement ARB_texture_compression_bptc 		(No Functions)
 	Implement ARB_texture_storage
 	Implement ARB_transform_feedback_instanced
 
-### Milestone 16, gl 4.3
-	Implement KHR_debug
+### Milestone 16, gl 4.3	
 	Implement ARB_clear_buffer_object
-	Implement ARB_compute_shader
-	Implement ARB_copy_image
-	Implement ARB_internalformat_query2
-	Implement ARB_invalidate_subdata
-	Implement ARB_multi_draw_indirect
-	Implement ARB_program_interface_query
-	Implement ARB_shader_storage_buffer_object
-	Implement ARB_stencil_texturing
+	Implement ARB_compute_shader 				(No DSA)
+	Implement ARB_copy_image 					(No DSA)
+	Implement ARB_internalformat_query2 		(No DSA)
+	Implement ARB_invalidate_subdata 			(No DSA)
+	Implement ARB_multi_draw_indirect 			(No DSA)
+	Implement ARB_program_interface_query 		(No DSA)
+	Implement ARB_shader_storage_buffer_object  (No DSA)
+	Implement ARB_stencil_texturing 			(No Functions)
 	Implement ARB_texture_buffer_range
-	Implement ARB_texture_query_levels
-	Implement ARB_texture_storage_multisample
-	Implement ARB_texture_view
-	Implement ARB_vertex_attrib_binding
+	Implement ARB_texture_query_levels 			(No Functions)
+	Implement ARB_texture_storage_multisample 	
+	Implement ARB_texture_view 					(No DSA)
+	Implement ARB_vertex_attrib_binding 
 	Implement ARB_framebuffer_no_attachments
+	Implement KHR_debug
 
 ### Milestone 17, gl 4.4
-	Implement ARB_buffer_storage
-	Implement ARB_clear_texture
-	Implement ARB_enhanced_layouts
-	Implement ARB_multi_bind
-	Implement ARB_query_buffer_object
-	Implement ARB_texture_mirror_clamp_to_edge
-	Implement ARB_texture_stencil8
-	Implement ARB_vertex_type_10f_11f_11f_rev
+	Implement ARB_buffer_storage 
+	Implement ARB_clear_texture 				(No DSA)
+	Implement ARB_enhanced_layouts 				(No Functions)
+	Implement ARB_multi_bind 					(No DSA)
+	Implement ARB_query_buffer_object 			(No Functions)
+	Implement ARB_texture_mirror_clamp_to_edge 	(No Functions)
+	Implement ARB_texture_stencil8 				(No Functions)
+	Implement ARB_vertex_type_10f_11f_11f_rev 	(No Functions)
 	New implementation-dependent state MAX_VERTEX_ATTRIB_STRIDE
+
+
+### Milestone x++, PixelInternalFormat_v2
+	Fix this MESS!
 
 ### Milestone x++, math3d integration.
 	Determine best way to do this?
@@ -240,10 +245,17 @@ A list of work todo to track progress.
 	has appeared. To use this calls you need to cast your PixelInternalFormat into one of those.
 	We need to clarify the usage of PixelInternalFormat.
 
+	Update 1:
+	Just added compressed BPTC format. All the PixelInternalFormat enums are a MESS!
+
 ### Kraggs.Graphics.OpenGL.ARB
 	It seems my understanding of arb functions was not correct.
 	From what I can see all ARB extensions have their functionnames without arb postfix,
 	and therefore Kraggs.Graphics.OpenGL.Core will load them correctly anyway.
+
+	Update 1:
+	glMinSampleShadingARB was added and was found and working correctly. It might be
+	that glCopyBufferSubDataARB is mispelled somehow. I've experienced that before....
 
 ### Kraggs.Graphics.OpenGL.ARB and Kraggs.Graphics.OpenGL.EXT
 	In most cases where your not running full core 4.4 context you will need both

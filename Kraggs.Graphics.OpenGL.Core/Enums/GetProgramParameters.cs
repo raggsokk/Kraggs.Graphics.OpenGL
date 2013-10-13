@@ -56,5 +56,32 @@ namespace Kraggs.Graphics.OpenGL
         //ComputeWorkGroupSize = All.COMPUTE_WORK_GROUP_SIZE
         GeometryShaderInvocations = All.GEOMETRY_SHADER_INVOCATIONS,
         GeometryVerticesOut = All.GEOMETRY_VERTICES_OUT,
+
+        TessControlOutputVertices = All.TESS_CONTROL_OUTPUT_VERTICES,
+        /// <summary>
+        /// Returned by GetProgramiv when <pname> is TESS_GEN_MODE: TRIANGLES, QUADS, ISOLINES
+        /// </summary>
+        TessGenMode = All.TESS_GEN_MODE,
+
+        /// <summary>
+        /// Returned by GetProgramiv when <pname> is TESS_GEN_SPACING: EQUAL, FRACTIONAL_ODD, FRACTIONAL_EVEN
+        /// </summary>
+        TessGenSpacing = All.TESS_GEN_SPACING,
+
+        /// <summary>
+        /// Returned by GetProgramiv when <pname> is TESS_GEN_VERTEX_ORDER: CCW, CW
+        /// </summary>
+        TessGenVertexOrder = All.TESS_GEN_VERTEX_ORDER,
+
+        /// <summary>
+        /// Returned by GetProgramiv when <pname> is TESS_GEN_POINT_MODE: FALSE, TRUE
+        /// </summary>
+        TessGenPointMode = All.TESS_GEN_POINT_MODE,
+
+        ProgramBinaryLength = All.PROGRAM_BINARY_LENGTH,
+        ProgramSeparable = All.PROGRAM_SEPARABLE,
+
+        ComputeWorkGroupSize = All.COMPUTE_WORK_GROUP_SIZE,
+
     }
 }

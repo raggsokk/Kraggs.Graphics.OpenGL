@@ -34,31 +34,15 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum ProgramInterface
+    public enum DebugCategoryAMD
     {
-        Uniform = All.UNIFORM,
-        UniformBlock = All.UNIFORM_BLOCK,
-        ProgramInput = All.PROGRAM_INPUT,
-        ProgramOutput = All.PROGRAM_OUTPUT,
-        BufferVariable = All.BUFFER_VARIABLE,
-        ShaderStorageBlock = All.SHADER_STORAGE_BLOCK,
-        AtomicCounterBuffer = All.ATOMIC_COUNTER_BUFFER,
-        VertexSubroutine = All.VERTEX_SUBROUTINE,
-        TessControlSubroutine = All.TESS_CONTROL_SUBROUTINE,
-        TessEvaluationSubroutine = All.TESS_EVALUATION_SUBROUTINE,
-        GeometrySubroutine = All.GEOMETRY_SUBROUTINE,        
-        FragmentSubroutine = All.FRAGMENT_SUBROUTINE,
-        ComputeSubroutine = All.COMPUTE_SUBROUTINE,
-        
-        VertexSubroutineUniform = All.VERTEX_SUBROUTINE_UNIFORM,
-        TessControlSubroutineUniform = All.TESS_CONTROL_SUBROUTINE_UNIFORM,
-        TessEvaluationSubroutineUniform = All.TESS_EVALUATION_SUBROUTINE_UNIFORM,
-        GeometrySubroutineUniform = All.GEOMETRY_SUBROUTINE_UNIFORM,
-        FragmentSubroutineUniform = All.FRAGMENT_SUBROUTINE_UNIFORM,
-        ComputeSubroutineUniform = All.COMPUTE_SUBROUTINE_UNIFORM,
-
-
-        TransformFeedbackVarying = All.TRANSFORM_FEEDBACK_VARYING,
-        TransformFeedbackBuffer = All.TRANSFORM_FEEDBACK_BUFFER,
+        API_ERROR_AMD = 0x9149,
+        WINDOW_SYSTEM_AMD = 0x914A,
+        DEPRECATION_AMD = 0x914B,
+        UNDEFINED_BEHAVIOR_AMD = 0x914C,
+        PERFORMANCE_AMD = 0x914D,
+        SHADER_COMPILER_AMD = 0x914E,
+        APPLICATION_AMD = 0x914F,
+        OTHER_AMD = 0x9150,
     }
 }

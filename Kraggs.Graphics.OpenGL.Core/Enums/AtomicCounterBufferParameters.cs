@@ -34,31 +34,22 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum ProgramInterface
+    /// <summary>
+    /// Used by GetActiveAtomicCounterBufferiv to retrive atomic counter parameters.
+    /// </summary>
+    public enum AtomicCounterBufferParameters
     {
-        Uniform = All.UNIFORM,
-        UniformBlock = All.UNIFORM_BLOCK,
-        ProgramInput = All.PROGRAM_INPUT,
-        ProgramOutput = All.PROGRAM_OUTPUT,
-        BufferVariable = All.BUFFER_VARIABLE,
-        ShaderStorageBlock = All.SHADER_STORAGE_BLOCK,
-        AtomicCounterBuffer = All.ATOMIC_COUNTER_BUFFER,
-        VertexSubroutine = All.VERTEX_SUBROUTINE,
-        TessControlSubroutine = All.TESS_CONTROL_SUBROUTINE,
-        TessEvaluationSubroutine = All.TESS_EVALUATION_SUBROUTINE,
-        GeometrySubroutine = All.GEOMETRY_SUBROUTINE,        
-        FragmentSubroutine = All.FRAGMENT_SUBROUTINE,
-        ComputeSubroutine = All.COMPUTE_SUBROUTINE,
-        
-        VertexSubroutineUniform = All.VERTEX_SUBROUTINE_UNIFORM,
-        TessControlSubroutineUniform = All.TESS_CONTROL_SUBROUTINE_UNIFORM,
-        TessEvaluationSubroutineUniform = All.TESS_EVALUATION_SUBROUTINE_UNIFORM,
-        GeometrySubroutineUniform = All.GEOMETRY_SUBROUTINE_UNIFORM,
-        FragmentSubroutineUniform = All.FRAGMENT_SUBROUTINE_UNIFORM,
-        ComputeSubroutineUniform = All.COMPUTE_SUBROUTINE_UNIFORM,
+        Binding = All.ATOMIC_COUNTER_BUFFER_BINDING,
+        DataSize = All.ATOMIC_COUNTER_BUFFER_DATA_SIZE,
+        ActiveAtomicCounters = All.ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTERS,
+        ActiveAtomicCounterIndices = All.ATOMIC_COUNTER_BUFFER_ACTIVE_ATOMIC_COUNTER_INDICES,
 
+        ReferencedByVertexShader = All.ATOMIC_COUNTER_BUFFER_REFERENCED_BY_VERTEX_SHADER,
+        ReferencedByFragmentShader = All.ATOMIC_COUNTER_BUFFER_REFERENCED_BY_FRAGMENT_SHADER,
+        ReferencedByGeometryShader = All.ATOMIC_COUNTER_BUFFER_REFERENCED_BY_GEOMETRY_SHADER,
+        ReferencedByTessControlShader = All.ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_CONTROL_SHADER,
+        ReferencedByTessEvaluationShader = All.ATOMIC_COUNTER_BUFFER_REFERENCED_BY_TESS_EVALUATION_SHADER,
+        ReferencedByComputeShader = All.ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER,
 
-        TransformFeedbackVarying = All.TRANSFORM_FEEDBACK_VARYING,
-        TransformFeedbackBuffer = All.TRANSFORM_FEEDBACK_BUFFER,
     }
 }

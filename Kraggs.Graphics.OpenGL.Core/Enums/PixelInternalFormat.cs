@@ -152,7 +152,10 @@ namespace Kraggs.Graphics.OpenGL
         Compressed_RG_RGTC2 = All.COMPRESSED_RG_RGTC2,
         Compressed_Signed_RG_RGTC2 = All.COMPRESSED_SIGNED_RG_RGTC2,
 
-        //Compressed_RGBA_BPTC_UNorm = All.
+        Compressed_RGBA_BPTC_UNorm = All.COMPRESSED_RGBA_BPTC_UNORM_ARB,
+        Compressed_SRGBAlpha_BPTC_UNorm = All.COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB,
+        Compressed_Signed_RGB_BPTC_Float = All.COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB,
+        Compressed_Unsigned_RGB_BPTC_Float = All.COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB,
         //Compressed_SRGB_Alpha_BPTC_UNorm = All.
         //Compressed_RGB_BPTC_Signed_Float = All.
         //Compressed_RGB_BTTC_Unsigned_Float = All.

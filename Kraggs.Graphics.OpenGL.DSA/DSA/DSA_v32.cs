@@ -43,19 +43,9 @@ namespace Kraggs.Graphics.OpenGL
 
             #region Delegates
 
-            //ARB_texture_storage_multisample
-            public delegate void delTextureStorage2DMultisampleEXT(uint TextureID, TextureTarget target, int samples, PixelInternalFormat piformat, int width, int height, bool fixedSampleLocations);
-            public delegate void delTextureStorage3DMultisampleEXT(uint TextureID, TextureTarget target, int samples, PixelInternalFormat piformat, int width, int height, int depth, bool fixedSampleLocations);
-
-
             #endregion
 
             #region GL Fields
-
-            //ARB_texture_storage_multisample
-            public static delTextureStorage2DMultisampleEXT glTextureStorage2DMultisampleEXT;
-            public static delTextureStorage3DMultisampleEXT glTextureStorage3DMultisampleEXT;
-
 
             #endregion
         }
@@ -63,37 +53,6 @@ namespace Kraggs.Graphics.OpenGL
         #endregion
 
         #region Public functions.
-
-        /// <summary>
-        /// Allocates multisample storage for a named texture id.
-        /// </summary>
-        /// <param name="TextureID">id of texture to allocat multisample storage.</param>
-        /// <param name="target">Texture target of texture.</param>
-        /// <param name="samples">Number of samples to allocate</param>
-        /// <param name="piformat">Format of storage.</param>
-        /// <param name="width">Width of texture.</param>
-        /// <param name="height">Height of texture.</param>
-        /// <param name="fixedSampleLocations">Should we use fixed sample locations?</param>
-        public static void TextureStorage2DMultisampleEXT(uint TextureID, TextureTarget target, int samples, PixelInternalFormat piformat, int width, int height, bool fixedSampleLocations)
-        {
-            Delegates.glTextureStorage2DMultisampleEXT(TextureID, target, samples, piformat, width, height, fixedSampleLocations);
-        }
-        /// <summary>
-        /// Allocates multisample storage for a named texture id.
-        /// </summary>
-        /// <param name="TextureID">id of texture to allocat multisample storage.</param>
-        /// <param name="target">Texture target of texture.</param>
-        /// <param name="samples">Number of samples to allocate</param>
-        /// <param name="piformat">Format of storage.</param>
-        /// <param name="width">Width of texture.</param>
-        /// <param name="height">Height of texture.</param>
-        /// <param name="depth">Depth of texture.</param>
-        /// <param name="fixedSampleLocations">Should we use fixed sample locations?</param>
-        public static void TextureStorage3DMultisampleEXT(uint TextureID, TextureTarget target, int samples, PixelInternalFormat piformat, int width, int height, int depth, bool fixedSampleLocations)
-        {
-            Delegates.glTextureStorage3DMultisampleEXT(TextureID, target, samples, piformat, width, height, depth, fixedSampleLocations);
-        }
-
 
         #endregion
     }

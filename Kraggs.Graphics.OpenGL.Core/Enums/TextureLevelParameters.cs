@@ -59,5 +59,6 @@ namespace Kraggs.Graphics.OpenGL
         CompressedImageSize = All.TEXTURE_COMPRESSED_IMAGE_SIZE,
 
         TextureBufferOffset = All.TEXTURE_BUFFER_OFFSET,
+        TextureBufferSize = All.TEXTURE_BUFFER_SIZE,
     }
 }

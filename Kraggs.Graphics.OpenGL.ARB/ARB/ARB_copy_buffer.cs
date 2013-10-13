@@ -50,7 +50,7 @@ namespace Kraggs.Graphics.OpenGL
 
             #region GL Fields
 
-            public static delCopyBufferSubDataARB glCopyBufferSubDataARB;
+            public static delCopyBufferSubDataARB glCopyBufferSubdataARB;
 
             #endregion
         }
@@ -71,7 +71,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="writeTarget">Buffer target to write to, doesn't have to be CopyWriteBuffer</param>
         public static void CopyBufferSubDataARB(long readOffset, long writeOffset, long Size, BufferTarget readTarget = BufferTarget.CopyReadBuffer, BufferTarget writeTarget = BufferTarget.CopyWriteBuffer)
         {
-            Delegates.glCopyBufferSubDataARB(readTarget, writeTarget, (IntPtr)readOffset, (IntPtr)writeOffset, (IntPtr)Size);
+            Delegates.glCopyBufferSubdataARB(readTarget, writeTarget, (IntPtr)readOffset, (IntPtr)writeOffset, (IntPtr)Size);
         }
 
         #endregion

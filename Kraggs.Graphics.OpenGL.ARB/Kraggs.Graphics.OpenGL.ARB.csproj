@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="ARB.cs" />
     <Compile Include="ARB\ARB_copy_buffer.cs" />
+    <Compile Include="ARB\ARB_sample_shading.cs" />
+    <Compile Include="ARB\ARB_v42.cs" />
+    <Compile Include="ARB\ARB_v43.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

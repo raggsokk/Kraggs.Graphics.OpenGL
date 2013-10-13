@@ -54,4 +54,11 @@ namespace Kraggs.Graphics.OpenGL
 
         #endregion
     }
+
+    #region Public Delegates
+
+    public delegate void DebugMessageDelegate(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string message, IntPtr userParam);
+
+    #endregion
+
 }

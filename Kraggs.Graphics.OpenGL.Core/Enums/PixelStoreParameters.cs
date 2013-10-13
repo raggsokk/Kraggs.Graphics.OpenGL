@@ -53,5 +53,15 @@ namespace Kraggs.Graphics.OpenGL
         UnpackSkipRows = All.UNPACK_SKIP_ROWS,
         UnpackSkipImages = All.UNPACK_SKIP_IMAGES,
         UnpackAlignment = All.UNPACK_ALIGNMENT,
+
+        PackCompressedBlockWidth = All.PACK_COMPRESSED_BLOCK_WIDTH,
+        PackCompressedBlockHeight = All.PACK_COMPRESSED_BLOCK_HEIGHT,
+        PackCompressedBlockDepth = All.PACK_COMPRESSED_BLOCK_DEPTH,
+        PackCompressedBlockSize = All.PACK_COMPRESSED_BLOCK_SIZE,
+
+        UnpackCompressedBlockWidth = All.UNPACK_COMPRESSED_BLOCK_WIDTH,
+        UnpackCompressedBlockHeight = All.UNPACK_COMPRESSED_BLOCK_HEIGHT,
+        UnpackCompressedBlockDepth = All.UNPACK_COMPRESSED_BLOCK_DEPTH,
+        UnpackCompressedBlockSize = All.UNPACK_COMPRESSED_BLOCK_SIZE,
     }
 }

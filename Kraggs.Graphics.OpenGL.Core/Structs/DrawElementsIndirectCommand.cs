@@ -41,6 +41,9 @@ namespace Kraggs.Graphics.OpenGL
         public uint primCount;
         public uint firstIndex;
         public int baseVertex;
-        public uint reservedMustBeZero;
+        /// <summary>
+        /// The baseInstance member of the DrawElementsIndirectCommand structure is defined only if the GL version is 4.2 or greater. For versions of the GL less than 4.2, this parameter is present but is reserved and should be set to zero. On earlier versions of the GL, behavior is undefined if it is non-zero.
+        /// </summary>
+        public uint baseInstance;
     }
 } 

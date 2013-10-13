@@ -48,5 +48,10 @@ namespace Kraggs.Graphics.OpenGL
         Stride = All.VERTEX_ATTRIB_ARRAY_STRIDE,
         Type = All.VERTEX_ATTRIB_ARRAY_TYPE,
         //BarrierBit = All.VERTEX_ATTRIB_ARRAY_BARRIER_BIT,
+
+
+        Binding = All.VERTEX_ATTRIB_BINDING,
+        RelativeOffset = All.VERTEX_ATTRIB_RELATIVE_OFFSET,
+
     }
 }

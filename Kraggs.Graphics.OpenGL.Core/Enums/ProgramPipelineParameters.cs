@@ -34,31 +34,8 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum ProgramInterface
+    public enum ProgramPipelineParameters
     {
-        Uniform = All.UNIFORM,
-        UniformBlock = All.UNIFORM_BLOCK,
-        ProgramInput = All.PROGRAM_INPUT,
-        ProgramOutput = All.PROGRAM_OUTPUT,
-        BufferVariable = All.BUFFER_VARIABLE,
-        ShaderStorageBlock = All.SHADER_STORAGE_BLOCK,
-        AtomicCounterBuffer = All.ATOMIC_COUNTER_BUFFER,
-        VertexSubroutine = All.VERTEX_SUBROUTINE,
-        TessControlSubroutine = All.TESS_CONTROL_SUBROUTINE,
-        TessEvaluationSubroutine = All.TESS_EVALUATION_SUBROUTINE,
-        GeometrySubroutine = All.GEOMETRY_SUBROUTINE,        
-        FragmentSubroutine = All.FRAGMENT_SUBROUTINE,
-        ComputeSubroutine = All.COMPUTE_SUBROUTINE,
-        
-        VertexSubroutineUniform = All.VERTEX_SUBROUTINE_UNIFORM,
-        TessControlSubroutineUniform = All.TESS_CONTROL_SUBROUTINE_UNIFORM,
-        TessEvaluationSubroutineUniform = All.TESS_EVALUATION_SUBROUTINE_UNIFORM,
-        GeometrySubroutineUniform = All.GEOMETRY_SUBROUTINE_UNIFORM,
-        FragmentSubroutineUniform = All.FRAGMENT_SUBROUTINE_UNIFORM,
-        ComputeSubroutineUniform = All.COMPUTE_SUBROUTINE_UNIFORM,
-
-
-        TransformFeedbackVarying = All.TRANSFORM_FEEDBACK_VARYING,
-        TransformFeedbackBuffer = All.TRANSFORM_FEEDBACK_BUFFER,
+        ActiveProgram = All.ACTIVE_PROGRAM,
     }
 }

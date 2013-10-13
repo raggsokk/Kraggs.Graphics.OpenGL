@@ -62,7 +62,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delBeginQuery(QueryTarget target, uint QueryID);
             public delegate void delEndQuery(QueryTarget target);
             public delegate void delGetQueryiv(QueryTarget target, GetQueryParameters pname, ref int @params);
-            public delegate void delGetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname, ref int @params);
+            //public delegate void delGetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname, ref int @params);
+            public unsafe delegate void delGetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname, int* param);
             public delegate void delGetQueryObjectuiv(uint QueryID, GetQueryObjectParameters pname, ref uint @params);
 
             #endregion
@@ -248,67 +249,172 @@ namespace Kraggs.Graphics.OpenGL
 
 
 
-
+        /// <summary>
+        /// Generates an array of query ids.
+        /// </summary>
+        /// <param name="QueryIDs"></param>
         public static void GenQueries(uint[] QueryIDs)
         {
             Delegates.glGenQueries(QueryIDs.Length, ref QueryIDs[0]);
         }
-        public static uint GenQueries(uint QueryID)
+        /// <summary>
+        /// Generates a single query id.
+        /// </summary>
+        /// <param name="QueryID"></param>
+        /// <returns></returns>
+        public static uint GenQueries()
         {
             uint tmp = 0;
             Delegates.glGenQueries(1, ref tmp);
             return tmp;
         }
+        /// <summary>
+        /// Delets an array of query objects
+        /// </summary>
+        /// <param name="QueryIDs"></param>
         public static void DeleteQueries(uint[] QueryIDs)
         {
             Delegates.glDeleteQueries(QueryIDs.Length, ref QueryIDs[0]);
         }
+        /// <summary>
+        /// Deletes a single query object
+        /// </summary>
+        /// <param name="QueryID"></param>
         public static void DeleteQueries(uint QueryID)
         {
             Delegates.glDeleteQueries(1, ref QueryID);
         }
 
+        /// <summary>
+        /// Is this a query?
+        /// </summary>
+        /// <param name="QueryID"></param>
+        /// <returns></returns>
         public static bool IsQuery(uint QueryID)
         {
             return Delegates.glIsQuery(QueryID);
         }
-
+        /// <summary>
+        /// glBeginQuery and glEndQuery delimit the boundaries of a query object. query must be a name previously returned from a call to glGenQueries. If a query object with name id does not yet exist it is created with the type determined by target. target must be one of GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, or GL_TIME_ELAPSED.
+        /// Calling glBeginQuery or glEndQuery is equivalent to calling glBeginQueryIndexed or glEndQueryIndexed with index set to zero, respectively.
+        /// </summary>
+        /// <param name="target">Specifies the target type of query object established between glBeginQuery and the subsequent glEndQuery. The symbolic constant must be one of GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, or GL_TIME_ELAPSED.</param>
+        /// <param name="QueryID">Specifies the name of a query object.</param>
         public static void BeginQuery(QueryTarget target, uint QueryID)
         {
             Delegates.glBeginQuery(target, QueryID);
         }
 
+        /// <summary>
+        /// glBeginQuery and glEndQuery delimit the boundaries of a query object. query must be a name previously returned from a call to glGenQueries. If a query object with name id does not yet exist it is created with the type determined by target. target must be one of GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, or GL_TIME_ELAPSED.
+        /// Calling glBeginQuery or glEndQuery is equivalent to calling glBeginQueryIndexed or glEndQueryIndexed with index set to zero, respectively.
+        /// </summary>
+        /// <param name="target">Specifies the target type of query object to be concluded. The symbolic constant must be one of GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, or GL_TIME_ELAPSED.</param>
         public static void EndQuery(QueryTarget target)
         {
             Delegates.glEndQuery(target);
         }
 
+        /// <summary>
+        /// glGetQueryiv returns in params a selected parameter of the query object target specified by target.
+        /// Calling glGetQueryiv is equivalent to calling glGetQueryIndexediv with index set to zero.
+        /// </summary>
+        /// <param name="target">Specifies a query object target. Must be GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED_CONSERVATIVE GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, GL_TIME_ELAPSED, or GL_TIMESTAMP.</param>
+        /// <param name="pname">Specifies the symbolic name of a query object target parameter. Accepted values are GL_CURRENT_QUERY or GL_QUERY_COUNTER_BITS.</param>
+        /// <param name="params"></param>
         public static void GetQueryiv(QueryTarget target, GetQueryParameters pname, int[] @params)
         {
             Delegates.glGetQueryiv(target, pname, ref @params[0]);
         }
+        /// <summary>
+        /// glGetQueryiv returns in params a selected parameter of the query object target specified by target.
+        /// Calling glGetQueryiv is equivalent to calling glGetQueryIndexediv with index set to zero.
+        /// </summary>
+        /// <param name="target">Specifies a query object target. Must be GL_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED, GL_ANY_SAMPLES_PASSED_CONSERVATIVE GL_PRIMITIVES_GENERATED, GL_TRANSFORM_FEEDBACK_PRIMITIVES_WRITTEN, GL_TIME_ELAPSED, or GL_TIMESTAMP.</param>
+        /// <param name="pname">Specifies the symbolic name of a query object target parameter. Accepted values are GL_CURRENT_QUERY or GL_QUERY_COUNTER_BITS.</param>
+        /// <returns></returns>
         public static int GetQueryiv(QueryTarget target, GetQueryParameters pname)
         {
             int tmp = 0;
             Delegates.glGetQueryiv(target, pname, ref tmp);
             return tmp;
         }
-
-        public static void GetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname, int[] @params)
+        /// <summary>
+        /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// </summary>
+        /// <param name="QueryID">Specifies the name of a query object.</param>
+        /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
+        /// <param name="params">If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data.</param>
+        /// <remarks>
+        /// If an error is generated, no change is made to the contents of params.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// If multiple queries are issued using the same query object id before calling glGetQueryObject, the results of the most recent query will be returned. In this case, when issuing a new query, the results of the previous query are discarded.
+        /// glGetQueryObjecti64v and glGetQueryObjectui64v are available only if the GL version is 3.3 or greater.
+        /// GL_QUERY_RESULT_NO_WAIT is accepted for pname only if the GL version is 4.4 or greater.
+        /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
+        /// </remarks>        
+        public unsafe static void GetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname, int[] @params)
         {
-            Delegates.glGetQueryObjectiv(QueryID, pname, ref @params[0]);
+            //Delegates.glGetQueryObjectiv(QueryID, pname, ref @params[0]);
+            fixed(int* ptr = &@params[0])
+                Delegates.glGetQueryObjectiv(QueryID, pname, ptr);
         }
-        public static int GetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname)
+        /// <summary>
+        /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// </summary>
+        /// <param name="QueryID">Specifies the name of a query object.</param>
+        /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
+        /// <returns></returns>
+        /// <remarks>
+        /// If an error is generated, no change is made to the contents of params.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// If multiple queries are issued using the same query object id before calling glGetQueryObject, the results of the most recent query will be returned. In this case, when issuing a new query, the results of the previous query are discarded.
+        /// glGetQueryObjecti64v and glGetQueryObjectui64v are available only if the GL version is 3.3 or greater.
+        /// GL_QUERY_RESULT_NO_WAIT is accepted for pname only if the GL version is 4.4 or greater.
+        /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
+        /// </remarks>        
+        public unsafe static int GetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname)
         {
             int tmp = 0;
-            Delegates.glGetQueryObjectiv(QueryID, pname, ref tmp);
+            Delegates.glGetQueryObjectiv(QueryID, pname, &tmp);
             return tmp;
         }
-
+        /// <summary>
+        /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// </summary>
+        /// <param name="QueryID">Specifies the name of a query object.</param>
+        /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
+        /// <param name="params">If no buffer is bound to GL_QUERY_RESULT_BUFFER, then params is treated as an address in client memory of a variable to receive the resulting data.</param>
+        /// <remarks>
+        /// If an error is generated, no change is made to the contents of params.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// If multiple queries are issued using the same query object id before calling glGetQueryObject, the results of the most recent query will be returned. In this case, when issuing a new query, the results of the previous query are discarded.
+        /// glGetQueryObjecti64v and glGetQueryObjectui64v are available only if the GL version is 3.3 or greater.
+        /// GL_QUERY_RESULT_NO_WAIT is accepted for pname only if the GL version is 4.4 or greater.
+        /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
+        /// </remarks>        
         public static void GetQueryObjectuiv(uint QueryID, GetQueryObjectParameters pname, uint[] @params)
         {
             Delegates.glGetQueryObjectuiv(QueryID, pname, ref @params[0]);
         }
+        /// <summary>
+        /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// </summary>
+        /// <param name="QueryID">Specifies the name of a query object.</param>
+        /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
+        /// <returns></returns>
+        /// <remarks>
+        /// If an error is generated, no change is made to the contents of params.
+        /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
+        /// If multiple queries are issued using the same query object id before calling glGetQueryObject, the results of the most recent query will be returned. In this case, when issuing a new query, the results of the previous query are discarded.
+        /// glGetQueryObjecti64v and glGetQueryObjectui64v are available only if the GL version is 3.3 or greater.
+        /// GL_QUERY_RESULT_NO_WAIT is accepted for pname only if the GL version is 4.4 or greater.
+        /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
+        /// </remarks>        
         public static uint GetQueryObjectuiv(uint QueryID, GetQueryObjectParameters pname)
         {
             uint tmp = 0;

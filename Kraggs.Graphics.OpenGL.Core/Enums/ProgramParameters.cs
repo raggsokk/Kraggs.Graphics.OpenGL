@@ -36,7 +36,7 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum ProgramParameters
     {
-        SeparableProgram = All.PROGRAM_SEPARABLE,
-        BinaryRetrievableProgramHint = All.PROGRAM_BINARY_RETRIEVABLE_HINT,
+        ProgramSeparable = All.PROGRAM_SEPARABLE,
+        ProgramBinaryRetrievableHint = All.PROGRAM_BINARY_RETRIEVABLE_HINT,
     }
 }

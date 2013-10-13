@@ -52,6 +52,11 @@
     <Compile Include="DSA\DSA_v31.cs" />
     <Compile Include="DSA\DSA_v32.cs" />
     <Compile Include="DSA\DSA_v33.cs" />
+    <Compile Include="DSA\DSA_v40.cs" />
+    <Compile Include="DSA\DSA_v41.cs" />
+    <Compile Include="DSA\DSA_v42.cs" />
+    <Compile Include="DSA\DSA_v43.cs" />
+    <Compile Include="DSA\DSA_v44.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
