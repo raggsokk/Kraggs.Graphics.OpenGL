@@ -169,6 +169,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delBeginConditionalRender(uint id, ConditionalRenderType mode);
             public delegate void delEndConditionalRender();
 
+            // glGetStringi ?? added here.
+            public delegate IntPtr delGetStringi(StringName name, uint index);
 
             #endregion
 
@@ -285,6 +287,7 @@ namespace Kraggs.Graphics.OpenGL
             public static delBeginConditionalRender glBeginConditionalRender;
             public static delEndConditionalRender glEndConditionalRender;
 
+            public static delGetStringi glGetStringi;
 
             #endregion
         }
@@ -1041,6 +1044,18 @@ namespace Kraggs.Graphics.OpenGL
         public static void EndConditionalRender()
         {
             Delegates.glEndConditionalRender();
+        }
+
+        /// <summary>
+        /// Returns the indexed name string. For now only Extensions are supported so thats default value.
+        /// </summary>
+        /// <param name="index">index of extension to retrive. This index can change from driver version to driver version.</param>
+        /// <param name="name">Only Extensions are supported here.</param>
+        /// <returns></returns>
+        public static string GetStringi(uint index, StringName name = StringName.Extensions)
+        {
+            var ptr = Delegates.glGetStringi(name, index);
+            return Marshal.PtrToStringAnsi(ptr);
         }
 
         #endregion
