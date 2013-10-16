@@ -198,6 +198,11 @@ A list of work todo to track progress.
 	Implement ARB_vertex_type_10f_11f_11f_rev 	(No Functions)
 	New implementation-dependent state MAX_VERTEX_ATTRIB_STRIDE
 
+### Milestone 18, varius fixes.
+	Fix Issue Drawbuffers.
+	Add ARB_ES2_compatibility 
+	Add ARB_ES3_compatibility
+	Fix Issue PixelInternalFormat
 
 ### Milestone x++, PixelInternalFormat_v2
 	Fix this MESS!
@@ -210,6 +215,7 @@ A list of work todo to track progress.
 ### Release 1
 	Milestone 1
 	Milestone 2
+
 ### Release 2
 	Milestone 3
 	Milestone 4
@@ -217,11 +223,13 @@ A list of work todo to track progress.
 	Milestone 6
 	Milestone 7
 	Milestone 8
+
 ### Release 3
 	Milestone 9
 	Milestone 10
 	Milestone 11
 	Milestone 12
+
 ### Release 4
 	Milestone 13
 	Milestone 14
@@ -229,6 +237,11 @@ A list of work todo to track progress.
 	Milestone 16
 	Milestone 17
 
+### Release 5
+	Milestone 18
+	...
+	Implement Compatibility project.
+	Fix/clarify ARB and EXT projects.
 
 
 ## Open Issues which needs to be clarified.
@@ -273,7 +286,7 @@ A list of work todo to track progress.
 	~~GenTexture:			Shouldn't this be GenTextures event if its only 1 texture id created.~~
 	~~VertexAttribFormat:	Change or add overload where relativeOffset is int.~~
 	~~ClearBufferfv:		Is missing, add ARB_es2_compatibility for core?	~~
-							Postponed to update 2.
+							Postponed to later.
 	~~ARB_multi_bind:			Reimplement ARB_Multi_bind with ref <type> in addition to <type>[] arrays.~~
 	~~DebugSource			Add GL_DONT_CARE~~
 	~~DebugType				Add GL_DONT_CARE~~
@@ -283,7 +296,5 @@ A list of work todo to track progress.
 	~~BufferStorageFlags:		Some of these enum values is completely wrong.~~
 	~~BufferStorage<TValueType>: Added.~~
 
-### Cummulative Update 2
-	ARB_ES2_compatibility:	glClearDepthf, glDepthRangef, glGetShaderPrecisionFormat, glReleaseShaderCompiler, glShaderBinary
-	ARB_ES3_compatibility:	glClearBufferfv, glClearBufferiv, glClearBufferuiv
-	
+###	Cummulative Update 2
+	(none added yet...	)
