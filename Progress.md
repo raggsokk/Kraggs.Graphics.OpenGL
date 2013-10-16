@@ -286,8 +286,4 @@ A list of work todo to track progress.
 ### Cummulative Update 2
 	ARB_ES2_compatibility:	glClearDepthf, glDepthRangef, glGetShaderPrecisionFormat, glReleaseShaderCompiler, glShaderBinary
 	ARB_ES3_compatibility:	glClearBufferfv, glClearBufferiv, glClearBufferuiv
-
-	var buf = new buf[4]
-	var index = 2,
-	var length = 4
-	var len = Math.Min(buf.length, index + length) - index == 4
+	
