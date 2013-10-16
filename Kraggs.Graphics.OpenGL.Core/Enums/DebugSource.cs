@@ -36,6 +36,10 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum DebugSource
     {
+        /// <summary>
+        /// Match all. Usefull when calling DebugMessageControl.
+        /// </summary>
+        DontCare = All.DONT_CARE,
         Api = All.DEBUG_SOURCE_API,
         WindowSystem = All.DEBUG_SOURCE_WINDOW_SYSTEM,
         ShaderCompiler = All.DEBUG_SOURCE_SHADER_COMPILER,

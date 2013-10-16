@@ -57,8 +57,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delBindTextures(uint first, int count, ref uint textures);
             public delegate void delBindSamplers(uint first, int count, ref uint samplers);
             public delegate void delBindImageTextures(uint first, int count, ref uint textures);
-            //public delegate void delBindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Strides);
-            public unsafe delegate void delBindVertexBuffers(uint first, int count, uint* buffers, IntPtr* Offsets, IntPtr* Strides);
+            public delegate void delBindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref int Strides);
+            //public unsafe delegate void delBindVertexBuffers(uint first, int count, uint* buffers, IntPtr* Offsets, int* Strides);
 
             #endregion
 
@@ -94,9 +94,20 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="size">Size in bytes of allocates storage.</param>
         /// <param name="data">Data to upload to buffer or zero to just allocate.</param>
         /// <param name="flags">Buffer Allocation Flags.</param>
-        public static void BufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags)
+        public static void BufferStorage(BufferTarget target, long size, IntPtr data, BufferStorageFlags flags)
         {
-            Delegates.glBufferStorage(target, size, data, flags);
+            Delegates.glBufferStorage(target, (IntPtr)size, data, flags);
+        }
+
+        public static void BufferStorage<TValueType>(BufferTarget target, TValueType[] data, BufferStorageFlags flags) where TValueType : new()
+        {
+            var totalsize = Marshal.SizeOf(typeof(TValueType)) * data.Length;
+
+            var handle = GCHandle.Alloc(data, GCHandleType.Pinned);
+
+            Delegates.glBufferStorage(target, (IntPtr)totalsize, handle.AddrOfPinnedObject(), flags);
+
+            handle.Free();
         }
 
         //ARB_clear_texture
@@ -133,6 +144,20 @@ namespace Kraggs.Graphics.OpenGL
         }
 
         //ARB_multi_bind'
+
+        /// <summary>
+        /// Binds an array of buffer ids to a range of bindingindexes of target type.
+        /// </summary>
+        /// <param name="target">Type of BindingIndexes.</param>
+        /// <param name="first">first BindingIndex to bind first buffer to.</param>
+        /// <param name="count">Size of array buffers and number of buffers to bind continiously from first and upwards.</param>
+        /// <param name="buffers">Array of buffer ids to bind.</param>
+        public static void BindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers)
+        {
+            //Delegates.glBindBufferBase(target, bindingIndex, BufferId)
+            Delegates.glBindBuffersBase(target, first, count, ref buffers);
+        }
+
         /// <summary>
         /// Binds an array of buffer ids to a bindingindex of target type starting at first.
         /// </summary>
@@ -144,17 +169,23 @@ namespace Kraggs.Graphics.OpenGL
             //Delegates.glBindBufferBase(target, bindingIndex, BufferId)
             Delegates.glBindBuffersBase(target, first, buffers.Length, ref buffers[0]);
         }
-        /// <summary>
-        /// Resets a range of bindingindexes to no buffer.
-        /// </summary>
-        /// <param name="target">Which sets of binding indexes to set to zero?</param>
-        /// <param name="first">first BindingIndex to reset.</param>
-        /// <param name="count">Number of bindingindexes to reset.</param>
-        public static void BindBuffersBase(BufferProgramTarget target, int first, int count)
+        ///// <summary>
+        ///// Resets a range of bindingindexes to no buffer.
+        ///// </summary>
+        ///// <param name="target">Which sets of binding indexes to set to zero?</param>
+        ///// <param name="first">first BindingIndex to reset.</param>
+        ///// <param name="count">Number of bindingindexes to reset.</param>
+        //public static void BindBuffersBase(BufferProgramTarget target, int first, int count)
+        //{
+        //    var tmp = new uint[count];
+        //    Delegates.glBindBuffersBase(target, first, tmp.Length, ref tmp[0]);
+        //}
+
+        public static void BindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes)
         {
-            var tmp = new uint[count];
-            Delegates.glBindBuffersBase(target, first, tmp.Length, ref tmp[0]);
+            Delegates.glBindBuffersRange(target, first, count, ref buffers, ref Offsets, ref Sizes);
         }
+
         public static void BindBuffersRange(BufferProgramTarget target, int first, uint[] buffers, IntPtr[] Offsets, IntPtr[] Sizes)
         {
             var count = Math.Min(buffers.Length, Math.Min(Offsets.Length, Sizes.Length));
@@ -164,6 +195,18 @@ namespace Kraggs.Graphics.OpenGL
 
         /// <summary>
         /// Binds a range of textures to a range of texture units.
+        /// TextureTarget used is the first texturetarget used to bind after texture id generation.
+        /// </summary>
+        /// <param name="first">First zerobased texture unit to bind textures[0] to.</param>
+        /// <param name="count">Size of array textures and number of textures to bind continiously from first and upwards.</param>
+        /// <param name="textures">Array of texture ids to bind.</param>
+        public static void BindTextures(uint first, int count, ref uint textures)
+        {
+            Delegates.glBindTextures(first, count, ref textures);
+        }
+        /// <summary>
+        /// Binds a range of textures to a range of texture units.
+        /// TextureTarget used is the first texturetarget used to bind after texture id generation.
         /// </summary>
         /// <param name="first">First Texture unit to bind textures[0] to..</param>
         /// <param name="textures">Array of texture ids to bind. Texture target used is the target specified when the texture object was created.</param>
@@ -171,17 +214,27 @@ namespace Kraggs.Graphics.OpenGL
         {
             Delegates.glBindTextures(first, textures.Length, ref textures[0]);
         }
-        /// <summary>
-        /// Resets a range of texture units to their default texture.(0)
-        /// </summary>
-        /// <param name="first">First Texture unit to reset.</param>
-        /// <param name="count">Count Texture unit to reset.</param>
-        public static void BindTextures(uint first, int count)
-        {
-            var tmp = new uint[count];
-            Delegates.glBindTextures(first, tmp.Length, ref tmp[0]);
-        }
+        ///// <summary>
+        ///// Resets a range of texture units to their default texture.(0)
+        ///// </summary>
+        ///// <param name="first">First Texture unit to reset.</param>
+        ///// <param name="count">Count Texture unit to reset.</param>
+        //public static void BindTextures(uint first, int count)
+        //{
+        //    var tmp = new uint[count];
+        //    Delegates.glBindTextures(first, tmp.Length, ref tmp[0]);
+        //}
 
+        /// <summary>
+        /// Binds a range of sampler ids to a range of texture units.
+        /// </summary>
+        /// <param name="first">First zerobased texture unit to bind samplers[0] to.</param>
+        /// <param name="count">Size of array Samplers and number of Samplers to bind continiously from first and upwards.</param>
+        /// <param name="samplers">Array of sampler ids to bind.</param>
+        public static void BindSamplers(uint first, int count, ref uint samplers)
+        {
+            Delegates.glBindSamplers(first, count, ref samplers);
+        }
         /// <summary>
         /// Binds a range of sampler ids to a range of texture units.
         /// </summary>
@@ -197,10 +250,35 @@ namespace Kraggs.Graphics.OpenGL
         /// When binding a non-zero texture object to an image unit, the image unit [level, layered, layer, and access] parameters are set to [zero, TRUE, zero, and READ_WRITE], respectively.
         /// </summary>
         /// <param name="first">First Image unit to bind to.</param>
+        /// <param name="count">Size of array textures and number of textures to bind continiously from first and upwards.</param>
+        /// <param name="textures">Array of textures to bind to image units.</param>
+        public static void BindImageTextures(uint first, int count, ref uint textures)
+        {
+            Delegates.glBindImageTextures(first, count, ref textures);
+        }
+
+        /// <summary>
+        /// Binds a range of image textures to a range of image units.
+        /// When binding a non-zero texture object to an image unit, the image unit [level, layered, layer, and access] parameters are set to [zero, TRUE, zero, and READ_WRITE], respectively.
+        /// </summary>
+        /// <param name="first">First Image unit to bind to.</param>
         /// <param name="textures">Array of textures to bind to image units.</param>
         public static void BindImageTextures(uint first, uint[] textures)
         {
             Delegates.glBindImageTextures(first, textures.Length, ref textures[0]);
+        }
+
+        /// <summary>
+        /// Binds an array of buffers to a range of vertex buffer binding points starting at first.
+        /// </summary>
+        /// <param name="first">First binding point to bind first set of parametes to. aka buffers[0], Offsets[0], and Strides[0]</param>
+        /// <param name="count">Size of arrays and number of bindingpoints to bind continiously from first and upwards.</param>
+        /// <param name="buffers">Array of buffer ids to bind.</param>
+        /// <param name="Offsets">Array of OFfsets to use, 1 per binding</param>
+        /// <param name="Strides">Array of Strides to use, 1 per binding.</param>
+        public static void BindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref int Strides)
+        {
+            Delegates.glBindVertexBuffers(first, count, ref buffers, ref Offsets, ref Strides);
         }
 
         /// <summary>
@@ -210,7 +288,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="buffers">Array of buffer ids to bind continiously.</param>
         /// <param name="Offsets">Array of Offsets to use during binding.</param>
         /// <param name="Strides">Array of Strides to use during binding.</param>
-        public unsafe static void BindVertexBuffers(uint first, uint[] buffers, IntPtr[] Offsets, IntPtr[] Strides)
+        public unsafe static void BindVertexBuffers(uint first, uint[] buffers, IntPtr[] Offsets, int[] Strides)
         {
             //Debug.Assert(buffers != null && Offsets != null && Strides != null);
 
@@ -220,50 +298,58 @@ namespace Kraggs.Graphics.OpenGL
 
             int count = Math.Min(buffers.Length, Math.Min(Offsets.Length, Strides.Length));
 
-            fixed(uint* ptrBuffers = &buffers[0])
-                fixed(IntPtr* ptrOffsets = &Offsets[0])
-                    fixed(IntPtr* ptrStrides = &Strides[0])
-            {
-                Delegates.glBindVertexBuffers(first, count, ptrBuffers, ptrOffsets, ptrStrides);
-            }
+            Delegates.glBindVertexBuffers(first, count, ref buffers[0], ref Offsets[0], ref Strides[0]);
+
+            //fixed(uint* ptrBuffers = &buffers[0])
+            //    fixed(IntPtr* ptrOffsets = &Offsets[0])
+            //        fixed(int* ptrStrides = &Strides[0])
+            //{
+            //    Delegates.glBindVertexBuffers(first, count, ptrBuffers, ptrOffsets, ptrStrides);
+            //}
         }
         /// <summary>
         /// Binds an array of buffers to a range of  vertex buffer binding points starting at first.
+        /// This creates a IntPtr[] and converts Offsets into this before calling.
         /// </summary>
         /// <param name="first">First BufferBindingPoint to bind buffer to.</param>
         /// <param name="buffers">Array of buffer ids to bind continiously.</param>
         /// <param name="Offsets">Array of Offsets to use during binding, converted to IntPtr array.</param>
         /// <param name="Strides">>Array of Strides to use during binding, converted to IntPtr arrray.</param>
         /// <returns></returns>
-        public unsafe static int BindVertexBuffers(uint first, uint[] buffers, long[] Offsets, long[] Strides)
+        public unsafe static int BindVertexBuffers(uint first, uint[] buffers, long[] Offsets, int[] Strides)
         {
             int count = Math.Min(buffers.Length, Math.Min(Offsets.Length, Strides.Length));
 
-            if (count > 0)
-            {
-                var ptrOffsets = new IntPtr[count];
-                for (int i = 0; i < ptrOffsets.Length; i++)
-                    ptrOffsets[i] = (IntPtr)Offsets[i];
+            var ptrOffsets = new IntPtr[count];
+            for (int i = 0; i < ptrOffsets.Length; ++i)
+                ptrOffsets[i] = (IntPtr)Offsets[i];
 
-                var ptrStrides = new IntPtr[count];
-                for (int i = 0; i < ptrStrides.Length; i++)
-                    ptrStrides[i] = (IntPtr)Strides[i];
+            Delegates.glBindVertexBuffers(first, count, ref buffers[0], ref ptrOffsets[0], ref Strides[0]);
+            //if (count > 0)
+            //{
+            //    var ptrOffsets = new IntPtr[count];
+            //    for (int i = 0; i < ptrOffsets.Length; i++)
+            //        ptrOffsets[i] = (IntPtr)Offsets[i];
 
-                BindVertexBuffers(first, buffers, ptrOffsets, ptrStrides);
-            }
+            //    var ptrStrides = new IntPtr[count];
+            //    for (int i = 0; i < ptrStrides.Length; i++)
+            //        ptrStrides[i] = (IntPtr)Strides[i];
+
+            //    BindVertexBuffers(first, buffers, ptrOffsets, ptrStrides);
+            //}
 
             return count;
         }
 
-        /// <summary>
-        /// Resets a range [first,count-first] of vertex buffer binding points to zero.
-        /// </summary>
-        /// <param name="first">First BufferBindingPoint to reset.</param>
-        /// <param name="count">Number of continous BufferBindingPoints to reset.</param>
-        public unsafe static void BindVertexBuffers(uint first, int count)
-        {
-            Delegates.glBindVertexBuffers(first, count, null, null, null);
-        }
+        ///// <summary>
+        ///// Resets a range [first,count-first] of vertex buffer binding points to zero.
+        ///// </summary>
+        ///// <param name="first">First BufferBindingPoint to reset.</param>
+        ///// <param name="count">Number of continous BufferBindingPoints to reset.</param>
+        //public unsafe static void BindVertexBuffers(uint first, int count)
+        //{
+        //    Delegates.glBindVertexBuffers(first, count, null, null, null);
+        //}
 
         #endregion
     }

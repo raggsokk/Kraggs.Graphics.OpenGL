@@ -198,6 +198,65 @@ namespace Kraggs.Graphics.OpenGL
         {
             Delegates.glBufferSubData(target, (IntPtr)Offset, (IntPtr)Size, data);
         }
+        public static void BufferSubData(BufferTarget target, long Offset, byte[] data)
+        {
+            BufferSubData(target, Offset, data, 0, data.Length);
+        }
+        public unsafe static void BufferSubData(BufferTarget target, long Offset, byte[] data, int index,int length)
+        {
+            var len = Math.Min(data.Length, index + length) - index;
+
+#if DEBUG
+            Debug.Assert(len >= 0);
+#endif
+
+            //if (len > 0)
+            {
+                fixed (byte* ptr = &data[index])
+                {
+                    Delegates.glBufferSubData(target, (IntPtr)Offset, (IntPtr)len, (IntPtr)ptr);
+                }
+            }
+        }
+        public static void BufferSubData(BufferTarget target, long Offset, float[] data)
+        {
+            BufferSubData(target, Offset, data, 0, data.Length);
+        }
+        public unsafe static void BufferSubData(BufferTarget target, long Offset, float[] data, int index, int length)
+        {
+            var len = Math.Min(data.Length, index + length) - index;
+
+#if DEBUG
+            Debug.Assert(len >= 0);
+#endif
+
+            //if (len > 0)
+            {
+                fixed (float* ptr = &data[index])
+                {
+                    Delegates.glBufferSubData(target, (IntPtr)Offset, (IntPtr)len, (IntPtr)ptr);
+                }
+            }
+        }
+
+        public static void BufferSubData<TValueType>(BufferTarget target, long Offset, TValueType[] data)
+        {
+            BufferSubData<TValueType>(target, Offset, data, 0, data.Length);
+        }
+        public static void BufferSubData<TValueType>(BufferTarget target, long Offset, TValueType[] data, int index, int count)
+        {
+            var elementcount = Math.Min(data.Length, index + count) - index;
+
+            var sizeinbytes = Marshal.SizeOf(typeof(TValueType)) * elementcount;
+
+            var handle = GCHandle.Alloc(data, GCHandleType.Pinned);
+
+            var ptr = Marshal.UnsafeAddrOfPinnedArrayElement(data, index);
+
+            Delegates.glBufferSubData(target, (IntPtr)Offset, (IntPtr)sizeinbytes, ptr);
+
+            handle.Free();
+        }
 
         /// <summary>
         /// Retrive the contents of bound buffer target into data pointer.

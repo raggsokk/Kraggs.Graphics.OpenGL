@@ -447,14 +447,17 @@ namespace Kraggs.Graphics.OpenGL
         /// Retrives the shader info log.
         /// </summary>
         /// <param name="Shader"></param>
+        /// <param name="InfoLogLength">When you already know the info log length add it here to prevent this function for retriving it again.</param>
         /// <returns>Retrives shader info log.</returns>
-        public static string GetShaderInfoLog(uint Shader)
+        public static string GetShaderInfoLog(uint Shader, int InfoLogLength = -1)
         {
-            var loglen = GetShaderiv(Shader, ShaderParameters.InfoLogLength);
-            if (loglen > 1)
+            if(InfoLogLength == -1)
+                InfoLogLength = GetShaderiv(Shader, ShaderParameters.InfoLogLength);
+
+            if (InfoLogLength > 1)
             {
-                var sb = new StringBuilder(loglen + 4);
-                Delegates.glGetShaderInfoLog(Shader, sb.Capacity - 2, out loglen, sb);
+                var sb = new StringBuilder(InfoLogLength + 4);
+                Delegates.glGetShaderInfoLog(Shader, sb.Capacity - 2, out InfoLogLength, sb);
 
                 return sb.ToString();
             }
@@ -564,14 +567,17 @@ namespace Kraggs.Graphics.OpenGL
         /// Retrives the program info log.
         /// </summary>
         /// <param name="Program"></param>
+        /// <param name="InfoLogLength">If not -1, assumes this is the length of the infolog, otherwise it calls opengl to retrive it.</param>
         /// <returns></returns>
-        public static string GetProgramInfoLog(uint Program)
+        public static string GetProgramInfoLog(uint Program, int InfoLogLength = -1)
         {
-            var loglen = GetProgramiv(Program, GetProgramParameters.InfoLogLength);
-            if (loglen > 1)
+            if(InfoLogLength > -1)
+                InfoLogLength = GetProgramiv(Program, GetProgramParameters.InfoLogLength);
+
+            if (InfoLogLength > 1)
             {
-                var sb = new StringBuilder(loglen + 4);
-                Delegates.glGetProgramInfoLog(Program, sb.Capacity - 2, out loglen, sb);
+                var sb = new StringBuilder(InfoLogLength + 4);
+                Delegates.glGetProgramInfoLog(Program, sb.Capacity - 2, out InfoLogLength, sb);
 
                 return sb.ToString();
             }

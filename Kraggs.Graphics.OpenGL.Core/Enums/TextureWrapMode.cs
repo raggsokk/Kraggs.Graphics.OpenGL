@@ -39,7 +39,14 @@ namespace Kraggs.Graphics.OpenGL
         Repeat = All.REPEAT,
         MirroredRepeat = All.MIRRORED_REPEAT,
         ClampToEdge = All.CLAMP_TO_EDGE,
+        ClampToBorder = All.CLAMP_TO_BORDER,
 
         MirrorClampToEdge = All.MIRROR_CLAMP_TO_EDGE,
+
+        /// <summary>
+        /// Requires GL_EXT_texture_mirror_clamp which is core or compat.
+        /// </summary>
+        MirrorClampToBorderExt = 0x8912,
+
     }
 }

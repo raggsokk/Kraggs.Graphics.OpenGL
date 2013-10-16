@@ -659,7 +659,7 @@ namespace Kraggs.Graphics.OpenGL
         /// The generated textures have no dimensionality; they assume the dimensionality of the texture target to which they are first bound (see glBindTexture).
         /// Texture names returned by a call to glGenTextures are not returned by subsequent calls, unless they are first deleted with glDeleteTextures.
         /// </remarks>
-        public static void GenTexture(uint[] textures)
+        public static void GenTextures(uint[] textures)
         {
             Delegates.glGenTextures(textures.Length, ref textures[0]);
         }
@@ -672,7 +672,7 @@ namespace Kraggs.Graphics.OpenGL
         /// The generated textures have no dimensionality; they assume the dimensionality of the texture target to which they are first bound (see glBindTexture).
         /// Texture names returned by a call to glGenTextures are not returned by subsequent calls, unless they are first deleted with glDeleteTextures.
         /// </remarks>
-        public static uint GenTexture()
+        public static uint GenTextures()
         {
             uint tmp = 0;
             Delegates.glGenTextures(1, ref tmp);

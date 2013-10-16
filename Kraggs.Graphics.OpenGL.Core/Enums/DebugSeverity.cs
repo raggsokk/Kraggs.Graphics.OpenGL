@@ -36,6 +36,10 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum DebugSeverity
     {
+        /// <summary>
+        /// Match all. Usefull when calling DebugMessageControl.
+        /// </summary>
+        DontCare = All.DONT_CARE,
         High = All.DEBUG_SEVERITY_HIGH,
         Medium = All.DEBUG_SEVERITY_MEDIUM,
         Low = All.DEBUG_SEVERITY_LOW,

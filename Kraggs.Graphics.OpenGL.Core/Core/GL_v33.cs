@@ -325,9 +325,30 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Sampler">id of sampler to change.</param>
         /// <param name="pname">Name of parameter to set.</param>
         /// <param name="params">new values for parameter</param>
+        public static void SamplerParameteriv(uint Sampler, SamplerParameters pname, ref int @params)
+        {
+            Delegates.glSamplerParameteriv(Sampler, pname, ref @params);
+        }
+
+        /// <summary>
+        /// Sets the parameter of a sampler object.
+        /// </summary>
+        /// <param name="Sampler">id of sampler to change.</param>
+        /// <param name="pname">Name of parameter to set.</param>
+        /// <param name="params">new values for parameter</param>
         public static void SamplerParameterfv(uint Sampler, SamplerParameters pname, float[] @params)
         {
             Delegates.glSamplerParameterfv(Sampler, pname, ref @params[0]);
+        }
+        /// <summary>
+        /// Sets the parameter of a sampler object.
+        /// </summary>
+        /// <param name="Sampler">id of sampler to change.</param>
+        /// <param name="pname">Name of parameter to set.</param>
+        /// <param name="params">new values for parameter</param>
+        public static void SamplerParameterfv(uint Sampler, SamplerParameters pname, ref float @params)
+        {
+            Delegates.glSamplerParameterfv(Sampler, pname, ref @params);
         }
         /// <summary>
         /// Sets the parameter of a sampler object.
@@ -345,11 +366,30 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Sampler">id of sampler to change.</param>
         /// <param name="pname">Name of parameter to set.</param>
         /// <param name="params">new values for parameter</param>
+        public static void SamplerParameterIiv(uint Sampler, SamplerParameters pname, ref int @params)
+        {
+            Delegates.glSamplerParameterIiv(Sampler, pname, ref @params);
+        }
+        /// <summary>
+        /// Sets the parameter of a sampler object.
+        /// </summary>
+        /// <param name="Sampler">id of sampler to change.</param>
+        /// <param name="pname">Name of parameter to set.</param>
+        /// <param name="params">new values for parameter</param>
         public static void SamplerParameterIuiv(uint Sampler, SamplerParameters pname, uint[] @params)
         {
             Delegates.glSamplerParameterIuiv(Sampler, pname, ref @params[0]);
         }
-
+        /// <summary>
+        /// Sets the parameter of a sampler object.
+        /// </summary>
+        /// <param name="Sampler">id of sampler to change.</param>
+        /// <param name="pname">Name of parameter to set.</param>
+        /// <param name="params">new values for parameter</param>
+        public static void SamplerParameterIuiv(uint Sampler, SamplerParameters pname, ref uint @params)
+        {
+            Delegates.glSamplerParameterIuiv(Sampler, pname, ref @params);
+        }
         /// <summary>
         /// Deletes an array of samplers.
         /// </summary>

@@ -106,7 +106,8 @@ namespace Kraggs.Graphics.OpenGL
 
             //KHR_debug / ARB_debug_output
 
-            public delegate void delDebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int Count, ref uint ids, bool Enabled);
+            //public delegate void delDebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int Count, ref uint ids, bool Enabled);
+            public unsafe delegate void delDebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int Count, uint* ids, bool Enabled);
             public delegate void delDebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string buf);
             public delegate void delDebugMessageCallback(DebugMessageDelegate callback, IntPtr userParam);
             public delegate uint delGetDebugMessageLog(uint count, int bufsize, ref DebugSource sources, ref DebugType types, ref uint ids, ref DebugSeverity severities, ref int lengths, StringBuilder messageLog);
@@ -656,9 +657,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="type"></param>
         /// <param name="relativeOffset">offset in bytes from start of eventually bound buffer?</param>
         /// <param name="normalized">Is data normalized?</param>
-        public static void VertexAttribFormat(uint attribIndex, int Size, VertexAttribFormat type, uint relativeOffset, bool normalized = false)
+        public static void VertexAttribFormat(uint attribIndex, int Size, VertexAttribFormat type, int relativeOffset, bool normalized = false)
         {
-            Delegates.glVertexAttribFormat(attribIndex, Size, type, normalized, relativeOffset);
+            Delegates.glVertexAttribFormat(attribIndex, Size, type, normalized, (uint)relativeOffset);
         }
         /// <summary>
         /// Sets up the Vertex Declaration for a AttributeIndex without specifind source buffer.
@@ -668,9 +669,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Size">Number of components in vertices. aka vec2i = 2, vec3i = 3 osv.</param>
         /// <param name="itype">Integer type.</param>
         /// <param name="relativeOffset">offset in bytes from start of eventually bound buffer?</param>
-        public static void VertexAttribIFormat(uint attribIndex, int Size, VertexAttribIFormat itype, uint relativeOffset)
+        public static void VertexAttribIFormat(uint attribIndex, int Size, VertexAttribIFormat itype, int relativeOffset)
         {
-            Delegates.glVertexAttribIFormat(attribIndex, Size, itype, relativeOffset);
+            Delegates.glVertexAttribIFormat(attribIndex, Size, itype, (uint)relativeOffset);
         }
         /// <summary>
         /// Sets up the Vertex Declaration for a AttributeIndex without specifind source buffer.
@@ -680,9 +681,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Size">Number of components in vertices. aka vec2d = 2, vec3d = 3 osv.</param>
         /// <param name="ltype">Must be DOUBLE</param>
         /// <param name="relativeOffset">offset in bytes from start of eventually bound buffer?</param>
-        public static void VertexAttribLFormat(uint attribIndex, int Size, VertexAttribLFormat ltype, uint relativeOffset)
+        public static void VertexAttribLFormat(uint attribIndex, int Size, VertexAttribLFormat ltype, int relativeOffset)
         {
-            Delegates.glVertexAttribLFormat(attribIndex, Size, ltype, relativeOffset);
+            Delegates.glVertexAttribLFormat(attribIndex, Size, ltype, (uint)relativeOffset);
         }
         //ARB_framebuffer_no_attachment
         /// <summary>
@@ -730,9 +731,15 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="severity">Severity of ids.</param>
         /// <param name="ids">array of ids to change.</param>
         /// <param name="Enabled">Enables or disables the ids.</param>
-        public static void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, uint[] ids, bool Enabled)
+        public unsafe static void DebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, uint[] ids, bool Enabled)
         {
-            Delegates.glDebugMessageControl(source, type, severity, ids.Length, ref ids[0], Enabled);
+            if (ids == null)
+                Delegates.glDebugMessageControl(source, type, severity, 0, null, Enabled);
+            else
+            {
+                fixed (uint* ptr = &ids[0])
+                    Delegates.glDebugMessageControl(source, type, severity, ids.Length, ptr, Enabled);
+            }
         }
         /// <summary>
         /// Insert a new debug message in the debug message log array.

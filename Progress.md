@@ -262,3 +262,32 @@ A list of work todo to track progress.
 	of these anyway. Why seperate them? And all opengl version post 3.0 don't use 
 	EXT but all are ARB Extensions. So Kraggs.Graphics.OpenGL.EXT have limited use
 	and from issue one above clearly Kraggs.Graphics.OpenGL.ARB have also limited use.
+
+## Cummulative Updates
+
+###	Cummulative Update 1
+	~~BufferStorage:		Add an overload where "IntPtr Size" is "long Size".~~
+	~~SamplerParameterfv:	Add an overload for ref float so that we can use ref Vec4f.x~~
+	~~TextureWrapMode:		Add missing ClampToBorder.~~
+	~~TextureWrapMode:		Add GL_MIRROR_CLAMP_TO_BORDER_EXT even if its EXT only.~~
+	~~GenTexture:			Shouldn't this be GenTextures event if its only 1 texture id created.~~
+	~~VertexAttribFormat:	Change or add overload where relativeOffset is int.~~
+	~~ClearBufferfv:		Is missing, add ARB_es2_compatibility for core?	~~
+							Postponed to update 2.
+	~~ARB_multi_bind:			Reimplement ARB_Multi_bind with ref <type> in addition to <type>[] arrays.~~
+	~~DebugSource			Add GL_DONT_CARE~~
+	~~DebugType				Add GL_DONT_CARE~~
+	~~DebugSeverity			Add GL_DONT_CARE~~
+	~~DebugMessageControl:	Add support for cases where ids is null.~~
+	~~GetShaderLog:			Add optional parameter for cases when loglength is already known.~~
+	~~BufferStorageFlags:		Some of these enum values is completely wrong.~~
+	~~BufferStorage<TValueType>: Added.~~
+
+### Cummulative Update 2
+	ARB_ES2_compatibility:	glClearDepthf, glDepthRangef, glGetShaderPrecisionFormat, glReleaseShaderCompiler, glShaderBinary
+	ARB_ES3_compatibility:	glClearBufferfv, glClearBufferiv, glClearBufferuiv
+
+	var buf = new buf[4]
+	var index = 2,
+	var length = 4
+	var len = Math.Min(buf.length, index + length) - index == 4

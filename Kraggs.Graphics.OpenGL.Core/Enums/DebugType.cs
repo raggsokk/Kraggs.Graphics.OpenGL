@@ -36,6 +36,10 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum DebugType
     {
+        /// <summary>
+        /// Match all. Usefull when calling DebugMessageControl.
+        /// </summary>
+        DontCare = All.DONT_CARE,
         Error = All.DEBUG_TYPE_ERROR,
         DepricatedBehavior = All.DEBUG_TYPE_DEPRECATED_BEHAVIOR,
         UndefinedBehavior = All.DEBUG_TYPE_UNDEFINED_BEHAVIOR,

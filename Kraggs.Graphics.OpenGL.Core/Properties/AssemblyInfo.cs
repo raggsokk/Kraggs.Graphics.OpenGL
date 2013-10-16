@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.17.*")]
-[assembly: AssemblyFileVersion("4.17.0.1")]
+[assembly: AssemblyFileVersion("4.17.1.1")]
 
 //[assembly: AssemblyKeyFile("..\\Kraggs.Graphics.OpenGL.snk")]

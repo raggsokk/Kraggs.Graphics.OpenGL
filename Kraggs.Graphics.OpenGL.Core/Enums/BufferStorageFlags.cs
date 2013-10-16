@@ -39,9 +39,9 @@ namespace Kraggs.Graphics.OpenGL
     {
         MapRead = All.MAP_READ_BIT,
         MapWrite = All.MAP_WRITE_BIT,
-        MapPersistent,
-        MapCoherent,
-        DynamicStorage,
-        ClientStorage,
+        MapPersistent = All.MAP_PERSISTENT_BIT,
+        MapCoherent = All.MAP_COHERENT_BIT,
+        DynamicStorage = All.DYNAMIC_STORAGE_BIT,
+        ClientStorage = All.CLIENT_STORAGE_BIT,
     }
 }
