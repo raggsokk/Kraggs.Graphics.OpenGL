@@ -322,9 +322,6 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glDrawBuffers(bufs.Length, ref bufs[0]);
         }
 
-
-
-
         /// <summary>
         /// Creates a new shader id with specified ShaderType.
         /// </summary>

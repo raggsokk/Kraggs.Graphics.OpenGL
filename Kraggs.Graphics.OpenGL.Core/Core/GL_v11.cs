@@ -274,7 +274,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delPointSize(float size);
             public delegate void delPolygonMode(PolygonFace face, PolygonMode mode);
             public delegate void delPolygonOffset(float factor, float units);
-            public delegate void delReadBuffer(ReadBufferMode mode);
+            //public delegate void delReadBuffer(ReadBufferMode mode);
+            public delegate void delReadBuffer(DrawBufferTarget buffer);
             public delegate void delReadPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, IntPtr data);
             public delegate void delScissor(int x, int y, int width, int height);
             public delegate void delStencilFunc(StencilFunction function, int @ref, uint mask);
@@ -842,9 +843,10 @@ namespace Kraggs.Graphics.OpenGL
         {
             Delegates.glPolygonOffset(factor, units);
         }
-        public static void ReadBuffer(ReadBufferMode mode)
+        //public static void ReadBuffer(ReadBufferMode mode)
+        public static void ReadBuffer(DrawBufferTarget buffer)
         {
-            Delegates.glReadBuffer(mode);
+            Delegates.glReadBuffer(buffer);
         }
         public static void ReadPixels(int x, int y, int width, int height, PixelFormat format, PixelType type, IntPtr data)
         {
@@ -943,6 +945,7 @@ namespace Kraggs.Graphics.OpenGL
         {
             Delegates.glTexSubImage1D(target, level, xoffset, width, format, type, data);
         }
+
         public static void TexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, PixelFormat format, PixelType type, IntPtr data)
         {
             Delegates.glTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, data);
