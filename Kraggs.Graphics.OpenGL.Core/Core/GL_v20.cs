@@ -920,36 +920,92 @@ namespace Kraggs.Graphics.OpenGL
             name = sb.ToString();
         }
 
+        /// <summary>
+        /// Gets Current Vertex Declaration Information of double type for current bound vertex array and specified Attribute Index.
+        /// </summary>
+        /// <param name="index">Attribute Index to query</param>
+        /// <param name="pname">Name of value to retrive.</param>
+        /// <param name="params">Preallocated double array of sufficient size.</param>
         public static void GetVertexAttribdv(uint index, VertexAttribParameters pname, ref double @params)
         {
             Delegates.glGetVertexAttribdv(index, pname, ref @params);
         }
+        /// <summary>
+        /// Gets Current Vertex Declaration Information of double type for current bound vertex array and specified Attribute Index.
+        /// </summary>
+        /// <param name="index">Attribute Index to query</param>
+        /// <param name="pname">Name of value to retrive.</param>
+        /// <returns>Result</returns>
+        public static double GetVertexAttribdv(uint index, VertexAttribParameters pname)
+        {
+            double tmp = 0.0d;
+            Delegates.glGetVertexAttribdv(index, pname, ref tmp);
+            return tmp;
+        }
+
+        /// <summary>
+        /// Gets Current Vertex Declaration Information of float type for current bound vertex array and specified Attribute Index.
+        /// </summary>
+        /// <param name="index">Attribute Index to query</param>
+        /// <param name="pname">Name of value to retrive.</param>
+        /// <param name="params">Preallocated float array of sufficient size.</param>
         public static void GetVertexAttribfv(uint index, VertexAttribParameters pname, ref float @params)
         {
             Delegates.glGetVertexAttribfv(index, pname, ref @params);
         }
+        /// <summary>
+        /// Gets Current Vertex Declaration Information of float type for current bound vertex array and specified Attribute Index.
+        /// </summary>
+        /// <param name="index">Attribute Index to query</param>
+        /// <param name="pname">Name of value to retrive.</param>
+        /// <returns>Result</returns>
+        public static float GetVertexAttribfv(uint index, VertexAttribParameters pname)
+        {
+            float tmp = 0.0f;
+            Delegates.glGetVertexAttribfv(index, pname, ref tmp);
+            return tmp;
+        }
+
+        /// <summary>
+        /// Gets Current Vertex Declaration Information of int type for current bound vertex array and specified Attribute Index.
+        /// </summary>
+        /// <param name="index">Attribute Index to query</param>
+        /// <param name="pname">Name of value to retrive.</param>
+        /// <param name="params">Preallocated int array of sufficient size.</param>
         public static void GetVertexAttribiv(uint index, VertexAttribParameters pname, ref int @params)
         {
             Delegates.glGetVertexAttribiv(index, pname, ref @params);
+        }
+        /// <summary>
+        /// Gets Current Vertex Declaration Information of int type for current bound vertex array and specified Attribute Index.
+        /// </summary>
+        /// <param name="index">Attribute Index to query.</param>
+        /// <param name="pname">Name of value to retrive.</param>
+        /// <returns></returns>
+        public static int GetVertexAttribiv(uint index, VertexAttribParameters pname)
+        {
+            int tmp = 0;
+            Delegates.glGetVertexAttribiv(index, pname, ref tmp);
+            return tmp;
         }
 
         /// <summary>
         /// Returns the current pointer of specified Attribute Index in current bound VertexArrayObject.
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="pname"></param>
+        /// <param name="index">Attribute Index to query.</param>
+        /// <param name="pname">Type of pointer to retrive.</param>
         /// <param name="ptr"></param>
-        public static void GetVertexAttribPointerv(uint index, VertexAttribPointerParameters pname, out IntPtr ptr)
+        public static void GetVertexAttribPointerv(uint index, out IntPtr ptr,  VertexAttribPointerParameters pname = VertexAttribPointerParameters.ArrayPointer)
         {
             Delegates.glGetVertexAttribPointerv(index, pname, out ptr);
         }
         /// <summary>
         /// Returns the current pointer of specified Attribute Index in current bound VertexArrayObject.
         /// </summary>
-        /// <param name="index"></param>
-        /// <param name="pname"></param>
+        /// <param name="index">Attribute Index to query.</param>
+        /// <param name="pname">Type of pointer to retrive.</param>
         /// <returns></returns>
-        public static IntPtr GetVertexAttribPointerv(uint index, VertexAttribPointerParameters pname)
+        public static IntPtr GetVertexAttribPointerv(uint index, VertexAttribPointerParameters pname = VertexAttribPointerParameters.ArrayPointer)
         {
             IntPtr ptr;
             Delegates.glGetVertexAttribPointerv(index, pname, out ptr);
