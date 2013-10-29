@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33E1EBC3-2CBB-45CD-AB09-39A6476908B4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Kraggs.Graphics.OpenGL.Enums</RootNamespace>
+    <AssemblyName>Kraggs.Graphics.OpenGL.Enums</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\\Kraggs.Graphics.OpenGL.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="absOpenTKDllImportLoader.cs" />
+    <Compile Include="absOpenTKLoader.cs" />
+    <Compile Include="Enums\All.cs" />
+    <Compile Include="Enums\AtomicCounterBufferParameters.cs" />
+    <Compile Include="Enums\AttachmentParameters.cs" />
+    <Compile Include="Enums\AttributeType.cs" />
+    <Compile Include="Enums\BaseInternalFormat.cs" />
+    <Compile Include="Enums\BeginMode.cs" />
+    <Compile Include="Enums\BlendEquationMode.cs" />
+    <Compile Include="Enums\BlendEquationSeparateAlpha.cs" />
+    <Compile Include="Enums\BlendEquationSeparateRGB.cs" />
+    <Compile Include="Enums\BlendFactorDst.cs" />
+    <Compile Include="Enums\BlendFactorSrc.cs" />
+    <Compile Include="Enums\BlitFramebufferFilter.cs" />
+    <Compile Include="Enums\BufferParameters.cs" />
+    <Compile Include="Enums\BufferPointerParameters.cs" />
+    <Compile Include="Enums\BufferProgramTarget.cs" />
+    <Compile Include="Enums\BufferStorageFlags.cs" />
+    <Compile Include="Enums\BufferTarget.cs" />
+    <Compile Include="Enums\BufferTargetBinding.cs" />
+    <Compile Include="Enums\BufferTextureTarget.cs" />
+    <Compile Include="Enums\BufferUsage.cs" />
+    <Compile Include="Enums\ClampColorMode.cs" />
+    <Compile Include="Enums\ClampColorTarget.cs" />
+    <Compile Include="Enums\ClearBuffer.cs" />
+    <Compile Include="Enums\ClearBufferDataFormat.cs" />
+    <Compile Include="Enums\ClearBufferFlags.cs" />
+    <Compile Include="Enums\ClientWaitSyncStatus.cs" />
+    <Compile Include="Enums\CompressedInternalFormat.cs" />
+    <Compile Include="Enums\ConditionalRenderType.cs" />
+    <Compile Include="Enums\CullMode.cs" />
+    <Compile Include="Enums\DebugNamespace.cs" />
+    <Compile Include="Enums\DebugSeverity.cs" />
+    <Compile Include="Enums\DebugSource.cs" />
+    <Compile Include="Enums\DebugType.cs" />
+    <Compile Include="Enums\DepthFunction.cs" />
+    <Compile Include="Enums\DrawBufferTarget.cs" />
+    <Compile Include="Enums\EnableState.cs" />
+    <Compile Include="Enums\EnableStateIndexed.cs" />
+    <Compile Include="Enums\ErrorCode.cs" />
+    <Compile Include="Enums\FramebufferAttachmentType.cs" />
+    <Compile Include="Enums\FramebufferParameters.cs" />
+    <Compile Include="Enums\FramebufferStatus.cs" />
+    <Compile Include="Enums\FramebufferTarget.cs" />
+    <Compile Include="Enums\FrontFaceMode.cs" />
+    <Compile Include="Enums\GetInternalformatParameters.cs" />
+    <Compile Include="Enums\GetInternalformatTargets.cs" />
+    <Compile Include="Enums\GetParameters.cs" />
+    <Compile Include="Enums\GetPointerName.cs" />
+    <Compile Include="Enums\GetProgramParameters.cs" />
+    <Compile Include="Enums\GetQueryIndexedParameters.cs" />
+    <Compile Include="Enums\GetQueryObjectParameters.cs" />
+    <Compile Include="Enums\GetQueryParameters.cs" />
+    <Compile Include="Enums\HintMode.cs" />
+    <Compile Include="Enums\HintTarget.cs" />
+    <Compile Include="Enums\IndicesType.cs" />
+    <Compile Include="Enums\LogicOpEnum.cs" />
+    <Compile Include="Enums\MapBufferAccess.cs" />
+    <Compile Include="Enums\MapBufferRangeAccessFlags.cs" />
+    <Compile Include="Enums\MemoryBarrierFlags.cs" />
+    <Compile Include="Enums\MultisampleParameters.cs" />
+    <Compile Include="Enums\PatchParameters.cs" />
+    <Compile Include="Enums\PixelFormat.cs" />
+    <Compile Include="Enums\PixelInternalFormat.cs" />
+    <Compile Include="Enums\PixelStoreParameters.cs" />
+    <Compile Include="Enums\PixelType.cs" />
+    <Compile Include="Enums\PointParameters.cs" />
+    <Compile Include="Enums\PolygonFace.cs" />
+    <Compile Include="Enums\PolygonMode.cs" />
+    <Compile Include="Enums\PrecisionType.cs" />
+    <Compile Include="Enums\ProgramInterface.cs" />
+    <Compile Include="Enums\ProgramInterfaceParameters.cs" />
+    <Compile Include="Enums\ProgramParameters.cs" />
+    <Compile Include="Enums\ProgramPipelineParameters.cs" />
+    <Compile Include="Enums\ProgramResourceProperties.cs" />
+    <Compile Include="Enums\ProgramStageParameters.cs" />
+    <Compile Include="Enums\ProgramStages.cs" />
+    <Compile Include="Enums\ProvokeVertexMode.cs" />
+    <Compile Include="Enums\QueryCounterTarget.cs" />
+    <Compile Include="Enums\QueryTarget.cs" />
+    <Compile Include="Enums\ReadBufferMode.cs" />
+    <Compile Include="Enums\RenderbufferParameters.cs" />
+    <Compile Include="Enums\RenderbufferStorageFormat.cs" />
+    <Compile Include="Enums\RenderbufferTarget.cs" />
+    <Compile Include="Enums\SamplerParameters.cs" />
+    <Compile Include="Enums\ShaderParameters.cs" />
+    <Compile Include="Enums\ShaderType.cs" />
+    <Compile Include="Enums\StencilFunction.cs" />
+    <Compile Include="Enums\StencilOperation.cs" />
+    <Compile Include="Enums\StringName.cs" />
+    <Compile Include="Enums\SubroutineUniformParameters.cs" />
+    <Compile Include="Enums\SyncCondition.cs" />
+    <Compile Include="Enums\SyncFlags.cs" />
+    <Compile Include="Enums\SyncParameters.cs" />
+    <Compile Include="Enums\TextureBufferInternalFormat.cs" />
+    <Compile Include="Enums\TextureCompareFunc.cs" />
+    <Compile Include="Enums\TextureCompareMode.cs" />
+    <Compile Include="Enums\TextureImageClass.cs" />
+    <Compile Include="Enums\TextureLevelParameters.cs" />
+    <Compile Include="Enums\TextureMagFilter.cs" />
+    <Compile Include="Enums\TextureMinFilter.cs" />
+    <Compile Include="Enums\TextureParameters.cs" />
+    <Compile Include="Enums\TextureTarget.cs" />
+    <Compile Include="Enums\TextureUnit.cs" />
+    <Compile Include="Enums\TextureViewClass.cs" />
+    <Compile Include="Enums\TextureWrapMode.cs" />
+    <Compile Include="Enums\TransformFeedbackAttributeMode.cs" />
+    <Compile Include="Enums\TransformFeedbackTarget.cs" />
+    <Compile Include="Enums\UniformBlockParameters.cs" />
+    <Compile Include="Enums\UniformParameters.cs" />
+    <Compile Include="Enums\UniformType.cs" />
+    <Compile Include="Enums\VertexAttribFormat.cs" />
+    <Compile Include="Enums\VertexAttribIFormat.cs" />
+    <Compile Include="Enums\VertexAttribLFormat.cs" />
+    <Compile Include="Enums\VertexAttribParameters.cs" />
+    <Compile Include="Enums\VertexAttribPointerParameters.cs" />
+    <Compile Include="Enums\VertexAttribPType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Structs\DrawArraysIndirectCommand.cs" />
+    <Compile Include="Structs\DrawElementsIndirectCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\\Kraggs.Graphics.OpenGL.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

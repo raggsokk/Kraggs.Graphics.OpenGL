@@ -34,34 +34,11 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum PixelType
+    public sealed partial class GLES : absOpenTKLoader
     {
-        UByte = All.UNSIGNED_BYTE,
-        Byte = All.BYTE,
-        UShort = All.UNSIGNED_SHORT,
-        Short = All.SHORT,
-        UInt = All.UNSIGNED_INT,
-        Int = All.INT,
-        Float = All.FLOAT,
-        HalfFloat = All.HALF_FLOAT,
-        Float32UnsignedUnt238Reverse = All.FLOAT_32_UNSIGNED_INT_24_8_REV,
-
-        UByte332 = All.UNSIGNED_BYTE_3_3_2,
-        UByte233Reversed = All.UNSIGNED_BYTE_2_3_3_REV,
-        UShort565 = All.UNSIGNED_SHORT_5_6_5,
-        UShort565Reversed = All.UNSIGNED_SHORT_5_6_5_REV,
-        UShort4444 = All.UNSIGNED_SHORT_4_4_4_4,
-        UShort4444Reversed = All.UNSIGNED_SHORT_4_4_4_4_REV,
-        UShort5551 = All.UNSIGNED_SHORT_5_5_5_1,
-        UShort1555Reversed = All.UNSIGNED_SHORT_1_5_5_5_REV,
-        UInt8888 = All.UNSIGNED_INT_8_8_8_8,
-        UInt8888Reversed = All.UNSIGNED_INT_8_8_8_8_REV,
-        UInt1010102 = All.UNSIGNED_INT_10_10_10_2,
-        UInt2101010Reversed = All.UNSIGNED_INT_2_10_10_10_REV,
-
-        UInt248 = All.UNSIGNED_INT_24_8,
-        UInt10F11F11FReversed = All.UNSIGNED_INT_10F_11F_11F_REV,
-        UInt5999Reversed = All.UNSIGNED_INT_5_9_9_9_REV,
-        Float32Uint248Reversed = All.FLOAT_32_UNSIGNED_INT_24_8_REV,
+        [SuppressUnmanagedCodeSecurity()]
+        internal static partial class Delegates
+        { }
+        
     }
 }

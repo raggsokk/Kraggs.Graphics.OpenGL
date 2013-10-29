@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AAF21C2C-2290-4D9E-9CC7-AF7CE13E9DD2}</ProjectGuid>
+    <ProjectGuid>{030CFB29-76A2-4A8D-9EA1-EB9BF2D00BBA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Kraggs.Graphics.OpenGL</RootNamespace>
-    <AssemblyName>Kraggs.Graphics.OpenGL.ARB</AssemblyName>
+    <RootNamespace>Kraggs.Graphics.OpenGL.ES</RootNamespace>
+    <AssemblyName>Kraggs.Graphics.OpenGL.ES</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,20 +41,16 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ARB.cs" />
-    <Compile Include="ARB\ARB_copy_buffer.cs" />
-    <Compile Include="ARB\ARB_sample_shading.cs" />
-    <Compile Include="ARB\ARB_v42.cs" />
-    <Compile Include="ARB\ARB_v43.cs" />
+    <Compile Include="GL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\\Kraggs.Graphics.OpenGL.snk" />
-  </ItemGroup>
+  </ItemGroup>  
   <ItemGroup>
-    <ProjectReference Include="..\Kraggs.Graphics.OpenGL.Core\Kraggs.Graphics.OpenGL.Core.csproj">
-      <Project>{a38f7a6f-180e-4b74-b7ee-53e7e47046c4}</Project>
-      <Name>Kraggs.Graphics.OpenGL.Core</Name>
+    <ProjectReference Include="..\Kraggs.Graphics.OpenGL.Enums\Kraggs.Graphics.OpenGL.Enums.csproj">
+      <Project>{33e1ebc3-2cbb-45cd-ab09-39a6476908b4}</Project>
+      <Name>Kraggs.Graphics.OpenGL.Enums</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

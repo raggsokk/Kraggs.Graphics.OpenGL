@@ -57,7 +57,7 @@ namespace Kraggs.Graphics.OpenGL
 
             //ARB_shader_image_-load_store
             public delegate void delMemoryBarrier(MemoryBarrierFlags barriers);
-            public delegate void delBindImageTexture(uint index, uint TextureID, int level, bool layered, int layer, MapBufferAccess access, SizedInternalFormat format);
+            public delegate void delBindImageTexture(uint index, uint TextureID, int level, bool layered, int layer, MapBufferAccess access, PixelInternalFormat format);
 
             //ARB_texture_storage
             public delegate void delTexStorage1D(TextureTarget target, int levels, PixelInternalFormat piformat, int Width);
@@ -190,8 +190,8 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="layered"> If layered is TRUE, the entire level is bound. If layered is FALSE, only the single layer identified by layer will be bound</param>
         /// <param name="layer"></param>
         /// <param name="access">access specifies whether the texture bound to the image will be treated as READ_ONLY, WRITE_ONLY, or READ_WRITE.</param>
-        /// <param name="format">format specifies the format that the elements of the image will be treated as when doing formatted stores</param>
-        public static void BindImageTexture(uint unit, uint TextureID, int level, MapBufferAccess access, SizedInternalFormat format, bool layered = false, int layer = 0)
+        /// <param name="format">Sized format specifies the format that the elements of the image will be treated as when doing formatted stores</param>
+        public static void BindImageTexture(uint unit, uint TextureID, int level, MapBufferAccess access, PixelInternalFormat format, bool layered = false, int layer = 0)
         {
             Delegates.glBindImageTexture(unit, TextureID, level, layered, layer, access, format);
         }
@@ -257,23 +257,23 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glTexStorage2D(target, levels, piformat, Width, Height);
         }
 
-        /// <summary>
-        /// TexStorageXX allocates images with the given size (width​, height​, and depth​, where appropriate), with the number of mipmaps given by levels​. The storage is created here, but the contents of that storage is undefined.
-        /// For 1D array textures, the number of array layers in each mipmap level is the height​ value. For rectangle textures, the number of mipmap levels must be 1.
-        /// </summary>
-        /// <param name="target">Valid target​s: GL_TEXTURE_2D​, GL_TEXTURE_RECTANGE​, GL_TEXTURE_CUBEMAP​, or GL_TEXTURE_1D_ARRAY​.</param>
-        /// <param name="levels">Number of mipmaps to alloc.</param>
-        /// <param name="piformat">Any Sized Internal format.</param>
-        /// <param name="Width">Width of base mipmap.</param>
-        /// <param name="Height">Height of base mipmap. For 1D array textures, the number of array layers in each mipmap level is the height​ value. For rectangle textures, the number of mipmap levels must be 1.</param>
-        /// <remarks>
-        ///  immutable storage allocates all of the images for the texture all at once. Every mipmap level, array layer, and cube map face is all allocated with a single call, giving all of these images a specific Image Format. It is called "immutable" because once the storage is allocated, the storage cannot be changed. The texture can be deleted as normal, but the storage cannot be altered. A 256x256 2D texture with 5 mipmap layers that uses the GL_RGBA8​ image format will *always* be a 256x256 2D texture with 5 mipmap layers that uses the GL_RGBA8​ image format.
-        ///  Note that what immutable storage refers to is the allocation of the memory, not the contents of that memory. You can upload different pixel data to immutable storage all you want. With mutable storage, you can re-vamp the storage of a texture object entirely, changing a 256x256 texture into a 1024x1024 texture.
-        /// </remarks>
-        public static void TexStorage2D(TextureTarget target, int levels, PixelInternalFormatV2 piformat, int Width, int Height)
-        {
-            Delegates.glTexStorage2D(target, levels, (PixelInternalFormat)piformat, Width, Height);
-        }
+        ///// <summary>
+        ///// TexStorageXX allocates images with the given size (width​, height​, and depth​, where appropriate), with the number of mipmaps given by levels​. The storage is created here, but the contents of that storage is undefined.
+        ///// For 1D array textures, the number of array layers in each mipmap level is the height​ value. For rectangle textures, the number of mipmap levels must be 1.
+        ///// </summary>
+        ///// <param name="target">Valid target​s: GL_TEXTURE_2D​, GL_TEXTURE_RECTANGE​, GL_TEXTURE_CUBEMAP​, or GL_TEXTURE_1D_ARRAY​.</param>
+        ///// <param name="levels">Number of mipmaps to alloc.</param>
+        ///// <param name="piformat">Any Sized Internal format.</param>
+        ///// <param name="Width">Width of base mipmap.</param>
+        ///// <param name="Height">Height of base mipmap. For 1D array textures, the number of array layers in each mipmap level is the height​ value. For rectangle textures, the number of mipmap levels must be 1.</param>
+        ///// <remarks>
+        /////  immutable storage allocates all of the images for the texture all at once. Every mipmap level, array layer, and cube map face is all allocated with a single call, giving all of these images a specific Image Format. It is called "immutable" because once the storage is allocated, the storage cannot be changed. The texture can be deleted as normal, but the storage cannot be altered. A 256x256 2D texture with 5 mipmap layers that uses the GL_RGBA8​ image format will *always* be a 256x256 2D texture with 5 mipmap layers that uses the GL_RGBA8​ image format.
+        /////  Note that what immutable storage refers to is the allocation of the memory, not the contents of that memory. You can upload different pixel data to immutable storage all you want. With mutable storage, you can re-vamp the storage of a texture object entirely, changing a 256x256 texture into a 1024x1024 texture.
+        ///// </remarks>
+        //public static void TexStorage2D(TextureTarget target, int levels, PixelInternalFormatV2 piformat, int Width, int Height)
+        //{
+        //    Delegates.glTexStorage2D(target, levels, (PixelInternalFormat)piformat, Width, Height);
+        //}
         /// <summary>
         /// TexStorageXX allocates images with the given size (width​, height​, and depth​, where appropriate), with the number of mipmaps given by levels​. The storage is created here, but the contents of that storage is undefined.
         /// For 2D array textures, the number of array layers in each mipmap level is the depth​ value. For 2D cubemap array textures, the number of cubemap layer-faces is the depth​, which must be a multiple of 6. Therefore, the number of individual cubemaps in the array is given by depth​ / 6.

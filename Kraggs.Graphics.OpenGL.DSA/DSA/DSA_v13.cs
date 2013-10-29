@@ -44,12 +44,12 @@ namespace Kraggs.Graphics.OpenGL
 
             #region Delegates
 
-            public delegate void delCompressedTextureImage1DEXT(uint TextureID, TextureTarget target, int level, SizedCompressedInternalFormat piformat, int width, int border, int imageSize, IntPtr data);
-            public delegate void delCompressedTextureImage2DEXT(uint TextureID, TextureTarget target, int level, SizedCompressedInternalFormat piformat, int width, int height, int border, int imageSize, IntPtr data);
-            public delegate void delCompressedTextureImage3DEXT(uint TextureID, TextureTarget target, int level, SizedCompressedInternalFormat piformat, int width, int height, int depth, int border, int imageSize, IntPtr data);
-            public delegate void delCompressedTextureSubImage1DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int width, SizedCompressedInternalFormat format, int imageSize, IntPtr data);
-            public delegate void delCompressedTextureSubImage2DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int width, int height, SizedCompressedInternalFormat format, int imageSize, IntPtr data);
-            public delegate void delCompressedTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, SizedCompressedInternalFormat format, int imageSize, IntPtr data);
+            public delegate void delCompressedTextureImage1DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int border, int imageSize, IntPtr data);
+            public delegate void delCompressedTextureImage2DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int border, int imageSize, IntPtr data);
+            public delegate void delCompressedTextureImage3DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, int border, int imageSize, IntPtr data);
+            public delegate void delCompressedTextureSubImage1DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int width, PixelInternalFormat format, int imageSize, IntPtr data);
+            public delegate void delCompressedTextureSubImage2DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int width, int height, PixelInternalFormat format, int imageSize, IntPtr data);
+            public delegate void delCompressedTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelInternalFormat format, int imageSize, IntPtr data);
             public delegate void delGetCompressedTextureImageEXT(uint TextureID, TextureTarget target, int level, IntPtr img);
 
 
@@ -73,30 +73,112 @@ namespace Kraggs.Graphics.OpenGL
 
         #region Public functions.
 
-        public static void CompressedTextureImage1DEXT(uint TextureID, TextureTarget target, int level, SizedCompressedInternalFormat piformat, int width, int border, int imageSize, IntPtr data)
+        /// <summary>
+        /// Uploads already compressed data to a texture object.
+        /// </summary>
+        /// <param name="TextureID"></param>
+        /// <param name="target"></param>
+        /// <param name="level"></param>
+        /// <param name="piformat">A non-generic compressed format.</param>
+        /// <param name="width"></param>
+        /// <param name="border"></param>
+        /// <param name="imageSize"></param>
+        /// <param name="data"></param>
+        public static void CompressedTextureImage1DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int border, int imageSize, IntPtr data)
         {
             Delegates.glCompressedTextureImage1DEXT(TextureID, target, level, piformat, width, border, imageSize, data);
         }
-        public static void CompressedTextureImage2DEXT(uint TextureID, TextureTarget target, int level, SizedCompressedInternalFormat piformat, int width, int height, int border, int imageSize, IntPtr data)
+        /// <summary>
+        /// Uploads already compressed data to a texture object.
+        /// </summary>
+        /// <param name="TextureID"></param>
+        /// <param name="target"></param>
+        /// <param name="level"></param>
+        /// <param name="piformat">A non-generic compressed format.</param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="border"></param>
+        /// <param name="imageSize"></param>
+        /// <param name="data"></param>
+        public static void CompressedTextureImage2DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int border, int imageSize, IntPtr data)
         {
             Delegates.glCompressedTextureImage2DEXT(TextureID, target, level, piformat, width, height, border, imageSize, data);
         }
-        public static void CompressedTextureImage3DEXT(uint TextureID, TextureTarget target, int level, SizedCompressedInternalFormat piformat, int width, int height, int depth, int border, int imageSize, IntPtr data)
+        /// <summary>
+        /// Uploads already compressed data to a texture object.
+        /// </summary>
+        /// <param name="TextureID"></param>
+        /// <param name="target"></param>
+        /// <param name="level"></param>
+        /// <param name="piformat">A non-generic compressed format.</param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="depth"></param>
+        /// <param name="border"></param>
+        /// <param name="imageSize"></param>
+        /// <param name="data"></param>
+        public static void CompressedTextureImage3DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, int border, int imageSize, IntPtr data)
         {
             Delegates.glCompressedTextureImage3DEXT(TextureID, target, level, piformat, width, height, depth, border, imageSize, data);
         }
-        public static void CompressedTextureSubImage1DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int width, SizedCompressedInternalFormat format, int imageSize, IntPtr data)
+        /// <summary>
+        /// Uploads already compressed data to a texture object.
+        /// </summary>
+        /// <param name="TextureID"></param>
+        /// <param name="target"></param>
+        /// <param name="level"></param>
+        /// <param name="xoffset"></param>
+        /// <param name="width"></param>
+        /// <param name="format">A non-generic compressed format.</param>
+        /// <param name="imageSize"></param>
+        /// <param name="data"></param>
+        public static void CompressedTextureSubImage1DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int width, PixelInternalFormat format, int imageSize, IntPtr data)
         {
             Delegates.glCompressedTextureSubImage1DEXT(TextureID, target, level, xoffset, width, format, imageSize, data);
         }
-        public static void CompressedTextureSubImage2DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int width, int height, SizedCompressedInternalFormat format, int imageSize, IntPtr data)
+        /// <summary>
+        /// Uploads already compressed data to a texture object.
+        /// </summary>
+        /// <param name="TextureID"></param>
+        /// <param name="target"></param>
+        /// <param name="level"></param>
+        /// <param name="xoffset"></param>
+        /// <param name="yoffset"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="format">A non-generic compressed format.</param>
+        /// <param name="imageSize"></param>
+        /// <param name="data"></param>
+        public static void CompressedTextureSubImage2DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int width, int height, PixelInternalFormat format, int imageSize, IntPtr data)
         {
             Delegates.glCompressedTextureSubImage2DEXT(TextureID, target, level, xoffset, yoffset, width, height, format, imageSize, data);
         }
-        public static void CompressedTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, SizedCompressedInternalFormat format, int imageSize, IntPtr data)
+        /// <summary>
+        /// Uploads already compressed data to a texture object.
+        /// </summary>
+        /// <param name="TextureID"></param>
+        /// <param name="target"></param>
+        /// <param name="level"></param>
+        /// <param name="xoffset"></param>
+        /// <param name="yoffset"></param>
+        /// <param name="zoffset"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <param name="depth"></param>
+        /// <param name="format">A non-generic compressed format.</param>
+        /// <param name="imageSize"></param>
+        /// <param name="data"></param>
+        public static void CompressedTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelInternalFormat format, int imageSize, IntPtr data)
         {
             Delegates.glCompressedTextureSubImage3DEXT(TextureID, target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
         }
+        /// <summary>
+        /// Retrives a compressed image.
+        /// </summary>
+        /// <param name="TextureID"></param>
+        /// <param name="target"></param>
+        /// <param name="level"></param>
+        /// <param name="img"></param>
         public static void GetCompressedTextureImageEXT(uint TextureID, TextureTarget target, int level, IntPtr img)
         {
             Delegates.glGetCompressedTextureImageEXT(TextureID, target, level, img);

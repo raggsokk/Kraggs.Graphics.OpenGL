@@ -34,29 +34,31 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum PixelFormat
+
+    partial class GLES
     {
-        StencilIndex = All.STENCIL_INDEX,
-        DepthComponent = All.DEPTH_COMPONENT,
-        DepthStencil = All.DEPTH_STENCIL,
+        #region Delegate Class
 
-        Red = All.RED,
-        Green = All.GREEN,
-        Blue = All.BLUE,
+        partial class Delegates
+        {
 
-        RG = All.RG,
-        RGB = All.RGB,
-        RGBA = All.RGBA,
-        BGR = All.BGR,
-        BGRA = All.BGRA,
+            #region Delegates
 
-        RedInt = All.RED_INTEGER,
-        GreenInt = All.GREEN_INTEGER,
-        BlueInt = All.BLUE_INTEGER,
-        RGInt = All.RG_INTEGER,
-        RGBInt = All.RGB_INTEGER,
-        RGBAInt = All.RGBA_INTEGER,
-        BGRInt = All.BGR_INTEGER,
-        BGRAInt = All.BGRA_INTEGER,
+
+
+            #endregion
+
+            #region GL Fields
+
+            #endregion
+        }
+
+        #endregion
+
+        #region Public functions.
+
+
+
+        #endregion
     }
 }

@@ -44,6 +44,10 @@
       <Project>{a38f7a6f-180e-4b74-b7ee-53e7e47046c4}</Project>
       <Name>Kraggs.Graphics.OpenGL.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kraggs.Graphics.OpenGL.Enums\Kraggs.Graphics.OpenGL.Enums.csproj">
+      <Project>{33e1ebc3-2cbb-45cd-ab09-39a6476908b4}</Project>
+      <Name>Kraggs.Graphics.OpenGL.Enums</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

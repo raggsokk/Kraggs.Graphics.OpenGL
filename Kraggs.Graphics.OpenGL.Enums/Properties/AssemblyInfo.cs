@@ -30,8 +30,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Kraggs.Graphics.OpenGL.DSA")]
-[assembly: AssemblyDescription("OpenGL Direct State Access Functions fore Core v3.3 up to Core v4.4")]
+[assembly: AssemblyTitle("Kraggs.Graphics.OpenGL.Enums")]
+[assembly: AssemblyDescription("OpenGL [ES] Common Enums and OpenTK Loader.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Kraggs.Graphics.OpenGL")]
@@ -45,7 +45,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("64a98f85-beb5-4f06-8d58-e138884c8b90")]
+[assembly: Guid("7db01647-ab54-4e3f-baca-41f589cb5aa4")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -58,4 +58,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.19.*")]
-[assembly: AssemblyFileVersion("4.19.0.0")]
+[assembly: AssemblyFileVersion("4.19.0.1")]
