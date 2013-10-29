@@ -203,8 +203,17 @@ A list of work todo to track progress.
 	Add ARB_ES2_compatibility 					(Already implemented)
 	Add ARB_ES3_compatibility					(No Functions)
 	Added missing ClearBuffer functions, don't know which ARB their from (not all functions are...)
-
 	Fix Issue PixelInternalFormat
+	
+### Milestone 19.
+	ReOrganize Projects.
+		Seperate Enums & absOpenTKLoader into Kraggs.Graphics.OpenGL.[Enums/Common?]
+		Add new project Kraggs.Graphics.OpenGL.[ES/ES2?/ES3?]
+		Combine ARB & EXT into Kraggs.Graphics.OpenGL.[CoreExtended/CoreExtensions?].
+			Pros:
+				Kraggs.Graphics.Image can be used by both OpenGL Core and ES situas
+			Cons:
+				More libraries to load...
 
 ### ~~Milestone x++, PixelInternalFormat_v2~~
 	~~Fix this MESS!~~ (Improved in Milestone 18)
