@@ -5,6 +5,8 @@ OpenGL 4.4 Wrapper Libraries.
 
 A collection of manually created wrapper libraries for OpenGL 4.4 core context and OpenGL ES 3.x.
 
+Warning: These projects are to be considered in BETA stage. ABI changes might occur between commits. Core and DSA are mostly safe thou.
+
 ## The solution has these projects.
 
 ### Kraggs.Graphics.OpenGL.Enums
@@ -30,9 +32,6 @@ As an example:
 	where EXT_direct_state_access is present, also implements NamedBufferStorageEXT.
 	
 
-Warning: 
-Beta State, almost all if not all of the opengl functions is present, work is still in progress for validating all enumerations in use for the functions.
-Se also Kraggs.Graphics.OpenGL.DSA for a companion project to this project containing updated DSA functions for core extensions.
 
 # License: 
 

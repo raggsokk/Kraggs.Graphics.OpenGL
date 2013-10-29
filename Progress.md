@@ -215,8 +215,40 @@ A list of work todo to track progress.
 			Cons:
 				More libraries to load...
 
+### Milestone 20.
+	Implement OpenGL ES 1 functions. (only those overlapping ES 2&3).
+	Implement OpenGL ES 2 functions.
+	Implement OpenGL ES 3 functions.
+	
+### Milestone 21
+	Extend CoreExtended with ARB functions for OpenGL Core 4.4
+
+### Milestone 22
+	Extend CoreExtended with ARB functions for OpenGL Core 4.3
+	
+### Milestone 23
+	Extend CoreExtended with ARB functions for OpenGL Core 4.2
+	
+### Milestone 24
+	Extend CoreExtended with ARB functions for OpenGL Core 4.1
+	
+### Milestone 25
+	Extend CoreExtended with ARB functions for OpenGL Core 4.0
+	
+### Milestone 26
+	Extend CoreExtended with ARB functions for OpenGL Core 3.3
+	
+### Milestone 27
+	Extend CoreExtended with ARB functions for OpenGL Core 3.2
+	
+### Milestone 28
+	Extend CoreExtended with ARB functions for OpenGL Core 3.1
+	
+### Milestone 29
+	Finish Compatibility project.
+			
 ### ~~Milestone x++, PixelInternalFormat_v2~~
-	~~Fix this MESS!~~ (Improved in Milestone 18)
+	~~Fix this MESS!~~ (Fixed in Milestone 19)
 
 ### Milestone x++, math3d integration.
 	Determine best way to do this?
@@ -250,10 +282,19 @@ A list of work todo to track progress.
 
 ### Release 5
 	Milestone 18
-	...
-	Implement Compatibility project.
-	Fix/clarify ARB and EXT projects.
-
+	Milestone 19
+	Milestone 20
+	
+### Release 6	
+	Milestone 21
+	Milestone 22
+	Milestone 23
+	Milestone 24
+	Milestone 25
+	Milestone 26
+	Milestone 27
+	Milestone 28
+	Milestone 29 Implement Compatibility project.	
 
 ## Open Issues which needs to be clarified.
 
@@ -262,7 +303,7 @@ A list of work todo to track progress.
 	~~GL_DRAWBUFFERS[0,MaxDrawBuffers]. Right now only the first is present ~~
 	~~in an enum. We need more info on when and where to use them correctly.~~
 
-### ~~PixelInternalFormat~~ (Improved in Milestone18. It will never be perfect thou.)
+### ~~PixelInternalFormat~~ ~~(Improved in Milestone18.)~~ (Fixed in milestone 19.)
 	~~This enum is caotic. To make things worse a lot of opengl calls expect~~
 	~~a subset of this enum and there enums like BaseInternalFormat,SizedInternalFormat,~~
 	~~CompressedInternalFormat,SizedCompressedInternalFormat and GenericCompressedInternalFormat~~

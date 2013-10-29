@@ -41,18 +41,22 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GL.cs" />
+    <Compile Include="GLES.cs" />
+    <Compile Include="GLES\GLES_v1x.cs" />
+    <Compile Include="GLES\GLES_v2x.cs" />
+    <Compile Include="GLES\GLES_v3x.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\\Kraggs.Graphics.OpenGL.snk" />
-  </ItemGroup>  
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kraggs.Graphics.OpenGL.Enums\Kraggs.Graphics.OpenGL.Enums.csproj">
       <Project>{33e1ebc3-2cbb-45cd-ab09-39a6476908b4}</Project>
       <Name>Kraggs.Graphics.OpenGL.Enums</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

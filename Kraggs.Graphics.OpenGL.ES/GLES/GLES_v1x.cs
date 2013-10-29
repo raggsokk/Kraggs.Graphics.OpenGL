@@ -74,10 +74,15 @@ namespace Kraggs.Graphics.OpenGL
              * GenTextures
              * GetBooleanv
              * GetIntegerv
+             * GetFloatv
              * GetBufferParameteriv
              * GetError
+             * GetString
              * GetTexParameteriv
              * Hint
+             * IsBuffer
+             * IsEnabled
+             * IsTexture
              * LineWidth
              * PixelStorei
              * PolygonOffset

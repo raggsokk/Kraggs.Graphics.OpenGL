@@ -44,6 +44,92 @@ namespace Kraggs.Graphics.OpenGL
 
             #region Delegates
 
+            /*
+             * AttachShader
+             * BindAttribLocation
+             * BindFramebuffer
+             * BindRenderbuffer
+             * BlendColor
+             * BlendEquation
+             * BlendEquationSeperate
+             * BlendFuncSeparate
+             * CompileShader
+             * CreateProgram
+             * CreateShader
+             * DeleteFramebuffers
+             * DeleteProgram
+             * DeleteRenderbuffers
+             * DeleteShader
+             * DetachShader
+             * DisableVertexAttribArray
+             * EnableVertexAttribArray
+             * FramebufferRenderbuffer
+             * FramebufferTexture2D
+             * GenerateMipmap
+             * GenFramebuffers
+             * GenRanderbuffers
+             * GetActiveAttrib
+             * GetActiveUniform
+             * GetAttachedShaders
+             * GetAttribLocation
+             * GetFramebufferAttachmentParameteriv
+             * GetProgramiv
+             * GetProgramInfoLog
+             * GetRenderbufferParameteriv
+             * GetShaderiv
+             * GetShaderInfoLog
+             * GetShaderPrecisionFormat
+             * GetShaderSource
+             * GetUniformfv
+             * GetUniformiv
+             * GetUniformLocation
+             * GetVertexAttribfv
+             * GetVertexAttribiv
+             * GetVertexAttribPointerv
+             * IsFramebuffer
+             * IsProgram
+             * IsRenderbuffer
+             * IsShader
+             * LinkProgram
+             * ReleaseShaderCompiler
+             * RenderbufferStorage
+             * ShaderBinary
+             * ShaderSource
+             * StencilFuncSeparate
+             * StencilMaskSeparate
+             * StencilOpSeparate
+             * Uniform1f
+             * Uniform2f
+             * Uniform3f
+             * Uniform4f
+             * Uniform1fv
+             * Uniform2fv
+             * Uniform3fv
+             * Uniform4fv
+             * Uniform1i
+             * Uniform2i
+             * Uniform3i
+             * Uniform4i
+             * Uniform1iv
+             * Uniform2iv
+             * Uniform3iv
+             * Uniform4iv
+             * UniformMatrix2fv
+             * UniformMatrix3fv
+             * UniformMatrix4fv
+             * UseProgram
+             * ValidateProgram
+             * VertexAttrib1f
+             * VertexAttrib2f
+             * VertexAttrib3f
+             * VertexAttrib4f
+             * VertexAttrib1fv
+             * VertexAttrib2fv
+             * VertexAttrib3fv
+             * VertexAttrib4fv
+             * VertexAttribPointer
+             * 
+             */
 
 
             #endregion
