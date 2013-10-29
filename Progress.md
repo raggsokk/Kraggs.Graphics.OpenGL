@@ -200,12 +200,23 @@ A list of work todo to track progress.
 
 ### Milestone 18, varius fixes.
 	Fix Issue Drawbuffers.
-	Add ARB_ES2_compatibility 
-	Add ARB_ES3_compatibility
+	Add ARB_ES2_compatibility 					(Already implemented)
+	Add ARB_ES3_compatibility					(No Functions)
+	Added missing ClearBuffer functions, don't know which ARB their from (not all functions are...)
 	Fix Issue PixelInternalFormat
+	
+### Milestone 19.
+	ReOrganize Projects.
+		Seperate Enums & absOpenTKLoader into Kraggs.Graphics.OpenGL.[Enums/Common?]
+		Add new project Kraggs.Graphics.OpenGL.[ES/ES2?/ES3?]
+		Combine ARB & EXT into Kraggs.Graphics.OpenGL.[CoreExtended/CoreExtensions?].
+			Pros:
+				Kraggs.Graphics.Image can be used by both OpenGL Core and ES situas
+			Cons:
+				More libraries to load...
 
-### Milestone x++, PixelInternalFormat_v2
-	Fix this MESS!
+### ~~Milestone x++, PixelInternalFormat_v2~~
+	~~Fix this MESS!~~ (Improved in Milestone 18)
 
 ### Milestone x++, math3d integration.
 	Determine best way to do this?
@@ -246,20 +257,20 @@ A list of work todo to track progress.
 
 ## Open Issues which needs to be clarified.
 
-### Drawbuffers
-	Some opengl calls expect drawbuffers of GL_Back type and other of type 
-	GL_DRAWBUFFERS[0,MaxDrawBuffers]. Right now only the first is present 
-	in an enum. We need more info on when and where to use them correctly.
+### ~~Drawbuffers~~ (Fixed in Milestone18)
+	~~Some opengl calls expect drawbuffers of GL_Back type and other of type~~ 
+	~~GL_DRAWBUFFERS[0,MaxDrawBuffers]. Right now only the first is present ~~
+	~~in an enum. We need more info on when and where to use them correctly.~~
 
-### PixelInternalFormat
-	This enum is caotic. To make things worse a lot of opengl calls expect
-	a subset of this enum and there enums like BaseInternalFormat,SizedInternalFormat,
-	CompressedInternalFormat,SizedCompressedInternalFormat and GenericCompressedInternalFormat
-	has appeared. To use this calls you need to cast your PixelInternalFormat into one of those.
-	We need to clarify the usage of PixelInternalFormat.
+### ~~PixelInternalFormat~~ (Improved in Milestone18. It will never be perfect thou.)
+	~~This enum is caotic. To make things worse a lot of opengl calls expect~~
+	~~a subset of this enum and there enums like BaseInternalFormat,SizedInternalFormat,~~
+	~~CompressedInternalFormat,SizedCompressedInternalFormat and GenericCompressedInternalFormat~~
+	~~has appeared. To use this calls you need to cast your PixelInternalFormat into one of those.~~
+	~~We need to clarify the usage of PixelInternalFormat.~~
 
-	Update 1:
-	Just added compressed BPTC format. All the PixelInternalFormat enums are a MESS!
+	~~Update 1:~~
+	~~Just added compressed BPTC format. All the PixelInternalFormat enums are a MESS!~~
 
 ### Kraggs.Graphics.OpenGL.ARB
 	It seems my understanding of arb functions was not correct.

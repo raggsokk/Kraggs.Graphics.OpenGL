@@ -32,7 +32,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.17.*")]
-[assembly: AssemblyFileVersion("4.17.1.1")]
+[assembly: AssemblyVersion("4.18.*")]
+[assembly: AssemblyFileVersion("4.18.1.1")]
 
 //[assembly: AssemblyKeyFile("..\\Kraggs.Graphics.OpenGL.snk")]

@@ -1013,6 +1013,13 @@ namespace Kraggs.Graphics.OpenGL
 
         #endregion
 
+        #region OpenGL 4.1 Additions.
+
+        ShaderBinaryFormats = All.SHADER_BINARY_FORMATS,
+        //NumShaderBinaryFormats = All.NUM_SHADER_BINARY_FORMATS,
+
+        #endregion
+
         #region OpenGL 4.2 Additions.
 
         // opengl 4.2 / ARB_compressed_texture_pixel_storage

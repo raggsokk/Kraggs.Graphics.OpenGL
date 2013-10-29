@@ -123,6 +123,16 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delPushDebugGroup(DebugSource source, uint id, int length, string message);
             public delegate void delPopDebugGroup();
 
+            //ARB_ES3_compatibility
+            // no functions
+
+            // OpenGL 4.3 other functions
+            public delegate void delClearBufferfv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref float values );
+            public delegate void delClearBufferiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref int values);
+            public delegate void delClearBufferuiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref uint values);
+
+            public delegate void delClearBufferfi(ClearBuffer buffer, DrawBufferTarget drawbuffer, float depth, int stencil);
+
             #endregion
 
             #region GL Fields
@@ -200,6 +210,14 @@ namespace Kraggs.Graphics.OpenGL
 
             public static delPushDebugGroup glPushDebugGroup;
             public static delPopDebugGroup glPopDebugGroup;
+
+            // OpenGL 4.3 other functions
+            public static delClearBufferfv glClearBufferfv;
+            public static delClearBufferiv glClearBufferiv;
+            public static delClearBufferuiv glClearBufferuiv;
+
+            public static delClearBufferfi glClearBufferfi;
+
 
             #endregion
         }
@@ -952,6 +970,94 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glPopDebugGroup();
         }
 
+        // OpenGL 4.3 other functions
+        /// <summary>
+        /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
+        /// ClearBufferfv should be used to clear fixed- and floating-point buffers.
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="drawbuffer">If buffer is color, a colorAttachment to clear, otherwise 0/none</param>
+        /// <param name="values">Dependent on buffer, se ClearBuffer Enum text for usage.</param>
+        /// <remarks>
+        /// If buffer is COLOR, a particular draw buffer DRAW_BUFFERi is specified by passing i as the parameter drawbuffer, and value points to a four-element vector specifying the R, G, B, and A color to clear that draw buffer to. 
+        /// If buffer is DEPTH, drawbuffer must be zero, and value points to the single depth value to clear the depth buffer to.
+        /// Only ClearBufferfv should be used to clear depth buffers.
+        /// If buffer is STENCIL, drawbuffer must be zero, and value points to the single stencil value to clear the stencil buffer to.
+        /// Only ClearBufferiv should be used to clear stencil buffers.
+        /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
+        /// </remarks>
+        public static void ClearBufferfv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref float values)
+        {
+            Delegates.glClearBufferfv(buffer, drawbuffer, ref values);
+        }
+        /// <summary>
+        /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
+        /// ClearBufferiv should be used to clear signed integer buffers.
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="drawbuffer">If buffer is color, a colorAttachment to clear, otherwise 0/none</param>
+        /// <param name="values">Dependent on buffer, se ClearBuffer Enum text for usage.</param>
+        /// <remarks>
+        /// If buffer is COLOR, a particular draw buffer DRAW_BUFFERi is specified by passing i as the parameter drawbuffer, and value points to a four-element vector specifying the R, G, B, and A color to clear that draw buffer to. 
+        /// If buffer is DEPTH, drawbuffer must be zero, and value points to the single depth value to clear the depth buffer to.
+        /// Only ClearBufferfv should be used to clear depth buffers.
+        /// If buffer is STENCIL, drawbuffer must be zero, and value points to the single stencil value to clear the stencil buffer to.
+        /// Only ClearBufferiv should be used to clear stencil buffers.
+        /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
+        /// </remarks>
+        public static void ClearBufferiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref int values)
+        {
+            Delegates.glClearBufferiv(buffer, drawbuffer, ref values);
+        }
+        /// <summary>
+        /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
+        /// ClearBufferuiv should be used to clear unsigned integer buffers.
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <param name="drawbuffer">If buffer is color, a colorAttachment to clear, otherwise 0/none</param>
+        /// <param name="values">Dependent on buffer, se ClearBuffer Enum text for usage.</param>
+        /// <remarks>
+        /// If buffer is COLOR, a particular draw buffer DRAW_BUFFERi is specified by passing i as the parameter drawbuffer, and value points to a four-element vector specifying the R, G, B, and A color to clear that draw buffer to. 
+        /// If buffer is DEPTH, drawbuffer must be zero, and value points to the single depth value to clear the depth buffer to.
+        /// Only ClearBufferfv should be used to clear depth buffers.
+        /// If buffer is STENCIL, drawbuffer must be zero, and value points to the single stencil value to clear the stencil buffer to.
+        /// Only ClearBufferiv should be used to clear stencil buffers.
+        /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
+        /// </remarks>
+        public static void ClearBufferuiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref uint values)
+        {
+            Delegates.glClearBufferuiv(buffer, drawbuffer, ref values);
+        }       
+
+        /// <summary>
+        /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
+        /// ClearBufferfi is equivalent to clearing the depth and stencil buffers separately, but may be faster when a buffer of internal format DEPTH_STENCIL is being cleared. 
+        /// </summary>
+        /// <param name="depth">depth and sten-cil are the values to clear the depth and stencil buffers to, respectively</param>
+        /// <param name="stencil">depth and sten-cil are the values to clear the depth and stencil buffers to, respectively</param>
+        /// <param name="buffer">buffer must be DEPTH_STENCIL</param>
+        /// <param name="drawbuffer">drawbuffer must be zero/NONE.</param>
+        public static void ClearBufferfi(float depth, int stencil, ClearBuffer buffer = ClearBuffer.DepthStencil, DrawBufferTarget drawbuffer = DrawBufferTarget.None)
+        {
+            Delegates.glClearBufferfi(buffer, drawbuffer, depth, stencil);
+        }
+
+        /// <summary>
+        /// Clears the depth buffer. Overload of glClearBufferfv with correct settings.
+        /// </summary>
+        /// <param name="depth"></param>
+        public static void ClearBufferDepth(float depth)
+        {
+            Delegates.glClearBufferfv(ClearBuffer.Depth, (DrawBufferTarget)0, ref depth);
+        }
+        /// <summary>
+        /// Clears the stencil buffer. Overload of glClearBufferiv with correct settings.
+        /// </summary>
+        /// <param name="stencil"></param>
+        public static void ClearBufferStencil(int stencil)
+        {
+            Delegates.glClearBufferiv(ClearBuffer.Stencil, (DrawBufferTarget)0, ref stencil);
+        }
 
 
         #endregion

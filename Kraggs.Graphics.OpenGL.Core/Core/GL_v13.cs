@@ -150,6 +150,23 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glCompressedTexImage2D(target, level, piformat, width, height, 0, imageSize, data);
         }
         /// <summary>
+        /// CompressedTexImage2D allocates image with compressed formats and simultaneously fills them with compressed data
+        /// With the exception of the last two parameters, CompressedTexImage2D work identically to their glTexImage*​ counterparts.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="piformat">Requires the correct Sized Compressed format used to compress image with.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
+        public static void CompressedTexImage2D(TextureTarget target, int level, PixelInternalFormatV2 piformat, int width, int height, int imageSize, IntPtr data)
+        {
+            Delegates.glCompressedTexImage2D(target, level, (SizedCompressedInternalFormat) piformat, width, height, 0, imageSize, data);
+        }
+
+        /// <summary>
         /// CompressedTexImage3D allocates image with compressed formats and simultaneously fills them with compressed data
         /// With the exception of the last two parameters, CompressedTexImage3D work identically to their glTexImage*​ counterparts.
         /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.

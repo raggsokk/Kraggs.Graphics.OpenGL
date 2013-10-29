@@ -21,6 +21,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseAddress>5242880</BaseAddress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Release\Kraggs.Graphics.OpenGL.Core.XML</DocumentationFile>
+    <BaseAddress>5242880</BaseAddress>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -63,7 +66,9 @@
     <Compile Include="Core\GL_v44.cs" />
     <Compile Include="Core\GL_v45.cs" />
     <Compile Include="Enums\AtomicCounterBufferParameters.cs" />
+    <Compile Include="Enums\ClearBuffer.cs" />
     <Compile Include="Enums\GetInternalformatTargets.cs" />
+    <Compile Include="Enums\PixelInternalFormatV2.cs" />
     <Compile Include="Enums\ProgramPipelineParameters.cs" />
     <Compile Include="Enums\SubroutineUniformParameters.cs" />
     <Compile Include="Enums\All.cs" />

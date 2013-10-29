@@ -47,9 +47,9 @@ namespace Kraggs.Graphics.OpenGL
             //ARB_ES2_compatibility
             public delegate void delClearDepthf(float d);
             public delegate void delDepthRangef(float near, float far);
-            public delegate void delGetShaderPrecisionFormat(ShaderType type, PrecisionType precisiontype, int[] range, int[] precision);
+            public delegate void delGetShaderPrecisionFormat(ShaderType type, PrecisionType precisiontype, ref int range, ref int precision);
             public delegate void delReleaseShaderCompiler();
-            public delegate void delShaderBinary(int count, uint[] shaders, int BinaryFormat , IntPtr binary, int Length);
+            public delegate void delShaderBinary(int count, ref uint shaders, int BinaryFormat , IntPtr binary, int Length);
 
             //ARB_get_program_binary
             public delegate void delGetProgramBinary(uint Program, int bufSize, out int Length, out int BinaryFormat , IntPtr binary);
@@ -311,17 +311,34 @@ namespace Kraggs.Graphics.OpenGL
         {
             Delegates.glDepthRangef(near, far);
         }
+        /// <summary>
+        /// returns the range and precision for different numeric formats supported by the shader compiler.
+        /// </summary>
+        /// <param name="type"> must be VERTEX_SHADER or FRAGMENT_SHADER.</param>
+        /// <param name="precisiontype">must be one of LOW_FLOAT, MEDIUM_FLOAT, HIGH_FLOAT, LOW_INT, MEDIUM_INT or HIGH_INT.</param>
+        /// <param name="range">points to an array of two integers in which encodings of the format's numeric range are returned.</param>
+        /// <param name="precision">points to an integer in which the log2 value of the number of bits of precision of the format is returned.</param>
         public static void GetShaderPrecisionFormat(ShaderType type, PrecisionType precisiontype, int[] range, int[] precision)
         {
-            Delegates.glGetShaderPrecisionFormat(type, precisiontype, range, precision);
+            Delegates.glGetShaderPrecisionFormat(type, precisiontype, ref range[0], ref precision[0]);
         }
+        /// <summary>
+        /// OpenGL Desktop never releases its compiler so this is a noop.
+        /// </summary>
         public static void ReleaseShaderCompiler()
         {
             Delegates.glReleaseShaderCompiler();
         }
-        public static void ShaderBinary(int count, uint[] shaders, int BinaryFormat, IntPtr binary, int Length)
+        /// <summary>
+        /// Precompiled shader binaries may be loaded with the command
+        /// </summary>
+        /// <param name="shaders">contains a list of shader object handles. Each handle refers to a unique shader type (vertex shader or fragment shader).</param>
+        /// <param name="BinaryFormat">denotes the format of the pre-compiled code.</param>
+        /// <param name="binary">points to bytes of pre-compiled binary shader code in client memory,</param>
+        /// <param name="Length">size in bytes of binary data.</param>
+        public static void ShaderBinary(uint[] shaders, int BinaryFormat, IntPtr binary, int Length)
         {
-            Delegates.glShaderBinary(count, shaders, BinaryFormat, binary, Length);
+            Delegates.glShaderBinary(shaders.Length,ref shaders[0], BinaryFormat, binary, Length);
         }
 
         //ARB_get_program_binary
