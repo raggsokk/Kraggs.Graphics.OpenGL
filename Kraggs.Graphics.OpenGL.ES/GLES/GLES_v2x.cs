@@ -44,6 +44,11 @@ namespace Kraggs.Graphics.OpenGL
 
             #region Delegates
 
+            public delegate void delClearColor(float red, float green, float blue, float alpha);
+            public delegate void delClearDepthf(float depth);
+            public delegate void delLineWidth(float width);
+            public delegate void delPolygonOffset(float factor, float units);
+
             /*
              * AttachShader
              * BindAttribLocation

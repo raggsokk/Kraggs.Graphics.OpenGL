@@ -44,6 +44,10 @@ namespace Kraggs.Graphics.OpenGL
 
             #region Delegates
 
+            public delegate void delCompressedTexImage3D(TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, int border, int imageSize, IntPtr data);
+            public delegate void delCompressedTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelInternalFormat format, int imageSize, IntPtr data);
+                        
+
             /*
              * ReadBuffer
              * DrawRangeElements

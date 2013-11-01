@@ -60,6 +60,12 @@ namespace Kraggs.Graphics.OpenGL
             public static extern void glCullFace(CullMode mode);
 
             [DllImport(OPENGL_LIBRARY)]
+            public static extern void glCopyTexImage1D(TextureTarget target, int level, PixelInternalFormat piformat, int x, int y, int width, int border);
+
+            [DllImport(OPENGL_LIBRARY)]
+            public static extern void glCopyTexImage2D(TextureTarget target, int level, PixelInternalFormat piformat, int x, int y, int width, int height, int border);
+
+            [DllImport(OPENGL_LIBRARY)]
             public static extern void glCopyTexSubImage1D(TextureTarget target, int level, int xoffset, int x, int y, int width);            
 
             [DllImport(OPENGL_LIBRARY)]
@@ -234,6 +240,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delClear(ClearBufferFlags flags);
             public delegate void delClearColor(float red, float green, float blue, float alpha);
             public delegate void delColorMask(bool red, bool green, bool blue, bool alpha);
+            public delegate void delCopyTexImage1D(TextureTarget target, int level, PixelInternalFormat piformat, int x, int y, int width, int border);
+            public delegate void delCopyTexImage2D(TextureTarget target, int level, PixelInternalFormat piformat, int x, int y, int width, int height, int border);
             public delegate void delCopyTexSubImage1D(TextureTarget target, int level, int xoffset, int x, int y, int width);
             public delegate void delCopyTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int x, int y, int width, int height);
             public delegate void delCullFace(CullMode mode);
@@ -302,6 +310,8 @@ namespace Kraggs.Graphics.OpenGL
             public static delClear glClear;
             public static delClearColor glClearColor;
             public static delColorMask glColorMask;
+            public static delCopyTexImage1D glCopyTexImage1D;
+            public static delCopyTexImage2D glCopyTexImage2D;
             public static delCopyTexSubImage1D glCopyTexSubImage1D;
             public static delCopyTexSubImage2D glCopyTexSubImage2D;
             public static delCullFace glCullFace;
@@ -441,6 +451,37 @@ namespace Kraggs.Graphics.OpenGL
         public static void ColorMask(bool red, bool green, bool blue, bool alpha)
         {
             Delegates.glColorMask(red, green, blue, alpha);
+        }
+
+        /// <summary>
+        ///glCopyTexImage1D defines a one-dimensional texture image with pixels from the current GL_READ_BUFFER.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_1D.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="piformat"></param>
+        /// <param name="x">Specify the window coordinates of the left corner of the row of pixels to be copied.</param>
+        /// <param name="y">Specify the window coordinates of the left corner of the row of pixels to be copied.</param>
+        /// <param name="width">Specifies the width of the texture image. The height of the texture image is 1.</param>
+        /// <param name="border">Must be 0.</param>
+        public static void CopyTexImage1D(TextureTarget target, int level, PixelInternalFormat piformat, int x, int y, int width, int border = 0)
+        {
+            Delegates.glCopyTexImage1D(target, level, piformat, x, y, width, border);
+        }
+
+        /// <summary>
+        /// glCopyTexImage2D defines a one-dimensional texture image with pixels from the current GL_READ_BUFFER.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="piformat"></param>
+        /// <param name="x">Specify the window coordinates of the lower left corner of the rectangular region of pixels to be copied.</param>
+        /// <param name="y">Specify the window coordinates of the lower left corner of the rectangular region of pixels to be copied.</param>
+        /// <param name="width">Specifies the width of the texture image.</param>
+        /// <param name="height">Specifies the height of the texture image.</param>
+        /// <param name="border">Must be 0.</param>
+        public static void CopyTexImage2D(TextureTarget target, int level, PixelInternalFormat piformat, int x, int y, int width, int height, int border = 0)
+        {
+            Delegates.glCopyTexImage2D(target, level, piformat, x, y, width, height, border);
         }
 
         /// <summary>
