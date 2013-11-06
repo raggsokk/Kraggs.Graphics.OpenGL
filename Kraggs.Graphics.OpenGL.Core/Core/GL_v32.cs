@@ -62,6 +62,7 @@ namespace Kraggs.Graphics.OpenGL
 
             public delegate void delGetInteger64v(GetParameters pname, ref long @params);
             public delegate void delGetInteger64i_v(GetParameters pname, uint index, ref long @params);
+            public delegate void delGetBufferParameteri64v(GetParameters pname, ref long param);
 
             //ARB_texture_multisample
             public delegate void delGetMultisamplefv(MultisampleParameters pname, uint index, ref float val);
@@ -95,6 +96,7 @@ namespace Kraggs.Graphics.OpenGL
 
             public static delGetInteger64v glGetInteger64v;
             public static delGetInteger64i_v glGetInteger64i_v;
+            public static delGetBufferParameteri64v glGetBufferParameteri64v;
 
             //ARB_texture_multisample
             public static delGetMultisamplefv glGetMultisamplefv;
@@ -323,6 +325,18 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glGetInteger64i_v(pname, index, ref tmp);
             return tmp;
         }
+
+        public static void GetBufferParameteri64v(GetParameters pname, ref long param)
+        {
+            Delegates.glGetBufferParameteri64v(pname, ref param);
+        }
+        public static long GetBufferParameteri64v(GetParameters pname)
+        {
+            long tmp = 0;
+            Delegates.glGetBufferParameteri64v(pname, ref tmp);
+            return tmp;
+        }
+
 
         //ARB_texture_multisample
         /// <summary>

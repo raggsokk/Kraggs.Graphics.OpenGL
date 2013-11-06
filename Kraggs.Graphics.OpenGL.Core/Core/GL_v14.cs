@@ -60,6 +60,11 @@ namespace Kraggs.Graphics.OpenGL
             // EXT_blend_func_separate
             public delegate void delBlendFuncSeparate(BlendFactorSrc sfactorRGB, BlendFactorDst dfactorRGB, BlendFactorSrc sfactorAlpha, BlendFactorDst dfactorAlpha);
 
+
+            public delegate void delStencilFuncSeparate(CullMode face, StencilFunction func, int @ref, uint mask);
+            public delegate void delStencilMaskSeparate(CullMode face, uint mask);
+            public delegate void delStencilOpSeparate(CullMode face, StencilOperation StencilFails, StencilOperation DepthFails,StencilOperation StencilPasses);
+
             #endregion
 
             #region GL Fields
@@ -73,6 +78,10 @@ namespace Kraggs.Graphics.OpenGL
             public static delPointParameterf glPointParameterf;
             public static delPointParameteriv glPointParameteriv;
             public static delBlendFuncSeparate glBlendFuncSeparate;
+
+            public static delStencilFuncSeparate glStencilFuncSeparate;
+            public static delStencilMaskSeparate glStencilMaskSeparate;
+            public static delStencilOpSeparate glStencilOpSeparate;
 
             #endregion
         }
@@ -119,6 +128,19 @@ namespace Kraggs.Graphics.OpenGL
             Delegates.glBlendFuncSeparate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
         }
 
+        public static void StencilFuncSeparate(CullMode face, StencilFunction func, int @ref, uint mask)
+        {
+            Delegates.glStencilFuncSeparate(face, func, @ref, mask);
+        }
+
+        public static void StencilMaskSeparate(CullMode face, uint mask)
+        {
+            Delegates.glStencilMaskSeparate(face, mask);
+        }
+        public static void StencilOpSeparate(CullMode face, StencilOperation StencilFails, StencilOperation DepthFails, StencilOperation StencilPasses)
+        {
+            Delegates.glStencilOpSeparate(face, StencilFails, DepthFails, StencilPasses);
+        }
 
         #endregion
     }

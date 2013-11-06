@@ -50,7 +50,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate void delDrawArraysInstanced(BeginMode mode, int first, int count, int InstanceCount);
             public delegate void delDrawElementsInstanced(BeginMode mode, int count, IndicesType type, IntPtr Indices, int InstanceCount);
             //ARB_uniform_buffer_object
-            public delegate void delGetUniformIndices(uint Program, int UniformCount, string[] UniformNames, uint[] UniformIndices);
+            //public delegate void delGetUniformIndices(uint Program, int UniformCount, string[] UniformNames, uint[] UniformIndices);
+            public delegate void delGetUniformIndices(uint Program, int UniformCount, ref string UniformNames, ref uint UniformIndices);
             public delegate uint delGetUniformBlockIndex(uint Program, string UniformBlockName);
             public delegate void delGetActiveUniformBlockName(uint Program, uint UniformBlockIndex, int bufSize, out int length, StringBuilder UniformBlockName);
             public delegate void delGetActiveUniformBlockiv(uint Program, uint UniformBlockIndex, UniformBlockParameters pname, ref int @params);
@@ -143,7 +144,8 @@ namespace Kraggs.Graphics.OpenGL
         public static void GetUniformIndices(uint Program, string[] UniformNames, uint[] UniformIndices)
         {
             var len = Math.Min(UniformNames.Length, UniformIndices.Length);
-            Delegates.glGetUniformIndices(Program, len, UniformNames, UniformIndices);
+            //Delegates.glGetUniformIndices(Program, len, UniformNames, UniformIndices);
+            Delegates.glGetUniformIndices(Program, len, ref UniformNames[0], ref UniformIndices[0]);
         }
         /// <summary>
         /// Retrives an array indices for the array of unifornames on a program.
@@ -154,7 +156,8 @@ namespace Kraggs.Graphics.OpenGL
         public static uint[] GetUniformIndices(uint Program, string[] UniformNames)
         {
             var indices = new uint[UniformNames.Length];
-            Delegates.glGetUniformIndices(Program, UniformNames.Length, UniformNames, indices);
+            //Delegates.glGetUniformIndices(Program, UniformNames.Length, UniformNames, indices);
+            Delegates.glGetUniformIndices(Program, indices.Length, ref UniformNames[0], ref indices[0]);
             return indices;
         }
         /// <summary>
