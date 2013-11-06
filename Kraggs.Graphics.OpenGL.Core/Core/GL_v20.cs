@@ -49,7 +49,8 @@ namespace Kraggs.Graphics.OpenGL
             public delegate uint delCreateShader(ShaderType type);
             public delegate void delDeleteShader(uint Shader);
             public delegate bool delIsShader(uint Shader);
-            public delegate void delShaderSource(uint Shader, int Count, string[] source, int[] Lengths);
+            //public delegate void delShaderSource(uint Shader, int Count, string[] source, int[] Lengths);
+            public delegate void delShaderSource(uint Shader, int Count, ref string source, ref int Lengths);
             public delegate void delCompileShader(uint Shader);
             public delegate void delGetShaderiv(uint Shader, ShaderParameters pname, ref int @params);
             public delegate void delGetShaderSource(uint Shader, int BufSize, out int Length, StringBuilder source);
@@ -358,7 +359,16 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Lengths">array of ints with lengths of the strings of source code.</param>
         public static void ShaderSource(uint Shader, int Count, string[] source, int[] Lengths)
         {
-            Delegates.glShaderSource(Shader, Count, source, Lengths);
+            //Delegates.glShaderSource(Shader, Count, source, Lengths);
+            Delegates.glShaderSource(Shader, Count, ref source[0], ref Lengths[0]);
+        }
+        public static void ShaderSource(uint Shader, string[] source)
+        {
+            int[] arrLength = new int[source.Length];
+            for (int i = 0; i < arrLength.Length; i++)
+                arrLength[i] = source[i].Length;
+
+            Delegates.glShaderSource(Shader, source.Length, ref source[0], ref arrLength[0]);
         }
 
         /// <summary>
@@ -368,7 +378,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="source">the source code to upload.</param>
         public static void ShaderSource(uint Shader, string source)
         {
-            Delegates.glShaderSource(Shader, 1, new string[] { source }, new int[] { source.Length });
+            //Delegates.glShaderSource(Shader, 1, new string[] { source }, new int[] { source.Length });
+            int len = source.Length;
+            Delegates.glShaderSource(Shader, 1, ref source, ref len);
         }
         /// <summary>
         /// Compiles the shader.
