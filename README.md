@@ -33,9 +33,9 @@ As an example:
 	
 
 
-# License: 
+## License: 
 
-## Kraggs.Graphics.OpenGL (github.com/raggsokk)
+### Kraggs.Graphics.OpenGL (github.com/raggsokk)
 
 ### Copyright (c) 2013 Jarle Hansen (github.com/raggsokk)
  Permission is hereby granted, free of charge, to any person obtaining a copy
