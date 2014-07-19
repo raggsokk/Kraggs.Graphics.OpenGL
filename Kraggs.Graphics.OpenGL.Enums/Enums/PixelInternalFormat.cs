@@ -45,7 +45,7 @@ namespace Kraggs.Graphics.OpenGL
     public enum PixelInternalFormat
     {
         // invalid
-        INTERNAL_NONE = 0,					//GL_NONE 
+        NONE = 0,					//GL_NONE 
 
         //// base internal format
         //// opengl 4.3 core, table 8.11
@@ -149,6 +149,10 @@ namespace Kraggs.Graphics.OpenGL
         INTERNAL_D32F = 0x8CAC,				//GL_DEPTH_COMPONENT32F
         INTERNAL_D32FS8X24 = 0x8CAD,		//GL_DEPTH32F_STENCIL8
         INTERNAL_S8 = 0x8D48,               //GL_STENCIL_INDEX8
+
+        // sRGB
+        INTERNAL_SRGB8 = All.SRGB8,
+        INTERNAL_SRGBA8 = All.SRGB8_ALPHA8,
 
         // Compressed formats have no understanding of internal and external format.
         // A compressed format is what it is.
