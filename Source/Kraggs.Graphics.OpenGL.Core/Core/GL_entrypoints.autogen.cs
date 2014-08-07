@@ -79,6 +79,15 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 0, // glTexSubImage3D
 				103, 108, 67, 111, 112, 121, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 0, // glCopyTexSubImage3D
 				103, 108, 68, 114, 97, 119, 82, 97, 110, 103, 101, 69, 108, 101, 109, 101, 110, 116, 115, 0, // glDrawRangeElements
+				103, 108, 65, 99, 116, 105, 118, 101, 84, 101, 120, 116, 117, 114, 101, 0, // glActiveTexture
+				103, 108, 83, 97, 109, 112, 108, 101, 67, 111, 118, 101, 114, 97, 103, 101, 0, // glSampleCoverage
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 73, 109, 97, 103, 101, 49, 68, 0, // glCompressedTexImage1D
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 73, 109, 97, 103, 101, 50, 68, 0, // glCompressedTexImage2D
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 73, 109, 97, 103, 101, 51, 68, 0, // glCompressedTexImage3D
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 49, 68, 0, // glCompressedTexSubImage1D
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 50, 68, 0, // glCompressedTexSubImage2D
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 0, // glCompressedTexSubImage3D
+				103, 108, 71, 101, 116, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glGetCompressedTexImage
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -156,15 +165,15 @@ namespace Kraggs.Graphics.OpenGL
 				832, // SlotID: 61 = glTexSubImage3D
 				848, // SlotID: 62 = glCopyTexSubImage3D
 				868, // SlotID: 63 = glDrawRangeElements
-				0, // SlotID: 64 is Empty
-				0, // SlotID: 65 is Empty
-				0, // SlotID: 66 is Empty
-				0, // SlotID: 67 is Empty
-				0, // SlotID: 68 is Empty
-				0, // SlotID: 69 is Empty
-				0, // SlotID: 70 is Empty
-				0, // SlotID: 71 is Empty
-				0, // SlotID: 72 is Empty
+				888, // SlotID: 64 = glActiveTexture
+				904, // SlotID: 65 = glSampleCoverage
+				921, // SlotID: 66 = glCompressedTexImage1D
+				944, // SlotID: 67 = glCompressedTexImage2D
+				967, // SlotID: 68 = glCompressedTexImage3D
+				990, // SlotID: 69 = glCompressedTexSubImage1D
+				1016, // SlotID: 70 = glCompressedTexSubImage2D
+				1042, // SlotID: 71 = glCompressedTexSubImage3D
+				1068, // SlotID: 72 = glGetCompressedTexImage
 				0, // SlotID: 73 is Empty
 				0, // SlotID: 74 is Empty
 				0, // SlotID: 75 is Empty
@@ -4492,15 +4501,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				888, // SlotID: 4400 = glBufferStorage
-				904, // SlotID: 4401 = glClearTexImage
-				920, // SlotID: 4402 = glClearTexSubImage
-				939, // SlotID: 4403 = glBindBuffersBase
-				957, // SlotID: 4404 = glBindBuffersRange
-				976, // SlotID: 4405 = glBindTextures
-				991, // SlotID: 4406 = glBindSamplers
-				1006, // SlotID: 4407 = glBindImageTextures
-				1026, // SlotID: 4408 = glBindVertexBuffers
+				1092, // SlotID: 4400 = glBufferStorage
+				1108, // SlotID: 4401 = glClearTexImage
+				1124, // SlotID: 4402 = glClearTexSubImage
+				1143, // SlotID: 4403 = glBindBuffersBase
+				1161, // SlotID: 4404 = glBindBuffersRange
+				1180, // SlotID: 4405 = glBindTextures
+				1195, // SlotID: 4406 = glBindSamplers
+				1210, // SlotID: 4407 = glBindImageTextures
+				1230, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
