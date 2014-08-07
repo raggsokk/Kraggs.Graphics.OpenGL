@@ -100,6 +100,25 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 83, 116, 101, 110, 99, 105, 108, 70, 117, 110, 99, 83, 101, 112, 97, 114, 97, 116, 101, 0, // glStencilFuncSeparate
 				103, 108, 83, 116, 101, 110, 99, 105, 108, 77, 97, 115, 107, 83, 101, 112, 97, 114, 97, 116, 101, 0, // glStencilMaskSeparate
 				103, 108, 83, 116, 101, 110, 99, 105, 108, 79, 112, 83, 101, 112, 97, 114, 97, 116, 101, 0, // glStencilOpSeparate
+				103, 108, 66, 105, 110, 100, 66, 117, 102, 102, 101, 114, 0, // glBindBuffer
+				103, 108, 68, 101, 108, 101, 116, 101, 66, 117, 102, 102, 101, 114, 115, 0, // glDeleteBuffers
+				103, 108, 71, 101, 110, 66, 117, 102, 102, 101, 114, 115, 0, // glGenBuffers
+				103, 108, 73, 115, 66, 117, 102, 102, 101, 114, 0, // glIsBuffer
+				103, 108, 66, 117, 102, 102, 101, 114, 68, 97, 116, 97, 0, // glBufferData
+				103, 108, 66, 117, 102, 102, 101, 114, 83, 117, 98, 68, 97, 116, 97, 0, // glBufferSubData
+				103, 108, 71, 101, 116, 66, 117, 102, 102, 101, 114, 83, 117, 98, 68, 97, 116, 97, 0, // glGetBufferSubData
+				103, 108, 77, 97, 112, 66, 117, 102, 102, 101, 114, 0, // glMapBuffer
+				103, 108, 85, 110, 109, 97, 112, 66, 117, 102, 102, 101, 114, 0, // glUnmapBuffer
+				103, 108, 71, 101, 116, 66, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 0, // glGetBufferParameteriv
+				103, 108, 71, 101, 116, 66, 117, 102, 102, 101, 114, 80, 111, 105, 110, 116, 101, 114, 118, 0, // glGetBufferPointerv
+				103, 108, 71, 101, 110, 81, 117, 101, 114, 105, 101, 115, 0, // glGenQueries
+				103, 108, 68, 101, 108, 101, 116, 101, 81, 117, 101, 114, 105, 101, 115, 0, // glDeleteQueries
+				103, 108, 73, 115, 81, 117, 101, 114, 121, 0, // glIsQuery
+				103, 108, 66, 101, 103, 105, 110, 81, 117, 101, 114, 121, 0, // glBeginQuery
+				103, 108, 69, 110, 100, 81, 117, 101, 114, 121, 0, // glEndQuery
+				103, 108, 71, 101, 116, 81, 117, 101, 114, 121, 105, 118, 0, // glGetQueryiv
+				103, 108, 71, 101, 116, 81, 117, 101, 114, 121, 79, 98, 106, 101, 99, 116, 105, 118, 0, // glGetQueryObjectiv
+				103, 108, 71, 101, 116, 81, 117, 101, 114, 121, 79, 98, 106, 101, 99, 116, 117, 105, 118, 0, // glGetQueryObjectuiv
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -198,25 +217,25 @@ namespace Kraggs.Graphics.OpenGL
 				1253, // SlotID: 82 = glStencilFuncSeparate
 				1275, // SlotID: 83 = glStencilMaskSeparate
 				1297, // SlotID: 84 = glStencilOpSeparate
-				0, // SlotID: 85 is Empty
-				0, // SlotID: 86 is Empty
-				0, // SlotID: 87 is Empty
-				0, // SlotID: 88 is Empty
-				0, // SlotID: 89 is Empty
-				0, // SlotID: 90 is Empty
-				0, // SlotID: 91 is Empty
-				0, // SlotID: 92 is Empty
-				0, // SlotID: 93 is Empty
-				0, // SlotID: 94 is Empty
-				0, // SlotID: 95 is Empty
-				0, // SlotID: 96 is Empty
-				0, // SlotID: 97 is Empty
-				0, // SlotID: 98 is Empty
-				0, // SlotID: 99 is Empty
-				0, // SlotID: 100 is Empty
-				0, // SlotID: 101 is Empty
-				0, // SlotID: 102 is Empty
-				0, // SlotID: 103 is Empty
+				1317, // SlotID: 85 = glBindBuffer
+				1330, // SlotID: 86 = glDeleteBuffers
+				1346, // SlotID: 87 = glGenBuffers
+				1359, // SlotID: 88 = glIsBuffer
+				1370, // SlotID: 89 = glBufferData
+				1383, // SlotID: 90 = glBufferSubData
+				1399, // SlotID: 91 = glGetBufferSubData
+				1418, // SlotID: 92 = glMapBuffer
+				1430, // SlotID: 93 = glUnmapBuffer
+				1444, // SlotID: 94 = glGetBufferParameteriv
+				1467, // SlotID: 95 = glGetBufferPointerv
+				1487, // SlotID: 96 = glGenQueries
+				1500, // SlotID: 97 = glDeleteQueries
+				1516, // SlotID: 98 = glIsQuery
+				1526, // SlotID: 99 = glBeginQuery
+				1539, // SlotID: 100 = glEndQuery
+				1550, // SlotID: 101 = glGetQueryiv
+				1563, // SlotID: 102 = glGetQueryObjectiv
+				1582, // SlotID: 103 = glGetQueryObjectuiv
 				0, // SlotID: 104 is Empty
 				0, // SlotID: 105 is Empty
 				0, // SlotID: 106 is Empty
@@ -4513,15 +4532,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				1317, // SlotID: 4400 = glBufferStorage
-				1333, // SlotID: 4401 = glClearTexImage
-				1349, // SlotID: 4402 = glClearTexSubImage
-				1368, // SlotID: 4403 = glBindBuffersBase
-				1386, // SlotID: 4404 = glBindBuffersRange
-				1405, // SlotID: 4405 = glBindTextures
-				1420, // SlotID: 4406 = glBindSamplers
-				1435, // SlotID: 4407 = glBindImageTextures
-				1455, // SlotID: 4408 = glBindVertexBuffers
+				1602, // SlotID: 4400 = glBufferStorage
+				1618, // SlotID: 4401 = glClearTexImage
+				1634, // SlotID: 4402 = glClearTexSubImage
+				1653, // SlotID: 4403 = glBindBuffersBase
+				1671, // SlotID: 4404 = glBindBuffersRange
+				1690, // SlotID: 4405 = glBindTextures
+				1705, // SlotID: 4406 = glBindSamplers
+				1720, // SlotID: 4407 = glBindImageTextures
+				1740, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
