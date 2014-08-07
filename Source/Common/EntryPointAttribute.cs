@@ -15,7 +15,14 @@ namespace Kraggs.Graphics
         /// <summary>
         /// Name of dll import name.
         /// </summary>
-        public string FunctionName { get; protected set; }
+        public string FunctionName; // Cecil doesnt like the one below.
+        //public string FunctionName { get; protected set; }
+
+        /// <summary>
+        /// Dummy ctor. Requires explicit setting of FunctionName
+        /// </summary>
+        public EntryPointAttribute()
+        { }
 
         /// <summary>
         /// Decorates a function with its corrosponding dllimport.

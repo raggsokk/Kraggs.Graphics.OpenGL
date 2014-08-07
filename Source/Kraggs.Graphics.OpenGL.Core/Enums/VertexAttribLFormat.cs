@@ -34,10 +34,9 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum MapBufferAccess
+    public enum VertexAttribLFormat
     {
-        ReadOnly = All.READ_ONLY,
-        WriteOnly = All.WRITE_ONLY,
-        ReadWrite = All.READ_WRITE,
+        Double = All.DOUBLE,
+        UInt64 = All.UNSIGNED_INT64_ARB,
     }
 }

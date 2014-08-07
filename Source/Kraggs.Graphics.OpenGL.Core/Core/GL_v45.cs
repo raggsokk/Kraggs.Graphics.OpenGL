@@ -34,8 +34,18 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum VertexAttribLFormat
+    partial class GL
     {
-        Double = All.DOUBLE,
+        #region OpenGL DLLImports
+
+        #endregion
+
+        #region Public functions
+
+        #endregion
+
+        #region Public Helper Functions
+
+        #endregion
     }
 }

@@ -34,31 +34,22 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-
-    partial class GL
+    [DebuggerNonUserCode()]
+    [SuppressUnmanagedCodeSecurity()]
+    public sealed partial class ARB : absOpenTKLoaderV2
     {
-        #region Delegate Class
+        private const string LIBRARY = "opengl32.dll";
 
-        partial class Delegates
+        static IntPtr[] EntryPoints;
+        static byte[] EntryPointNames;
+        static int[] EntryPointNameOffsets;
+
+        public ARB()
         {
-
-            #region Delegates
-
-
-
-            #endregion
-
-            #region GL Fields
-
-            #endregion
+            _EntryPointsInstance = EntryPoints;
+            _EntryPointNamesInstance = EntryPointNames;
+            _EntryPointNameOffsetsInstance = EntryPointNameOffsets;
         }
-
-        #endregion
-
-        #region Public functions.
-
-
-
-        #endregion
     }
 }
+

@@ -1,0 +1,6 @@
+﻿{
+	"Output": "ARB_entrypoints.autogen.cs",
+	"PartialClasses": [
+		"ARB_bindless_texture.cs",
+	]
+}

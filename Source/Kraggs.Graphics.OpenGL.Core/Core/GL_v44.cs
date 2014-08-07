@@ -143,6 +143,10 @@ namespace Kraggs.Graphics.OpenGL
 
         //ARB_multi_bind'
 
+        [EntryPoint("glBindBuffersBase")]
+        private static unsafe void BindBuffersBase(BufferProgramTarget target, int first, int count, uint* buffers)
+        { throw new NotImplementedException(); }
+
         /// <summary>
         /// Binds an array of buffer ids to a range of bindingindexes of target type.
         /// </summary>
@@ -150,9 +154,14 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="first">first BindingIndex to bind first buffer to.</param>
         /// <param name="count">Size of array buffers and number of buffers to bind continiously from first and upwards.</param>
         /// <param name="buffers">Array of buffer ids to bind.</param>
-        [EntryPoint("glBindBuffersBase")]
-        public static void BindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers)
-        { throw new NotImplementedException(); }
+        //[EntryPoint("glBindBuffersBase")]
+        public static unsafe void BindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers)
+        {
+            fixed(uint* ptr = &buffers)
+            {
+                BindBuffersBase(target, first, count, ptr);
+            }
+        }
 
         /// <summary>
         /// Binds an array of buffer ids to a bindingindex of target type starting at first.
@@ -161,7 +170,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="first">First Bindingindex to start binding at.</param>
         /// <param name="buffers">Array of buffer ids to bind.</param>
         [EntryPoint("glBindBuffersBase")]
-        public static void BindBuffersBase(BufferProgramTarget target, int first, uint[] buffers)
+        public static void BindBuffersBase(BufferProgramTarget target, int first, int count, uint[] buffers)
         { throw new NotImplementedException(); }
 
         ///// <summary>
@@ -362,7 +371,8 @@ namespace Kraggs.Graphics.OpenGL
         //ARB_multi_bind
         [EntryPointSlot(4403)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers);
+        private static unsafe extern void glBindBuffersBase(BufferProgramTarget target, int first, int count, uint* buffers);
+
         [EntryPointSlot(4404)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         private static extern void glBindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes);

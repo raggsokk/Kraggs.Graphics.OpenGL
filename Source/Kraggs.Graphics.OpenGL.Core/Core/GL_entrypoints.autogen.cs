@@ -16,6 +16,65 @@ namespace Kraggs.Graphics.OpenGL
             EntryPointNames = new byte[]
             {
                 0, 0, 0, 0, // dummy function name.
+				103, 108, 66, 105, 110, 100, 84, 101, 120, 116, 117, 114, 101, 0, // glBindTexture
+				103, 108, 66, 108, 101, 110, 100, 70, 117, 110, 99, 0, // glBlendFunc
+				103, 108, 67, 108, 101, 97, 114, 0, // glClear
+				103, 108, 67, 108, 101, 97, 114, 67, 111, 108, 111, 114, 0, // glClearColor
+				103, 108, 67, 111, 108, 111, 114, 77, 97, 115, 107, 0, // glColorMask
+				103, 108, 67, 117, 108, 108, 70, 97, 99, 101, 0, // glCullFace
+				103, 108, 67, 111, 112, 121, 84, 101, 120, 73, 109, 97, 103, 101, 49, 68, 0, // glCopyTexImage1D
+				103, 108, 67, 111, 112, 121, 84, 101, 120, 73, 109, 97, 103, 101, 50, 68, 0, // glCopyTexImage2D
+				103, 108, 67, 111, 112, 121, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 49, 68, 0, // glCopyTexSubImage1D
+				103, 108, 67, 111, 112, 121, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 50, 68, 0, // glCopyTexSubImage2D
+				103, 108, 68, 101, 108, 101, 116, 101, 84, 101, 120, 116, 117, 114, 101, 115, 0, // glDeleteTextures
+				103, 108, 68, 101, 112, 116, 104, 70, 117, 110, 99, 0, // glDepthFunc
+				103, 108, 68, 101, 112, 116, 104, 77, 97, 115, 107, 0, // glDepthMask
+				103, 108, 68, 101, 112, 116, 104, 82, 97, 110, 103, 101, 0, // glDepthRange
+				103, 108, 68, 105, 115, 97, 98, 108, 101, 0, // glDisable
+				103, 108, 68, 114, 97, 119, 65, 114, 114, 97, 121, 115, 0, // glDrawArrays
+				103, 108, 68, 114, 97, 119, 66, 117, 102, 102, 101, 114, 0, // glDrawBuffer
+				103, 108, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 0, // glDrawElements
+				103, 108, 69, 110, 97, 98, 108, 101, 0, // glEnable
+				103, 108, 70, 105, 110, 105, 115, 104, 0, // glFinish
+				103, 108, 70, 108, 117, 115, 104, 0, // glFlush
+				103, 108, 70, 114, 111, 110, 116, 70, 97, 99, 101, 0, // glFrontFace
+				103, 108, 71, 101, 110, 84, 101, 120, 116, 117, 114, 101, 115, 0, // glGenTextures
+				103, 108, 71, 101, 116, 66, 111, 111, 108, 101, 97, 110, 118, 0, // glGetBooleanv
+				103, 108, 71, 101, 116, 68, 111, 117, 98, 108, 101, 118, 0, // glGetDoublev
+				103, 108, 71, 101, 116, 70, 108, 111, 97, 116, 118, 0, // glGetFloatv
+				103, 108, 71, 101, 116, 73, 110, 116, 101, 103, 101, 114, 118, 0, // glGetIntegerv
+				103, 108, 71, 101, 116, 69, 114, 114, 111, 114, 0, // glGetError
+				103, 108, 71, 101, 116, 83, 116, 114, 105, 110, 103, 0, // glGetString
+				103, 108, 71, 101, 116, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glGetTexImage
+				103, 108, 71, 101, 116, 84, 101, 120, 76, 101, 118, 101, 108, 80, 97, 114, 97, 109, 101, 116, 101, 114, 102, 118, 0, // glGetTexLevelParameterfv
+				103, 108, 71, 101, 116, 84, 101, 120, 76, 101, 118, 101, 108, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 0, // glGetTexLevelParameteriv
+				103, 108, 71, 101, 116, 84, 101, 120, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 0, // glGetTexParameteriv
+				103, 108, 71, 101, 116, 84, 101, 120, 80, 97, 114, 97, 109, 101, 116, 101, 114, 102, 118, 0, // glGetTexParameterfv
+				103, 108, 72, 105, 110, 116, 0, // glHint
+				103, 108, 73, 115, 69, 110, 97, 98, 108, 101, 100, 0, // glIsEnabled
+				103, 108, 73, 115, 84, 101, 120, 116, 117, 114, 101, 0, // glIsTexture
+				103, 108, 76, 105, 110, 101, 87, 105, 100, 116, 104, 0, // glLineWidth
+				103, 108, 76, 111, 103, 105, 99, 79, 112, 0, // glLogicOp
+				103, 108, 80, 105, 120, 101, 108, 83, 116, 111, 114, 101, 105, 0, // glPixelStorei
+				103, 108, 80, 105, 120, 101, 108, 83, 116, 111, 114, 101, 102, 0, // glPixelStoref
+				103, 108, 80, 111, 105, 110, 116, 83, 105, 122, 101, 0, // glPointSize
+				103, 108, 80, 111, 108, 121, 103, 111, 110, 77, 111, 100, 101, 0, // glPolygonMode
+				103, 108, 80, 111, 108, 121, 103, 111, 110, 79, 102, 102, 115, 101, 116, 0, // glPolygonOffset
+				103, 108, 82, 101, 97, 100, 66, 117, 102, 102, 101, 114, 0, // glReadBuffer
+				103, 108, 82, 101, 97, 100, 80, 105, 120, 101, 108, 115, 0, // glReadPixels
+				103, 108, 83, 99, 105, 115, 115, 111, 114, 0, // glScissor
+				103, 108, 83, 116, 101, 110, 99, 105, 108, 70, 117, 110, 99, 0, // glStencilFunc
+				103, 108, 83, 116, 101, 110, 99, 105, 108, 77, 97, 115, 107, 0, // glStencilMask
+				103, 108, 83, 116, 101, 110, 99, 105, 108, 79, 112, 0, // glStencilOp
+				103, 108, 84, 101, 120, 73, 109, 97, 103, 101, 49, 68, 0, // glTexImage1D
+				103, 108, 84, 101, 120, 73, 109, 97, 103, 101, 50, 68, 0, // glTexImage2D
+				103, 108, 84, 101, 120, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 0, // glTexParameteri
+				103, 108, 84, 101, 120, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 0, // glTexParameteriv
+				103, 108, 84, 101, 120, 80, 97, 114, 97, 109, 101, 116, 101, 114, 102, 0, // glTexParameterf
+				103, 108, 84, 101, 120, 80, 97, 114, 97, 109, 101, 116, 101, 114, 102, 118, 0, // glTexParameterfv
+				103, 108, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 49, 68, 0, // glTexSubImage1D
+				103, 108, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 50, 68, 0, // glTexSubImage2D
+				103, 108, 86, 105, 101, 119, 112, 111, 114, 116, 0, // glViewport
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -30,65 +89,65 @@ namespace Kraggs.Graphics.OpenGL
             EntryPointNameOffsets = new int[]
             {
 				0, // SlotID: 0 is Empty
-				0, // SlotID: 1 is Empty
-				0, // SlotID: 2 is Empty
-				0, // SlotID: 3 is Empty
-				0, // SlotID: 4 is Empty
-				0, // SlotID: 5 is Empty
-				0, // SlotID: 6 is Empty
-				0, // SlotID: 7 is Empty
-				0, // SlotID: 8 is Empty
-				0, // SlotID: 9 is Empty
-				0, // SlotID: 10 is Empty
-				0, // SlotID: 11 is Empty
-				0, // SlotID: 12 is Empty
-				0, // SlotID: 13 is Empty
-				0, // SlotID: 14 is Empty
-				0, // SlotID: 15 is Empty
-				0, // SlotID: 16 is Empty
-				0, // SlotID: 17 is Empty
-				0, // SlotID: 18 is Empty
-				0, // SlotID: 19 is Empty
-				0, // SlotID: 20 is Empty
-				0, // SlotID: 21 is Empty
-				0, // SlotID: 22 is Empty
-				0, // SlotID: 23 is Empty
-				0, // SlotID: 24 is Empty
-				0, // SlotID: 25 is Empty
-				0, // SlotID: 26 is Empty
-				0, // SlotID: 27 is Empty
-				0, // SlotID: 28 is Empty
-				0, // SlotID: 29 is Empty
-				0, // SlotID: 30 is Empty
-				0, // SlotID: 31 is Empty
-				0, // SlotID: 32 is Empty
-				0, // SlotID: 33 is Empty
-				0, // SlotID: 34 is Empty
-				0, // SlotID: 35 is Empty
-				0, // SlotID: 36 is Empty
-				0, // SlotID: 37 is Empty
-				0, // SlotID: 38 is Empty
-				0, // SlotID: 39 is Empty
-				0, // SlotID: 40 is Empty
-				0, // SlotID: 41 is Empty
-				0, // SlotID: 42 is Empty
-				0, // SlotID: 43 is Empty
-				0, // SlotID: 44 is Empty
-				0, // SlotID: 45 is Empty
-				0, // SlotID: 46 is Empty
-				0, // SlotID: 47 is Empty
-				0, // SlotID: 48 is Empty
-				0, // SlotID: 49 is Empty
-				0, // SlotID: 50 is Empty
-				0, // SlotID: 51 is Empty
-				0, // SlotID: 52 is Empty
-				0, // SlotID: 53 is Empty
-				0, // SlotID: 54 is Empty
-				0, // SlotID: 55 is Empty
-				0, // SlotID: 56 is Empty
-				0, // SlotID: 57 is Empty
-				0, // SlotID: 58 is Empty
-				0, // SlotID: 59 is Empty
+				4, // SlotID: 1 = glBindTexture
+				18, // SlotID: 2 = glBlendFunc
+				30, // SlotID: 3 = glClear
+				38, // SlotID: 4 = glClearColor
+				51, // SlotID: 5 = glColorMask
+				63, // SlotID: 6 = glCullFace
+				74, // SlotID: 7 = glCopyTexImage1D
+				91, // SlotID: 8 = glCopyTexImage2D
+				108, // SlotID: 9 = glCopyTexSubImage1D
+				128, // SlotID: 10 = glCopyTexSubImage2D
+				148, // SlotID: 11 = glDeleteTextures
+				165, // SlotID: 12 = glDepthFunc
+				177, // SlotID: 13 = glDepthMask
+				189, // SlotID: 14 = glDepthRange
+				202, // SlotID: 15 = glDisable
+				212, // SlotID: 16 = glDrawArrays
+				225, // SlotID: 17 = glDrawBuffer
+				238, // SlotID: 18 = glDrawElements
+				253, // SlotID: 19 = glEnable
+				262, // SlotID: 20 = glFinish
+				271, // SlotID: 21 = glFlush
+				279, // SlotID: 22 = glFrontFace
+				291, // SlotID: 23 = glGenTextures
+				305, // SlotID: 24 = glGetBooleanv
+				319, // SlotID: 25 = glGetDoublev
+				332, // SlotID: 26 = glGetFloatv
+				344, // SlotID: 27 = glGetIntegerv
+				358, // SlotID: 28 = glGetError
+				369, // SlotID: 29 = glGetString
+				381, // SlotID: 30 = glGetTexImage
+				395, // SlotID: 31 = glGetTexLevelParameterfv
+				420, // SlotID: 32 = glGetTexLevelParameteriv
+				445, // SlotID: 33 = glGetTexParameteriv
+				465, // SlotID: 34 = glGetTexParameterfv
+				485, // SlotID: 35 = glHint
+				492, // SlotID: 36 = glIsEnabled
+				504, // SlotID: 37 = glIsTexture
+				516, // SlotID: 38 = glLineWidth
+				528, // SlotID: 39 = glLogicOp
+				538, // SlotID: 40 = glPixelStorei
+				552, // SlotID: 41 = glPixelStoref
+				566, // SlotID: 42 = glPointSize
+				578, // SlotID: 43 = glPolygonMode
+				592, // SlotID: 44 = glPolygonOffset
+				608, // SlotID: 45 = glReadBuffer
+				621, // SlotID: 46 = glReadPixels
+				634, // SlotID: 47 = glScissor
+				644, // SlotID: 48 = glStencilFunc
+				658, // SlotID: 49 = glStencilMask
+				672, // SlotID: 50 = glStencilOp
+				684, // SlotID: 51 = glTexImage1D
+				697, // SlotID: 52 = glTexImage2D
+				710, // SlotID: 53 = glTexParameteri
+				726, // SlotID: 54 = glTexParameteriv
+				743, // SlotID: 55 = glTexParameterf
+				759, // SlotID: 56 = glTexParameterfv
+				776, // SlotID: 57 = glTexSubImage1D
+				792, // SlotID: 58 = glTexSubImage2D
+				808, // SlotID: 59 = glViewport
 				0, // SlotID: 60 is Empty
 				0, // SlotID: 61 is Empty
 				0, // SlotID: 62 is Empty
@@ -4429,15 +4488,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				4, // SlotID: 4400 = glBufferStorage
-				20, // SlotID: 4401 = glClearTexImage
-				36, // SlotID: 4402 = glClearTexSubImage
-				55, // SlotID: 4403 = glBindBuffersBase
-				73, // SlotID: 4404 = glBindBuffersRange
-				92, // SlotID: 4405 = glBindTextures
-				107, // SlotID: 4406 = glBindSamplers
-				122, // SlotID: 4407 = glBindImageTextures
-				142, // SlotID: 4408 = glBindVertexBuffers
+				819, // SlotID: 4400 = glBufferStorage
+				835, // SlotID: 4401 = glClearTexImage
+				851, // SlotID: 4402 = glClearTexSubImage
+				870, // SlotID: 4403 = glBindBuffersBase
+				888, // SlotID: 4404 = glBindBuffersRange
+				907, // SlotID: 4405 = glBindTextures
+				922, // SlotID: 4406 = glBindSamplers
+				937, // SlotID: 4407 = glBindImageTextures
+				957, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

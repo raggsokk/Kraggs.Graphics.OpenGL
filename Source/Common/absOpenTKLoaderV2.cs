@@ -167,7 +167,7 @@ namespace Kraggs.Graphics
 
         #region Protected Abstract Members
 
-        protected virtual void LoadEntryPoints(IGetProcAddress GetProcAddress = null)
+        public virtual void LoadEntryPoints(IGetProcAddress GetProcAddress = null)
         {
             if (GetProcAddress == null)
                 GetProcAddress = GetDefaultGetProcAddress();
@@ -202,15 +202,14 @@ namespace Kraggs.Graphics
 
         private static IGetProcAddress sGetProcAddress;
 
-        /// <summary>
-        /// Interface for 
-        /// </summary>
-        protected interface IGetProcAddress
-        {
-            IntPtr GetProcAddress(IntPtr ProcName);
-        }
-
         #endregion
     }
 
+    /// <summary>
+    /// Interface for 
+    /// </summary>
+    public interface IGetProcAddress
+    {
+        IntPtr GetProcAddress(IntPtr ProcName);
+    }
 }

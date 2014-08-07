@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Windows Desktop
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraggs.Graphics.OpenGL.Core", "Kraggs.Graphics.OpenGL.Core\Kraggs.Graphics.OpenGL.Core.csproj", "{A38F7A6F-180E-4B74-B7EE-53E7E47046C4}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{4A0A1D10-63E6-424A-8783-42D7B3414502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntryPointGenerator", "EntryPointGenerator\EntryPointGenerator.csproj", "{6F2F0E94-2D1F-4C91-B8C9-6596153717D1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{6EB0EF7D-5AD2-46F6-BA2B-E1DA42B23E72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kraggs.Graphics.OpenGL.Core", "Source\Kraggs.Graphics.OpenGL.Core\Kraggs.Graphics.OpenGL.Core.csproj", "{A38F7A6F-180E-4B74-B7EE-53E7E47046C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntryPointGenerator", "Utilities\EntryPointGenerator\EntryPointGenerator.csproj", "{6F2F0E94-2D1F-4C91-B8C9-6596153717D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generator.Rewrite", "Utilities\Generator.Rewrite\Generator.Rewrite.csproj", "{C426C9D1-8857-4E52-BAC7-4C05EE6070AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,11 +27,17 @@ Global
 		{6F2F0E94-2D1F-4C91-B8C9-6596153717D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F2F0E94-2D1F-4C91-B8C9-6596153717D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F2F0E94-2D1F-4C91-B8C9-6596153717D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C426C9D1-8857-4E52-BAC7-4C05EE6070AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C426C9D1-8857-4E52-BAC7-4C05EE6070AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C426C9D1-8857-4E52-BAC7-4C05EE6070AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C426C9D1-8857-4E52-BAC7-4C05EE6070AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{A38F7A6F-180E-4B74-B7EE-53E7E47046C4} = {6EB0EF7D-5AD2-46F6-BA2B-E1DA42B23E72}
 		{6F2F0E94-2D1F-4C91-B8C9-6596153717D1} = {4A0A1D10-63E6-424A-8783-42D7B3414502}
+		{C426C9D1-8857-4E52-BAC7-4C05EE6070AB} = {4A0A1D10-63E6-424A-8783-42D7B3414502}
 	EndGlobalSection
 EndGlobal
