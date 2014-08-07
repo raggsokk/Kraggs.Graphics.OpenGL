@@ -38,9 +38,17 @@ namespace Kraggs.Graphics.OpenGL
     {
         #region OpenGL DLLImports
 
+        //[EntryPointSlot(1)]
+        //[DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        //private static extern void glBindTexture(TextureTarget target, uint textureid);
+
         #endregion
 
         #region Public functions
+
+        //[EntryPoint(FunctionName = "gl")]
+        //public static void BindTexture(TextureTarget target, uint textureid) { throw new NotImplementedException(); }
+
 
         #endregion
 

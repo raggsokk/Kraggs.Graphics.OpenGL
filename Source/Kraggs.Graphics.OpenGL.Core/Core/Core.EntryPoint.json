@@ -2,6 +2,7 @@
 	"Output": "GL_entrypoints.autogen.cs",
 	"PartialClasses": [
 		"GL_v11.cs",
+		"GL_v12.cs",
 		"GL_v44.cs",
 	]
 }
