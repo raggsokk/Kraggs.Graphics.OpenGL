@@ -37,111 +37,99 @@ namespace Kraggs.Graphics.OpenGL
     // template class until gl 4.4 where its not neede for another year.
     partial class GL
     {
-        //#region Delegate Class
+        #region OpenGL DLLImports
 
-        //partial class Delegates
-        //{
+        // EXT_blend_color
+        [EntryPointSlot(73)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBlendColor(float red, float green, float blue, float alpha);
+        // EXT_blend_minmax
+        [EntryPointSlot(74)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBlendEquation(BlendEquationMode mode);
+        // EXT_multi_draw_arrays
+        [EntryPointSlot(75)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glMultiDrawArrays(BeginMode mode, int first, int count, int drawcount);
+        [EntryPointSlot(76)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glMultiDrawElements(BeginMode mode, int count, IndicesType type, IntPtr indices, int drawCount);
+        // ARB_point_parameters
+        [EntryPointSlot(77)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glPointParameteri(PointParameters pname, int param);
+        [EntryPointSlot(78)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glPointParameterf(PointParameters pname, float param);
 
-        //    #region Delegates
+        [EntryPointSlot(79)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glPointParameterfv(PointParameters pname, float* values);
+        [EntryPointSlot(80)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glPointParameteriv(PointParameters pname, int* values);
+        // EXT_blend_func_separate
+        [EntryPointSlot(81)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBlendFuncSeparate(BlendFactorSrc sfactorRGB, BlendFactorDst dfactorRGB, BlendFactorSrc sfactorAlpha, BlendFactorDst dfactorAlpha);
 
-        //    // EXT_blend_color
-        //    public delegate void delBlendColor(float red, float green, float blue, float alpha);
-        //    // EXT_blend_minmax
-        //    public delegate void delBlendEquation(BlendEquationMode mode);
-        //    // EXT_multi_draw_arrays
-        //    public delegate void delMultiDrawArrays(BeginMode mode, int first, int count, int drawcount);
-        //    public delegate void delMultiDrawElements(BeginMode mode, int count, IndicesType type, IntPtr indices, int drawCount);
-        //    // ARB_point_parameters
-        //    public delegate void delPointParameteri(PointParameters pname, int param);
-        //    public delegate void delPointParameterf(PointParameters pname, float param);
-
-        //    public delegate void delPointParameterfv(PointParameters pname, float[] values);
-        //    public delegate void delPointParameteriv(PointParameters pname, int[] values);
-        //    // EXT_blend_func_separate
-        //    public delegate void delBlendFuncSeparate(BlendFactorSrc sfactorRGB, BlendFactorDst dfactorRGB, BlendFactorSrc sfactorAlpha, BlendFactorDst dfactorAlpha);
+        [EntryPointSlot(82)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glStencilFuncSeparate(CullMode face, StencilFunction func, int @ref, uint mask);
+        [EntryPointSlot(83)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glStencilMaskSeparate(CullMode face, uint mask);
+        [EntryPointSlot(84)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glStencilOpSeparate(CullMode face, StencilOperation StencilFails, StencilOperation DepthFails, StencilOperation StencilPasses);
 
 
-        //    public delegate void delStencilFuncSeparate(CullMode face, StencilFunction func, int @ref, uint mask);
-        //    public delegate void delStencilMaskSeparate(CullMode face, uint mask);
-        //    public delegate void delStencilOpSeparate(CullMode face, StencilOperation StencilFails, StencilOperation DepthFails,StencilOperation StencilPasses);
+        #endregion
 
-        //    #endregion
+        #region Public functions
 
-        //    #region GL Fields
+        // EXT_blend_color
+        [EntryPoint(FunctionName = "glBlendColor")]
+        public static void BlendColor(float red, float green, float blue, float alpha){ throw new NotImplementedException(); }
+        // EXT_blend_minmax
+        [EntryPoint(FunctionName = "glBlendEquation")]
+        public static void BlendEquation(BlendEquationMode mode){ throw new NotImplementedException(); }
+        // EXT_multi_draw_arrays
+        [EntryPoint(FunctionName = "glMultiDrawArrays")]
+        public static void MultiDrawArrays(BeginMode mode, int first, int count, int drawcount){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glMultiDrawElements")]
+        public static void MultiDrawElements(BeginMode mode, int count, IndicesType type, IntPtr indices, int drawCount){ throw new NotImplementedException(); }
+        // ARB_point_parameters
+        [EntryPoint(FunctionName = "glPointParameteri")]
+        public static void PointParameteri(PointParameters pname, int param){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glPointParameterf")]
+        public static void PointParameterf(PointParameters pname, float param){ throw new NotImplementedException(); }
 
-        //    public static delBlendColor glBlendColor;
-        //    public static delBlendEquation glBlendEquation;
-        //    public static delMultiDrawArrays glMultiDrawArrays;
-        //    public static delMultiDrawElements glMultiDrawElements;
-        //    public static delPointParameteri glPointParameteri;
-        //    public static delPointParameterfv glPointParameterfv;
-        //    public static delPointParameterf glPointParameterf;
-        //    public static delPointParameteriv glPointParameteriv;
-        //    public static delBlendFuncSeparate glBlendFuncSeparate;
+        [EntryPoint(FunctionName = "glPointParameterfv")]
+        unsafe public static void PointParameterfv(PointParameters pname, float* values) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glPointParameterfv")]
+        public static void PointParameterfv(PointParameters pname, float[] values){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glPointParameteriv")]
+        unsafe public static void PointParameteriv(PointParameters pname, int* values) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glPointParameteriv")]
+        public static void PointParameteriv(PointParameters pname, int[] values){ throw new NotImplementedException(); }
+        // EXT_blend_func_separate
+        [EntryPoint(FunctionName = "glBlendFuncSeparate")]
+        public static void BlendFuncSeparate(BlendFactorSrc sfactorRGB, BlendFactorDst dfactorRGB, BlendFactorSrc sfactorAlpha, BlendFactorDst dfactorAlpha){ throw new NotImplementedException(); }
 
-        //    public static delStencilFuncSeparate glStencilFuncSeparate;
-        //    public static delStencilMaskSeparate glStencilMaskSeparate;
-        //    public static delStencilOpSeparate glStencilOpSeparate;
+        [EntryPoint(FunctionName = "glStencilFuncSeparate")]
+        public static void StencilFuncSeparate(CullMode face, StencilFunction func, int @ref, uint mask){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glStencilMaskSeparate")]
+        public static void StencilMaskSeparate(CullMode face, uint mask){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glStencilOpSeparate")]
+        public static void StencilOpSeparate(CullMode face, StencilOperation StencilFails, StencilOperation DepthFails, StencilOperation StencilPasses){ throw new NotImplementedException(); }
 
-        //    #endregion
-        //}
 
-        //#endregion
+        #endregion
 
-        //#region Public functions.
+        #region Public Helper Functions
 
-        //public static void BlendColor(float red, float green, float blue, float alpha)
-        //{
-        //    Delegates.glBlendColor(red, green, blue, alpha);
-        //}
-        //public static void BlendEquation(BlendEquationMode mode)
-        //{
-        //    Delegates.glBlendEquation(mode);
-        //}
-        //public static void MultiDrawArrays(BeginMode mode, int first, int count, int drawcount)
-        //{
-        //    Delegates.glMultiDrawArrays(mode, first, count, drawcount);
-        //}
+        #endregion
 
-        //public static void MultiDrawElements(BeginMode mode, int count, IndicesType type, IntPtr indices, int drawCount)
-        //{
-        //    Delegates.glMultiDrawElements(mode, count, type, indices, drawCount);
-        //}
-        //public static void PointParameteri(PointParameters pname, int param)
-        //{
-        //    Delegates.glPointParameteri(pname, @param);
-        //}
-        //public static void PointParameterf(PointParameters pname, float param)
-        //{
-        //    Delegates.glPointParameterf(pname, @param);
-        //}
-        //public static void PointParameterfv(PointParameters pname, float[] values)
-        //{
-        //    Delegates.glPointParameterfv(pname, values);
-        //}
-        //public static void PointParameteriv(PointParameters pname, int[] values)
-        //{
-        //    Delegates.glPointParameteriv(pname, values);
-        //}
-        //public static void BlendFuncSeparate(BlendFactorSrc sfactorRGB, BlendFactorDst dfactorRGB, BlendFactorSrc sfactorAlpha, BlendFactorDst dfactorAlpha)
-        //{
-        //    Delegates.glBlendFuncSeparate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
-        //}
-
-        //public static void StencilFuncSeparate(CullMode face, StencilFunction func, int @ref, uint mask)
-        //{
-        //    Delegates.glStencilFuncSeparate(face, func, @ref, mask);
-        //}
-
-        //public static void StencilMaskSeparate(CullMode face, uint mask)
-        //{
-        //    Delegates.glStencilMaskSeparate(face, mask);
-        //}
-        //public static void StencilOpSeparate(CullMode face, StencilOperation StencilFails, StencilOperation DepthFails, StencilOperation StencilPasses)
-        //{
-        //    Delegates.glStencilOpSeparate(face, StencilFails, DepthFails, StencilPasses);
-        //}
-
-        //#endregion
     }
 }
