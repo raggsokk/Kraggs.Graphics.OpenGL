@@ -36,17 +36,21 @@ namespace Kraggs.Graphics.OpenGL
 {
     [DebuggerNonUserCode()]
     [SuppressUnmanagedCodeSecurity()]
-    public sealed partial class GL
+    public sealed partial class GL : absOpenTKLoaderV2
     {
-        internal const string OPENGL_LIBRARY = "opengl32.dll";
+        //const string Library = "opengl32.dll";
+        private const string LIBRARY = "opengl32.dll";
 
-        [SuppressUnmanagedCodeSecurity()]
-        internal static partial class DllImports
-        { }
+        static IntPtr[] EntryPoints;
+        static byte[] EntryPointNames;
+        static int[] EntryPointNameOffsets;
 
-        [SuppressUnmanagedCodeSecurity()]
-        internal static partial class Delegates
-        { }
+        public GL()
+        {
+            _EntryPointsInstance = EntryPoints;
+            _EntryPointNamesInstance = EntryPointNames;
+            _EntryPointNameOffsetsInstance = EntryPointNameOffsets;
+        }
 
         #region Public Const
 

@@ -37,50 +37,54 @@ namespace Kraggs.Graphics.OpenGL
     
     partial class GL
     {
+
+
         #region Delegate Class
 
-        partial class Delegates
-        {
 
-            #region Delegates
 
-            //ARB_buffer_storage
-            public delegate void delBufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags);
+        //partial class Delegates
+        //{
 
-            //ARB_clear_texture
-            public delegate void delClearTexImage(uint texture, int level, PixelFormat format, PixelType type, IntPtr FillData);
-            public delegate void delClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr FillData);
+        //    #region Delegates
 
-            //ARB_multi_bind
-            public delegate void delBindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers);
-            public delegate void delBindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes);
-            public delegate void delBindTextures(uint first, int count, ref uint textures);
-            public delegate void delBindSamplers(uint first, int count, ref uint samplers);
-            public delegate void delBindImageTextures(uint first, int count, ref uint textures);
-            public delegate void delBindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref int Strides);
-            //public unsafe delegate void delBindVertexBuffers(uint first, int count, uint* buffers, IntPtr* Offsets, int* Strides);
+        //    //ARB_buffer_storage
+        //    public delegate void delBufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags);
 
-            #endregion
+        //    //ARB_clear_texture
+        //    public delegate void delClearTexImage(uint texture, int level, PixelFormat format, PixelType type, IntPtr FillData);
+        //    public delegate void delClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr FillData);
 
-            #region GL Fields
+        //    //ARB_multi_bind
+        //    public delegate void delBindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers);
+        //    public delegate void delBindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes);
+        //    public delegate void delBindTextures(uint first, int count, ref uint textures);
+        //    public delegate void delBindSamplers(uint first, int count, ref uint samplers);
+        //    public delegate void delBindImageTextures(uint first, int count, ref uint textures);
+        //    public delegate void delBindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref int Strides);
+        //    //public unsafe delegate void delBindVertexBuffers(uint first, int count, uint* buffers, IntPtr* Offsets, int* Strides);
 
-            //ARB_buffer_storage
-            public static delBufferStorage glBufferStorage;
+        //    #endregion
 
-            //ARB_clear_texture
-            public static delClearTexImage glClearTexImage;
-            public static delClearTexSubImage glClearTexSubImage;
+        //    #region GL Fields
 
-            //ARB_multi_bind
-            public static delBindBuffersBase glBindBuffersBase;
-            public static delBindBuffersRange glBindBuffersRange;
-            public static delBindTextures glBindTextures;
-            public static delBindSamplers glBindSamplers;
-            public static delBindImageTextures glBindImageTextures;
-            public static delBindVertexBuffers glBindVertexBuffers;
+        //    //ARB_buffer_storage
+        //    public static delBufferStorage glBufferStorage;
 
-            #endregion
-        }
+        //    //ARB_clear_texture
+        //    public static delClearTexImage glClearTexImage;
+        //    public static delClearTexSubImage glClearTexSubImage;
+
+        //    //ARB_multi_bind
+        //    public static delBindBuffersBase glBindBuffersBase;
+        //    public static delBindBuffersRange glBindBuffersRange;
+        //    public static delBindTextures glBindTextures;
+        //    public static delBindSamplers glBindSamplers;
+        //    public static delBindImageTextures glBindImageTextures;
+        //    public static delBindVertexBuffers glBindVertexBuffers;
+
+        //    #endregion
+        //}
 
         #endregion
 
@@ -350,6 +354,43 @@ namespace Kraggs.Graphics.OpenGL
         //{
         //    Delegates.glBindVertexBuffers(first, count, null, null, null);
         //}
+
+        #endregion
+
+        #region DllImports
+
+        //ARB_buffer_storage
+        [EntryPointSlot(4400)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern void glBufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags);
+
+        //ARB_clear_texture
+        [EntryPointSlot(4401)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern void glClearTexImage(uint texture, int level, PixelFormat format, PixelType type, IntPtr FillData);
+        [EntryPointSlot(4402)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern void glClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr FillData);
+
+        //ARB_multi_bind
+        [EntryPointSlot(4403)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers);
+        [EntryPointSlot(4404)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes);
+        [EntryPointSlot(4405)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBindTextures(uint first, int count, ref uint textures);
+        [EntryPointSlot(4406)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBindSamplers(uint first, int count, ref uint samplers);
+        [EntryPointSlot(4407)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBindImageTextures(uint first, int count, ref uint textures);
+        [EntryPointSlot(4408)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glBindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref int Strides);
 
         #endregion
     }

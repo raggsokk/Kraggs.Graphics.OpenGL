@@ -2,7 +2,7 @@
 
 // Kraggs.Graphics.OpenGL (github.com/raggsokk)
 //
-// Copyright (c) 2013 Jarle Hansen (github.com/raggsokk)
+// Copyright (c) 2014 Jarle Hansen (github.com/raggsokk)
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -27,6 +27,8 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+using Kraggs.Graphics;
+
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
@@ -35,7 +37,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Kraggs.Graphics.OpenGL")]
-[assembly: AssemblyCopyright("Copyright ©  2013")]
+[assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -57,7 +59,11 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("4.20.*")]
-[assembly: AssemblyFileVersion("4.20.1.1")]
+[assembly: AssemblyVersion("5.0.*")]
+[assembly: AssemblyFileVersion("5.0.0.1")]
 
 //[assembly: AssemblyKeyFile("..\\Kraggs.Graphics.OpenGL.snk")]
+
+// mark this assembly as not rewritten.
+// (will be true if OpenTK Rewriter has processed this dll.)
+[assembly: AssemblyRewritten(false)]

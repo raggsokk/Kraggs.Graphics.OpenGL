@@ -1,8 +1,9 @@
 Kraggs.Graphics.OpenGL
 ======================
 
-A list of work todo to track progress.
+(OLD. Not Updated with info of redesign.)
 
+A list of work todo to track progress.
 
 ## Milestone Progress
 
