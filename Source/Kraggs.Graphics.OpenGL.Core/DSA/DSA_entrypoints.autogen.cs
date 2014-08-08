@@ -33,6 +33,13 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 84, 101, 120, 116, 117, 114, 101, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glTextureImage3DEXT
 				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glTextureSubImage3DEXT
 				103, 108, 67, 111, 112, 121, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glCopyTextureSubImage3DEXT
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 73, 109, 97, 103, 101, 49, 68, 69, 88, 84, 0, // glCompressedTextureImage1DEXT
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 73, 109, 97, 103, 101, 50, 68, 69, 88, 84, 0, // glCompressedTextureImage2DEXT
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glCompressedTextureImage3DEXT
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 49, 68, 69, 88, 84, 0, // glCompressedTextureSubImage1DEXT
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 50, 68, 69, 88, 84, 0, // glCompressedTextureSubImage2DEXT
+				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glCompressedTextureSubImage3DEXT
+				103, 108, 71, 101, 116, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 73, 109, 97, 103, 101, 69, 88, 84, 0, // glGetCompressedTextureImageEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -55,6 +62,13 @@ namespace Kraggs.Graphics.OpenGL
 				345, // SlotID: 15 = glTextureImage3DEXT
 				365, // SlotID: 16 = glTextureSubImage3DEXT
 				388, // SlotID: 17 = glCopyTextureSubImage3DEXT
+				415, // SlotID: 18 = glCompressedTextureImage1DEXT
+				445, // SlotID: 19 = glCompressedTextureImage2DEXT
+				475, // SlotID: 20 = glCompressedTextureImage3DEXT
+				505, // SlotID: 21 = glCompressedTextureSubImage1DEXT
+				538, // SlotID: 22 = glCompressedTextureSubImage2DEXT
+				571, // SlotID: 23 = glCompressedTextureSubImage3DEXT
+				604, // SlotID: 24 = glGetCompressedTextureImageEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
