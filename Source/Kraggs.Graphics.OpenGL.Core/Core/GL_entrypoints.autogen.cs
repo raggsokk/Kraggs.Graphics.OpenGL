@@ -250,6 +250,26 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 85, 110, 105, 102, 111, 114, 109, 66, 108, 111, 99, 107, 66, 105, 110, 100, 105, 110, 103, 0, // glUniformBlockBinding
 				103, 108, 80, 114, 105, 109, 105, 116, 105, 118, 101, 82, 101, 115, 116, 97, 114, 116, 73, 110, 100, 101, 120, 0, // glPrimitiveRestartIndex
 				103, 108, 84, 101, 120, 66, 117, 102, 102, 101, 114, 0, // glTexBuffer
+				103, 108, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 66, 97, 115, 101, 86, 101, 114, 116, 101, 120, 0, // glDrawElementsBaseVertex
+				103, 108, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 73, 110, 115, 116, 97, 110, 99, 101, 100, 66, 97, 115, 101, 86, 101, 114, 116, 101, 120, 0, // glDrawElementsInstancedBaseVertex
+				103, 108, 68, 114, 97, 119, 82, 97, 110, 103, 101, 69, 108, 101, 109, 101, 110, 116, 115, 66, 97, 115, 101, 86, 101, 114, 116, 101, 120, 0, // glDrawRangeElementsBaseVertex
+				103, 108, 77, 117, 108, 116, 105, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 66, 97, 115, 101, 86, 101, 114, 116, 101, 120, 0, // glMultiDrawElementsBaseVertex
+				103, 108, 80, 114, 111, 118, 111, 107, 105, 110, 103, 86, 101, 114, 116, 101, 120, 0, // glProvokingVertex
+				103, 108, 68, 101, 108, 101, 116, 101, 83, 121, 110, 99, 0, // glDeleteSync
+				103, 108, 70, 101, 110, 99, 101, 83, 121, 110, 99, 0, // glFenceSync
+				103, 108, 73, 115, 83, 121, 110, 99, 0, // glIsSync
+				103, 108, 71, 101, 116, 83, 121, 110, 99, 105, 118, 0, // glGetSynciv
+				103, 108, 67, 108, 105, 101, 110, 116, 87, 97, 105, 116, 83, 121, 110, 99, 0, // glClientWaitSync
+				103, 108, 87, 97, 105, 116, 83, 121, 110, 99, 0, // glWaitSync
+				103, 108, 71, 101, 116, 73, 110, 116, 101, 103, 101, 114, 54, 52, 118, 0, // glGetInteger64v
+				103, 108, 71, 101, 116, 73, 110, 116, 101, 103, 101, 114, 54, 52, 105, 95, 118, 0, // glGetInteger64i_v
+				103, 108, 71, 101, 116, 66, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 54, 52, 118, 0, // glGetBufferParameteri64v
+				103, 108, 71, 101, 116, 77, 117, 108, 116, 105, 115, 97, 109, 112, 108, 101, 102, 118, 0, // glGetMultisamplefv
+				103, 108, 83, 97, 109, 112, 108, 101, 77, 97, 115, 107, 105, 0, // glSampleMaski
+				103, 108, 84, 101, 120, 73, 109, 97, 103, 101, 50, 68, 77, 117, 108, 116, 105, 115, 97, 109, 112, 108, 101, 0, // glTexImage2DMultisample
+				103, 108, 84, 101, 120, 73, 109, 97, 103, 101, 51, 68, 77, 117, 108, 116, 105, 115, 97, 109, 112, 108, 101, 0, // glTexImage3DMultisample
+				103, 108, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 84, 101, 120, 116, 117, 114, 101, 0, // glFramebufferTexture
+				103, 108, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 84, 101, 120, 116, 117, 114, 101, 76, 97, 121, 101, 114, 0, // glFramebufferTextureLayer
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -498,26 +518,26 @@ namespace Kraggs.Graphics.OpenGL
 				3970, // SlotID: 232 = glUniformBlockBinding
 				3992, // SlotID: 233 = glPrimitiveRestartIndex
 				4016, // SlotID: 234 = glTexBuffer
-				0, // SlotID: 235 is Empty
-				0, // SlotID: 236 is Empty
-				0, // SlotID: 237 is Empty
-				0, // SlotID: 238 is Empty
-				0, // SlotID: 239 is Empty
-				0, // SlotID: 240 is Empty
-				0, // SlotID: 241 is Empty
-				0, // SlotID: 242 is Empty
-				0, // SlotID: 243 is Empty
-				0, // SlotID: 244 is Empty
-				0, // SlotID: 245 is Empty
-				0, // SlotID: 246 is Empty
-				0, // SlotID: 247 is Empty
-				0, // SlotID: 248 is Empty
-				0, // SlotID: 249 is Empty
-				0, // SlotID: 250 is Empty
-				0, // SlotID: 251 is Empty
-				0, // SlotID: 252 is Empty
-				0, // SlotID: 253 is Empty
-				0, // SlotID: 254 is Empty
+				4028, // SlotID: 235 = glDrawElementsBaseVertex
+				4053, // SlotID: 236 = glDrawElementsInstancedBaseVertex
+				4087, // SlotID: 237 = glDrawRangeElementsBaseVertex
+				4117, // SlotID: 238 = glMultiDrawElementsBaseVertex
+				4147, // SlotID: 239 = glProvokingVertex
+				4165, // SlotID: 240 = glDeleteSync
+				4178, // SlotID: 241 = glFenceSync
+				4190, // SlotID: 242 = glIsSync
+				4199, // SlotID: 243 = glGetSynciv
+				4211, // SlotID: 244 = glClientWaitSync
+				4228, // SlotID: 245 = glWaitSync
+				4239, // SlotID: 246 = glGetInteger64v
+				4255, // SlotID: 247 = glGetInteger64i_v
+				4273, // SlotID: 248 = glGetBufferParameteri64v
+				4298, // SlotID: 249 = glGetMultisamplefv
+				4317, // SlotID: 250 = glSampleMaski
+				4331, // SlotID: 251 = glTexImage2DMultisample
+				4355, // SlotID: 252 = glTexImage3DMultisample
+				4379, // SlotID: 253 = glFramebufferTexture
+				4400, // SlotID: 254 = glFramebufferTextureLayer
 				0, // SlotID: 255 is Empty
 				0, // SlotID: 256 is Empty
 				0, // SlotID: 257 is Empty
@@ -4663,15 +4683,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				4028, // SlotID: 4400 = glBufferStorage
-				4044, // SlotID: 4401 = glClearTexImage
-				4060, // SlotID: 4402 = glClearTexSubImage
-				4079, // SlotID: 4403 = glBindBuffersBase
-				4097, // SlotID: 4404 = glBindBuffersRange
-				4116, // SlotID: 4405 = glBindTextures
-				4131, // SlotID: 4406 = glBindSamplers
-				4146, // SlotID: 4407 = glBindImageTextures
-				4166, // SlotID: 4408 = glBindVertexBuffers
+				4426, // SlotID: 4400 = glBufferStorage
+				4442, // SlotID: 4401 = glClearTexImage
+				4458, // SlotID: 4402 = glClearTexSubImage
+				4477, // SlotID: 4403 = glBindBuffersBase
+				4495, // SlotID: 4404 = glBindBuffersRange
+				4514, // SlotID: 4405 = glBindTextures
+				4529, // SlotID: 4406 = glBindSamplers
+				4544, // SlotID: 4407 = glBindImageTextures
+				4564, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
