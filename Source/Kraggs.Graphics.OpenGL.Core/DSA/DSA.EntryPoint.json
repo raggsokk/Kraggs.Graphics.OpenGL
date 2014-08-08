@@ -1,0 +1,7 @@
+﻿{
+	"Output": "DSA_entrypoints.autogen.cs",
+	"PartialClasses": [
+		"DSA_v11.cs",
+		"DSA_v32.cs",
+	]
+}
