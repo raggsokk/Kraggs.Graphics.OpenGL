@@ -2,7 +2,7 @@
 
 // Kraggs.Graphics.OpenGL (github.com/raggsokk)
 //
-// Copyright (c) 2013 Jarle Hansen (github.com/raggsokk)
+// Copyright (c) 2014 Jarle Hansen (github.com/raggsokk)
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -37,50 +37,42 @@ namespace Kraggs.Graphics.OpenGL
     
     partial class GL
     {
-        #region Delegate Class
 
-        //partial class Delegates
-        //{
+        #region DllImports
 
-        //    #region Delegates
+        //ARB_buffer_storage
+        [EntryPointSlot(461)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern void glBufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags);
 
-        //    //ARB_buffer_storage
-        //    public delegate void delBufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags);
+        //ARB_clear_texture
+        [EntryPointSlot(462)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern void glClearTexImage(uint texture, int level, PixelFormat format, PixelType type, IntPtr FillData);
+        [EntryPointSlot(463)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        public static extern void glClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr FillData);
 
-        //    //ARB_clear_texture
-        //    public delegate void delClearTexImage(uint texture, int level, PixelFormat format, PixelType type, IntPtr FillData);
-        //    public delegate void delClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr FillData);
+        //ARB_multi_bind
+        [EntryPointSlot(464)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static unsafe extern void glBindBuffersBase(BufferProgramTarget target, int first, int count, uint* buffers);
 
-        //    //ARB_multi_bind
-        //    public delegate void delBindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers);
-        //    public delegate void delBindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes);
-        //    public delegate void delBindTextures(uint first, int count, ref uint textures);
-        //    public delegate void delBindSamplers(uint first, int count, ref uint samplers);
-        //    public delegate void delBindImageTextures(uint first, int count, ref uint textures);
-        //    public delegate void delBindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref int Strides);
-        //    //public unsafe delegate void delBindVertexBuffers(uint first, int count, uint* buffers, IntPtr* Offsets, int* Strides);
-
-        //    #endregion
-
-        //    #region GL Fields
-
-        //    //ARB_buffer_storage
-        //    public static delBufferStorage glBufferStorage;
-
-        //    //ARB_clear_texture
-        //    public static delClearTexImage glClearTexImage;
-        //    public static delClearTexSubImage glClearTexSubImage;
-
-        //    //ARB_multi_bind
-        //    public static delBindBuffersBase glBindBuffersBase;
-        //    public static delBindBuffersRange glBindBuffersRange;
-        //    public static delBindTextures glBindTextures;
-        //    public static delBindSamplers glBindSamplers;
-        //    public static delBindImageTextures glBindImageTextures;
-        //    public static delBindVertexBuffers glBindVertexBuffers;
-
-        //    #endregion
-        //}
+        [EntryPointSlot(465)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glBindBuffersRange(BufferProgramTarget target, int first, int count, uint* buffers, IntPtr* Offsets, IntPtr* Sizes);
+        [EntryPointSlot(466)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glBindTextures(uint first, int count, uint* textures);
+        [EntryPointSlot(467)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glBindSamplers(uint first, int count, uint* samplers);
+        [EntryPointSlot(468)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glBindImageTextures(uint first, int count, uint* textures);
+        [EntryPointSlot(469)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glBindVertexBuffers(uint first, int count, uint* buffers, IntPtr* Offsets, int* Strides);
 
         #endregion
 
@@ -154,14 +146,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="first">first BindingIndex to bind first buffer to.</param>
         /// <param name="count">Size of array buffers and number of buffers to bind continiously from first and upwards.</param>
         /// <param name="buffers">Array of buffer ids to bind.</param>
-        //[EntryPoint("glBindBuffersBase")]
-        public static unsafe void BindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers)
-        {
-            fixed(uint* ptr = &buffers)
-            {
-                BindBuffersBase(target, first, count, ptr);
-            }
-        }
+        [EntryPoint("glBindBuffersBase")]
+        public static void BindBuffersBase(BufferProgramTarget target, int first, int count, ref uint buffers) { throw new NotImplementedException(); }
+
 
         /// <summary>
         /// Binds an array of buffer ids to a bindingindex of target type starting at first.
@@ -169,9 +156,11 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="target">The sets or type of bindingindexes to bind to.</param>
         /// <param name="first">First Bindingindex to start binding at.</param>
         /// <param name="buffers">Array of buffer ids to bind.</param>
-        [EntryPoint("glBindBuffersBase")]
-        public static void BindBuffersBase(BufferProgramTarget target, int first, int count, uint[] buffers)
-        { throw new NotImplementedException(); }
+        //[EntryPoint("glBindBuffersBase")]
+        public static void BindBuffersBase(BufferProgramTarget target, int first, uint[] buffers)
+        {
+            BindBuffersBase(target, first, buffers.Length, ref buffers[0]);
+        }
 
         ///// <summary>
         ///// Resets a range of bindingindexes to no buffer.
@@ -182,8 +171,12 @@ namespace Kraggs.Graphics.OpenGL
         //public static void BindBuffersBase(BufferProgramTarget target, int first, int count)
         //{
         //    var tmp = new uint[count];
-        //    Delegates.glBindBuffersBase(target, first, tmp.Length, ref tmp[0]);
+        //    BindBuffersBase(target, first, tmp.Length, ref tmp[0]);
         //}
+        [EntryPoint("glBindBuffersRange")]
+        unsafe public static void BindBuffersRange(BufferProgramTarget target, int first, int count, uint* buffers, IntPtr* Offsets, IntPtr* Sizes)
+        { throw new NotImplementedException(); }
+
         [EntryPoint("glBindBuffersRange")]
         public static void BindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes)
         { throw new NotImplementedException(); }
@@ -194,6 +187,16 @@ namespace Kraggs.Graphics.OpenGL
 
             BindBuffersRange(target, first, count, ref buffers[0], ref Offsets[0], ref Sizes[0]);
         }
+        /// <summary>
+        /// Binds a range of textures to a range of texture units.
+        /// TextureTarget used is the first texturetarget used to bind after texture id generation.
+        /// </summary>
+        /// <param name="first">First zerobased texture unit to bind textures[0] to.</param>
+        /// <param name="count">Size of array textures and number of textures to bind continiously from first and upwards.</param>
+        /// <param name="textures">Array of texture ids to bind.</param>
+        [EntryPoint("glBindTextures")]
+        unsafe public static void BindTextures(uint first, int count, uint* textures)
+        { throw new NotImplementedException(); }
 
         /// <summary>
         /// Binds a range of textures to a range of texture units.
@@ -214,7 +217,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="textures">Array of texture ids to bind. Texture target used is the target specified when the texture object was created.</param>
         [EntryPoint("glBindTextures")]
         public static void BindTextures(uint first, uint[] textures)
-        { throw new NotImplementedException(); }
+        {
+            BindTextures(first, textures.Length, ref textures[0]);
+        }
 
         ///// <summary>
         ///// Resets a range of texture units to their default texture.(0)
@@ -226,6 +231,16 @@ namespace Kraggs.Graphics.OpenGL
         //    var tmp = new uint[count];
         //    Delegates.glBindTextures(first, tmp.Length, ref tmp[0]);
         //}
+
+        /// <summary>
+        /// Binds a range of sampler ids to a range of texture units.
+        /// </summary>
+        /// <param name="first">First zerobased texture unit to bind samplers[0] to.</param>
+        /// <param name="count">Size of array Samplers and number of Samplers to bind continiously from first and upwards.</param>
+        /// <param name="samplers">Array of sampler ids to bind.</param>
+        [EntryPoint("glBindSamplers")]
+        unsafe public static void BindSamplers(uint first, int count, uint* samplers)
+        { throw new NotImplementedException(); }
 
         /// <summary>
         /// Binds a range of sampler ids to a range of texture units.
@@ -246,6 +261,16 @@ namespace Kraggs.Graphics.OpenGL
         {
             BindSamplers(first, samplers.Length, ref samplers[0]);
         }
+        /// <summary>
+        /// Binds a range of image textures to a range of image units.
+        /// When binding a non-zero texture object to an image unit, the image unit [level, layered, layer, and access] parameters are set to [zero, TRUE, zero, and READ_WRITE], respectively.
+        /// </summary>
+        /// <param name="first">First Image unit to bind to.</param>
+        /// <param name="count">Size of array textures and number of textures to bind continiously from first and upwards.</param>
+        /// <param name="textures">Array of textures to bind to image units.</param>
+        [EntryPoint("glBindImageTextures")]
+        unsafe public static void BindImageTextures(uint first, int count, uint* textures)
+        { throw new NotImplementedException(); }
 
         /// <summary>
         /// Binds a range of image textures to a range of image units.
@@ -268,6 +293,17 @@ namespace Kraggs.Graphics.OpenGL
         {
             BindImageTextures(first, textures.Length, ref textures[0]);
         }
+        /// <summary>
+        /// Binds an array of buffers to a range of vertex buffer binding points starting at first.
+        /// </summary>
+        /// <param name="first">First binding point to bind first set of parametes to. aka buffers[0], Offsets[0], and Strides[0]</param>
+        /// <param name="count">Size of arrays and number of bindingpoints to bind continiously from first and upwards.</param>
+        /// <param name="buffers">Array of buffer ids to bind.</param>
+        /// <param name="Offsets">Array of OFfsets to use, 1 per binding</param>
+        /// <param name="Strides">Array of Strides to use, 1 per binding.</param>
+        [EntryPoint("glBindVertexBuffers")]
+        unsafe public static void BindVertexBuffers(uint first, int count, uint* buffers, IntPtr* Offsets, int* Strides)
+        { throw new NotImplementedException(); }
 
         /// <summary>
         /// Binds an array of buffers to a range of vertex buffer binding points starting at first.
@@ -307,6 +343,7 @@ namespace Kraggs.Graphics.OpenGL
             //    Delegates.glBindVertexBuffers(first, count, ptrBuffers, ptrOffsets, ptrStrides);
             //}
         }
+
         /// <summary>
         /// Binds an array of buffers to a range of  vertex buffer binding points starting at first.
         /// This creates a IntPtr[] and converts Offsets into this before calling.
@@ -325,18 +362,6 @@ namespace Kraggs.Graphics.OpenGL
                 ptrOffsets[i] = (IntPtr)Offsets[i];
 
             BindVertexBuffers(first, count, ref buffers[0], ref ptrOffsets[0], ref Strides[0]);
-            //if (count > 0)
-            //{
-            //    var ptrOffsets = new IntPtr[count];
-            //    for (int i = 0; i < ptrOffsets.Length; i++)
-            //        ptrOffsets[i] = (IntPtr)Offsets[i];
-
-            //    var ptrStrides = new IntPtr[count];
-            //    for (int i = 0; i < ptrStrides.Length; i++)
-            //        ptrStrides[i] = (IntPtr)Strides[i];
-
-            //    BindVertexBuffers(first, buffers, ptrOffsets, ptrStrides);
-            //}
 
             return count;
         }
@@ -353,42 +378,6 @@ namespace Kraggs.Graphics.OpenGL
 
         #endregion
 
-        #region DllImports
-
-        //ARB_buffer_storage
-        [EntryPointSlot(4400)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern void glBufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags);
-
-        //ARB_clear_texture
-        [EntryPointSlot(4401)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern void glClearTexImage(uint texture, int level, PixelFormat format, PixelType type, IntPtr FillData);
-        [EntryPointSlot(4402)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern void glClearTexSubImage(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr FillData);
-
-        //ARB_multi_bind
-        [EntryPointSlot(4403)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static unsafe extern void glBindBuffersBase(BufferProgramTarget target, int first, int count, uint* buffers);
-
-        [EntryPointSlot(4404)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindBuffersRange(BufferProgramTarget target, int first, int count, ref uint buffers, ref IntPtr Offsets, ref IntPtr Sizes);
-        [EntryPointSlot(4405)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindTextures(uint first, int count, ref uint textures);
-        [EntryPointSlot(4406)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindSamplers(uint first, int count, ref uint samplers);
-        [EntryPointSlot(4407)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindImageTextures(uint first, int count, ref uint textures);
-        [EntryPointSlot(4408)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindVertexBuffers(uint first, int count, ref uint buffers, ref IntPtr Offsets, ref int Strides);
-
-        #endregion
+        
     }
 }
