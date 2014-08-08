@@ -119,6 +119,62 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 71, 101, 116, 81, 117, 101, 114, 121, 105, 118, 0, // glGetQueryiv
 				103, 108, 71, 101, 116, 81, 117, 101, 114, 121, 79, 98, 106, 101, 99, 116, 105, 118, 0, // glGetQueryObjectiv
 				103, 108, 71, 101, 116, 81, 117, 101, 114, 121, 79, 98, 106, 101, 99, 116, 117, 105, 118, 0, // glGetQueryObjectuiv
+				103, 108, 66, 108, 101, 110, 100, 69, 113, 117, 97, 116, 105, 111, 110, 83, 101, 112, 97, 114, 97, 116, 101, 0, // glBlendEquationSeparate
+				103, 108, 68, 114, 97, 119, 66, 117, 102, 102, 101, 114, 115, 0, // glDrawBuffers
+				103, 108, 67, 114, 101, 97, 116, 101, 83, 104, 97, 100, 101, 114, 0, // glCreateShader
+				103, 108, 68, 101, 108, 101, 116, 101, 83, 104, 97, 100, 101, 114, 0, // glDeleteShader
+				103, 108, 73, 115, 83, 104, 97, 100, 101, 114, 0, // glIsShader
+				103, 108, 83, 104, 97, 100, 101, 114, 83, 111, 117, 114, 99, 101, 0, // glShaderSource
+				103, 108, 67, 111, 109, 112, 105, 108, 101, 83, 104, 97, 100, 101, 114, 0, // glCompileShader
+				103, 108, 71, 101, 116, 83, 104, 97, 100, 101, 114, 105, 118, 0, // glGetShaderiv
+				103, 108, 71, 101, 116, 83, 104, 97, 100, 101, 114, 83, 111, 117, 114, 99, 101, 0, // glGetShaderSource
+				103, 108, 71, 101, 116, 83, 104, 97, 100, 101, 114, 73, 110, 102, 111, 76, 111, 103, 0, // glGetShaderInfoLog
+				103, 108, 67, 114, 101, 97, 116, 101, 80, 114, 111, 103, 114, 97, 109, 0, // glCreateProgram
+				103, 108, 68, 101, 108, 101, 116, 101, 80, 114, 111, 103, 114, 97, 109, 0, // glDeleteProgram
+				103, 108, 73, 115, 80, 114, 111, 103, 114, 97, 109, 0, // glIsProgram
+				103, 108, 65, 116, 116, 97, 99, 104, 83, 104, 97, 100, 101, 114, 0, // glAttachShader
+				103, 108, 68, 101, 116, 97, 99, 104, 83, 104, 97, 100, 101, 114, 0, // glDetachShader
+				103, 108, 76, 105, 110, 107, 80, 114, 111, 103, 114, 97, 109, 0, // glLinkProgram
+				103, 108, 86, 97, 108, 105, 100, 97, 116, 101, 80, 114, 111, 103, 114, 97, 109, 0, // glValidateProgram
+				103, 108, 85, 115, 101, 80, 114, 111, 103, 114, 97, 109, 0, // glUseProgram
+				103, 108, 71, 101, 116, 80, 114, 111, 103, 114, 97, 109, 105, 118, 0, // glGetProgramiv
+				103, 108, 71, 101, 116, 80, 114, 111, 103, 114, 97, 109, 73, 110, 102, 111, 76, 111, 103, 0, // glGetProgramInfoLog
+				103, 108, 71, 101, 116, 65, 116, 116, 97, 99, 104, 101, 100, 83, 104, 97, 100, 101, 114, 115, 0, // glGetAttachedShaders
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 85, 110, 105, 102, 111, 114, 109, 0, // glGetActiveUniform
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 85, 110, 105, 102, 111, 114, 109, 78, 97, 109, 101, 0, // glGetActiveUniformName
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 85, 110, 105, 102, 111, 114, 109, 115, 105, 118, 0, // glGetActiveUniformsiv
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 76, 111, 99, 97, 116, 105, 111, 110, 0, // glGetUniformLocation
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 102, 118, 0, // glGetUniformfv
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 105, 118, 0, // glGetUniformiv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 102, 0, // glUniform1f
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 105, 0, // glUniform1i
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 102, 0, // glUniform2f
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 105, 0, // glUniform2i
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 102, 0, // glUniform3f
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 105, 0, // glUniform3i
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 102, 0, // glUniform4f
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 105, 0, // glUniform4i
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 102, 118, 0, // glUniform1fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 105, 118, 0, // glUniform1iv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 102, 118, 0, // glUniform2fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 105, 118, 0, // glUniform2iv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 102, 118, 0, // glUniform3fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 105, 118, 0, // glUniform3iv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 102, 118, 0, // glUniform4fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 105, 118, 0, // glUniform4iv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 102, 118, 0, // glUniformMatrix2fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 102, 118, 0, // glUniformMatrix3fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 102, 118, 0, // glUniformMatrix4fv
+				103, 108, 69, 110, 97, 98, 108, 101, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 65, 114, 114, 97, 121, 0, // glEnableVertexAttribArray
+				103, 108, 68, 105, 115, 97, 98, 108, 101, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 65, 114, 114, 97, 121, 0, // glDisableVertexAttribArray
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 80, 111, 105, 110, 116, 101, 114, 0, // glVertexAttribPointer
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 80, 111, 105, 110, 116, 101, 114, 118, 0, // glGetVertexAttribPointerv
+				103, 108, 66, 105, 110, 100, 65, 116, 116, 114, 105, 98, 76, 111, 99, 97, 116, 105, 111, 110, 0, // glBindAttribLocation
+				103, 108, 71, 101, 116, 65, 116, 116, 114, 105, 98, 76, 111, 99, 97, 116, 105, 111, 110, 0, // glGetAttribLocation
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 65, 116, 116, 114, 105, 98, 0, // glGetActiveAttrib
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 100, 118, 0, // glGetVertexAttribdv
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 102, 118, 0, // glGetVertexAttribfv
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 105, 118, 0, // glGetVertexAttribiv
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -236,62 +292,62 @@ namespace Kraggs.Graphics.OpenGL
 				1550, // SlotID: 101 = glGetQueryiv
 				1563, // SlotID: 102 = glGetQueryObjectiv
 				1582, // SlotID: 103 = glGetQueryObjectuiv
-				0, // SlotID: 104 is Empty
-				0, // SlotID: 105 is Empty
-				0, // SlotID: 106 is Empty
-				0, // SlotID: 107 is Empty
-				0, // SlotID: 108 is Empty
-				0, // SlotID: 109 is Empty
-				0, // SlotID: 110 is Empty
-				0, // SlotID: 111 is Empty
-				0, // SlotID: 112 is Empty
-				0, // SlotID: 113 is Empty
-				0, // SlotID: 114 is Empty
-				0, // SlotID: 115 is Empty
-				0, // SlotID: 116 is Empty
-				0, // SlotID: 117 is Empty
-				0, // SlotID: 118 is Empty
-				0, // SlotID: 119 is Empty
-				0, // SlotID: 120 is Empty
-				0, // SlotID: 121 is Empty
-				0, // SlotID: 122 is Empty
-				0, // SlotID: 123 is Empty
-				0, // SlotID: 124 is Empty
-				0, // SlotID: 125 is Empty
-				0, // SlotID: 126 is Empty
-				0, // SlotID: 127 is Empty
-				0, // SlotID: 128 is Empty
-				0, // SlotID: 129 is Empty
-				0, // SlotID: 130 is Empty
-				0, // SlotID: 131 is Empty
-				0, // SlotID: 132 is Empty
-				0, // SlotID: 133 is Empty
-				0, // SlotID: 134 is Empty
-				0, // SlotID: 135 is Empty
-				0, // SlotID: 136 is Empty
-				0, // SlotID: 137 is Empty
-				0, // SlotID: 138 is Empty
-				0, // SlotID: 139 is Empty
-				0, // SlotID: 140 is Empty
-				0, // SlotID: 141 is Empty
-				0, // SlotID: 142 is Empty
-				0, // SlotID: 143 is Empty
-				0, // SlotID: 144 is Empty
-				0, // SlotID: 145 is Empty
-				0, // SlotID: 146 is Empty
-				0, // SlotID: 147 is Empty
-				0, // SlotID: 148 is Empty
-				0, // SlotID: 149 is Empty
-				0, // SlotID: 150 is Empty
-				0, // SlotID: 151 is Empty
-				0, // SlotID: 152 is Empty
-				0, // SlotID: 153 is Empty
-				0, // SlotID: 154 is Empty
-				0, // SlotID: 155 is Empty
-				0, // SlotID: 156 is Empty
-				0, // SlotID: 157 is Empty
-				0, // SlotID: 158 is Empty
-				0, // SlotID: 159 is Empty
+				1602, // SlotID: 104 = glBlendEquationSeparate
+				1626, // SlotID: 105 = glDrawBuffers
+				1640, // SlotID: 106 = glCreateShader
+				1655, // SlotID: 107 = glDeleteShader
+				1670, // SlotID: 108 = glIsShader
+				1681, // SlotID: 109 = glShaderSource
+				1696, // SlotID: 110 = glCompileShader
+				1712, // SlotID: 111 = glGetShaderiv
+				1726, // SlotID: 112 = glGetShaderSource
+				1744, // SlotID: 113 = glGetShaderInfoLog
+				1763, // SlotID: 114 = glCreateProgram
+				1779, // SlotID: 115 = glDeleteProgram
+				1795, // SlotID: 116 = glIsProgram
+				1807, // SlotID: 117 = glAttachShader
+				1822, // SlotID: 118 = glDetachShader
+				1837, // SlotID: 119 = glLinkProgram
+				1851, // SlotID: 120 = glValidateProgram
+				1869, // SlotID: 121 = glUseProgram
+				1882, // SlotID: 122 = glGetProgramiv
+				1897, // SlotID: 123 = glGetProgramInfoLog
+				1917, // SlotID: 124 = glGetAttachedShaders
+				1938, // SlotID: 125 = glGetActiveUniform
+				1957, // SlotID: 126 = glGetActiveUniformName
+				1980, // SlotID: 127 = glGetActiveUniformsiv
+				2002, // SlotID: 128 = glGetUniformLocation
+				2023, // SlotID: 129 = glGetUniformfv
+				2038, // SlotID: 130 = glGetUniformiv
+				2053, // SlotID: 131 = glUniform1f
+				2065, // SlotID: 132 = glUniform1i
+				2077, // SlotID: 133 = glUniform2f
+				2089, // SlotID: 134 = glUniform2i
+				2101, // SlotID: 135 = glUniform3f
+				2113, // SlotID: 136 = glUniform3i
+				2125, // SlotID: 137 = glUniform4f
+				2137, // SlotID: 138 = glUniform4i
+				2149, // SlotID: 139 = glUniform1fv
+				2162, // SlotID: 140 = glUniform1iv
+				2175, // SlotID: 141 = glUniform2fv
+				2188, // SlotID: 142 = glUniform2iv
+				2201, // SlotID: 143 = glUniform3fv
+				2214, // SlotID: 144 = glUniform3iv
+				2227, // SlotID: 145 = glUniform4fv
+				2240, // SlotID: 146 = glUniform4iv
+				2253, // SlotID: 147 = glUniformMatrix2fv
+				2272, // SlotID: 148 = glUniformMatrix3fv
+				2291, // SlotID: 149 = glUniformMatrix4fv
+				2310, // SlotID: 150 = glEnableVertexAttribArray
+				2336, // SlotID: 151 = glDisableVertexAttribArray
+				2363, // SlotID: 152 = glVertexAttribPointer
+				2385, // SlotID: 153 = glGetVertexAttribPointerv
+				2411, // SlotID: 154 = glBindAttribLocation
+				2432, // SlotID: 155 = glGetAttribLocation
+				2452, // SlotID: 156 = glGetActiveAttrib
+				2470, // SlotID: 157 = glGetVertexAttribdv
+				2490, // SlotID: 158 = glGetVertexAttribfv
+				2510, // SlotID: 159 = glGetVertexAttribiv
 				0, // SlotID: 160 is Empty
 				0, // SlotID: 161 is Empty
 				0, // SlotID: 162 is Empty
@@ -4532,15 +4588,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				1602, // SlotID: 4400 = glBufferStorage
-				1618, // SlotID: 4401 = glClearTexImage
-				1634, // SlotID: 4402 = glClearTexSubImage
-				1653, // SlotID: 4403 = glBindBuffersBase
-				1671, // SlotID: 4404 = glBindBuffersRange
-				1690, // SlotID: 4405 = glBindTextures
-				1705, // SlotID: 4406 = glBindSamplers
-				1720, // SlotID: 4407 = glBindImageTextures
-				1740, // SlotID: 4408 = glBindVertexBuffers
+				2530, // SlotID: 4400 = glBufferStorage
+				2546, // SlotID: 4401 = glClearTexImage
+				2562, // SlotID: 4402 = glClearTexSubImage
+				2581, // SlotID: 4403 = glBindBuffersBase
+				2599, // SlotID: 4404 = glBindBuffersRange
+				2618, // SlotID: 4405 = glBindTextures
+				2633, // SlotID: 4406 = glBindSamplers
+				2648, // SlotID: 4407 = glBindImageTextures
+				2668, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
