@@ -240,6 +240,16 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 69, 110, 100, 67, 111, 110, 100, 105, 116, 105, 111, 110, 97, 108, 82, 101, 110, 100, 101, 114, 0, // glEndConditionalRender
 				103, 108, 71, 101, 116, 83, 116, 114, 105, 110, 103, 105, 0, // glGetStringi
 				103, 108, 71, 101, 110, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 115, 0, // glGenVertexArrays
+				103, 108, 67, 111, 112, 121, 66, 117, 102, 102, 101, 114, 83, 117, 98, 68, 97, 116, 97, 0, // glCopyBufferSubData
+				103, 108, 68, 114, 97, 119, 65, 114, 114, 97, 121, 115, 73, 110, 115, 116, 97, 110, 99, 101, 100, 0, // glDrawArraysInstanced
+				103, 108, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 73, 110, 115, 116, 97, 110, 99, 101, 100, 0, // glDrawElementsInstanced
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 73, 110, 100, 105, 99, 101, 115, 0, // glGetUniformIndices
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 66, 108, 111, 99, 107, 73, 110, 100, 101, 120, 0, // glGetUniformBlockIndex
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 85, 110, 105, 102, 111, 114, 109, 66, 108, 111, 99, 107, 78, 97, 109, 101, 0, // glGetActiveUniformBlockName
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 85, 110, 105, 102, 111, 114, 109, 66, 108, 111, 99, 107, 105, 118, 0, // glGetActiveUniformBlockiv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 66, 108, 111, 99, 107, 66, 105, 110, 100, 105, 110, 103, 0, // glUniformBlockBinding
+				103, 108, 80, 114, 105, 109, 105, 116, 105, 118, 101, 82, 101, 115, 116, 97, 114, 116, 73, 110, 100, 101, 120, 0, // glPrimitiveRestartIndex
+				103, 108, 84, 101, 120, 66, 117, 102, 102, 101, 114, 0, // glTexBuffer
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -478,16 +488,16 @@ namespace Kraggs.Graphics.OpenGL
 				3753, // SlotID: 222 = glEndConditionalRender
 				3776, // SlotID: 223 = glGetStringi
 				3789, // SlotID: 224 = glGenVertexArrays
-				0, // SlotID: 225 is Empty
-				0, // SlotID: 226 is Empty
-				0, // SlotID: 227 is Empty
-				0, // SlotID: 228 is Empty
-				0, // SlotID: 229 is Empty
-				0, // SlotID: 230 is Empty
-				0, // SlotID: 231 is Empty
-				0, // SlotID: 232 is Empty
-				0, // SlotID: 233 is Empty
-				0, // SlotID: 234 is Empty
+				3807, // SlotID: 225 = glCopyBufferSubData
+				3827, // SlotID: 226 = glDrawArraysInstanced
+				3849, // SlotID: 227 = glDrawElementsInstanced
+				3873, // SlotID: 228 = glGetUniformIndices
+				3893, // SlotID: 229 = glGetUniformBlockIndex
+				3916, // SlotID: 230 = glGetActiveUniformBlockName
+				3944, // SlotID: 231 = glGetActiveUniformBlockiv
+				3970, // SlotID: 232 = glUniformBlockBinding
+				3992, // SlotID: 233 = glPrimitiveRestartIndex
+				4016, // SlotID: 234 = glTexBuffer
 				0, // SlotID: 235 is Empty
 				0, // SlotID: 236 is Empty
 				0, // SlotID: 237 is Empty
@@ -4653,15 +4663,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				3807, // SlotID: 4400 = glBufferStorage
-				3823, // SlotID: 4401 = glClearTexImage
-				3839, // SlotID: 4402 = glClearTexSubImage
-				3858, // SlotID: 4403 = glBindBuffersBase
-				3876, // SlotID: 4404 = glBindBuffersRange
-				3895, // SlotID: 4405 = glBindTextures
-				3910, // SlotID: 4406 = glBindSamplers
-				3925, // SlotID: 4407 = glBindImageTextures
-				3945, // SlotID: 4408 = glBindVertexBuffers
+				4028, // SlotID: 4400 = glBufferStorage
+				4044, // SlotID: 4401 = glClearTexImage
+				4060, // SlotID: 4402 = glClearTexSubImage
+				4079, // SlotID: 4403 = glBindBuffersBase
+				4097, // SlotID: 4404 = glBindBuffersRange
+				4116, // SlotID: 4405 = glBindTextures
+				4131, // SlotID: 4406 = glBindSamplers
+				4146, // SlotID: 4407 = glBindImageTextures
+				4166, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
