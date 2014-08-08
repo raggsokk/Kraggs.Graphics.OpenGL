@@ -1,0 +1,14 @@
+﻿{
+	"Output": "GL_debug_entrypoints.autogen.cs",
+	"PartialClasses": [
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v11.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v12.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v13.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v14.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v15.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v20.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v21.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v30.cs",
+		"..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Core\\GL_v44.cs",
+	]
+}
