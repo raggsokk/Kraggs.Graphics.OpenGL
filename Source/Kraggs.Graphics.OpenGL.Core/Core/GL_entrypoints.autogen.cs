@@ -175,6 +175,12 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 100, 118, 0, // glGetVertexAttribdv
 				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 102, 118, 0, // glGetVertexAttribfv
 				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 105, 118, 0, // glGetVertexAttribiv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 120, 51, 102, 118, 0, // glUniformMatrix2x3fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 120, 52, 102, 118, 0, // glUniformMatrix2x4fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 50, 102, 118, 0, // glUniformMatrix3x2fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 52, 102, 118, 0, // glUniformMatrix3x4fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 50, 102, 118, 0, // glUniformMatrix4x2fv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 51, 102, 118, 0, // glUniformMatrix4x3fv
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -348,12 +354,12 @@ namespace Kraggs.Graphics.OpenGL
 				2470, // SlotID: 157 = glGetVertexAttribdv
 				2490, // SlotID: 158 = glGetVertexAttribfv
 				2510, // SlotID: 159 = glGetVertexAttribiv
-				0, // SlotID: 160 is Empty
-				0, // SlotID: 161 is Empty
-				0, // SlotID: 162 is Empty
-				0, // SlotID: 163 is Empty
-				0, // SlotID: 164 is Empty
-				0, // SlotID: 165 is Empty
+				2530, // SlotID: 160 = glUniformMatrix2x3fv
+				2551, // SlotID: 161 = glUniformMatrix2x4fv
+				2572, // SlotID: 162 = glUniformMatrix3x2fv
+				2593, // SlotID: 163 = glUniformMatrix3x4fv
+				2614, // SlotID: 164 = glUniformMatrix4x2fv
+				2635, // SlotID: 165 = glUniformMatrix4x3fv
 				0, // SlotID: 166 is Empty
 				0, // SlotID: 167 is Empty
 				0, // SlotID: 168 is Empty
@@ -4588,15 +4594,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				2530, // SlotID: 4400 = glBufferStorage
-				2546, // SlotID: 4401 = glClearTexImage
-				2562, // SlotID: 4402 = glClearTexSubImage
-				2581, // SlotID: 4403 = glBindBuffersBase
-				2599, // SlotID: 4404 = glBindBuffersRange
-				2618, // SlotID: 4405 = glBindTextures
-				2633, // SlotID: 4406 = glBindSamplers
-				2648, // SlotID: 4407 = glBindImageTextures
-				2668, // SlotID: 4408 = glBindVertexBuffers
+				2656, // SlotID: 4400 = glBufferStorage
+				2672, // SlotID: 4401 = glClearTexImage
+				2688, // SlotID: 4402 = glClearTexSubImage
+				2707, // SlotID: 4403 = glBindBuffersBase
+				2725, // SlotID: 4404 = glBindBuffersRange
+				2744, // SlotID: 4405 = glBindTextures
+				2759, // SlotID: 4406 = glBindSamplers
+				2774, // SlotID: 4407 = glBindImageTextures
+				2794, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
