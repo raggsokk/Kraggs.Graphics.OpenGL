@@ -30,6 +30,9 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 71, 101, 116, 84, 101, 120, 116, 117, 114, 101, 80, 97, 114, 97, 109, 101, 116, 101, 114, 102, 118, 69, 88, 84, 0, // glGetTextureParameterfvEXT
 				103, 108, 71, 101, 116, 84, 101, 120, 116, 117, 114, 101, 76, 101, 118, 101, 108, 80, 97, 114, 97, 109, 101, 116, 101, 114, 102, 118, 69, 88, 84, 0, // glGetTextureLevelParameterfvEXT
 				103, 108, 71, 101, 116, 84, 101, 120, 116, 117, 114, 101, 76, 101, 118, 101, 108, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 69, 88, 84, 0, // glGetTextureLevelParameterivEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glTextureImage3DEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glTextureSubImage3DEXT
+				103, 108, 67, 111, 112, 121, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glCopyTextureSubImage3DEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -49,6 +52,9 @@ namespace Kraggs.Graphics.OpenGL
 				254, // SlotID: 12 = glGetTextureParameterfvEXT
 				281, // SlotID: 13 = glGetTextureLevelParameterfvEXT
 				313, // SlotID: 14 = glGetTextureLevelParameterivEXT
+				345, // SlotID: 15 = glTextureImage3DEXT
+				365, // SlotID: 16 = glTextureSubImage3DEXT
+				388, // SlotID: 17 = glCopyTextureSubImage3DEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

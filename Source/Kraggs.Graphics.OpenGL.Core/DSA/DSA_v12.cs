@@ -37,46 +37,40 @@ namespace Kraggs.Graphics.OpenGL
     // template class until gl 4.4 where its not neede for another year.
     partial class DSA
     {
-        //#region Delegate Class
 
-        //partial class Delegates
-        //{
-        //    #region Delegates
+        #region OpenGL DLLImports
 
-        //    public delegate void delTextureImage3DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, int border, PixelFormat format, PixelType type, IntPtr pixels);
-        //    public delegate void delTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr pixels);
-        //    public delegate void delCopyTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height);
-
-        //    #endregion
-
-        //    #region GL Fields
-
-        //    public static delTextureImage3DEXT glTextureImage3DEXT;
-        //    public static delTextureSubImage3DEXT glTextureSubImage3DEXT;
-        //    public static delCopyTextureSubImage3DEXT glCopyTextureSubImage3DEXT;
-
-        //    #endregion
-        //}
-
-        //#endregion
-
-        //#region Public functions.
-
-        //public static void TextureImage3DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr pixels)
-        //{
-        //    Delegates.glTextureImage3DEXT(TextureID, target, level, piformat, width, height, depth, 0, format, type, pixels);
-        //}
-        //public static void TextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr pixels)
-        //{
-        //    Delegates.glTextureSubImage3DEXT(TextureID, target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
-        //}
-        //public static void CopyTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height)
-        //{
-        //    Delegates.glCopyTextureSubImage3DEXT(TextureID, target, level, xoffset, yoffset, zoffset, x, y, width, height);
-        //}
+        [EntryPointSlot(15)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glTextureImage3DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, int border, PixelFormat format, PixelType type, IntPtr pixels);
+        [EntryPointSlot(16)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr pixels);
+        [EntryPointSlot(17)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glCopyTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height);
 
 
-        //#endregion
+        #endregion
+
+        #region Public functions
+
+        
+        [EntryPoint(FunctionName = "glTextureImage3DEXT")]
+        public static void TextureImage3DEXT(uint TextureID, TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, int border, PixelFormat format, PixelType type, IntPtr pixels){ throw new NotImplementedException(); }
+        
+        [EntryPoint(FunctionName = "glTextureSubImage3DEXT")]
+        public static void TextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, IntPtr pixels){ throw new NotImplementedException(); }
+        
+        [EntryPoint(FunctionName = "glCopyTextureSubImage3DEXT")]
+        public static void CopyTextureSubImage3DEXT(uint TextureID, TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int x, int y, int width, int height){ throw new NotImplementedException(); }
+
+        #endregion
+
+        #region Public Helper Functions
+
+        #endregion
+
     }
 }
 
