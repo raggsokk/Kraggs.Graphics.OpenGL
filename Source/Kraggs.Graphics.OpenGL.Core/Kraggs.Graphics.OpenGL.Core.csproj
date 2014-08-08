@@ -80,6 +80,23 @@
     <Compile Include="Core\GL_v43.cs" />
     <Compile Include="Core\GL_v44.cs" />
     <Compile Include="Core\GL_v45.cs" />
+    <Compile Include="DSA\DSA.cs" />
+    <Compile Include="DSA\DSA_entrypoints.autogen.cs" />
+    <Compile Include="DSA\DSA_v11.cs" />
+    <Compile Include="DSA\DSA_v12.cs" />
+    <Compile Include="DSA\DSA_v13.cs" />
+    <Compile Include="DSA\DSA_v15.cs" />
+    <Compile Include="DSA\DSA_v20.cs" />
+    <Compile Include="DSA\DSA_v21.cs" />
+    <Compile Include="DSA\DSA_v30.cs" />
+    <Compile Include="DSA\DSA_v31.cs" />
+    <Compile Include="DSA\DSA_v32.cs" />
+    <Compile Include="DSA\DSA_v33.cs" />
+    <Compile Include="DSA\DSA_v40.cs" />
+    <Compile Include="DSA\DSA_v41.cs" />
+    <Compile Include="DSA\DSA_v42.cs" />
+    <Compile Include="DSA\DSA_v43.cs" />
+    <Compile Include="DSA\DSA_v44.cs" />
     <Compile Include="Enums\All.cs" />
     <Compile Include="Enums\AtomicCounterBufferParameters.cs" />
     <Compile Include="Enums\AttachmentParameters.cs" />
@@ -207,11 +224,10 @@
   <ItemGroup>
     <None Include="ARB\ARB.EntryPoint.json" />
     <None Include="Core\Core.EntryPoint.json" />
+    <None Include="DSA\DSA.EntryPoint.json" />
     <None Include="OpenGL.rewrite.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DSA\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
