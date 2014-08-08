@@ -416,6 +416,18 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 86, 105, 101, 119, 112, 111, 114, 116, 65, 114, 114, 97, 121, 118, 0, // glViewportArrayv
 				103, 108, 86, 105, 101, 119, 112, 111, 114, 116, 73, 110, 100, 101, 120, 101, 100, 102, 0, // glViewportIndexedf
 				103, 108, 86, 105, 101, 119, 112, 111, 114, 116, 73, 110, 100, 101, 120, 101, 100, 102, 118, 0, // glViewportIndexedfv
+				103, 108, 68, 114, 97, 119, 65, 114, 114, 97, 121, 115, 73, 110, 115, 116, 97, 110, 99, 101, 100, 66, 97, 115, 101, 73, 110, 115, 116, 97, 110, 99, 101, 0, // glDrawArraysInstancedBaseInstance
+				103, 108, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 73, 110, 115, 116, 97, 110, 99, 101, 100, 66, 97, 115, 101, 73, 110, 115, 116, 97, 110, 99, 101, 0, // glDrawElementsInstancedBaseInstance
+				103, 108, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 73, 110, 115, 116, 97, 110, 99, 101, 100, 66, 97, 115, 101, 86, 101, 114, 116, 101, 120, 66, 97, 115, 101, 73, 110, 115, 116, 97, 110, 99, 101, 0, // glDrawElementsInstancedBaseVertexBaseInstance
+				103, 108, 71, 101, 116, 73, 110, 116, 101, 114, 110, 97, 108, 102, 111, 114, 109, 97, 116, 105, 118, 0, // glGetInternalformativ
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 65, 116, 111, 109, 105, 99, 67, 111, 117, 110, 116, 101, 114, 66, 117, 102, 102, 101, 114, 105, 118, 0, // glGetActiveAtomicCounterBufferiv
+				103, 108, 77, 101, 109, 111, 114, 121, 66, 97, 114, 114, 105, 101, 114, 0, // glMemoryBarrier
+				103, 108, 66, 105, 110, 100, 73, 109, 97, 103, 101, 84, 101, 120, 116, 117, 114, 101, 0, // glBindImageTexture
+				103, 108, 84, 101, 120, 83, 116, 111, 114, 97, 103, 101, 49, 68, 0, // glTexStorage1D
+				103, 108, 84, 101, 120, 83, 116, 111, 114, 97, 103, 101, 50, 68, 0, // glTexStorage2D
+				103, 108, 84, 101, 120, 83, 116, 111, 114, 97, 103, 101, 51, 68, 0, // glTexStorage3D
+				103, 108, 68, 114, 97, 119, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 73, 110, 115, 116, 97, 110, 99, 101, 100, 0, // glDrawTransformFeedbackInstanced
+				103, 108, 68, 114, 97, 119, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 83, 116, 114, 101, 97, 109, 73, 110, 115, 116, 97, 110, 99, 101, 100, 0, // glDrawTransformFeedbackStreamInstanced
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -830,18 +842,18 @@ namespace Kraggs.Graphics.OpenGL
 				7450, // SlotID: 398 = glViewportArrayv
 				7467, // SlotID: 399 = glViewportIndexedf
 				7486, // SlotID: 400 = glViewportIndexedfv
-				0, // SlotID: 401 is Empty
-				0, // SlotID: 402 is Empty
-				0, // SlotID: 403 is Empty
-				0, // SlotID: 404 is Empty
-				0, // SlotID: 405 is Empty
-				0, // SlotID: 406 is Empty
-				0, // SlotID: 407 is Empty
-				0, // SlotID: 408 is Empty
-				0, // SlotID: 409 is Empty
-				0, // SlotID: 410 is Empty
-				0, // SlotID: 411 is Empty
-				0, // SlotID: 412 is Empty
+				7506, // SlotID: 401 = glDrawArraysInstancedBaseInstance
+				7540, // SlotID: 402 = glDrawElementsInstancedBaseInstance
+				7576, // SlotID: 403 = glDrawElementsInstancedBaseVertexBaseInstance
+				7622, // SlotID: 404 = glGetInternalformativ
+				7644, // SlotID: 405 = glGetActiveAtomicCounterBufferiv
+				7677, // SlotID: 406 = glMemoryBarrier
+				7693, // SlotID: 407 = glBindImageTexture
+				7712, // SlotID: 408 = glTexStorage1D
+				7727, // SlotID: 409 = glTexStorage2D
+				7742, // SlotID: 410 = glTexStorage3D
+				7757, // SlotID: 411 = glDrawTransformFeedbackInstanced
+				7790, // SlotID: 412 = glDrawTransformFeedbackStreamInstanced
 				0, // SlotID: 413 is Empty
 				0, // SlotID: 414 is Empty
 				0, // SlotID: 415 is Empty
@@ -4829,15 +4841,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				7506, // SlotID: 4400 = glBufferStorage
-				7522, // SlotID: 4401 = glClearTexImage
-				7538, // SlotID: 4402 = glClearTexSubImage
-				7557, // SlotID: 4403 = glBindBuffersBase
-				7575, // SlotID: 4404 = glBindBuffersRange
-				7594, // SlotID: 4405 = glBindTextures
-				7609, // SlotID: 4406 = glBindSamplers
-				7624, // SlotID: 4407 = glBindImageTextures
-				7644, // SlotID: 4408 = glBindVertexBuffers
+				7829, // SlotID: 4400 = glBufferStorage
+				7845, // SlotID: 4401 = glClearTexImage
+				7861, // SlotID: 4402 = glClearTexSubImage
+				7880, // SlotID: 4403 = glBindBuffersBase
+				7898, // SlotID: 4404 = glBindBuffersRange
+				7917, // SlotID: 4405 = glBindTextures
+				7932, // SlotID: 4406 = glBindSamplers
+				7947, // SlotID: 4407 = glBindImageTextures
+				7967, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
