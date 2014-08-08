@@ -290,6 +290,52 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 71, 101, 116, 83, 97, 109, 112, 108, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 73, 105, 118, 0, // glGetSamplerParameterIiv
 				103, 108, 71, 101, 116, 83, 97, 109, 112, 108, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 73, 117, 105, 118, 0, // glGetSamplerParameterIuiv
 				103, 108, 83, 97, 109, 112, 108, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 73, 117, 105, 118, 0, // glSamplerParameterIuiv
+				103, 108, 66, 108, 101, 110, 100, 69, 113, 117, 97, 116, 105, 111, 110, 83, 101, 112, 97, 114, 97, 116, 101, 105, 0, // glBlendEquationSeparatei
+				103, 108, 66, 108, 101, 110, 100, 69, 113, 117, 97, 116, 105, 111, 110, 105, 0, // glBlendEquationi
+				103, 108, 66, 108, 101, 110, 100, 70, 117, 110, 99, 83, 101, 112, 97, 114, 97, 116, 101, 105, 0, // glBlendFuncSeparatei
+				103, 108, 66, 108, 101, 110, 100, 70, 117, 110, 99, 105, 0, // glBlendFunci
+				103, 108, 68, 114, 97, 119, 65, 114, 114, 97, 121, 115, 73, 110, 100, 105, 114, 101, 99, 116, 0, // glDrawArraysIndirect
+				103, 108, 68, 114, 97, 119, 69, 108, 101, 109, 101, 110, 116, 115, 73, 110, 100, 105, 114, 101, 99, 116, 0, // glDrawElementsIndirect
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 83, 117, 98, 114, 111, 117, 116, 105, 110, 101, 78, 97, 109, 101, 0, // glGetActiveSubroutineName
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 83, 117, 98, 114, 111, 117, 116, 105, 110, 101, 85, 110, 105, 102, 111, 114, 109, 78, 97, 109, 101, 0, // glGetActiveSubroutineUniformName
+				103, 108, 71, 101, 116, 65, 99, 116, 105, 118, 101, 83, 117, 98, 114, 111, 117, 116, 105, 110, 101, 85, 110, 105, 102, 111, 114, 109, 105, 118, 0, // glGetActiveSubroutineUniformiv
+				103, 108, 71, 101, 116, 80, 114, 111, 103, 114, 97, 109, 83, 116, 97, 103, 101, 105, 118, 0, // glGetProgramStageiv
+				103, 108, 71, 101, 116, 83, 117, 98, 114, 111, 117, 116, 105, 110, 101, 73, 110, 100, 101, 120, 0, // glGetSubroutineIndex
+				103, 108, 71, 101, 116, 83, 117, 98, 114, 111, 117, 116, 105, 110, 101, 85, 110, 105, 102, 111, 114, 109, 76, 111, 99, 97, 116, 105, 111, 110, 0, // glGetSubroutineUniformLocation
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 83, 117, 98, 114, 111, 117, 116, 105, 110, 101, 117, 105, 118, 0, // glGetUniformSubroutineuiv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 83, 117, 98, 114, 111, 117, 116, 105, 110, 101, 115, 117, 105, 118, 0, // glUniformSubroutinesuiv
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 100, 118, 0, // glGetUniformdv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 100, 0, // glUniform1d
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 100, 0, // glUniform2d
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 100, 0, // glUniform3d
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 100, 0, // glUniform4d
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 100, 118, 0, // glUniform1dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 100, 118, 0, // glUniform2dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 100, 118, 0, // glUniform3dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 100, 118, 0, // glUniform4dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 100, 118, 0, // glUniformMatrix2dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 100, 118, 0, // glUniformMatrix3dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 100, 118, 0, // glUniformMatrix4dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 120, 51, 100, 118, 0, // glUniformMatrix2x3dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 120, 52, 100, 118, 0, // glUniformMatrix2x4dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 50, 100, 118, 0, // glUniformMatrix3x2dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 52, 100, 118, 0, // glUniformMatrix3x4dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 50, 100, 118, 0, // glUniformMatrix4x2dv
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 51, 100, 118, 0, // glUniformMatrix4x3dv
+				103, 108, 77, 105, 110, 83, 97, 109, 112, 108, 101, 83, 104, 97, 100, 105, 110, 103, 0, // glMinSampleShading
+				103, 108, 80, 97, 116, 99, 104, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 0, // glPatchParameteri
+				103, 108, 80, 97, 116, 99, 104, 80, 97, 114, 97, 109, 101, 116, 101, 114, 102, 118, 0, // glPatchParameterfv
+				103, 108, 66, 105, 110, 100, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 0, // glBindTransformFeedback
+				103, 108, 68, 101, 108, 101, 116, 101, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 115, 0, // glDeleteTransformFeedbacks
+				103, 108, 68, 114, 97, 119, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 0, // glDrawTransformFeedback
+				103, 108, 71, 101, 110, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 115, 0, // glGenTransformFeedbacks
+				103, 108, 73, 115, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 0, // glIsTransformFeedback
+				103, 108, 80, 97, 117, 115, 101, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 0, // glPauseTransformFeedback
+				103, 108, 82, 101, 115, 117, 109, 101, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 0, // glResumeTransformFeedback
+				103, 108, 66, 101, 103, 105, 110, 81, 117, 101, 114, 121, 73, 110, 100, 101, 120, 101, 100, 0, // glBeginQueryIndexed
+				103, 108, 68, 114, 97, 119, 84, 114, 97, 110, 115, 102, 111, 114, 109, 70, 101, 101, 100, 98, 97, 99, 107, 83, 116, 114, 101, 97, 109, 0, // glDrawTransformFeedbackStream
+				103, 108, 69, 110, 100, 81, 117, 101, 114, 121, 73, 110, 100, 101, 120, 101, 100, 0, // glEndQueryIndexed
+				103, 108, 71, 101, 116, 81, 117, 101, 114, 121, 73, 110, 100, 101, 120, 101, 100, 105, 118, 0, // glGetQueryIndexediv
 				103, 108, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 0, // glBufferStorage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 73, 109, 97, 103, 101, 0, // glClearTexImage
 				103, 108, 67, 108, 101, 97, 114, 84, 101, 120, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glClearTexSubImage
@@ -578,52 +624,52 @@ namespace Kraggs.Graphics.OpenGL
 				4764, // SlotID: 272 = glGetSamplerParameterIiv
 				4789, // SlotID: 273 = glGetSamplerParameterIuiv
 				4815, // SlotID: 274 = glSamplerParameterIuiv
-				0, // SlotID: 275 is Empty
-				0, // SlotID: 276 is Empty
-				0, // SlotID: 277 is Empty
-				0, // SlotID: 278 is Empty
-				0, // SlotID: 279 is Empty
-				0, // SlotID: 280 is Empty
-				0, // SlotID: 281 is Empty
-				0, // SlotID: 282 is Empty
-				0, // SlotID: 283 is Empty
-				0, // SlotID: 284 is Empty
-				0, // SlotID: 285 is Empty
-				0, // SlotID: 286 is Empty
-				0, // SlotID: 287 is Empty
-				0, // SlotID: 288 is Empty
-				0, // SlotID: 289 is Empty
-				0, // SlotID: 290 is Empty
-				0, // SlotID: 291 is Empty
-				0, // SlotID: 292 is Empty
-				0, // SlotID: 293 is Empty
-				0, // SlotID: 294 is Empty
-				0, // SlotID: 295 is Empty
-				0, // SlotID: 296 is Empty
-				0, // SlotID: 297 is Empty
-				0, // SlotID: 298 is Empty
-				0, // SlotID: 299 is Empty
-				0, // SlotID: 300 is Empty
-				0, // SlotID: 301 is Empty
-				0, // SlotID: 302 is Empty
-				0, // SlotID: 303 is Empty
-				0, // SlotID: 304 is Empty
-				0, // SlotID: 305 is Empty
-				0, // SlotID: 306 is Empty
-				0, // SlotID: 307 is Empty
-				0, // SlotID: 308 is Empty
-				0, // SlotID: 309 is Empty
-				0, // SlotID: 310 is Empty
-				0, // SlotID: 311 is Empty
-				0, // SlotID: 312 is Empty
-				0, // SlotID: 313 is Empty
-				0, // SlotID: 314 is Empty
-				0, // SlotID: 315 is Empty
-				0, // SlotID: 316 is Empty
-				0, // SlotID: 317 is Empty
-				0, // SlotID: 318 is Empty
-				0, // SlotID: 319 is Empty
-				0, // SlotID: 320 is Empty
+				4838, // SlotID: 275 = glBlendEquationSeparatei
+				4863, // SlotID: 276 = glBlendEquationi
+				4880, // SlotID: 277 = glBlendFuncSeparatei
+				4901, // SlotID: 278 = glBlendFunci
+				4914, // SlotID: 279 = glDrawArraysIndirect
+				4935, // SlotID: 280 = glDrawElementsIndirect
+				4958, // SlotID: 281 = glGetActiveSubroutineName
+				4984, // SlotID: 282 = glGetActiveSubroutineUniformName
+				5017, // SlotID: 283 = glGetActiveSubroutineUniformiv
+				5048, // SlotID: 284 = glGetProgramStageiv
+				5068, // SlotID: 285 = glGetSubroutineIndex
+				5089, // SlotID: 286 = glGetSubroutineUniformLocation
+				5120, // SlotID: 287 = glGetUniformSubroutineuiv
+				5146, // SlotID: 288 = glUniformSubroutinesuiv
+				5170, // SlotID: 289 = glGetUniformdv
+				5185, // SlotID: 290 = glUniform1d
+				5197, // SlotID: 291 = glUniform2d
+				5209, // SlotID: 292 = glUniform3d
+				5221, // SlotID: 293 = glUniform4d
+				5233, // SlotID: 294 = glUniform1dv
+				5246, // SlotID: 295 = glUniform2dv
+				5259, // SlotID: 296 = glUniform3dv
+				5272, // SlotID: 297 = glUniform4dv
+				5285, // SlotID: 298 = glUniformMatrix2dv
+				5304, // SlotID: 299 = glUniformMatrix3dv
+				5323, // SlotID: 300 = glUniformMatrix4dv
+				5342, // SlotID: 301 = glUniformMatrix2x3dv
+				5363, // SlotID: 302 = glUniformMatrix2x4dv
+				5384, // SlotID: 303 = glUniformMatrix3x2dv
+				5405, // SlotID: 304 = glUniformMatrix3x4dv
+				5426, // SlotID: 305 = glUniformMatrix4x2dv
+				5447, // SlotID: 306 = glUniformMatrix4x3dv
+				5468, // SlotID: 307 = glMinSampleShading
+				5487, // SlotID: 308 = glPatchParameteri
+				5505, // SlotID: 309 = glPatchParameterfv
+				5524, // SlotID: 310 = glBindTransformFeedback
+				5548, // SlotID: 311 = glDeleteTransformFeedbacks
+				5575, // SlotID: 312 = glDrawTransformFeedback
+				5599, // SlotID: 313 = glGenTransformFeedbacks
+				5623, // SlotID: 314 = glIsTransformFeedback
+				5645, // SlotID: 315 = glPauseTransformFeedback
+				5670, // SlotID: 316 = glResumeTransformFeedback
+				5696, // SlotID: 317 = glBeginQueryIndexed
+				5716, // SlotID: 318 = glDrawTransformFeedbackStream
+				5746, // SlotID: 319 = glEndQueryIndexed
+				5764, // SlotID: 320 = glGetQueryIndexediv
 				0, // SlotID: 321 is Empty
 				0, // SlotID: 322 is Empty
 				0, // SlotID: 323 is Empty
@@ -4703,15 +4749,15 @@ namespace Kraggs.Graphics.OpenGL
 				0, // SlotID: 4397 is Empty
 				0, // SlotID: 4398 is Empty
 				0, // SlotID: 4399 is Empty
-				4838, // SlotID: 4400 = glBufferStorage
-				4854, // SlotID: 4401 = glClearTexImage
-				4870, // SlotID: 4402 = glClearTexSubImage
-				4889, // SlotID: 4403 = glBindBuffersBase
-				4907, // SlotID: 4404 = glBindBuffersRange
-				4926, // SlotID: 4405 = glBindTextures
-				4941, // SlotID: 4406 = glBindSamplers
-				4956, // SlotID: 4407 = glBindImageTextures
-				4976, // SlotID: 4408 = glBindVertexBuffers
+				5784, // SlotID: 4400 = glBufferStorage
+				5800, // SlotID: 4401 = glClearTexImage
+				5816, // SlotID: 4402 = glClearTexSubImage
+				5835, // SlotID: 4403 = glBindBuffersBase
+				5853, // SlotID: 4404 = glBindBuffersRange
+				5872, // SlotID: 4405 = glBindTextures
+				5887, // SlotID: 4406 = glBindSamplers
+				5902, // SlotID: 4407 = glBindImageTextures
+				5922, // SlotID: 4408 = glBindVertexBuffers
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
