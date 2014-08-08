@@ -60,7 +60,7 @@ using Kraggs.Graphics;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("5.1.*")]
-[assembly: AssemblyFileVersion("5.1.40.0")]
+[assembly: AssemblyFileVersion("5.1.41.0")]
 
 //[assembly: AssemblyKeyFile("..\\Kraggs.Graphics.OpenGL.snk")]
 
