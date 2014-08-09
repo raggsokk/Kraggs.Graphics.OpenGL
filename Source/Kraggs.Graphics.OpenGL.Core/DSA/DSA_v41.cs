@@ -37,43 +37,36 @@ namespace Kraggs.Graphics.OpenGL
 
     partial class DSA
     {
-        //#region Delegate Class
 
-        //partial class Delegates
-        //{
+        #region OpenGL DLLImports
 
-        //    #region Delegates
+        [EntryPointSlot(114)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]        
+        private static extern void glVertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, VertexAttribLFormat type, int stride, IntPtr offset);
 
-        //    public delegate void delVertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, VertexAttribLFormat type, int stride, IntPtr offset); 
+        #endregion
 
-        //    #endregion
+        #region Public functions
 
-        //    #region GL Fields
+        /// <summary>
+        /// Sets up Vertex Declaration for a shader attribute variable declared with 64-bit double precision.
+        /// </summary>
+        /// <param name="vaobj">identifies a vertex array object used instead of the currently bound one</param>
+        /// <param name="buffer">buffer is used in place of the buffer object bound to ARRAY_BUFFER</param>
+        /// <param name="index">Attribute Index to declare vertex specification for.</param>
+        /// <param name="size">size may be one, two, three or four</param>
+        /// <param name="type">type must be DOUBLE</param>
+        /// <param name="stride">the length in bytes between two vertices.</param>
+        /// <param name="offset">offset in bytes in named buffer to retrive vertices from.</param>
+        [EntryPoint(FunctionName = "glVertexArrayVertexAttribLOffsetEXT")]
+        public static void VertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, VertexAttribLFormat type, int stride, IntPtr offset) { throw new NotImplementedException(); }
 
-        //    public static delVertexArrayVertexAttribLOffsetEXT glVertexArrayVertexAttribLOffsetEXT;
 
-        //    #endregion
-        //}
+        #endregion
 
-        //#endregion
+        #region Public Helper Functions
 
-        //#region Public functions.
+        #endregion
 
-        ///// <summary>
-        ///// Sets up Vertex Declaration for a shader attribute variable declared with 64-bit double precision.
-        ///// </summary>
-        ///// <param name="vaobj">identifies a vertex array object used instead of the currently bound one</param>
-        ///// <param name="buffer">buffer is used in place of the buffer object bound to ARRAY_BUFFER</param>
-        ///// <param name="index">Attribute Index to declare vertex specification for.</param>
-        ///// <param name="size">size may be one, two, three or four</param>
-        ///// <param name="type">type must be DOUBLE</param>
-        ///// <param name="stride">the length in bytes between two vertices.</param>
-        ///// <param name="offset">offset in bytes in named buffer to retrive vertices from.</param>
-        //public static void VertexArrayVertexAttribLOffsetEXT(uint vaobj, uint buffer, uint index, int size, VertexAttribLFormat type = VertexAttribLFormat.Double, int stride = 0, long offset = 0)
-        //{
-        //    Delegates.glVertexArrayVertexAttribLOffsetEXT(vaobj, buffer, index, size, type, stride, (IntPtr)offset);
-        //}
-
-        //#endregion
     }
 }

@@ -129,6 +129,7 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 52, 100, 118, 69, 88, 84, 0, // glProgramUniformMatrix3x4dvEXT
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 50, 100, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x2dvEXT
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 51, 100, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x3dvEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 76, 79, 102, 102, 115, 101, 116, 69, 88, 84, 0, // glVertexArrayVertexAttribLOffsetEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -247,6 +248,7 @@ namespace Kraggs.Graphics.OpenGL
 				2987, // SlotID: 111 = glProgramUniformMatrix3x4dvEXT
 				3018, // SlotID: 112 = glProgramUniformMatrix4x2dvEXT
 				3049, // SlotID: 113 = glProgramUniformMatrix4x3dvEXT
+				3080, // SlotID: 114 = glVertexArrayVertexAttribLOffsetEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
