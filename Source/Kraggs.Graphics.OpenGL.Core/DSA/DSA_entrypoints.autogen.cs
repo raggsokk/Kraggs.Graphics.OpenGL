@@ -133,6 +133,19 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 49, 68, 69, 88, 84, 0, // glTextureStorage1DEXT
 				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 50, 68, 69, 88, 84, 0, // glTextureStorage2DEXT
 				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glTextureStorage3DEXT
+				103, 108, 67, 108, 101, 97, 114, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 68, 97, 116, 97, 69, 88, 84, 0, // glClearNamedBufferDataEXT
+				103, 108, 67, 108, 101, 97, 114, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 83, 117, 98, 68, 97, 116, 97, 69, 88, 84, 0, // glClearNamedBufferSubDataEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 66, 117, 102, 102, 101, 114, 82, 97, 110, 103, 101, 69, 88, 84, 0, // glTextureBufferRangeEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 50, 68, 77, 117, 108, 116, 105, 115, 97, 109, 112, 108, 101, 69, 88, 84, 0, // glTextureStorage2DMultisampleEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 51, 68, 77, 117, 108, 116, 105, 115, 97, 109, 112, 108, 101, 69, 88, 84, 0, // glTextureStorage3DMultisampleEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 66, 105, 110, 100, 86, 101, 114, 116, 101, 120, 66, 117, 102, 102, 101, 114, 69, 88, 84, 0, // glVertexArrayBindVertexBufferEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 70, 111, 114, 109, 97, 116, 69, 88, 84, 0, // glVertexArrayVertexAttribFormatEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 73, 70, 111, 114, 109, 97, 116, 69, 88, 84, 0, // glVertexArrayVertexAttribIFormatEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 76, 70, 111, 114, 109, 97, 116, 69, 88, 84, 0, // glVertexArrayVertexAttribLFormatEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 66, 105, 110, 100, 105, 110, 103, 69, 88, 84, 0, // glVertexArrayVertexAttribBindingEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 66, 105, 110, 100, 105, 110, 103, 68, 105, 118, 105, 115, 111, 114, 69, 88, 84, 0, // glVertexArrayVertexBindingDivisorEXT
+				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 69, 88, 84, 0, // glNamedFramebufferParameteriEXT
+				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 69, 88, 84, 0, // glGetNamedFramebufferParameterivEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -255,6 +268,19 @@ namespace Kraggs.Graphics.OpenGL
 				3116, // SlotID: 115 = glTextureStorage1DEXT
 				3138, // SlotID: 116 = glTextureStorage2DEXT
 				3160, // SlotID: 117 = glTextureStorage3DEXT
+				3182, // SlotID: 118 = glClearNamedBufferDataEXT
+				3208, // SlotID: 119 = glClearNamedBufferSubDataEXT
+				3237, // SlotID: 120 = glTextureBufferRangeEXT
+				3261, // SlotID: 121 = glTextureStorage2DMultisampleEXT
+				3294, // SlotID: 122 = glTextureStorage3DMultisampleEXT
+				3327, // SlotID: 123 = glVertexArrayBindVertexBufferEXT
+				3360, // SlotID: 124 = glVertexArrayVertexAttribFormatEXT
+				3395, // SlotID: 125 = glVertexArrayVertexAttribIFormatEXT
+				3431, // SlotID: 126 = glVertexArrayVertexAttribLFormatEXT
+				3467, // SlotID: 127 = glVertexArrayVertexAttribBindingEXT
+				3503, // SlotID: 128 = glVertexArrayVertexBindingDivisorEXT
+				3540, // SlotID: 129 = glNamedFramebufferParameteriEXT
+				3572, // SlotID: 130 = glGetNamedFramebufferParameterivEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
