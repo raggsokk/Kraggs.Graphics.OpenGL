@@ -66,6 +66,12 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix2fvEXT
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix3fvEXT
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix4fvEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 120, 51, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix2x3fvEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 50, 120, 52, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix2x4fvEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 50, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix3x2fvEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 52, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix3x4fvEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 50, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x2fvEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 51, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x3fvEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -121,6 +127,12 @@ namespace Kraggs.Graphics.OpenGL
 				1168, // SlotID: 48 = glProgramUniformMatrix2fvEXT
 				1197, // SlotID: 49 = glProgramUniformMatrix3fvEXT
 				1226, // SlotID: 50 = glProgramUniformMatrix4fvEXT
+				1255, // SlotID: 51 = glProgramUniformMatrix2x3fvEXT
+				1286, // SlotID: 52 = glProgramUniformMatrix2x4fvEXT
+				1317, // SlotID: 53 = glProgramUniformMatrix3x2fvEXT
+				1348, // SlotID: 54 = glProgramUniformMatrix3x4fvEXT
+				1379, // SlotID: 55 = glProgramUniformMatrix4x2fvEXT
+				1410, // SlotID: 56 = glProgramUniformMatrix4x3fvEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

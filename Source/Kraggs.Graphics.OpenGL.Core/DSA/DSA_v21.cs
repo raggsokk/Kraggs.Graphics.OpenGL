@@ -103,5 +103,88 @@ namespace Kraggs.Graphics.OpenGL
 
 
         //#endregion
+
+        #region OpenGL DLLImports
+
+
+        [EntryPointSlot(51)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glProgramUniformMatrix2x3fvEXT(uint ProgramID, int location, int count, bool transpose, float* value);
+        [EntryPointSlot(52)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glProgramUniformMatrix2x4fvEXT(uint ProgramID, int location, int count, bool transpose, float* value);
+
+        [EntryPointSlot(53)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glProgramUniformMatrix3x2fvEXT(uint ProgramID, int location, int count, bool transpose, float* value);
+        [EntryPointSlot(54)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glProgramUniformMatrix3x4fvEXT(uint ProgramID, int location, int count, bool transpose, float* value);
+
+        [EntryPointSlot(55)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glProgramUniformMatrix4x2fvEXT(uint ProgramID, int location, int count, bool transpose, float* value);
+        [EntryPointSlot(56)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glProgramUniformMatrix4x3fvEXT(uint ProgramID, int location, int count, bool transpose, float* value);
+
+        #endregion
+
+        #region Public functions
+
+        //[EntryPoint(FunctionName = "gl")]
+        //public static void BindTexture(TextureTarget target, uint textureid) { throw new NotImplementedException(); }
+
+        
+        [EntryPoint(FunctionName = "glProgramUniformMatrix2x3fvEXT")]
+        unsafe public static void ProgramUniformMatrix2x3fvEXT(uint ProgramID, int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix2x3fvEXT")]
+        public static void ProgramUniformMatrix2x3fvEXT(uint ProgramID, int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix2x3fvEXT")]
+        public static void ProgramUniformMatrix2x3fvEXT(uint ProgramID, int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+
+        [EntryPoint(FunctionName = "glProgramUniformMatrix2x4fvEXT")]
+        unsafe public static void ProgramUniformMatrix2x4fvEXT(uint ProgramID, int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix2x4fvEXT")]
+        public static void ProgramUniformMatrix2x4fvEXT(uint ProgramID, int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix2x4fvEXT")]
+        public static void ProgramUniformMatrix2x4fvEXT(uint ProgramID, int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+
+
+        [EntryPoint(FunctionName = "glProgramUniformMatrix3x2fvEXT")]
+        unsafe public static void ProgramUniformMatrix3x2fvEXT(uint ProgramID, int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix3x2fvEXT")]
+        public static void ProgramUniformMatrix3x2fvEXT(uint ProgramID, int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix3x2fvEXT")]
+        public static void ProgramUniformMatrix3x2fvEXT(uint ProgramID, int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+
+        [EntryPoint(FunctionName = "glProgramUniformMatrix3x4fvEXT")]
+        unsafe public static void ProgramUniformMatrix3x4fvEXT(uint ProgramID, int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix3x4fvEXT")]
+        public static void ProgramUniformMatrix3x4fvEXT(uint ProgramID, int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix3x4fvEXT")]
+        public static void ProgramUniformMatrix3x4fvEXT(uint ProgramID, int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+
+
+        [EntryPoint(FunctionName = "glProgramUniformMatrix4x2fvEXT")]
+        unsafe public static void ProgramUniformMatrix4x2fvEXT(uint ProgramID, int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix4x2fvEXT")]
+        public static void ProgramUniformMatrix4x2fvEXT(uint ProgramID, int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix4x2fvEXT")]
+        public static void ProgramUniformMatrix4x2fvEXT(uint ProgramID, int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+
+        [EntryPoint(FunctionName = "glProgramUniformMatrix4x3fvEXT")]
+        unsafe public static void ProgramUniformMatrix4x3fvEXT(uint ProgramID, int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix4x3fvEXT")]
+        public static void ProgramUniformMatrix4x3fvEXT(uint ProgramID, int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glProgramUniformMatrix4x3fvEXT")]
+        public static void ProgramUniformMatrix4x3fvEXT(uint ProgramID, int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+
+        #endregion
+
+        #region Public Helper Functions
+
+        #endregion
+
     }
 }
