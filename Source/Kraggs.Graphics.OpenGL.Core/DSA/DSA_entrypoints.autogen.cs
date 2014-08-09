@@ -130,6 +130,9 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 50, 100, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x2dvEXT
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 51, 100, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x3dvEXT
 				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 76, 79, 102, 102, 115, 101, 116, 69, 88, 84, 0, // glVertexArrayVertexAttribLOffsetEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 49, 68, 69, 88, 84, 0, // glTextureStorage1DEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 50, 68, 69, 88, 84, 0, // glTextureStorage2DEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 83, 116, 111, 114, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glTextureStorage3DEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -249,6 +252,9 @@ namespace Kraggs.Graphics.OpenGL
 				3018, // SlotID: 112 = glProgramUniformMatrix4x2dvEXT
 				3049, // SlotID: 113 = glProgramUniformMatrix4x3dvEXT
 				3080, // SlotID: 114 = glVertexArrayVertexAttribLOffsetEXT
+				3116, // SlotID: 115 = glTextureStorage1DEXT
+				3138, // SlotID: 116 = glTextureStorage2DEXT
+				3160, // SlotID: 117 = glTextureStorage3DEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
