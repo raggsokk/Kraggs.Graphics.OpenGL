@@ -72,6 +72,43 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 51, 120, 52, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix3x4fvEXT
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 50, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x2fvEXT
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 77, 97, 116, 114, 105, 120, 52, 120, 51, 102, 118, 69, 88, 84, 0, // glProgramUniformMatrix4x3fvEXT
+				103, 108, 71, 101, 116, 84, 101, 120, 116, 117, 114, 101, 80, 97, 114, 97, 109, 101, 116, 101, 114, 73, 105, 118, 69, 88, 84, 0, // glGetTextureParameterIivEXT
+				103, 108, 71, 101, 116, 84, 101, 120, 116, 117, 114, 101, 80, 97, 114, 97, 109, 101, 116, 101, 114, 73, 117, 105, 118, 69, 88, 84, 0, // glGetTextureParameterIuivEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 80, 97, 114, 97, 109, 101, 116, 101, 114, 73, 105, 118, 69, 88, 84, 0, // glTextureParameterIivEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 80, 97, 114, 97, 109, 101, 116, 101, 114, 73, 117, 105, 118, 69, 88, 84, 0, // glTextureParameterIuivEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 49, 117, 105, 69, 88, 84, 0, // glProgramUniform1uiEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 50, 117, 105, 69, 88, 84, 0, // glProgramUniform2uiEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 51, 117, 105, 69, 88, 84, 0, // glProgramUniform3uiEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 52, 117, 105, 69, 88, 84, 0, // glProgramUniform4uiEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 49, 117, 105, 118, 69, 88, 84, 0, // glProgramUniform1uivEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 50, 117, 105, 118, 69, 88, 84, 0, // glProgramUniform2uivEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 51, 117, 105, 118, 69, 88, 84, 0, // glProgramUniform3uivEXT
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 52, 117, 105, 118, 69, 88, 84, 0, // glProgramUniform4uivEXT
+				103, 108, 78, 97, 109, 101, 100, 82, 101, 110, 100, 101, 114, 98, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 69, 88, 84, 0, // glNamedRenderbufferStorageEXT
+				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 82, 101, 110, 100, 101, 114, 98, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 69, 88, 84, 0, // glGetNamedRenderbufferParameterivEXT
+				103, 108, 78, 97, 109, 101, 100, 82, 101, 110, 100, 101, 114, 98, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 77, 117, 108, 116, 105, 115, 97, 109, 112, 108, 101, 69, 88, 84, 0, // glNamedRenderbufferStorageMultisampleEXT
+				103, 108, 78, 97, 109, 101, 100, 82, 101, 110, 100, 101, 114, 98, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 77, 117, 108, 116, 105, 115, 97, 109, 112, 108, 101, 67, 111, 118, 101, 114, 97, 103, 101, 69, 88, 84, 0, // glNamedRenderbufferStorageMultisampleCoverageEXT
+				103, 108, 67, 104, 101, 99, 107, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 83, 116, 97, 116, 117, 115, 69, 88, 84, 0, // glCheckNamedFramebufferStatusEXT
+				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 84, 101, 120, 116, 117, 114, 101, 49, 68, 69, 88, 84, 0, // glNamedFramebufferTexture1DEXT
+				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 84, 101, 120, 116, 117, 114, 101, 50, 68, 69, 88, 84, 0, // glNamedFramebufferTexture2DEXT
+				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 84, 101, 120, 116, 117, 114, 101, 51, 68, 69, 88, 84, 0, // glNamedFramebufferTexture3DEXT
+				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 82, 101, 110, 100, 101, 114, 98, 117, 102, 102, 101, 114, 69, 88, 84, 0, // glNamedFramebufferRenderbufferEXT
+				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 65, 116, 116, 97, 99, 104, 109, 101, 110, 116, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 69, 88, 84, 0, // glGetNamedFramebufferAttachmentParameterivEXT
+				103, 108, 71, 101, 110, 101, 114, 97, 116, 101, 84, 101, 120, 116, 117, 114, 101, 77, 105, 112, 109, 97, 112, 69, 88, 84, 0, // glGenerateTextureMipmapEXT
+				103, 108, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 68, 114, 97, 119, 66, 117, 102, 102, 101, 114, 69, 88, 84, 0, // glFramebufferDrawBufferEXT
+				103, 108, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 68, 114, 97, 119, 66, 117, 102, 102, 101, 114, 115, 69, 88, 84, 0, // glFramebufferDrawBuffersEXT
+				103, 108, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 82, 101, 97, 100, 66, 117, 102, 102, 101, 114, 69, 88, 84, 0, // glFramebufferReadBufferEXT
+				103, 108, 71, 101, 116, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 69, 88, 84, 0, // glGetFramebufferParameterivEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 79, 102, 102, 115, 101, 116, 69, 88, 84, 0, // glVertexArrayVertexAttribOffsetEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 73, 79, 102, 102, 115, 101, 116, 69, 88, 84, 0, // glVertexArrayVertexAttribIOffsetEXT
+				103, 108, 69, 110, 97, 98, 108, 101, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 65, 116, 116, 114, 105, 98, 69, 88, 84, 0, // glEnableVertexArrayAttribEXT
+				103, 108, 68, 105, 115, 97, 98, 108, 101, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 65, 116, 116, 114, 105, 98, 69, 88, 84, 0, // glDisableVertexArrayAttribEXT
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 73, 110, 116, 101, 103, 101, 114, 118, 69, 88, 84, 0, // glGetVertexArrayIntegervEXT
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 80, 111, 105, 110, 116, 101, 114, 118, 69, 88, 84, 0, // glGetVertexArrayPointervEXT
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 73, 110, 116, 101, 103, 101, 114, 105, 95, 118, 69, 88, 84, 0, // glGetVertexArrayIntegeri_vEXT
+				103, 108, 71, 101, 116, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 80, 111, 105, 110, 116, 101, 114, 105, 95, 118, 69, 88, 84, 0, // glGetVertexArrayPointeri_vEXT
+				103, 108, 70, 108, 117, 115, 104, 77, 97, 112, 112, 101, 100, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 82, 97, 110, 103, 101, 69, 88, 84, 0, // glFlushMappedNamedBufferRangeEXT
+				103, 108, 77, 97, 112, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 82, 97, 110, 103, 101, 69, 88, 84, 0, // glMapNamedBufferRangeEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -133,6 +170,43 @@ namespace Kraggs.Graphics.OpenGL
 				1348, // SlotID: 54 = glProgramUniformMatrix3x4fvEXT
 				1379, // SlotID: 55 = glProgramUniformMatrix4x2fvEXT
 				1410, // SlotID: 56 = glProgramUniformMatrix4x3fvEXT
+				1441, // SlotID: 57 = glGetTextureParameterIivEXT
+				1469, // SlotID: 58 = glGetTextureParameterIuivEXT
+				1498, // SlotID: 59 = glTextureParameterIivEXT
+				1523, // SlotID: 60 = glTextureParameterIuivEXT
+				1549, // SlotID: 61 = glProgramUniform1uiEXT
+				1572, // SlotID: 62 = glProgramUniform2uiEXT
+				1595, // SlotID: 63 = glProgramUniform3uiEXT
+				1618, // SlotID: 64 = glProgramUniform4uiEXT
+				1641, // SlotID: 65 = glProgramUniform1uivEXT
+				1665, // SlotID: 66 = glProgramUniform2uivEXT
+				1689, // SlotID: 67 = glProgramUniform3uivEXT
+				1713, // SlotID: 68 = glProgramUniform4uivEXT
+				1737, // SlotID: 69 = glNamedRenderbufferStorageEXT
+				1767, // SlotID: 70 = glGetNamedRenderbufferParameterivEXT
+				1804, // SlotID: 71 = glNamedRenderbufferStorageMultisampleEXT
+				1845, // SlotID: 72 = glNamedRenderbufferStorageMultisampleCoverageEXT
+				1894, // SlotID: 73 = glCheckNamedFramebufferStatusEXT
+				1927, // SlotID: 74 = glNamedFramebufferTexture1DEXT
+				1958, // SlotID: 75 = glNamedFramebufferTexture2DEXT
+				1989, // SlotID: 76 = glNamedFramebufferTexture3DEXT
+				2020, // SlotID: 77 = glNamedFramebufferRenderbufferEXT
+				2054, // SlotID: 78 = glGetNamedFramebufferAttachmentParameterivEXT
+				2100, // SlotID: 79 = glGenerateTextureMipmapEXT
+				2127, // SlotID: 80 = glFramebufferDrawBufferEXT
+				2154, // SlotID: 81 = glFramebufferDrawBuffersEXT
+				2182, // SlotID: 82 = glFramebufferReadBufferEXT
+				2209, // SlotID: 83 = glGetFramebufferParameterivEXT
+				2240, // SlotID: 84 = glVertexArrayVertexAttribOffsetEXT
+				2275, // SlotID: 85 = glVertexArrayVertexAttribIOffsetEXT
+				2311, // SlotID: 86 = glEnableVertexArrayAttribEXT
+				2340, // SlotID: 87 = glDisableVertexArrayAttribEXT
+				2370, // SlotID: 88 = glGetVertexArrayIntegervEXT
+				2398, // SlotID: 89 = glGetVertexArrayPointervEXT
+				2426, // SlotID: 90 = glGetVertexArrayIntegeri_vEXT
+				2456, // SlotID: 91 = glGetVertexArrayPointeri_vEXT
+				2486, // SlotID: 92 = glFlushMappedNamedBufferRangeEXT
+				2519, // SlotID: 93 = glMapNamedBufferRangeEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
