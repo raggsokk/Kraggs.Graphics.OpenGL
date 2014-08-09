@@ -10,5 +10,6 @@
 		"DSA_v30.cs",
 		"DSA_v31.cs",
 		"DSA_v32.cs",
+		"DSA_v33.cs",
 	]
 }

@@ -37,41 +37,33 @@ namespace Kraggs.Graphics.OpenGL
     
     partial class DSA
     {
-        //#region Delegate Class
 
-        //partial class Delegates
-        //{
+        #region OpenGL DLLImports
 
-        //    #region Delegates
+        [EntryPointSlot(96)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        //ARB_instanced_arrays
+        private static extern void glVertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor);
 
-        //    //ARB_instanced_arrays
-        //    public delegate void delVertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor);
+        #endregion
 
-        //    #endregion
+        #region Public functions
+        
+        /// <summary>
+        /// Sets the divisor for an Attribute Index on named VertexArrayObject.
+        /// If the divisor is zero, the corresponding attributesadvance once per vertex. Otherwise, attributes advance once per divisor instances of the set(s) of vertices being rendered. A generic attribute is referred to as in-stanced if its corresponding divisor value is non-zero.
+        /// </summary>
+        /// <param name="vaobj">id of VertexArrayObject to set divisor for.</param>
+        /// <param name="index">AttributeIndex to set divisor for.</param>
+        /// <param name="divisor">Divisor.</param>
+        [EntryPoint(FunctionName = "glVertexArrayVertexAttribDivisorEXT")]
+        public static void VertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor) { throw new NotImplementedException(); }
 
-        //    #region GL Fields
+        #endregion
 
-        //    public static delVertexArrayVertexAttribDivisorEXT glVertexArrayVertexAttribDivisorEXT;
+        #region Public Helper Functions
 
-        //    #endregion
-        //}
+        #endregion
 
-        //#endregion
-
-        //#region Public functions.
-
-        ///// <summary>
-        ///// Sets the divisor for an Attribute Index on named VertexArrayObject.
-        ///// If the divisor is zero, the corresponding attributesadvance once per vertex. Otherwise, attributes advance once per divisor instances of the set(s) of vertices being rendered. A generic attribute is referred to as in-stanced if its corresponding divisor value is non-zero.
-        ///// </summary>
-        ///// <param name="vaobj">id of VertexArrayObject to set divisor for.</param>
-        ///// <param name="index">AttributeIndex to set divisor for.</param>
-        ///// <param name="divisor">Divisor.</param>
-        //public static void VertexArrayVertexAttribDivisorEXT(uint vaobj, uint index, uint divisor)
-        //{
-        //    Delegates.glVertexArrayVertexAttribDivisorEXT(vaobj, index, divisor);
-        //}
-
-        //#endregion
     }
 }

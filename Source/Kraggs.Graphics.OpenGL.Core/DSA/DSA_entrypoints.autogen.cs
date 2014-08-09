@@ -111,6 +111,7 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 77, 97, 112, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 82, 97, 110, 103, 101, 69, 88, 84, 0, // glMapNamedBufferRangeEXT
 				103, 108, 84, 101, 120, 116, 117, 114, 101, 66, 117, 102, 102, 101, 114, 69, 88, 84, 0, // glTextureBufferEXT
 				103, 108, 78, 97, 109, 101, 100, 67, 111, 112, 121, 66, 117, 102, 102, 101, 114, 83, 117, 98, 68, 97, 116, 97, 69, 88, 84, 0, // glNamedCopyBufferSubDataEXT
+				103, 108, 86, 101, 114, 116, 101, 120, 65, 114, 114, 97, 121, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 68, 105, 118, 105, 115, 111, 114, 69, 88, 84, 0, // glVertexArrayVertexAttribDivisorEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -211,6 +212,7 @@ namespace Kraggs.Graphics.OpenGL
 				2519, // SlotID: 93 = glMapNamedBufferRangeEXT
 				2544, // SlotID: 94 = glTextureBufferEXT
 				2563, // SlotID: 95 = glNamedCopyBufferSubDataEXT
+				2591, // SlotID: 96 = glVertexArrayVertexAttribDivisorEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
