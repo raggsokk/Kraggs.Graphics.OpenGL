@@ -4,6 +4,7 @@
 		"DSA_v11.cs",
 		"DSA_v12.cs",
 		"DSA_v13.cs",
+		"DSA_v15.cs",
 		"DSA_v32.cs",
 	]
 }

@@ -469,7 +469,7 @@ namespace Kraggs.Graphics.OpenGL
             fixed(uint* ptr = &BufferIDs[0])
             {
                 DeleteBuffers(BufferIDs.Length, ptr);
-            }
+            }            
         }
 
         /// <summary>

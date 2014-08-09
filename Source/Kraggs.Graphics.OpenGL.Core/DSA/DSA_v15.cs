@@ -36,100 +36,179 @@ namespace Kraggs.Graphics.OpenGL
 {    
     partial class DSA
     {
-        //#region Delegate Class
 
-        //partial class Delegates
-        //{
+        #region OpenGL DLLImports
 
-        //    #region Delegates
+        [EntryPointSlot(25)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glNamedBufferDataEXT(uint BufferID, IntPtr size, IntPtr data, BufferUsage usage);
+        [EntryPointSlot(26)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glNamedBufferSubDataEXT(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr Data);
+        [EntryPointSlot(27)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern IntPtr glMapNamedBufferEXT(uint BufferID, MapBufferAccess access);
+        [EntryPointSlot(28)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern bool glUnmapNamedBufferEXT(uint BufferID);
 
-        //    public delegate void delNamedBufferDataEXT(uint BufferID, IntPtr size, IntPtr data, BufferUsage usage);
-        //    public delegate void delNamedBufferSubDataEXT(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr Data);
-        //    public delegate IntPtr delMapNamedBufferEXT(uint BufferID, MapBufferAccess access);
-        //    public delegate bool delUnmapNamedBufferEXT(uint BufferID);
+        [EntryPointSlot(29)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        unsafe private static extern void glGetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname, int* result);
+        [EntryPointSlot(30)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glGetNamedBufferPointervEXT(uint BufferID, BufferPointerParameters pname, out IntPtr ptr);
+        [EntryPointSlot(31)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glGetNamedBufferSubDataEXT(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr data);
 
-        //    public delegate void delGetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname, ref int @params);
-        //    public delegate void delGetNamedBufferPointervEXT(uint BufferID, BufferPointerParameters pname, out IntPtr ptr);
-        //    public delegate void delGetNamedBufferSubDataEXT(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr data);
 
-        //    #endregion
+        #endregion
 
-        //    #region GL Fields
+        #region Public functions
 
-        //    public static delNamedBufferDataEXT glNamedBufferDataEXT;
-        //    public static delNamedBufferSubDataEXT glNamedBufferSubDataEXT;
+        
+        [EntryPoint(FunctionName = "glNamedBufferDataEXT")]
+        public static void NamedBufferDataEXT(uint BufferID, IntPtr size, IntPtr data, BufferUsage usage){ throw new NotImplementedException(); }
+        public static void NamedBufferDataEXT(uint BufferID, long size, IntPtr data, BufferUsage usage)
+        {
+            NamedBufferDataEXT(BufferID, (IntPtr)size, data, usage);
+        }
+        unsafe public static void NamedBufferDataEXT(uint BufferID, byte[] data, BufferUsage usage)
+        {
+            fixed(byte* ptr = &data[0])
+            {
+                NamedBufferDataEXT(BufferID, data.Length, (IntPtr)ptr, usage);
+            }
+        }
+        unsafe public static void NamedBufferDataEXT(uint BufferID, float[] data, BufferUsage usage)
+        {
+            fixed (float* ptr = &data[0])
+            {
+                NamedBufferDataEXT(BufferID, data.Length * sizeof(float), (IntPtr)ptr, usage);
+            }
+        }
+        unsafe public static void NamedBufferDataEXT(uint BufferID, ushort[] data, BufferUsage usage)
+        {
+            fixed (ushort* ptr = &data[0])
+            {
+                NamedBufferDataEXT(BufferID, data.Length * sizeof(ushort), (IntPtr)ptr, usage);
+            }
+        }
+        unsafe public static void NamedBufferDataEXT(uint BufferID, uint[] data, BufferUsage usage)
+        {
+            fixed (uint* ptr = &data[0])
+            {
+                NamedBufferDataEXT(BufferID, data.Length * sizeof(uint), (IntPtr)ptr, usage);
+            }
+        }
 
-        //    public static delMapNamedBufferEXT glMapNamedBufferEXT;
-        //    public static delUnmapNamedBufferEXT glUnmapNamedBufferEXT;
-        //    public static delGetNamedBufferParameterivEXT glGetNamedBufferParameterivEXT;
-        //    public static delGetNamedBufferPointervEXT glGetNamedBufferPointervEXT;
-        //    public static delGetNamedBufferSubDataEXT glGetNamedBufferSubDataEXT;
+        public static void NamedBufferDataEXT<TValueType>(uint BufferID, TValueType[] data, BufferUsage usage) where TValueType : struct
+        {
+            var size = Marshal.SizeOf(typeof(TValueType)) * data.Length;
 
-        //    #endregion
-        //}
+            GCHandle handle = GCHandle.Alloc(data, GCHandleType.Pinned);
 
-        //#endregion
+            NamedBufferDataEXT(BufferID, size, handle.AddrOfPinnedObject(), usage);
 
-        //#region Public functions.
+            handle.Free();
+        }
 
-        //public static void NamedBufferData(uint BufferID, IntPtr size, IntPtr data, BufferUsage usage)
-        //{
-        //    Delegates.glNamedBufferDataEXT(BufferID, size, data, usage);
-        //}
-        //public static void NamedBufferData(uint BufferID, long size, IntPtr data, BufferUsage usage)
-        //{
-        //    Delegates.glNamedBufferDataEXT(BufferID, (IntPtr)size, data, usage);
-        //}
 
-        //public static void NamedBufferSubData(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr Data)
-        //{
-        //    Delegates.glNamedBufferSubDataEXT(BufferID, Offset, Size, Data);
-        //}
-        //public static void NamedBufferSubData(uint BufferID, long Offset, long Size, IntPtr Data)
-        //{
-        //    Delegates.glNamedBufferSubDataEXT(BufferID, (IntPtr)Offset, (IntPtr)Size, Data);
-        //}
+        [EntryPoint(FunctionName = "glNamedBufferSubDataEXT")]
+        public static void NamedBufferSubDataEXT(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr Data){ throw new NotImplementedException(); }
+        public static void NamedBufferSubDataEXT(uint BufferID, long Offset, long Size, IntPtr Data)
+        {
+            NamedBufferSubDataEXT(BufferID, (IntPtr)Offset, (IntPtr)Size, Data);
+        }
+        public static void NamedBufferSubDataEXT<TValueType>(uint BufferID, long Offset, TValueType[] Data, int index = 0, int count = -1) where TValueType : struct
+        {
+            if (count == -1)
+                count = Data.Length;
+            var SizeInBytes = Math.Min(Data.Length, count - index) * Marshal.SizeOf(typeof(TValueType));
+            //NamedBufferSubDataEXT(BufferID, (IntPtr)Offset, (IntPtr)Size, Data);
+            GCHandle handle = GCHandle.Alloc(Data, GCHandleType.Pinned);
 
-        //public static IntPtr MapNamedBufferEXT(uint BufferID, MapBufferAccess access)
-        //{
-        //    return Delegates.glMapNamedBufferEXT(BufferID, access);
-        //}
-        //public static bool UnmapNamedBufferEXT(uint BufferID)
-        //{
-        //    return Delegates.glUnmapNamedBufferEXT(BufferID);
-        //}
+            if(index != 0)
+                NamedBufferSubDataEXT(BufferID, Offset, SizeInBytes, Marshal.UnsafeAddrOfPinnedArrayElement(Data, index));
+            else
+                NamedBufferSubDataEXT(BufferID, Offset, SizeInBytes, handle.AddrOfPinnedObject());
 
-        //public static void GetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname, int[] @params)
-        //{
-        //    Delegates.glGetNamedBufferParameterivEXT(BufferID, pname, ref @params[0]);
-        //}
-        //public static int GetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname)
-        //{
-        //    int tmp = 0;
-        //    Delegates.glGetNamedBufferParameterivEXT(BufferID, pname, ref tmp);
-        //    return tmp;
-        //}
+            handle.Free();
+        }
 
-        //public static void GetNamedBufferPointervEXT(uint BufferID, BufferPointerParameters pname, out IntPtr ptr)
-        //{
-        //    Delegates.glGetNamedBufferPointervEXT(BufferID, pname, out ptr);
-        //}
-        //public static IntPtr GetNamedBufferPointervEXT(uint BufferID, BufferPointerParameters pname)
-        //{
-        //    IntPtr ptr;
-        //    Delegates.glGetNamedBufferPointervEXT(BufferID, pname, out ptr);
-        //    return ptr;
-        //}
+        unsafe public static void NamedBufferSubDataEXT(uint BufferID, long Offset, byte[] Data)
+        {
+            fixed(byte* ptr = &Data[0])
+            {
+                NamedBufferSubDataEXT(BufferID, Offset, Data.Length, (IntPtr)ptr);
+            }
+        }
+        unsafe public static void NamedBufferSubDataEXT(uint BufferID, long Offset, ushort[] Data)
+        {
+            fixed (ushort* ptr = &Data[0])
+            {
+                NamedBufferSubDataEXT(BufferID, Offset, Data.Length * sizeof(ushort), (IntPtr)ptr);
+            }
+        }
+        unsafe public static void NamedBufferSubDataEXT(uint BufferID, long Offset, uint[] Data)
+        {
+            fixed (uint* ptr = &Data[0])
+            {
+                NamedBufferSubDataEXT(BufferID, Offset, Data.Length * sizeof(uint), (IntPtr)ptr);
+            }
+        }
+        unsafe public static void NamedBufferSubDataEXT(uint BufferID, long Offset, float[] Data)
+        {
+            fixed (float* ptr = &Data[0])
+            {
+                NamedBufferSubDataEXT(BufferID, Offset, Data.Length * sizeof(float), (IntPtr)ptr);
+            }
+        }
 
-        //public static void GetNamedBufferSubDataEXT(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr data)
-        //{
-        //    Delegates.glGetNamedBufferSubDataEXT(BufferID, Offset, Size, data);
-        //}
-        //public static void GetNamedBufferSubDataEXT(uint BufferID, long Offset, long Size, IntPtr data)
-        //{
-        //    Delegates.glGetNamedBufferSubDataEXT(BufferID, (IntPtr)Offset, (IntPtr)Size, data);
-        //}
+        [EntryPoint(FunctionName = "glMapNamedBufferEXT")]
+        public static IntPtr MapNamedBufferEXT(uint BufferID, MapBufferAccess access){ throw new NotImplementedException(); }
+        
+        [EntryPoint(FunctionName = "glUnmapNamedBufferEXT")]
+        public static bool UnmapNamedBufferEXT(uint BufferID){ throw new NotImplementedException(); }
 
-        //#endregion
+        
+        [EntryPoint(FunctionName = "glGetNamedBufferParameterivEXT")]
+        unsafe public static void GetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname, int* result){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetNamedBufferParameterivEXT")]
+        public static void GetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname, int[] result) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetNamedBufferParameterivEXT")]
+        public static void GetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname, ref int result) { throw new NotImplementedException(); }
+        
+        public static int GetNamedBufferParameterivEXT(uint BufferID, BufferParameters pname)
+        {
+            int tmp = 0;
+            GetNamedBufferParameterivEXT(BufferID, pname, ref tmp);
+            return tmp;
+        }
+
+        [EntryPoint(FunctionName = "glGetNamedBufferPointervEXT")]
+        public static void GetNamedBufferPointervEXT(uint BufferID, BufferPointerParameters pname, out IntPtr ptr){ throw new NotImplementedException(); }
+        
+        public static IntPtr GetNamedBufferPointervEXT(uint BufferID, BufferPointerParameters pname)
+        {
+            var ptr = IntPtr.Zero;
+            GetNamedBufferPointervEXT(BufferID, pname, out ptr);
+            return ptr;
+        }
+
+        [EntryPoint(FunctionName = "glGetNamedBufferSubDataEXT")]
+        public static void GetNamedBufferSubDataEXT(uint BufferID, IntPtr Offset, IntPtr Size, IntPtr data){ throw new NotImplementedException(); }
+        public static void GetNamedBufferSubDataEXT(uint BufferID, long Offset, long Size, IntPtr data)
+        {
+            GetNamedBufferSubDataEXT(BufferID, (IntPtr)Offset, (IntPtr)Size, data);
+        }
+
+        #endregion
+
+        #region Public Helper Functions
+
+        #endregion
+
     }
 }

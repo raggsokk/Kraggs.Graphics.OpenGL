@@ -40,6 +40,13 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 50, 68, 69, 88, 84, 0, // glCompressedTextureSubImage2DEXT
 				103, 108, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 51, 68, 69, 88, 84, 0, // glCompressedTextureSubImage3DEXT
 				103, 108, 71, 101, 116, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 73, 109, 97, 103, 101, 69, 88, 84, 0, // glGetCompressedTextureImageEXT
+				103, 108, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 68, 97, 116, 97, 69, 88, 84, 0, // glNamedBufferDataEXT
+				103, 108, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 83, 117, 98, 68, 97, 116, 97, 69, 88, 84, 0, // glNamedBufferSubDataEXT
+				103, 108, 77, 97, 112, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 69, 88, 84, 0, // glMapNamedBufferEXT
+				103, 108, 85, 110, 109, 97, 112, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 69, 88, 84, 0, // glUnmapNamedBufferEXT
+				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 69, 88, 84, 0, // glGetNamedBufferParameterivEXT
+				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 80, 111, 105, 110, 116, 101, 114, 118, 69, 88, 84, 0, // glGetNamedBufferPointervEXT
+				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 83, 117, 98, 68, 97, 116, 97, 69, 88, 84, 0, // glGetNamedBufferSubDataEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -69,6 +76,13 @@ namespace Kraggs.Graphics.OpenGL
 				538, // SlotID: 22 = glCompressedTextureSubImage2DEXT
 				571, // SlotID: 23 = glCompressedTextureSubImage3DEXT
 				604, // SlotID: 24 = glGetCompressedTextureImageEXT
+				635, // SlotID: 25 = glNamedBufferDataEXT
+				656, // SlotID: 26 = glNamedBufferSubDataEXT
+				680, // SlotID: 27 = glMapNamedBufferEXT
+				700, // SlotID: 28 = glUnmapNamedBufferEXT
+				722, // SlotID: 29 = glGetNamedBufferParameterivEXT
+				753, // SlotID: 30 = glGetNamedBufferPointervEXT
+				781, // SlotID: 31 = glGetNamedBufferSubDataEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
