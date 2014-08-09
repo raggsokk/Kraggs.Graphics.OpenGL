@@ -37,43 +37,35 @@ namespace Kraggs.Graphics.OpenGL
 
     partial class DSA
     {
-        //#region Delegate Class
 
-        //partial class Delegates
-        //{
+        #region OpenGL DLLImports
 
-        //    #region Delegates
+        //ARB_buffer_storage
+        [EntryPointSlot(131)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glNamedBufferStorageEXT(uint buffer, IntPtr size, IntPtr data, BufferStorageFlags flags);
 
-        //    //ARB_buffer_storage
-        //    public delegate void delNamedBufferStorageEXT(uint buffer, IntPtr size, IntPtr data, BufferStorageFlags flags);
+        #endregion
 
-        //    #endregion
+        #region Public functions
 
-        //    #region GL Fields
+        //ARB_buffer_storage
+        /// <summary>
+        /// Allocates a buffer with immutable storage.
+        /// </summary>
+        /// <param name="buffer">Buffer id to allocate storage for.</param>
+        /// <param name="size">Size in bytes of buffer.</param>
+        /// <param name="data">Pointer to the data to upload or null.</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        [EntryPoint(FunctionName = "glNamedBufferStorageEXT")]
+        public static void NamedBufferStorageEXT(uint buffer, IntPtr size, IntPtr data, BufferStorageFlags flags) { throw new NotImplementedException(); }
 
-        //    //ARB_buffer_storage
-        //    public static delNamedBufferStorageEXT glNamedBufferStorageEXT;
 
-        //    #endregion
-        //}
+        #endregion
 
-        //#endregion
+        #region Public Helper Functions
 
-        //#region Public functions.
+        #endregion
 
-        ////ARB_buffer_storage
-        ///// <summary>
-        ///// Allocates a buffer with immutable storage.
-        ///// </summary>
-        ///// <param name="buffer">Buffer id to allocate storage for.</param>
-        ///// <param name="size">Size in bytes of buffer.</param>
-        ///// <param name="data">Pointer to the data to upload or null.</param>
-        ///// <param name="flags">Buffer Allocation Flags.</param>
-        //public static void NamedBufferStorageEXT(uint buffer, long size, IntPtr data, BufferStorageFlags flags)
-        //{
-        //    Delegates.glNamedBufferStorageEXT(buffer, (IntPtr)size, data, flags);
-        //}
-
-        //#endregion
     }
 }
