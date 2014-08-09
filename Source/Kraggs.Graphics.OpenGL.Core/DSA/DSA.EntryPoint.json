@@ -8,6 +8,7 @@
 		"DSA_v20.cs",
 		"DSA_v21.cs",
 		"DSA_v30.cs",
+		"DSA_v31.cs",
 		"DSA_v32.cs",
 	]
 }

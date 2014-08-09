@@ -36,57 +36,71 @@ namespace Kraggs.Graphics.OpenGL
 {    
     partial class DSA
     {
-        //#region Delegate Class
+        #region OpenGL DLLImports
 
-        //partial class Delegates
-        //{
-
-        //    #region Delegates
-            
-        //    public delegate void delTextureBufferEXT(uint TextureID, BufferTextureTarget target, TextureBufferInternalFormat format, uint BufferID);
-        //    public delegate void delNamedCopyBufferSubDataEXT(uint ReadBufferID, uint WriteBufferID, IntPtr readOffset, IntPtr writeOffset, IntPtr Size);
-
-        //    #endregion
-
-        //    #region GL Fields
-
-        //    public static delTextureBufferEXT glTextureBufferEXT;
-        //    public static delNamedCopyBufferSubDataEXT glNamedCopyBufferSubDataEXT;
+        [EntryPointSlot(94)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glTextureBufferEXT(uint TextureID, BufferTextureTarget target, TextureBufferInternalFormat format, uint BufferID);
+        [EntryPointSlot(95)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glNamedCopyBufferSubDataEXT(uint ReadBufferID, uint WriteBufferID, IntPtr readOffset, IntPtr writeOffset, IntPtr Size);
 
 
-        //    #endregion
-        //}
+        #endregion
 
-        //#endregion
-
-        //#region Public functions.
-
-        ///// <summary>
-        ///// Creates a texture buffer on named texture with named buffer as backing store.
-        ///// </summary>
-        ///// <param name="TextureID">Valid unallocated texture id.</param>
-        ///// <param name="format">BufferTexture Format</param>
-        ///// <param name="BufferID">Buffer id of backing store to texture buffer.</param>
-        ///// <param name="target">Type of buffer texture to create.</param>
-        //public static void TextureBufferEXT(uint TextureID, TextureBufferInternalFormat format, uint BufferID, BufferTextureTarget target  = BufferTextureTarget.TextureBuffer )
-        //{
-        //    Delegates.glTextureBufferEXT(TextureID, target, format, BufferID);
-        //}
-
-        ///// <summary>
-        ///// Copies data from read buffer id to write buffer id.
-        ///// </summary>
-        ///// <param name="ReadBufferID">id of buffer to read data from.</param>
-        ///// <param name="WriteBufferID">id of buffer to write data to.</param>
-        ///// <param name="readOffset">Offset in bytes in read buffer to start copying at.</param>
-        ///// <param name="writeOffset">Offset in bytes in write buffer to start copying to.</param>
-        ///// <param name="Size">Size in bytes of data to copy.</param>
-        //public static void NamedCopyBufferSubDataEXT(uint ReadBufferID, uint WriteBufferID, long readOffset, long writeOffset, long Size)
-        //{
-        //    Delegates.glNamedCopyBufferSubDataEXT(ReadBufferID, WriteBufferID, (IntPtr)readOffset, (IntPtr)writeOffset, (IntPtr)Size);
-        //}
+        #region Public functions
 
 
-        //#endregion
+        /// <summary>
+        /// Creates a texture buffer on named texture with named buffer as backing store.
+        /// </summary>
+        /// <param name="TextureID">Valid unallocated texture id.</param>
+        /// <param name="format">BufferTexture Format</param>
+        /// <param name="BufferID">Buffer id of backing store to texture buffer.</param>
+        /// <param name="target">Type of buffer texture to create.</param>
+        [EntryPoint(FunctionName = "glTextureBufferEXT")]
+        public static void TextureBufferEXT(uint TextureID, BufferTextureTarget target, TextureBufferInternalFormat format, uint BufferID) { throw new NotImplementedException(); }
+        /// <summary>
+        /// Creates a texture buffer on named texture with named buffer as backing store.
+        /// </summary>
+        /// <param name="TextureID">Valid unallocated texture id.</param>
+        /// <param name="format">BufferTexture Format</param>
+        /// <param name="BufferID">Buffer id of backing store to texture buffer.</param>
+        /// <param name="target">Type of buffer texture to create.</param>
+        public static void TextureBufferEXT(uint TextureID, TextureBufferInternalFormat format, uint BufferID, BufferTextureTarget target = BufferTextureTarget.TextureBuffer)
+        {
+            TextureBufferEXT(TextureID, target, format, BufferID);
+        }
+
+        /// <summary>
+        /// Copies data from read buffer id to write buffer id.
+        /// </summary>
+        /// <param name="ReadBufferID">id of buffer to read data from.</param>
+        /// <param name="WriteBufferID">id of buffer to write data to.</param>
+        /// <param name="readOffset">Offset in bytes in read buffer to start copying at.</param>
+        /// <param name="writeOffset">Offset in bytes in write buffer to start copying to.</param>
+        /// <param name="Size">Size in bytes of data to copy.</param>
+        [EntryPoint(FunctionName = "glNamedCopyBufferSubDataEXT")]
+        public static void NamedCopyBufferSubDataEXT(uint ReadBufferID, uint WriteBufferID, IntPtr readOffset, IntPtr writeOffset, IntPtr Size) { throw new NotImplementedException(); }
+        /// <summary>
+        /// Copies data from read buffer id to write buffer id.
+        /// </summary>
+        /// <param name="ReadBufferID">id of buffer to read data from.</param>
+        /// <param name="WriteBufferID">id of buffer to write data to.</param>
+        /// <param name="readOffset">Offset in bytes in read buffer to start copying at.</param>
+        /// <param name="writeOffset">Offset in bytes in write buffer to start copying to.</param>
+        /// <param name="Size">Size in bytes of data to copy.</param>        
+        public static void NamedCopyBufferSubDataEXT(uint ReadBufferID, uint WriteBufferID, long readOffset, long writeOffset, long Size)
+        {
+            NamedCopyBufferSubDataEXT(ReadBufferID, WriteBufferID, (IntPtr)readOffset, (IntPtr)writeOffset, (IntPtr)Size);
+        }
+
+
+        #endregion
+
+        #region Public Helper Functions
+
+        #endregion
+
     }
 }
