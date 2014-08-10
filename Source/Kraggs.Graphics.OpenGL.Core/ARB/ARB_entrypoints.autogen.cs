@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
 
+
 namespace Kraggs.Graphics.OpenGL
 {
     partial class ARB

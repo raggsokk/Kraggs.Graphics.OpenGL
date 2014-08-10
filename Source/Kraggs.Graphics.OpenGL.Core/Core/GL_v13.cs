@@ -39,10 +39,6 @@ namespace Kraggs.Graphics.OpenGL
     {
         #region OpenGL DLLImports
 
-        //[EntryPointSlot(1)]
-        //[DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        //private static extern void glBindTexture(TextureTarget target, uint textureid);
-
         // ARB_multitexture
         [EntryPointSlot(64)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
@@ -513,6 +509,48 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPoint(FunctionName = "glGetCompressedTexImage")]
         public static void GetCompressedTexImage(TextureTarget target, int level, IntPtr img) { throw new NotImplementedException(); }
 
+        /// <summary>
+        /// glGetCompressedTexImage returns the compressed texture image associated with target and lod into img.
+        /// Retrives the Compressed texture data from current bound target and specified mipmap level into img.
+        /// NOTE: REQUIRES zero named buffer object bound to the GL_PIXEL_PACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">The target, which our texture is currently bound to.Specifies which texture is to be obtained. GL_TEXTURE_1D, GL_TEXTURE_2D, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, and GL_TEXTURE_CUBE_MAP_NEGATIVE_Z are accepted.</param>
+        /// <param name="level">Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="data">a preallocated buffer big enough to store the compressed image data.</param>
+        /// <param name="index">index into data to start writing at.</param>
+        unsafe public static void GetCompressedTexImage(TextureTarget target, int level, byte[] data, int index = 0)
+        {
+            fixed(byte* ptr = &data[index])
+            {
+                GetCompressedTexImage(target, level, (IntPtr)ptr);
+            }
+        }
+
+        /// <summary>
+        /// GetCompressedTexImage quires opengl for the correct buffer size and returns the compressed texture image associated with target and lod
+        /// NOTE: REQUIRES zero named buffer object bound to the GL_PIXEL_PACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// NOTE: if image is not compressed returns 'new byte[0]', otherwise compressed image data.
+        /// </summary>
+        /// <param name="target">The target, which our texture is currently bound to.Specifies which texture is to be obtained. GL_TEXTURE_1D, GL_TEXTURE_2D, GL_TEXTURE_3D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, and GL_TEXTURE_CUBE_MAP_NEGATIVE_Z are accepted.</param>
+        /// <param name="level">Specifies the level-of-detail number of the desired image. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <returns>if image is not compressed returns 'new byte[0]', otherwise compressed image data.</returns>
+        public static byte[] GetCompressedTexImage(TextureTarget target, int level)
+        {
+            bool iscompressed = GetTexLevelParameteriv(target, level, TextureLevelParameters.Compressed) == (int)All.TRUE;
+
+            if (iscompressed)
+            {
+                var size = GetTexLevelParameteriv(target, level, TextureLevelParameters.CompressedImageSize);
+
+                var buf = new byte[size];
+
+                GetCompressedTexImage(target, level, buf);
+
+                return buf;
+            }
+            else
+                return new byte[0];
+        }
 
         #endregion
 
