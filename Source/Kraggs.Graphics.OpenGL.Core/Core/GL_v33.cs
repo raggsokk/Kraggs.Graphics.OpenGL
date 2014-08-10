@@ -316,11 +316,24 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPoint(FunctionName = "glGenSamplers")]
         public static void GenSamplers(int Count, ref uint Samplers) { throw new NotImplementedException(); }
         /// <summary>
+        /// Generates an array of sampler ids.
+        /// </summary>
+        public static uint[] GenSamplers(int Count)
+        {
+            var t = new uint[Count];
+            GenSamplers(t.Length, ref t[0]);
+            return t;
+        }
+        /// <summary>
         /// Generates a single sampler id.
         /// </summary>
-        /// <returns></returns>
-        [EntryPoint(FunctionName = "glGenSamplers")]
-        public static uint GenSamplers(int Count) { throw new NotImplementedException(); }
+        /// <returns></returns>        
+        public static uint GenSamplers()
+        {
+            uint t = 0;
+            GenSamplers(1, ref t);
+            return t;
+        }
 
         /// <summary>
         /// Binds a sampler to a texture unit.
@@ -457,9 +470,11 @@ namespace Kraggs.Graphics.OpenGL
         /// <summary>
         /// Deletes an array of samplers.
         /// </summary>
-        /// <param name="Samplers"></param>
-        [EntryPoint(FunctionName = "glDeleteSamplers")]
-        public static void DeleteSamplers(int Count, uint[] Samplers) { throw new NotImplementedException(); }
+        /// <param name="Samplers"></param>        
+        public static void DeleteSamplers(uint[] Samplers)
+        {
+            DeleteSamplers(Samplers.Length, ref Samplers[0]);
+        }
         /// <summary>
         /// Deletes an array of samplers.
         /// </summary>

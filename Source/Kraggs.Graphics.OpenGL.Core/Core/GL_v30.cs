@@ -300,6 +300,17 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPoint(FunctionName = "glFlushMappedBufferRange")]
         public static void FlushMappedBufferRange(BufferTarget target, IntPtr Offset, IntPtr Length){ throw new NotImplementedException(); }
         /// <summary>
+        /// Flushes a sub region of a mapped buffer region.
+        /// </summary>
+        /// <param name="target">Buffertarget to flush.</param>
+        /// <param name="Offset">Offset in bytes to flush</param>
+        /// <param name="Length">Length in bytes from offset.</param>
+        public static void FlushMappedBufferRange(BufferTarget target, long Offset, long Length)
+        {
+            FlushMappedBufferRange(target, (IntPtr)Offset, (IntPtr)Length);
+        }
+
+        /// <summary>
         /// Maps a region/range of a buffer.
         /// </summary>
         /// <param name="target">Buffertarget containing buffer to map.</param>
@@ -310,19 +321,58 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPoint(FunctionName = "glMapBufferRange")]
         public static IntPtr MapBufferRange(BufferTarget target, IntPtr Offset, IntPtr Length, MapBufferRangeAccessFlags access){ throw new NotImplementedException(); }
 
+        /// <summary>
+        /// Maps a region/range of a buffer.
+        /// </summary>
+        /// <param name="target">Buffertarget containing buffer to map.</param>
+        /// <param name="Offset">Offset in bytes from start of buffer to start of region/range to map.</param>
+        /// <param name="Length">Length in bytes from start of region/range.</param>
+        /// <param name="access">Desired access pattern of this mapping.</param>
+        /// <returns></returns>
+        public static IntPtr MapBufferRange(BufferTarget target, long Offset, long Length, MapBufferRangeAccessFlags access)
+        {
+            return MapBufferRange(target, (IntPtr)Offset, (IntPtr)Length, access);
+        }
+
         //ARB_vertex_array_object
+        /// <summary>
+        /// Generates a number of vertex array objects.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="Array">array to receive vao ids</param>
+        /// <returns></returns>
         [EntryPoint(FunctionName = "glGenVertexArrays")]
         unsafe public static void GenVertexArrays(int number, uint* Arrays){ throw new NotImplementedException(); }
-        //[EntryPoint(FunctionName = "glGenVertexArrays")]
-        //unsafe public static void GenVertexArrays(int number, uint[] Arrays) { throw new NotImplementedException(); }
+        /// <summary>
+        /// Generates a number of vertex array objects.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="Array">array to receive vao ids</param>
+        /// <returns></returns>
         [EntryPoint(FunctionName = "glGenVertexArrays")]
         public static void GenVertexArrays(int number, ref uint Array) { throw new NotImplementedException(); }
-        ///// <summary>
-        ///// Generates a vertex array object id.
-        ///// </summary>
-        ///// <returns>a new vertex array object id or 0 if it failed.</returns>
-        [EntryPoint(FunctionName = "glGenVertexArrays")]
-        public static uint GenVertexArrays() { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// Generates a number of vertex array objects.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static uint[] GenVertexArrays(int number)
+        {
+            var t = new uint[number];
+            GenVertexArrays(t.Length, ref t[0]);
+            return t;
+        }
+        /// <summary>
+        /// Generates a vertex array object id.
+        /// </summary>
+        /// <returns>a new vertex array object id or 0 if it failed.</returns>        
+        public static uint GenVertexArrays()
+        {
+            uint t = 0;
+            GenVertexArrays(1, ref t);
+            return t;
+        }
         /// <summary>
         /// Generates an array of vertex array objects.
         /// </summary>
@@ -331,10 +381,18 @@ namespace Kraggs.Graphics.OpenGL
         {
             GenVertexArrays(Arrays.Length, ref Arrays[0]);
         }
-
-
+        /// <summary>
+        /// Deletes an array of vertex array objects.
+        /// </summary>
+        /// <param name="number">size of array.</param>
+        /// <param name="Arrays"></param>
         [EntryPoint(FunctionName = "glDeleteVertexArrays")]
         unsafe public static void DeleteVertexArrays(int number, uint* Arrays){ throw new NotImplementedException(); }
+        /// <summary>
+        /// Deletes an array of vertex array objects.
+        /// </summary>
+        /// <param name="number">size of array.</param>
+        /// <param name="Arrays"></param>
         [EntryPoint(FunctionName = "glDeleteVertexArrays")]
         public static void DeleteVertexArrays(int number, ref uint Arrays) { throw new NotImplementedException(); }
         /// <summary>
@@ -375,12 +433,43 @@ namespace Kraggs.Graphics.OpenGL
 
         //ARB_framebuffer_object
         // render buffers
+        /// <summary>
+        /// Generates a number of renderbuffers.
+        /// </summary>
+        /// <param name="number">size of array</param>
+        /// <returns></returns>
         [EntryPoint(FunctionName = "glGenRenderbuffers")]
         unsafe public static void GenRenderbuffers(int number, uint* Renderbuffers){ throw new NotImplementedException(); }
+        /// <summary>
+        /// Generates a number of renderbuffers.
+        /// </summary>
+        /// <param name="number">size of array</param>
+        /// <returns></returns>
         [EntryPoint(FunctionName = "glGenRenderbuffers")]
         public static void GenRenderbuffers(int number, ref uint Renderbuffers) { throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glGenRenderbuffers")]
-        public static uint GenRenderbuffers() { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// Generates a number of renderbuffers.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static uint[] GenRenderbuffers(int number)
+        {
+            var t = new uint[number];
+            GenRenderbuffers(t.Length, ref t[0]);
+            return t;
+        }
+        /// <summary>
+        /// Generates a single renderbuffer.
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static uint GenRenderbuffers()
+        {
+            uint t = 0;
+            GenRenderbuffers(1, ref t);
+            return t;
+        }
         
         /// <summary>
         /// Generates an array of renderbuffer ids.
@@ -390,7 +479,6 @@ namespace Kraggs.Graphics.OpenGL
         {
             GenRenderbuffers(Renderbuffers.Length, ref Renderbuffers[0]);
         }
-
 
         /// <summary>
         /// Deletes an array of renderbuffers.
@@ -488,9 +576,13 @@ namespace Kraggs.Graphics.OpenGL
         /// <summary>
         /// Generates a frambuffer object.
         /// </summary>
-        /// <param name="Framebuffers">Preallocated array where framebuffer ids is written to.</param>
-        [EntryPoint(FunctionName = "glGenFramebuffers")]
-        unsafe public static uint GenFramebuffers() { throw new NotImplementedException(); }
+        /// <param name="Framebuffers">Preallocated array where framebuffer ids is written to.</param>        
+        public static uint GenFramebuffers()
+        {
+            uint t = 0;
+            GenFramebuffers(1, ref t);
+            return t;
+        }
         /// <summary>
         /// Generates an array of frambuffer objects.
         /// </summary>
@@ -498,6 +590,16 @@ namespace Kraggs.Graphics.OpenGL
         public static void GenFramebuffers(uint[] Framebuffers)
         {
             GenFramebuffers(Framebuffers.Length, ref Framebuffers[0]);
+        }
+
+        /// <summary>
+        /// Generates an array of frambuffer objects.
+        /// </summary>
+        public static uint[] GenFramebuffers(int number)
+        {
+            var t = new uint[number];
+            GenFramebuffers(t.Length, ref t[0]);
+            return t;
         }
 
         /// <summary>
@@ -882,9 +984,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void Uniform1uiv(int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform1uiv")]
         public static void Uniform1uiv(int location, int count, ref uint v) { throw new NotImplementedException(); }
-        public static void Uniform1uiv(int location, uint[] v)
+        public static void Uniform1uiv(int location, uint[] v, int count = 1)
         {
-            Uniform1uiv(location, v.Length, v);
+            Uniform1uiv(location, count, v);
         }
 
         [EntryPoint(FunctionName = "glUniform2uiv")]
@@ -893,9 +995,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void Uniform2uiv(int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform2uiv")]
         public static void Uniform2uiv(int location, int count, ref uint v) { throw new NotImplementedException(); }
-        public static void Uniform2uiv(int location, uint[] v)
+        public static void Uniform2uiv(int location, uint[] v, int count = 1)
         {
-            Uniform2uiv(location, v.Length / 2, v);
+            Uniform2uiv(location, count, v);
         }
 
         [EntryPoint(FunctionName = "glUniform3uiv")]
@@ -904,9 +1006,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void Uniform3uiv(int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform3uiv")]
         public static void Uniform3uiv(int location, int count, ref uint v) { throw new NotImplementedException(); }
-        public static void Uniform3uiv(int location, uint[] v)
+        public static void Uniform3uiv(int location, uint[] v, int count = 1)
         {
-            Uniform3uiv(location, v.Length / 3, v);
+            Uniform3uiv(location, count , v);
         }
 
         [EntryPoint(FunctionName = "glUniform4uiv")]
@@ -915,9 +1017,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void Uniform4uiv(int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform4uiv")]
         public static void Uniform4uiv(int location, int count, ref uint v) { throw new NotImplementedException(); }
-        public static void Uniform4uiv(int location, uint[] v)
+        public static void Uniform4uiv(int location, uint[] v, int count = 1)
         {
-            Uniform4uiv(location, v.Length / 4, v);
+            Uniform4uiv(location, count, v);
         }
 
         /* 16 functions ignored.
@@ -1073,6 +1175,21 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Size">Size in bytes from start of range to end of range.</param>
         [EntryPoint(FunctionName = "glBindBufferRange")]
         public static void BindBufferRange(BufferProgramTarget target, uint bindingIndex, uint BufferId, IntPtr Offset, IntPtr Size){ throw new NotImplementedException(); }
+        /// <summary>
+        /// Binds a range/region in a buffer to a bindingindex on current bound program.
+        /// Note that there are separate ranges of bindingindexes dependent on which target you bind.
+        /// Aka UniformBuffertarget and index 0 is not the same as ShaderStorageTarget and index 0.
+        /// </summary>
+        /// <param name="target">The target on current bound program to bind buffer at.</param>
+        /// <param name="bindingIndex">The bindingindex of target type to bind to.</param>
+        /// <param name="BufferId">The id of the buffer to bind.</param>
+        /// <param name="Offset">Offset in bytes from start of buffer to start of range.</param>
+        /// <param name="Size">Size in bytes from start of range to end of range.</param>        
+        public static void BindBufferRange(BufferProgramTarget target, uint bindingIndex, uint BufferId, long Offset, long Size)
+        {
+            BindBufferRange(target, bindingIndex, BufferId, (IntPtr)Offset, (IntPtr)Size);
+        }
+
         /// <summary>
         /// Binds a buffer to a bindingindex on current bound program.
         /// Note that there are separate ranges of bindingindexes dependent on which target you bind.

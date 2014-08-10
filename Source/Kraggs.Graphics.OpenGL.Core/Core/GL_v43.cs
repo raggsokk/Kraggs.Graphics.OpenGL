@@ -259,6 +259,7 @@ namespace Kraggs.Graphics.OpenGL
         {
             ClearBufferSubData(target, internalformat, (IntPtr)Offset, (IntPtr)Size, format, type, data);
         }
+
         //ARB_compute_shader
         /// <summary>
         /// Starts running a compute shader.
@@ -387,6 +388,16 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Length"></param>
         [EntryPoint(FunctionName = "glInvalidateBufferSubData")]
         public static void InvalidateBufferSubData(uint BufferId, IntPtr Offset, IntPtr Length){ throw new NotImplementedException(); }
+        /// <summary>
+        /// Invalidates a subrange of a buffer.
+        /// </summary>
+        /// <param name="BufferId"></param>
+        /// <param name="Offset"></param>
+        /// <param name="Length"></param>        
+        public static void InvalidateBufferSubData(uint BufferId, long Offset, long Length)
+        {
+            InvalidateBufferSubData(BufferId, (IntPtr)Offset, (IntPtr)Length);
+        }
 
         /// <summary>
         /// Invalidates the content of a framebuffers attachments.
@@ -660,6 +671,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Stride">Cant be ZERO even for not inverleaved data, size between vertices.</param>
         [EntryPoint(FunctionName = "glBindVertexBuffer")]
         public static void BindVertexBuffer(uint bindingsIndex, uint BufferID, IntPtr Offset, int Stride){ throw new NotImplementedException(); }
+
         /// <summary>
         /// Binds a Buffer Object to a binding index.
         /// NOTE: Binding Index 0 is used by non-bindingindex aware functions. So Avoid it!
@@ -705,7 +717,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="normalized">Is data normalized?</param>
         public static void VertexAttribFormat(uint attribIndex, int Size, VertexAttribFormat type, uint relativeOffset, bool normalized = false)
         {
-            throw new NotImplementedException();
+            VertexAttribFormat(attribIndex, Size, type, normalized, relativeOffset);
         }
         /// <summary>
         /// Sets up the Vertex Declaration for a AttributeIndex without specifind source buffer.

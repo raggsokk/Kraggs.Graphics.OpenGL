@@ -580,9 +580,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void Uniform1dv(int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform1dv")]
         public static void Uniform1dv(int location, int count, ref double v) { throw new NotImplementedException(); }
-        public static void Uniform1dv(int location, double[] v)
+        public static void Uniform1dv(int location, double[] v, int count = 1)
         {
-            Uniform1dv(location, v.Length, v);
+            Uniform1dv(location, count, v);
         }
 
         [EntryPoint(FunctionName = "glUniform2dv")]
@@ -591,9 +591,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void Uniform2dv(int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform2dv")]
         public static void Uniform2dv(int location, int count, ref double v) { throw new NotImplementedException(); }        
-        public static void Uniform2dv(int location, double[] v)
+        public static void Uniform2dv(int location, double[] v, int count = 1)
         {
-            Uniform2dv(location, v.Length / 2, v);
+            Uniform2dv(location, count, v);
         }
 
         [EntryPoint(FunctionName = "glUniform3dv")]
@@ -602,9 +602,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void Uniform3dv(int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform3dv")]
         public static void Uniform3dv(int location, int count, ref double v) { throw new NotImplementedException(); }
-        public static void Uniform3dv(int location, double[] v)
+        public static void Uniform3dv(int location, double[] v, int count = 1)
         {
-            Uniform3dv(location, v.Length / 3, v);
+            Uniform3dv(location, count, v);
         }
 
         [EntryPoint(FunctionName = "glUniform4dv")]
@@ -613,9 +613,9 @@ namespace Kraggs.Graphics.OpenGL
         unsafe public static void Uniform4dv(int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniform4dv")]
         unsafe public static void Uniform4dv(int location, int count, ref double v) { throw new NotImplementedException(); }        
-        unsafe public static void Uniform4dv(int location, double[] v)
+        unsafe public static void Uniform4dv(int location, double[] v, int count = 1)
         {
-            Uniform4dv(location, v.Length / 4, v);
+            Uniform4dv(location, count, v);
         }
 
 
@@ -626,9 +626,9 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPoint(FunctionName = "glUniformMatrix2dv")]
         public static void UniformMatrix2dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
 
-        public static void UniformMatrix2dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix2dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix2dv(location, count, transpose, matrix);
+            UniformMatrix2dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix2dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -641,9 +641,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix3dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix3dv")]
         public static void UniformMatrix3dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix3dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix3dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix3dv(location, count, transpose, matrix);
+            UniformMatrix3dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix3dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -656,9 +656,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix4dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix4dv")]
         public static void UniformMatrix4dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix4dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix4dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix4dv(location, count, transpose, matrix);
+            UniformMatrix4dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix4dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -671,9 +671,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix2x3dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix2x3dv")]
         public static void UniformMatrix2x3dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix2x3dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix2x3dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix2x3dv(location, count, transpose, matrix);
+            UniformMatrix2x3dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix2x3dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -686,9 +686,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix2x4dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix2x4dv")]
         public static void UniformMatrix2x4dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix2x4dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix2x4dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix2x4dv(location, count, transpose, matrix);
+            UniformMatrix2x4dv(location, count, transpose,ref  matrix[mindex]);
         }
         public static void UniformMatrix2x4dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -702,9 +702,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix3x2dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix3x2dv")]
         public static void UniformMatrix3x2dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix3x2dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix3x2dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix3x2dv(location, count, transpose, matrix);
+            UniformMatrix3x2dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix3x2dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -717,9 +717,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix3x4dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix3x4dv")]
         public static void UniformMatrix3x4dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix3x4dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix3x4dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix3x4dv(location, count, transpose, matrix);
+            UniformMatrix3x4dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix3x4dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -733,9 +733,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix4x2dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix4x2dv")]
         public static void UniformMatrix4x2dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix4x2dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix4x2dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix4x2dv(location, count, transpose, matrix);
+            UniformMatrix4x2dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix4x2dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -748,9 +748,9 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix4x3dv(int location, int count, bool transpose, double[] matrix) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix4x3dv")]
         public static void UniformMatrix4x3dv(int location, int count, bool transpose, ref double matrix) { throw new NotImplementedException(); }
-        public static void UniformMatrix4x3dv(int location, double[] matrix, int count = 1, bool transpose = false)
+        public static void UniformMatrix4x3dv(int location, double[] matrix, int count = 1, bool transpose = false, int mindex = 0)
         {
-            UniformMatrix4x3dv(location, count, transpose, matrix);
+            UniformMatrix4x3dv(location, count, transpose, ref matrix[mindex]);
         }
         public static void UniformMatrix4x3dv(int location, ref double matrix, int count = 1, bool transpose = false)
         {
@@ -842,9 +842,11 @@ namespace Kraggs.Graphics.OpenGL
         /// <summary>
         /// Deletes an array of transformfeedback ids.
         /// </summary>
-        /// <param name="TransformFeedbackIds"></param>
-        [EntryPoint(FunctionName = "glDeleteTransformFeedbacks")]
-        public static void DeleteTransformFeedbacks(int number, uint[] TransformFeedbackIds) { throw new NotImplementedException(); }
+        /// <param name="TransformFeedbackIds"></param>        
+        public static void DeleteTransformFeedbacks(uint[] TransformFeedbackIds)
+        {
+            DeleteTransformFeedbacks(TransformFeedbackIds.Length, ref TransformFeedbackIds[0]);
+        }
         /// <summary>
         /// Deletes an array of transformfeedback ids.
         /// </summary>
@@ -878,15 +880,26 @@ namespace Kraggs.Graphics.OpenGL
         /// <summary>
         /// Generates an array of transformfeeback ids.
         /// </summary>
-        /// <param name="TransformFeedbackIds"></param>
-        [EntryPoint(FunctionName = "glGenTransformFeedbacks")]
-        public static void GenTransformFeedbacks(int number, uint[] TransformFeedbackIds) { throw new NotImplementedException(); }
+        /// <param name="TransformFeedbackIds"></param>        
+        public static void GenTransformFeedbacks(uint[] TransformFeedbackIds)
+        {
+            GenTransformFeedbacks(TransformFeedbackIds.Length, ref TransformFeedbackIds[0]);
+        }
         /// <summary>
         /// Generates an array of transformfeeback ids.
         /// </summary>
         /// <param name="TransformFeedbackIds"></param>
         [EntryPoint(FunctionName = "glGenTransformFeedbacks")]
         public static void GenTransformFeedbacks(int number, ref uint TransformFeedbackIds) { throw new NotImplementedException(); }
+        /// <summary>
+        /// Generates an array of transformfeeback ids.
+        /// </summary>
+        public static uint[] GenTransformFeedbacks(int number)
+        {
+            var t = new uint[number];
+            GenTransformFeedbacks(t.Length, ref t[0]);
+            return t;
+        }
         /// <summary>
         /// Generates a single transformfeedback id.
         /// </summary>

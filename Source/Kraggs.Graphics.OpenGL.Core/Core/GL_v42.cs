@@ -115,8 +115,19 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="BaseInstance"></param>
         [EntryPoint(FunctionName = "glDrawElementsInstancedBaseInstance")]
         public static void DrawElementsInstancedBaseInstance(BeginMode mode, int count, IndicesType type, IntPtr Indices, int InstanceCount, uint BaseInstance){ throw new NotImplementedException(); }
+
+        public static void DrawElementsInstancedBaseInstance(BeginMode mode, int count, IndicesType type, long Indices, int InstanceCount, uint BaseInstance)
+        {
+            DrawElementsInstancedBaseInstance(mode, count, type, (IntPtr)Indices, InstanceCount, BaseInstance);
+        }
+
         [EntryPoint(FunctionName = "glDrawElementsInstancedBaseVertexBaseInstance")]
         public static void DrawElementsInstancedBaseVertexBaseInstance(BeginMode mode, int count, IndicesType type, IntPtr Indices, int InstanceCount, int BaseVertex, uint BaseInstance){ throw new NotImplementedException(); }
+
+        public static void DrawElementsInstancedBaseVertexBaseInstance(BeginMode mode, int count, IndicesType type, long Indices, int InstanceCount, int BaseVertex, uint BaseInstance)
+        {
+            DrawElementsInstancedBaseVertexBaseInstance(mode, count, type, (IntPtr)Indices, InstanceCount, BaseVertex, BaseInstance);
+        }
 
         //ARB_internalformat_query
         /// <summary>

@@ -109,10 +109,16 @@ namespace Kraggs.Graphics.OpenGL
         unsafe public static void PointParameterfv(PointParameters pname, float* values) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glPointParameterfv")]
         public static void PointParameterfv(PointParameters pname, float[] values){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glPointParameterfv")]
+        public static void PointParameterfv(PointParameters pname, ref float values) { throw new NotImplementedException(); }
+
         [EntryPoint(FunctionName = "glPointParameteriv")]
         unsafe public static void PointParameteriv(PointParameters pname, int* values) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glPointParameteriv")]
         public static void PointParameteriv(PointParameters pname, int[] values){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glPointParameteriv")]
+        public static void PointParameteriv(PointParameters pname, ref int values) { throw new NotImplementedException(); }
+
         // EXT_blend_func_separate
         [EntryPoint(FunctionName = "glBlendFuncSeparate")]
         public static void BlendFuncSeparate(BlendFactorSrc sfactorRGB, BlendFactorDst dfactorRGB, BlendFactorSrc sfactorAlpha, BlendFactorDst dfactorAlpha){ throw new NotImplementedException(); }

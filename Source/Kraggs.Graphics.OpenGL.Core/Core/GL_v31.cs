@@ -141,10 +141,22 @@ namespace Kraggs.Graphics.OpenGL
         /// Retrives an array of uniform indices from an array of uniform names on a program.
         /// </summary>
         /// <param name="Program">Program to query.</param>
+        /// <param name="UniformCount">size of both UniformNames and UniformIndices array.</param>
         /// <param name="UniformNames">Array of UniformNames to get Indices for.</param>
         /// <param name="UniformIndices">Preallocated array of same dimension as UniformNames.</param>
         [EntryPoint(FunctionName = "glGetUniformIndices")]
         unsafe public static void GetUniformIndices(uint Program, int UniformCount, string[] UniformNames, uint[] UniformIndices) { throw new NotImplementedException(); }
+        /// <summary>
+        /// Retrives an array of uniform indices from an array of uniform names on a program.
+        /// </summary>
+        /// <param name="Program">Program to query.</param>
+        /// <param name="UniformNames">Array of UniformNames to get Indices for.</param>
+        /// <param name="UniformIndices">Preallocated array of same dimension as UniformNames.</param>        
+        unsafe public static void GetUniformIndices(uint Program, string[] UniformNames, uint[] UniformIndices)
+        {
+            int UniformCount = Math.Min(UniformNames.Length, UniformIndices.Length);
+            GetUniformIndices(Program, UniformCount, UniformNames, UniformIndices);
+        }
 
         /// <summary>
         /// Returns the BlockIndex of a UniformBlock in a program.

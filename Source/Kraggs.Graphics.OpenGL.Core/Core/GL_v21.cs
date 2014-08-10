@@ -34,7 +34,7 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    
+
     partial class GL
     {
 
@@ -65,55 +65,17 @@ namespace Kraggs.Graphics.OpenGL
         #endregion
 
         #region Public functions
-        
+
         [EntryPoint(FunctionName = "glUniformMatrix2x3fv")]
-        unsafe public static void UniformMatrix2x3fv(int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
+        unsafe public static void UniformMatrix2x3fv(int location, int count, bool transpose, float* value) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix2x3fv")]
         public static void UniformMatrix2x3fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glUniformMatrix2x3fv")]
         public static void UniformMatrix2x3fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
-
-        [EntryPoint(FunctionName = "glUniformMatrix2x4fv")]
-        unsafe public static void UniformMatrix2x4fv(int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix2x4fv")]
-        public static void UniformMatrix2x4fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix2x4fv")]
-        public static void UniformMatrix2x4fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
-
-
-        [EntryPoint(FunctionName = "glUniformMatrix3x2fv")]
-        unsafe public static void UniformMatrix3x2fv(int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix3x2fv")]
-        public static void UniformMatrix3x2fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix3x2fv")]
-        public static void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
-
-        [EntryPoint(FunctionName = "glUniformMatrix3x4fv")]
-        unsafe public static void UniformMatrix3x4fv(int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix3x4fv")]
-        public static void UniformMatrix3x4fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix3x4fv")]
-        public static void UniformMatrix3x4fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
-
-
-        [EntryPoint(FunctionName = "glUniformMatrix4x2fv")]
-        unsafe public static void UniformMatrix4x2fv(int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix4x2fv")]
-        public static void UniformMatrix4x2fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix4x2fv")]
-        public static void UniformMatrix4x2fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
-
-        [EntryPoint(FunctionName = "glUniformMatrix4x3fv")]
-        unsafe public static void UniformMatrix4x3fv(int location, int count, bool transpose, float* value){ throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix4x3fv")]
-        public static void UniformMatrix4x3fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glUniformMatrix4x3fv")]
-        public static void UniformMatrix4x3fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
-
-        #endregion
-
-        #region Public Helper Functions
-
+        public static void UniformMatrix2x3fv(int location, float[] value, int count = 1, bool transpose = false, int vindex = 0)
+        {
+            UniformMatrix2x3fv(location, count, transpose, ref value[vindex]);
+        }
         /// <summary>
         /// Specify the value of a uniform variable for the current program object
         /// </summary>
@@ -126,6 +88,16 @@ namespace Kraggs.Graphics.OpenGL
             UniformMatrix2x3fv(location, count, transpose, ref value);
         }
 
+        [EntryPoint(FunctionName = "glUniformMatrix2x4fv")]
+        unsafe public static void UniformMatrix2x4fv(int location, int count, bool transpose, float* value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix2x4fv")]
+        public static void UniformMatrix2x4fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix2x4fv")]
+        public static void UniformMatrix2x4fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+        public static void UniformMatrix2x4fv(int location, float[] value, int count = 1, bool transpose = false, int vindex = 0)
+        {
+            UniformMatrix2x4fv(location, count, transpose, ref value[vindex]);
+        }
         /// <summary>
         /// Specify the value of a uniform variable for the current program object
         /// </summary>
@@ -134,10 +106,22 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="count">Specifies the number of matrices that are to be modified. This should be 1 if the targeted uniform variable is not an array of matrices, and 1 or more if it is an array of matrices.</param>
         /// <param name="transpose">Specifies whether to transpose the matrix as the values are loaded into the uniform variable.</param>
         public static void UniformMatrix2x4fv(int location, ref float value, int count = 1, bool transpose = false)
-        {            
+        {
             UniformMatrix2x4fv(location, count, transpose, ref value);
         }
 
+
+
+        [EntryPoint(FunctionName = "glUniformMatrix3x2fv")]
+        unsafe public static void UniformMatrix3x2fv(int location, int count, bool transpose, float* value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix3x2fv")]
+        public static void UniformMatrix3x2fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix3x2fv")]
+        public static void UniformMatrix3x2fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+        public static void UniformMatrix3x2fv(int location, float[] value, int count = 1, bool transpose = false, int vindex = 0)
+        {
+            UniformMatrix3x2fv(location, count, transpose, ref value[vindex]);
+        }
         /// <summary>
         /// Specify the value of a uniform variable for the current program object
         /// </summary>
@@ -147,7 +131,18 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="transpose">Specifies whether to transpose the matrix as the values are loaded into the uniform variable.</param>
         public static void UniformMatrix3x2fv(int location, ref float value, int count = 1, bool transpose = false)
         {
-            UniformMatrix3x2fv(location, count, transpose, ref value);            
+            UniformMatrix3x2fv(location, count, transpose, ref value);
+        }
+
+        [EntryPoint(FunctionName = "glUniformMatrix3x4fv")]
+        unsafe public static void UniformMatrix3x4fv(int location, int count, bool transpose, float* value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix3x4fv")]
+        public static void UniformMatrix3x4fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix3x4fv")]
+        public static void UniformMatrix3x4fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+        public static void UniformMatrix3x4fv(int location, float[] value, int count = 1, bool transpose = false, int vindex = 0)
+        {
+            UniformMatrix3x4fv(location, count, transpose, ref value[vindex]);
         }
         /// <summary>
         /// Specify the value of a uniform variable for the current program object
@@ -162,6 +157,17 @@ namespace Kraggs.Graphics.OpenGL
             UniformMatrix3x4fv(location, count, transpose, ref value);
         }
 
+
+        [EntryPoint(FunctionName = "glUniformMatrix4x2fv")]
+        unsafe public static void UniformMatrix4x2fv(int location, int count, bool transpose, float* value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix4x2fv")]
+        public static void UniformMatrix4x2fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix4x2fv")]
+        public static void UniformMatrix4x2fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+        public static void UniformMatrix4x2fv(int location, float[] value, int count = 1, bool transpose = false, int vindex = 0)
+        {
+            UniformMatrix4x2fv(location, count, transpose, ref value[vindex]);
+        }
         /// <summary>
         /// Specify the value of a uniform variable for the current program object
         /// </summary>
@@ -172,6 +178,17 @@ namespace Kraggs.Graphics.OpenGL
         public static void UniformMatrix4x2fv(int location, ref float value, int count = 1, bool transpose = false)
         {
             UniformMatrix4x2fv(location, count, transpose, ref value);
+        }
+
+        [EntryPoint(FunctionName = "glUniformMatrix4x3fv")]
+        unsafe public static void UniformMatrix4x3fv(int location, int count, bool transpose, float* value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix4x3fv")]
+        public static void UniformMatrix4x3fv(int location, int count, bool transpose, float[] value) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glUniformMatrix4x3fv")]
+        public static void UniformMatrix4x3fv(int location, int count, bool transpose, ref float value) { throw new NotImplementedException(); }
+        public static void UniformMatrix4x3fv(int location, float[] value, int count = 1, bool transpose = false, int vindex = 0)
+        {
+            UniformMatrix4x3fv(location, count, transpose, ref value[vindex]);
         }
         /// <summary>
         /// Specify the value of a uniform variable for the current program object
@@ -184,6 +201,12 @@ namespace Kraggs.Graphics.OpenGL
         {
             UniformMatrix4x3fv(location, count, transpose, ref value);
         }
+
+        #endregion
+
+        #region Public Helper Functions
+
+
 
         #endregion
 

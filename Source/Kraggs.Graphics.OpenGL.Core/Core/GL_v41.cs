@@ -666,6 +666,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform1fv(uint Program, int location, int count, float[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform1fv")]
         public static void ProgramUniform1fv(uint Program, int location, int count, ref float v) { throw new NotImplementedException(); }
+        public static void ProgramUniform1fv(uint Program, int location, float[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform1fv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform1fv(uint Program, int location, ref float v, int count = 1)
+        {
+            ProgramUniform1fv(Program, location, count, ref v);
+        }
 
         [EntryPoint(FunctionName = "glProgramUniform2fv")]
         unsafe public static void ProgramUniform2fv(uint Program, int location, int count, float* v){ throw new NotImplementedException(); }
@@ -673,6 +681,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform2fv(uint Program, int location, int count, float[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform2fv")]
         public static void ProgramUniform2fv(uint Program, int location, int count, ref float v) { throw new NotImplementedException(); }
+        public static void ProgramUniform2fv(uint Program, int location, float[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform2fv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform2fv(uint Program, int location, ref float v, int count = 1)
+        {
+            ProgramUniform2fv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform3fv")]
         unsafe public static void ProgramUniform3fv(uint Program, int location, int count, float* v){ throw new NotImplementedException(); }
@@ -680,6 +697,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform3fv(uint Program, int location, int count, float[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform3fv")]
         public static void ProgramUniform3fv(uint Program, int location, int count, ref float v) { throw new NotImplementedException(); }
+        public static void ProgramUniform3fv(uint Program, int location, float[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform3fv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform3fv(uint Program, int location, ref float v, int count = 1)
+        {
+            ProgramUniform3fv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform4fv")]
         unsafe public static void ProgramUniform4fv(uint Program, int location, int count, float* v){ throw new NotImplementedException(); }
@@ -687,6 +713,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform4fv(uint Program, int location, int count, float[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform4fv")]
         public static void ProgramUniform4fv(uint Program, int location, int count, ref float v) { throw new NotImplementedException(); }
+        public static void ProgramUniform4fv(uint Program, int location, float[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform4fv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform4fv(uint Program, int location, ref float v, int count = 1)
+        {
+            ProgramUniform4fv(Program, location, count, ref v);
+        }
 
 
         [EntryPoint(FunctionName = "glProgramUniform1dv")]
@@ -695,6 +729,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform1dv(uint Program, int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform1dv")]
         public static void ProgramUniform1dv(uint Program, int location, int count, ref double v) { throw new NotImplementedException(); }
+        public static void ProgramUniform1dv(uint Program, int location, double[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform1dv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform1dv(uint Program, int location, ref double v, int count = 1)
+        {
+            ProgramUniform1dv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform2dv")]
         unsafe public static void ProgramUniform2dv(uint Program, int location, int count, double* v){ throw new NotImplementedException(); }
@@ -702,6 +745,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform2dv(uint Program, int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform2dv")]
         public static void ProgramUniform2dv(uint Program, int location, int count, ref double v) { throw new NotImplementedException(); }
+        public static void ProgramUniform2dv(uint Program, int location, double[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform2dv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform2dv(uint Program, int location, ref double v, int count = 1)
+        {
+            ProgramUniform2dv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform3dv")]
         unsafe public static void ProgramUniform3dv(uint Program, int location, int count, double* v){ throw new NotImplementedException(); }
@@ -709,6 +761,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform3dv(uint Program, int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform3dv")]
         public static void ProgramUniform3dv(uint Program, int location, int count, ref double v) { throw new NotImplementedException(); }
+        public static void ProgramUniform3dv(uint Program, int location, double[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform3dv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform3dv(uint Program, int location, ref double v, int count = 1)
+        {
+            ProgramUniform3dv(Program, location, count, ref v);
+        }
 
         [EntryPoint(FunctionName = "glProgramUniform4dv")]
         unsafe public static void ProgramUniform4dv(uint Program, int location, int count, double* v){ throw new NotImplementedException(); }
@@ -716,6 +776,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform4dv(uint Program, int location, int count, double[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform4dv")]
         public static void ProgramUniform4dv(uint Program, int location, int count, ref double v) { throw new NotImplementedException(); }
+        public static void ProgramUniform4dv(uint Program, int location, double[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform4dv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform4dv(uint Program, int location, ref double v, int count = 1)
+        {
+            ProgramUniform4dv(Program, location, count, ref v);
+        }
 
 
         [EntryPoint(FunctionName = "glProgramUniform1iv")]
@@ -724,6 +792,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform1iv(uint Program, int location, int count, int[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform1iv")]
         public static void ProgramUniform1iv(uint Program, int location, int count, ref int v) { throw new NotImplementedException(); }
+        public static void ProgramUniform1iv(uint Program, int location, int[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform1iv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform1iv(uint Program, int location, ref int v, int count = 1)
+        {
+            ProgramUniform1iv(Program, location, count, ref v);
+        }
 
         [EntryPoint(FunctionName = "glProgramUniform2iv")]
         unsafe public static void ProgramUniform2iv(uint Program, int location, int count, int* v){ throw new NotImplementedException(); }
@@ -731,6 +807,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform2iv(uint Program, int location, int count, int[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform2iv")]
         public static void ProgramUniform2iv(uint Program, int location, int count, ref int v) { throw new NotImplementedException(); }
+        public static void ProgramUniform2iv(uint Program, int location, int[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform2iv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform2iv(uint Program, int location, ref int v, int count = 1)
+        {
+            ProgramUniform2iv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform3iv")]
         unsafe public static void ProgramUniform3iv(uint Program, int location, int count, int* v){ throw new NotImplementedException(); }
@@ -738,6 +823,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform3iv(uint Program, int location, int count, int[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform3iv")]
         public static void ProgramUniform3iv(uint Program, int location, int count, ref int v) { throw new NotImplementedException(); }
+        public static void ProgramUniform3iv(uint Program, int location, int[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform3iv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform3iv(uint Program, int location, ref int v, int count = 1)
+        {
+            ProgramUniform3iv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform4iv")]
         unsafe public static void ProgramUniform4iv(uint Program, int location, int count, int* v){ throw new NotImplementedException(); }
@@ -745,6 +839,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform4iv(uint Program, int location, int count, int[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform4iv")]
         public static void ProgramUniform4iv(uint Program, int location, int count, ref int v) { throw new NotImplementedException(); }
+        public static void ProgramUniform4iv(uint Program, int location, int[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform4iv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform4iv(uint Program, int location, ref int v, int count = 1)
+        {
+            ProgramUniform4iv(Program, location, count, ref v);
+        }
 
 
         [EntryPoint(FunctionName = "glProgramUniform1uiv")]
@@ -753,6 +855,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform1uiv(uint Program, int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform1uiv")]
         public static void ProgramUniform1uiv(uint Program, int location, int count, ref uint v) { throw new NotImplementedException(); }
+        public static void ProgramUniform1uiv(uint Program, int location, uint[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform1uiv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform1uiv(uint Program, int location, ref uint v, int count = 1)
+        {
+            ProgramUniform1uiv(Program, location, count, ref v);
+        }
 
         [EntryPoint(FunctionName = "glProgramUniform2uiv")]
         unsafe public static void ProgramUniform2uiv(uint Program, int location, int count, uint* v){ throw new NotImplementedException(); }
@@ -760,6 +870,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform2uiv(uint Program, int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform2uiv")]
         public static void ProgramUniform2uiv(uint Program, int location, int count, ref uint v) { throw new NotImplementedException(); }
+        public static void ProgramUniform2uiv(uint Program, int location, uint[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform2uiv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform2uiv(uint Program, int location, ref uint v, int count = 1)
+        {
+            ProgramUniform2uiv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform3uiv")]
         unsafe public static void ProgramUniform3uiv(uint Program, int location, int count, uint* v){ throw new NotImplementedException(); }
@@ -767,6 +886,15 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform3uiv(uint Program, int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform3uiv")]
         public static void ProgramUniform3uiv(uint Program, int location, int count, ref uint v) { throw new NotImplementedException(); }
+        public static void ProgramUniform3uiv(uint Program, int location, uint[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform3uiv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform3uiv(uint Program, int location, ref uint v, int count = 1)
+        {
+            ProgramUniform3uiv(Program, location, count, ref v);
+        }
+
 
         [EntryPoint(FunctionName = "glProgramUniform4uiv")]
         unsafe public static void ProgramUniform4uiv(uint Program, int location, int count, uint* v){ throw new NotImplementedException(); }
@@ -774,6 +902,14 @@ namespace Kraggs.Graphics.OpenGL
         public static void ProgramUniform4uiv(uint Program, int location, int count, uint[] v) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glProgramUniform4uiv")]
         public static void ProgramUniform4uiv(uint Program, int location, int count, ref uint v) { throw new NotImplementedException(); }
+        public static void ProgramUniform4uiv(uint Program, int location, uint[] v, int count = 1, int vindex = 0)
+        {
+            ProgramUniform4uiv(Program, location, count, ref v[vindex]);
+        }
+        public static void ProgramUniform4uiv(uint Program, int location, ref uint v, int count = 1)
+        {
+            ProgramUniform4uiv(Program, location, count, ref v);
+        }
 
 
         [EntryPoint(FunctionName = "glProgramUniformMatrix2fv")]

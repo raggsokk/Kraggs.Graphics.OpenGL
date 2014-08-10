@@ -111,12 +111,56 @@ namespace Kraggs.Graphics.OpenGL
         /// </summary>
         /// <param name="target"></param>
         /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
-        /// <param name="piformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
         /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="border">Depricated in core context. must be 0.</param>
         /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
         /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
         [EntryPoint(FunctionName = "glCompressedTexImage1D")]
-        public static void CompressedTexImage1D(TextureTarget target, int level, PixelInternalFormat piformat, int width, int border, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        //public static void CompressedTexImage1D(TextureTarget target, int level, PixelInternalFormat piformat, int width, int border, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        public static void CompressedTexImage1D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int border, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        /// <summary>
+        /// CompressedTexImage1D allocates image with compressed formats and simultaneously fills them with compressed data
+        /// With the exception of the last two parameters, CompressedTexImage1D work identically to their glTexImage*​ counterparts.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="offset">When GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from</param>               
+        /// <param name="border">Depricated in core context. must be 0.</param>
+        public static void CompressedTexImage1D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int imageSize, long offset, int border = 0)
+        {
+            CompressedTexImage1D(target, level, sciformat, width, border, imageSize, (IntPtr)offset);
+        }
+        /// <summary>
+        /// CompressedTexImage1D allocates image with compressed formats and simultaneously fills them with compressed data
+        /// With the exception of the last two parameters, CompressedTexImage1D work identically to their glTexImage*​ counterparts.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>        
+        /// <param name="cdata">buffer with already compressed image data.</param>
+        /// <param name="index">Index in cdata array to start reading at.</param>
+        /// <param name="imageSize">Defaults to cdata.length. The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="border">Depricated in core context.</param>
+        unsafe public static void CompressedTexImage1D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, byte[] cdata, int index = 0, int imageSize = -1, int border = 0)
+        {
+            if (imageSize == -1)
+                imageSize = cdata.Length;
+
+            // SHOULD WE SILENTLY CLAMP ARRAY DATA?
+            imageSize = Math.Min(cdata.Length - index, index + imageSize);
+
+            fixed(byte* ptr = &cdata[index])
+            {
+                CompressedTexImage1D(target, level, sciformat, width, border, imageSize, (IntPtr)ptr);
+            }
+        }
 
         /// <summary>
         /// CompressedTexImage2D allocates image with compressed formats and simultaneously fills them with compressed data
@@ -125,13 +169,58 @@ namespace Kraggs.Graphics.OpenGL
         /// </summary>
         /// <param name="target"></param>
         /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
-        /// <param name="piformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
         /// <param name="width">Specifies the width of the texture subimage.</param>
         /// <param name="height">Specifies the height of the texture subimage.</param>
         /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
         /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
         [EntryPoint(FunctionName = "glCompressedTexImage2D")]
-        public static void CompressedTexImage2D(TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int border, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        public static void CompressedTexImage2D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int height, int border, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// CompressedTexImage2D allocates image with compressed formats and simultaneously fills them with compressed data
+        /// With the exception of the last two parameters, CompressedTexImage2D work identically to their glTexImage*​ counterparts.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="offset">When GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from</param>
+        /// <param name="border">Depricated in core context. must be 0.</param>
+        public static void CompressedTexImage2D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int height, int imageSize, long offset, int border = 0)
+        {
+            CompressedTexImage2D(target, level, sciformat, width, height, border, imageSize, (IntPtr)offset);
+        }
+        /// <summary>
+        /// CompressedTexImage2D allocates image with compressed formats and simultaneously fills them with compressed data
+        /// With the exception of the last two parameters, CompressedTexImage2D work identically to their glTexImage*​ counterparts.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="cdata">buffer with already compressed image data.</param>
+        /// <param name="index">Index in cdata array to start reading at.</param>
+        /// <param name="imageSize">Defaults to cdata.length. The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="border">Depricated in core context. must be 0.</param>
+        unsafe public static void CompressedTexImage2D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int height, byte[] cdata, int index = 0, int imageSize = -1, int border = 0)
+        {
+            if (imageSize == -1)
+                imageSize = cdata.Length;
+
+            // SHOULD WE SILENTLY CLAMP ARRAY DATA?
+            imageSize = Math.Min(cdata.Length - index, index + imageSize);
+
+            fixed (byte* ptr = &cdata[index])
+            {
+                CompressedTexImage2D(target, level, sciformat, width,height, border, imageSize, (IntPtr)ptr);
+            }
+
+        }
 
         /// <summary>
         /// CompressedTexImage3D allocates image with compressed formats and simultaneously fills them with compressed data
@@ -140,14 +229,62 @@ namespace Kraggs.Graphics.OpenGL
         /// </summary>
         /// <param name="target"></param>
         /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
-        /// <param name="piformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="depth">Specifies the depth of the texture subimage.</param>
+        /// <param name="border">depricated in core context, must be 0</param>
+        /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
+        [EntryPoint(FunctionName = "glCompressedTexImage3D")]
+        public static void CompressedTexImage3D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int height, int depth, int border, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// CompressedTexImage3D allocates image with compressed formats and simultaneously fills them with compressed data
+        /// With the exception of the last two parameters, CompressedTexImage3D work identically to their glTexImage*​ counterparts.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
         /// <param name="width">Specifies the width of the texture subimage.</param>
         /// <param name="height">Specifies the height of the texture subimage.</param>
         /// <param name="depth">Specifies the depth of the texture subimage.</param>
         /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
-        /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
-        [EntryPoint(FunctionName = "glCompressedTexImage3D")]
-        public static void CompressedTexImage3D(TextureTarget target, int level, PixelInternalFormat piformat, int width, int height, int depth, int border, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        /// <param name="offset">When GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from</param>
+        /// <param name="border">Depricated in core context. must be 0.</param>
+        public static void CompressedTexImage3D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int height, int depth, int imageSize, long offset, int border = 0)
+        {
+            CompressedTexImage3D(target, level, sciformat, width, height, depth, border, imageSize, (IntPtr)offset);
+        }
+        /// <summary>
+        /// CompressedTexImage3D allocates image with compressed formats and simultaneously fills them with compressed data
+        /// With the exception of the last two parameters, CompressedTexImage3D work identically to their glTexImage*​ counterparts.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target"></param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="sciformat">internalformat​ can not be a generic compressed format.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="depth">Specifies the depth of the texture subimage.</param>
+        /// <param name="cdata">buffer with already compressed image data.</param>
+        /// <param name="index">Index in cdata array to start reading at.</param>
+        /// <param name="imageSize">Defaults to cdata.length. The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="border">Depricated in core context. must be 0.</param>
+        unsafe public static void CompressedTexImage3D(TextureTarget target, int level, SizedCompressedInternalFormat sciformat, int width, int height, int depth, byte[] cdata, int index = 0, int imageSize = -1, int border = 0)
+        {
+            if (imageSize == -1)
+                imageSize = cdata.Length;
+
+            // SHOULD WE SILENTLY CLAMP ARRAY DATA?
+            imageSize = Math.Min(cdata.Length - index, index + imageSize);
+
+            fixed (byte* ptr = &cdata[index])
+            {
+                CompressedTexImage3D(target, level, sciformat, width, height, depth, border, imageSize, (IntPtr)ptr);
+            }
+        }
 
         /// <summary>
         /// Upload compressed 1d image data into an existing bound texture image and its existing mipmap level.
@@ -157,7 +294,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
         /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
         /// <param name="width">Specifies the width of the texture subimage.</param>
-        /// <param name="format">format​ can not be a generic compressed format.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
         /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
         /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
         /// <remarks>
@@ -166,7 +303,59 @@ namespace Kraggs.Graphics.OpenGL
         /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
         /// </remarks>
         [EntryPoint(FunctionName = "glCompressedTexSubImage1D")]
-        public static void CompressedTexSubImage1D(TextureTarget target, int level, int xoffset, int width, PixelInternalFormat format, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        public static void CompressedTexSubImage1D(TextureTarget target, int level, int xoffset, int width, SizedCompressedInternalFormat sciformat, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// Upload compressed 1d image data into an existing bound texture image and its existing mipmap level.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_1D.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
+        /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="offset">When GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from.</param>
+        /// <remarks>
+        /// glCompressedTexSubImage1D redefines a contiguous subregion of an existing one-dimensional texture image. The texels referenced by data replace the portion of the existing texture array with x indices xoffset and xoffset + width - 1 , inclusive. This region may not include any texels outside the range of the texture array as it was originally specified. It is not an error to specify a subtexture with width of 0, but such a specification has no effect.
+        /// internalformat must be a known compressed image format (such as GL_RGTC) or an extension-specified compressed-texture format. The format of the compressed texture image is selected by the GL implementation that compressed it (see glTexImage1D), and should be queried at the time the texture was compressed with glGetTexLevelParameter.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </remarks>
+        public static void CompressedTexSubImage1D(TextureTarget target, int level, int xoffset, int width, SizedCompressedInternalFormat sciformat, int imageSize, long offset)
+        {
+            CompressedTexSubImage1D(target, level, xoffset, width, sciformat, imageSize, (IntPtr)offset);
+        }
+
+        /// <summary>
+        /// Upload compressed 1d image data into an existing bound texture image and its existing mipmap level.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_1D.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
+        /// <param name="cdata">buffer with already compressed image data.</param>
+        /// <param name="index">Index in cdata array to start reading at.</param>
+        /// <param name="imageSize">Defaults to cdata.length. The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <remarks>
+        /// glCompressedTexSubImage1D redefines a contiguous subregion of an existing one-dimensional texture image. The texels referenced by data replace the portion of the existing texture array with x indices xoffset and xoffset + width - 1 , inclusive. This region may not include any texels outside the range of the texture array as it was originally specified. It is not an error to specify a subtexture with width of 0, but such a specification has no effect.
+        /// internalformat must be a known compressed image format (such as GL_RGTC) or an extension-specified compressed-texture format. The format of the compressed texture image is selected by the GL implementation that compressed it (see glTexImage1D), and should be queried at the time the texture was compressed with glGetTexLevelParameter.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </remarks>
+        unsafe public static void CompressedTexSubImage1D(TextureTarget target, int level, int xoffset, int width, SizedCompressedInternalFormat sciformat, byte[] cdata, int index = 0, int imageSize = -1)
+        {
+            if (imageSize == -1)
+                imageSize = cdata.Length;
+
+            // SHOULD WE SILENTLY CLAMP ARRAY DATA?
+            imageSize = Math.Min(cdata.Length - index, index + imageSize);
+
+            fixed (byte* ptr = &cdata[index])
+            {
+                CompressedTexSubImage1D(target, level, xoffset, width, sciformat, imageSize, (IntPtr)ptr);
+            }
+        }
 
         /// <summary>
         /// Upload compressed 2d image data into an existing bound texture image and its existing mipmap level.
@@ -178,11 +367,57 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
         /// <param name="width">Specifies the width of the texture subimage.</param>
         /// <param name="height">Specifies the height of the texture subimage.</param>
-        /// <param name="format">format​ can not be a generic compressed format.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
         /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
         /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
         [EntryPoint(FunctionName = "glCompressedTexSubImage2D")]
-        public static void CompressedTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, PixelInternalFormat format, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        public static void CompressedTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, SizedCompressedInternalFormat sciformat, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// Upload compressed 2d image data into an existing bound texture image and its existing mipmap level.
+        /// NOTE: REQUIRES a non-zero named buffer object bound to GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
+        /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
+        /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="offset">When GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from.</param>
+        public static void CompressedTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, SizedCompressedInternalFormat sciformat, int imageSize, long offset)
+        {
+            CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, sciformat, imageSize, (IntPtr)offset);
+        }
+
+        /// <summary>
+        /// Upload compressed 2d image data into an existing bound texture image and its existing mipmap level.
+        /// NOTE: REQUIRES zero named buffer object bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X, GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y, GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
+        /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
+        /// <param name="cdata">buffer with already compressed image data.</param>
+        /// <param name="index">Index in cdata array to start reading at.</param>
+        /// <param name="imageSize">Defaults to cdata.length. The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        unsafe public static void CompressedTexSubImage2D(TextureTarget target, int level, int xoffset, int yoffset, int width, int height, SizedCompressedInternalFormat sciformat, byte[] cdata, int index = 0, int imageSize = 0)
+        {
+            if (imageSize == -1)
+                imageSize = cdata.Length;
+
+            // SHOULD WE SILENTLY CLAMP ARRAY DATA?
+            imageSize = Math.Min(cdata.Length - index, index + imageSize);
+
+            fixed (byte* ptr = &cdata[index])
+            {
+                CompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, sciformat, imageSize, (IntPtr)ptr);
+            }
+        }
 
         /// <summary>
         /// Upload compressed 3d image data into an existing bound texture image and its existing mipmap level.
@@ -196,7 +431,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="width">Specifies the width of the texture subimage.</param>
         /// <param name="height">Specifies the height of the texture subimage.</param>
         /// <param name="depth">Specifies the depth of the texture subimage.</param>
-        /// <param name="format">format​ can not be a generic compressed format.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
         /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
         /// <param name="data">If GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from, otherwise a pointer to the compressed image data in system memory. </param>
         /// <remarks>
@@ -205,7 +440,62 @@ namespace Kraggs.Graphics.OpenGL
         /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
         /// </remarks>
         [EntryPoint(FunctionName = "glCompressedTexSubImage3D")]
-        public static void CompressedTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelInternalFormat format, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+        public static void CompressedTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, SizedCompressedInternalFormat sciformat, int imageSize, IntPtr data) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// Upload compressed 3d image data into an existing bound texture image and its existing mipmap level.
+        /// NOTE: REQUIRES a non-zero named buffer object bound to GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_3D or 2darray?</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
+        /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
+        /// <param name="zoffset">Specifies a texel offset in the z direction within the texture array.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="depth">Specifies the depth of the texture subimage.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
+        /// <param name="imageSize">The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        /// <param name="offset">When GL_UNPACK_BUFFER binding is non-zero, data is a byte-offset from start of bound buffer to read from.</param>
+        /// <remarks>
+        /// glCompressedTexSubImage3D redefines a contiguous subregion of an existing three-dimensional texture image. The texels referenced by data replace the portion of the existing texture array with x indices xoffset and xoffset + width - 1 , and the y indices yoffset and yoffset + height - 1 , and the z indices zoffset and zoffset + depth - 1 , inclusive. This region may not include any texels outside the range of the texture array as it was originally specified. It is not an error to specify a subtexture with width of 0, but such a specification has no effect.
+        /// internalformat must be a known compressed image format (such as GL_RGTC) or an extension-specified compressed-texture format. The format of the compressed texture image is selected by the GL implementation that compressed it (see glTexImage3D) and should be queried at the time the texture was compressed with glGetTexLevelParameter.
+        /// If a non-zero named buffer object is bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </remarks>
+        public static void CompressedTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, SizedCompressedInternalFormat sciformat, int imageSize, long offset)
+        {
+            CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, sciformat, imageSize, (IntPtr)offset);
+        }
+
+        /// <summary>
+        /// Upload compressed 3d image data into an existing bound texture image and its existing mipmap level.
+        /// NOTE: REQUIRES zero named buffer object bound to the GL_PIXEL_UNPACK_BUFFER target (see glBindBuffer) while a texture image is specified, data is treated as a byte offset into the buffer object's data store.
+        /// </summary>
+        /// <param name="target">Specifies the target texture. Must be GL_TEXTURE_3D or 2darray?</param>
+        /// <param name="level">Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap reduction image.</param>
+        /// <param name="xoffset">Specifies a texel offset in the x direction within the texture array.</param>
+        /// <param name="yoffset">Specifies a texel offset in the y direction within the texture array.</param>
+        /// <param name="zoffset">Specifies a texel offset in the z direction within the texture array.</param>
+        /// <param name="width">Specifies the width of the texture subimage.</param>
+        /// <param name="height">Specifies the height of the texture subimage.</param>
+        /// <param name="depth">Specifies the depth of the texture subimage.</param>
+        /// <param name="sciformat">format​ can not be a generic compressed format.</param>
+        /// <param name="cdata">buffer with already compressed image data.</param>
+        /// <param name="index">Index in cdata array to start reading at.</param>
+        /// <param name="imageSize">Defaults to cdata.length. The imageSize​ must match with what OpenGL would compute based on the dimensions of the image and the internalformat​.</param>
+        unsafe public static void CompressedTexSubImage3D(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, SizedCompressedInternalFormat sciformat, byte[] cdata, int index = 0, int imageSize = -1)
+        {
+            if (imageSize == -1)
+                imageSize = cdata.Length;
+
+            // SHOULD WE SILENTLY CLAMP ARRAY DATA?
+            imageSize = Math.Min(cdata.Length - index, index + imageSize);
+
+            fixed (byte* ptr = &cdata[index])
+            {
+                CompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, sciformat, imageSize, (IntPtr)ptr);
+            }
+        }
 
         /// <summary>
         /// glGetCompressedTexImage returns the compressed texture image associated with target and lod into img.

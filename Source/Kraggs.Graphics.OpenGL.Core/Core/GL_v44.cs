@@ -87,20 +87,126 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="data">Data to upload to buffer or zero to just allocate.</param>
         /// <param name="flags">Buffer Allocation Flags.</param>
         [EntryPoint("glBufferStorage")]
-        public static void BufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags)
-        { throw new NotImplementedException(); }
-
-        public static void BufferStorage<TValueType>(BufferTarget target, TValueType[] data, BufferStorageFlags flags) where TValueType : new()
+        public static void BufferStorage(BufferTarget target, IntPtr size, IntPtr data, BufferStorageFlags flags) { throw new NotImplementedException(); }
+        /// <summary>
+        /// Allocates immutable storage for buffer bound to specified target.
+        /// </summary>
+        /// <param name="target">Target containging a buffer to allocate immutable storage for.s</param>
+        /// <param name="size">Size in bytes of allocates storage.</param>
+        /// <param name="data">Data to upload to buffer or zero to just allocate.</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        public static void BufferStorage(BufferTarget target, long size, IntPtr data, BufferStorageFlags flags)
         {
-            var totalsize = Marshal.SizeOf(typeof(TValueType)) * data.Length;
-
-            var handle = GCHandle.Alloc(data, GCHandleType.Pinned);
-
-            BufferStorage(target, (IntPtr)totalsize, handle.AddrOfPinnedObject(), flags);
-            //Delegates.glBufferStorage(target, (IntPtr)totalsize, handle.AddrOfPinnedObject(), flags);
-
-            handle.Free();
+            BufferStorage(target, (IntPtr)size, data, flags);
         }
+        /// <summary>
+        /// Allocates immutable storage for buffer bound to specified target.
+        /// </summary>
+        /// <param name="target">Target containging a buffer to allocate immutable storage for.s</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        /// <param name="data">data to upload</param>
+        /// <param name="index">index in data to upload at, default at start.</param>
+        /// <param name="count">number of elements to upload, starting at index. default is data.length</param>
+        unsafe public static void BufferStorage(BufferTarget target, BufferStorageFlags flags, byte[] data, int index = 0, int count = -1)
+        {
+            if (count == -1)
+                count = data.Length;
+
+            count = Math.Min(data.Length - index, index + count);
+
+            fixed(byte* ptr = &data[index])
+            {
+                BufferStorage(target, (IntPtr)count, (IntPtr)ptr, flags);
+            }
+        }
+        /// <summary>
+        /// Allocates immutable storage for buffer bound to specified target.
+        /// </summary>
+        /// <param name="target">Target containging a buffer to allocate immutable storage for.s</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        /// <param name="data">data to upload</param>
+        /// <param name="index">index in data to upload at, default at start.</param>
+        /// <param name="count">number of elements to upload, starting at index. default is data.length</param>
+        unsafe public static void BufferStorage(BufferTarget target, BufferStorageFlags flags, ushort[] data, int index = 0, int count = -1)
+        {
+            if (count == -1)
+                count = data.Length;
+
+            count = Math.Min(data.Length - index, index + count) * sizeof(ushort);
+
+            fixed (ushort* ptr = &data[index])
+            {
+                BufferStorage(target, (IntPtr)count, (IntPtr)ptr, flags);
+            }
+        }
+        /// <summary>
+        /// Allocates immutable storage for buffer bound to specified target.
+        /// </summary>
+        /// <param name="target">Target containging a buffer to allocate immutable storage for.s</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        /// <param name="data">data to upload</param>
+        /// <param name="index">index in data to upload at, default at start.</param>
+        /// <param name="count">number of elements to upload, starting at index. default is data.length</param>
+        unsafe public static void BufferStorage(BufferTarget target, BufferStorageFlags flags, uint[] data, int index = 0, int count = -1)
+        {
+            if (count == -1)
+                count = data.Length;
+
+            count = Math.Min(data.Length - index, index + count) * sizeof(uint);
+
+            fixed (uint* ptr = &data[index])
+            {
+                BufferStorage(target, (IntPtr)count, (IntPtr)ptr, flags);
+            }
+        }
+        /// <summary>
+        /// Allocates immutable storage for buffer bound to specified target.
+        /// </summary>
+        /// <param name="target">Target containging a buffer to allocate immutable storage for.s</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        /// <param name="data">data to upload</param>
+        /// <param name="index">index in data to upload at, default at start.</param>
+        /// <param name="count">number of elements to upload, starting at index. default is data.length</param>
+        unsafe public static void BufferStorage(BufferTarget target, BufferStorageFlags flags, float[] data, int index = 0, int count = -1)
+        {
+            if (count == -1)
+                count = data.Length;
+
+            count = Math.Min(data.Length - index, index + count) * sizeof(float);
+
+            fixed (float* ptr = &data[index])
+            {
+                BufferStorage(target, (IntPtr)count, (IntPtr)ptr, flags);
+            }
+        }
+        /// <summary>
+        /// Allocates immutable storage for buffer bound to specified target.
+        /// </summary>
+        /// <typeparam name="TValueType"></typeparam>
+        /// <param name="target">Target containging a buffer to allocate immutable storage for.s</param>
+        /// <param name="flags">Buffer Allocation Flags.</param>
+        /// <param name="data">data to upload</param>
+        /// <param name="index">index in data to upload at, default at start.</param>
+        /// <param name="count">number of elements to upload, starting at index. default is data.length</param>
+        public static void BufferStorage<TValueType>(BufferTarget target, BufferStorageFlags flags, TValueType[] data, int index = 0, int count = -1) where TValueType : struct
+        {
+            if (count == -1)
+                count = data.Length;
+
+            count = Math.Min(data.Length - index, index + count) * Marshal.SizeOf(typeof(TValueType));
+
+            if(count > 0)
+            {
+                var handle = GCHandle.Alloc(data, GCHandleType.Pinned);
+
+                var ptr = Marshal.UnsafeAddrOfPinnedArrayElement(data, index);
+
+                BufferStorage(target, (IntPtr)count, ptr, flags);
+
+                handle.Free();
+            }
+        }
+
 
         //ARB_clear_texture
         /// <summary>
@@ -187,6 +293,19 @@ namespace Kraggs.Graphics.OpenGL
 
             BindBuffersRange(target, first, count, ref buffers[0], ref Offsets[0], ref Sizes[0]);
         }
+        unsafe public static void BindBuffersRange(BufferProgramTarget target, int first, uint[] buffers, long[] Offsets, long[] Sizes)
+        {
+            var count = Math.Min(buffers.Length, Math.Min(Offsets.Length, Sizes.Length));
+
+            fixed(uint* ptrBuffers = &buffers[0])
+            {
+                fixed(long* ptrOffsets = &Offsets[0], ptrSizes = &Sizes[0])
+                {
+                    BindBuffersRange(target, first, count, ptrBuffers, (IntPtr*)ptrOffsets, (IntPtr*)ptrSizes);
+                }
+            }
+        }
+
         /// <summary>
         /// Binds a range of textures to a range of texture units.
         /// TextureTarget used is the first texturetarget used to bind after texture id generation.
@@ -357,11 +476,22 @@ namespace Kraggs.Graphics.OpenGL
         {
             int count = Math.Min(buffers.Length, Math.Min(Offsets.Length, Strides.Length));
 
-            var ptrOffsets = new IntPtr[count];
-            for (int i = 0; i < ptrOffsets.Length; ++i)
-                ptrOffsets[i] = (IntPtr)Offsets[i];
+            fixed(uint* ptrBuffers = &buffers[0])
+            {
+                fixed(long* ptrOffsets = &Offsets[0])
+                {
+                    fixed(int* ptrStrides = &Strides[0])
+                    {
+                        BindVertexBuffers(first, count, ptrBuffers, (IntPtr*)ptrOffsets, ptrStrides);
+                    }
+                }
+            }
 
-            BindVertexBuffers(first, count, ref buffers[0], ref ptrOffsets[0], ref Strides[0]);
+            //var ptrOffsets = new IntPtr[count];
+            //for (int i = 0; i < ptrOffsets.Length; ++i)
+            //    ptrOffsets[i] = (IntPtr)Offsets[i];
+
+            //BindVertexBuffers(first, count, ref buffers[0], ref ptrOffsets[0], ref Strides[0]);
 
             return count;
         }

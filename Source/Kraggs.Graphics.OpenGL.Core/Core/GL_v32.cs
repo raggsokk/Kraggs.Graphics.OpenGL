@@ -129,6 +129,19 @@ namespace Kraggs.Graphics.OpenGL
         public static void DrawElementsBaseVertex(BeginMode mode, int count, IndicesType type, IntPtr Indices, int BaseVertex) { throw new NotImplementedException(); }
 
         /// <summary>
+        /// DrawElementsBaseVertex behaves identically to DrawElements except that the ith element transferred by the corresponding draw call will be taken from element indices[i] + basevertex of each enabled array. If the resulting value is larger than the maximum value representable by type, it is as if the calculation were upconverted to 32-bit unsigned integers (with wrapping on overflow conditions). The operation is undefined if the sum would be negative.
+        /// </summary>
+        /// <param name="mode">Primitive mode</param>
+        /// <param name="count">Number of primitive types to render.</param>
+        /// <param name="type">Element/Indices type.</param>
+        /// <param name="Offset">Offset into current element/indices buffer bound to retive element/indices from.</param>
+        /// <param name="BaseVertex">Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays.</param>
+        public static void DrawElementsBaseVertex(BeginMode mode, int count, IndicesType type, long IndiceOffset, int BaseVertex)
+        {
+            DrawElementsBaseVertex(mode, count, type, (IntPtr)IndiceOffset, BaseVertex);
+        }
+
+        /// <summary>
         /// DrawElementsInstancedBaseVertex behaves identically to DrawElementsInstanced except that the ith element transferred by the corresponding draw call will be taken from element indices[i] + basevertex of each enabled array. If the resulting value is larger than the maximum value representable by type, it is as if the calculation were upconverted to 32-bit unsigned integers (with wrapping on overflow conditions). The operation is undefined if the sum would be negative.
         /// </summary>
         /// <param name="mode">Primitive mode</param>
@@ -139,6 +152,20 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="BaseVertex">Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays.</param>
         [EntryPoint(FunctionName = "glDrawElementsInstancedBaseVertex")]
         public static void DrawElementsInstancedBaseVertex(BeginMode mode, int count, IndicesType type, IntPtr Indices, int InstanceCount, int BaseVertex) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// DrawElementsInstancedBaseVertex behaves identically to DrawElementsInstanced except that the ith element transferred by the corresponding draw call will be taken from element indices[i] + basevertex of each enabled array. If the resulting value is larger than the maximum value representable by type, it is as if the calculation were upconverted to 32-bit unsigned integers (with wrapping on overflow conditions). The operation is undefined if the sum would be negative.
+        /// </summary>
+        /// <param name="mode">Primitive mode</param>
+        /// <param name="count">Number of primitive types to render.</param>
+        /// <param name="type">Element/Indices type.</param>
+        /// <param name="IndiceOffset">Offset into current element/indices buffer bound to retive element/indices from.</param>
+        /// <param name="InstanceCount">Number of instances to render.</param>
+        /// <param name="BaseVertex">Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays.</param>        
+        public static void DrawElementsInstancedBaseVertex(BeginMode mode, int count, IndicesType type, long IndiceOffset, int InstanceCount, int BaseVertex)
+        {
+            DrawElementsInstancedBaseVertex(mode, count, type, (IntPtr)IndiceOffset, InstanceCount, BaseVertex);
+        }
 
         /// <summary>
         /// glDrawRangeElementsBaseVertex is a restricted form of glDrawElementsBaseVertex. mode, start, end, count and basevertex match the corresponding arguments to glDrawElementsBaseVertex, with the additional constraint that all values in the array indices must lie between start and end, inclusive, prior to adding basevertex. Index values lying outside the range [start, end] are treated in the same way as glDrawElementsBaseVertex. The ith element transferred by the corresponding draw call will be taken from element indices[i] + basevertex of each enabled array. If the resulting value is larger than the maximum value representable by type, it is as if the calculation were upconverted to 32-bit unsigned integers (with wrapping on overflow conditions). The operation is undefined if the sum would be negative.
@@ -152,6 +179,22 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="BaseVertex">Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays.</param>
         [EntryPoint(FunctionName = "glDrawRangeElementsBaseVertex")]
         public static void DrawRangeElementsBaseVertex(BeginMode mode, uint start, uint end, int count, IndicesType type, IntPtr Indices, int BaseVertex) { throw new NotImplementedException(); }
+
+        /// <summary>
+        /// glDrawRangeElementsBaseVertex is a restricted form of glDrawElementsBaseVertex. mode, start, end, count and basevertex match the corresponding arguments to glDrawElementsBaseVertex, with the additional constraint that all values in the array indices must lie between start and end, inclusive, prior to adding basevertex. Index values lying outside the range [start, end] are treated in the same way as glDrawElementsBaseVertex. The ith element transferred by the corresponding draw call will be taken from element indices[i] + basevertex of each enabled array. If the resulting value is larger than the maximum value representable by type, it is as if the calculation were upconverted to 32-bit unsigned integers (with wrapping on overflow conditions). The operation is undefined if the sum would be negative.
+        /// </summary>
+        /// <param name="mode">Primitive mode</param>
+        /// <param name="start">Specifies the minimum array index contained in indices.</param>
+        /// <param name="end">Specifies the maximum array index contained in indices.</param>
+        /// <param name="count">Specifies the number of elements to be rendered.</param>
+        /// <param name="type">Element/Indices type.</param>
+        /// <param name="IndiceOffset">Offset into current element/indices buffer bound to retive element/indices from.</param>
+        /// <param name="BaseVertex">Specifies a constant that should be added to each element of indices when chosing elements from the enabled vertex arrays.</param>        
+        public static void DrawRangeElementsBaseVertex(BeginMode mode, uint start, uint end, int count, IndicesType type, long IndiceOffset, int BaseVertex)
+        {
+            DrawRangeElementsBaseVertex(mode, start, end, count, type, IndiceOffset, BaseVertex);
+        }
+
 
         [EntryPoint(FunctionName = "glMultiDrawElementsBaseVertex")]
         unsafe public static void MultiDrawElementsBaseVertex(BeginMode mode, int* Count, IndicesType type, IntPtr Indices, int drawCount, int* BaseVertex) { throw new NotImplementedException(); }
@@ -253,32 +296,32 @@ namespace Kraggs.Graphics.OpenGL
         public static void WaitSync(IntPtr Sync, SyncFlags flags = SyncFlags.Zero, ulong timeout = TIMEOUT_IGNORED){ throw new NotImplementedException(); }
 
 
-        ///// <summary>
-        ///// Retrives an possible array long sized parameter value.
-        ///// </summary>
-        ///// <param name="pname">Name of parameter to retrive.</param>
-        ///// <param name="params">Preallocated array to write result into.</param>
+        /// <summary>
+        /// Retrives an possible array long sized parameter value.
+        /// </summary>
+        /// <param name="pname">Name of parameter to retrive.</param>
+        /// <param name="params">Preallocated array to write result into.</param>
         [EntryPoint(FunctionName = "glGetInteger64v")]
-        unsafe public static void GetInteger64v(GetParameters pname, long* result){ throw new NotImplementedException(); }
-        ///// <summary>
-        ///// Retrives an possible array long sized parameter value.
-        ///// </summary>
-        ///// <param name="pname">Name of parameter to retrive.</param>
-        ///// <param name="params">Preallocated array to write result into.</param>
+        unsafe public static void GetInteger64v(GetParameters pname, long* result) { throw new NotImplementedException(); }
+        /// <summary>
+        /// Retrives an possible array long sized parameter value.
+        /// </summary>
+        /// <param name="pname">Name of parameter to retrive.</param>
+        /// <param name="params">Preallocated array to write result into.</param>
         [EntryPoint(FunctionName = "glGetInteger64v")]
         public static void GetInteger64v(GetParameters pname, long[] result) { throw new NotImplementedException(); }
-        ///// <summary>
-        ///// Retrives a single long sized parameter value.
-        ///// </summary>
-        ///// <param name="pname">Name of parameter to retrive.</param>
-        ///// <param name="params">Preallocated array to write result into.</param>
+        /// <summary>
+        /// Retrives a single long sized parameter value.
+        /// </summary>
+        /// <param name="pname">Name of parameter to retrive.</param>
+        /// <param name="params">Preallocated array to write result into.</param>
         [EntryPoint(FunctionName = "glGetInteger64v")]
         public static void GetInteger64v(GetParameters pname, ref long result) { throw new NotImplementedException(); }
-        ///// <summary>
-        ///// Retrives a single long sized parameter value.
-        ///// </summary>
-        ///// <param name="pname">Name of parameter to retrive.</param>
-        ///// <returns>result.</returns>
+        /// <summary>
+        /// Retrives a single long sized parameter value.
+        /// </summary>
+        /// <param name="pname">Name of parameter to retrive.</param>
+        /// <returns>result.</returns>
         [EntryPoint(FunctionName = "glGetInteger64v")]
         public static long GetInteger64v(GetParameters pname) { throw new NotImplementedException(); }
 
