@@ -59,6 +59,9 @@
       <Link>EntryPointSlotAttribute.cs</Link>
     </Compile>
     <Compile Include="absOpenTKLoaderV2_CORE.cs" />
+    <Compile Include="AMD\AMD.cs" />
+    <Compile Include="AMD\AMD_debug_output.cs" />
+    <Compile Include="AMD\AMD_entrypoints.autogen.cs" />
     <Compile Include="ARB\ARB.cs" />
     <Compile Include="ARB\ARB_bindless_texture.cs" />
     <Compile Include="ARB\ARB_debug_output.cs" />
@@ -131,7 +134,9 @@
     <Compile Include="Enums\ClientWaitSyncStatus.cs" />
     <Compile Include="Enums\CompressedInternalFormat.cs" />
     <Compile Include="Enums\ConditionalRenderType.cs" />
+    <Compile Include="Enums\CopyImageTargetNV.cs" />
     <Compile Include="Enums\CullMode.cs" />
+    <Compile Include="Enums\DebugCategoryAMD.cs" />
     <Compile Include="Enums\DebugNamespace.cs" />
     <Compile Include="Enums\DebugSeverity.cs" />
     <Compile Include="Enums\DebugSource.cs" />
@@ -226,15 +231,18 @@
     <Compile Include="Enums\VertexAttribPType.cs" />
     <Compile Include="GL.cs" />
     <Compile Include="NV\NV.cs" />
+    <Compile Include="NV\NV_copy_image.cs" />
     <Compile Include="NV\NV_draw_texture.cs" />
     <Compile Include="NV\NV_entrypoints.autogen.cs" />
     <Compile Include="NV\NV_shader_buffer_load.cs" />
+    <Compile Include="NV\NV_texture_barrier.cs" />
     <Compile Include="NV\NV_vertex_buffer_unified_memory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structs\DrawArraysIndirectCommand.cs" />
     <Compile Include="Structs\DrawElementsIndirectCommand.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="AMD\AMD.EntryPoint.json" />
     <None Include="ARB\ARB.EntryPoint.json" />
     <None Include="Core\Core.EntryPoint.json" />
     <None Include="DSA\DSA.EntryPoint.json" />

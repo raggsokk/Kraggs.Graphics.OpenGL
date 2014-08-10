@@ -103,6 +103,11 @@ namespace Kraggs.Graphics.OpenGL
         QueryBufferBarrier = All.QUERY_BUFFER_BARRIER_BIT,
 
         /// <summary>
+        /// NV_shader_buffer_store
+        /// </summary>
+        ShaderGlobalAccessBarrierNV = All.SHADER_GLOBAL_ACCESS_BARRIER_BIT_NV,
+
+        /// <summary>
         /// If barriers is ALL_BARRIER_BITS, shader memory accesses will be synchronized relative to all the operations described above.
         /// </summary>
         AllBarrierBits = All.ALL_BARRIER_BITS,

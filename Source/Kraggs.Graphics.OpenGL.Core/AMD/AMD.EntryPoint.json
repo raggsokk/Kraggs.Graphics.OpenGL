@@ -1,0 +1,6 @@
+﻿{
+	"Output": "AMD_entrypoints.autogen.cs",
+	"PartialClasses": [
+		"AMD_debug_output.cs",
+	]
+}

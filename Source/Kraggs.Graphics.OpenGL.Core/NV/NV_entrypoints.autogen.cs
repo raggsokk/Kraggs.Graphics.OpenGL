@@ -35,6 +35,8 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 70, 111, 114, 109, 97, 116, 78, 86, 0, // glVertexAttribFormatNV
 				103, 108, 86, 101, 114, 116, 101, 120, 65, 116, 116, 114, 105, 98, 73, 70, 111, 114, 109, 97, 116, 78, 86, 0, // glVertexAttribIFormatNV
 				103, 108, 71, 101, 116, 73, 110, 116, 101, 103, 101, 114, 117, 105, 54, 52, 105, 95, 118, 78, 86, 0, // glGetIntegerui64i_vNV
+				103, 108, 67, 111, 112, 121, 73, 109, 97, 103, 101, 83, 117, 98, 68, 97, 116, 97, 78, 86, 0, // glCopyImageSubDataNV
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 66, 97, 114, 114, 105, 101, 114, 78, 86, 0, // glTextureBarrierNV
             };
 
             EntryPointNameOffsets = new int[]
@@ -59,6 +61,8 @@ namespace Kraggs.Graphics.OpenGL
 				379, // SlotID: 17 = glVertexAttribFormatNV
 				402, // SlotID: 18 = glVertexAttribIFormatNV
 				426, // SlotID: 19 = glGetIntegerui64i_vNV
+				448, // SlotID: 20 = glCopyImageSubDataNV
+				469, // SlotID: 21 = glTextureBarrierNV
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

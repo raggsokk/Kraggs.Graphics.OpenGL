@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Kraggs.Graphics.OpenGL
 {
+
     public enum BufferResidentAccessNV
     {
         ReadOnly = All.READ_ONLY,
+        WriteOnly = All.WRITE_ONLY,
+        ReadWrite = All.READ_WRITE,
     }
 }

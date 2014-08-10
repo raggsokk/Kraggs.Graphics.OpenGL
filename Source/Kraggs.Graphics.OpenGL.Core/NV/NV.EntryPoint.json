@@ -4,5 +4,7 @@
 		"NV_draw_texture.cs",
 		"NV_shader_buffer_load.cs",
 		"NV_vertex_buffer_unified_memory.cs",
+		"NV_copy_image.cs",
+		"NV_texture_barrier.cs",
 	]
 }
