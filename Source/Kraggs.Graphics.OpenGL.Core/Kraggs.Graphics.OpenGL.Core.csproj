@@ -16,7 +16,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\build\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -26,12 +26,12 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>bin\build\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <DocumentationFile>bin\Release\Kraggs.Graphics.OpenGL.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\build\\Kraggs.Graphics.OpenGL.Core.XML</DocumentationFile>
     <BaseAddress>5242880</BaseAddress>
   </PropertyGroup>
   <PropertyGroup>
@@ -229,7 +229,7 @@
     <Compile Include="Enums\VertexAttribParameters.cs" />
     <Compile Include="Enums\VertexAttribPointerParameters.cs" />
     <Compile Include="Enums\VertexAttribPType.cs" />
-    <Compile Include="GL.cs" />
+    <Compile Include="Core\GL.cs" />
     <Compile Include="NV\NV.cs" />
     <Compile Include="NV\NV_copy_image.cs" />
     <Compile Include="NV\NV_draw_texture.cs" />

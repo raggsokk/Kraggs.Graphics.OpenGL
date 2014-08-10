@@ -1,5 +1,5 @@
 ﻿{
-	"AssemblyExecutable": "..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Bin\\Debug\\Kraggs.Graphics.OpenGL.Core.dll",
+	"AssemblyExecutable": "..\\..\\Source\\Kraggs.Graphics.OpenGL.Core\\Bin\\build\\Kraggs.Graphics.OpenGL.Core.dll",
 	"AssemblyKeyFile": "..\\..\\Kraggs.Graphics.OpenGL.snk",
 	"AssemblyOutput": "..\\OpenGL\\Kraggs.Graphics.OpenGL.Core.dll",
 	"OpenTKBindingsBase": "Kraggs.Graphics.absOpenTKLoaderV2",
