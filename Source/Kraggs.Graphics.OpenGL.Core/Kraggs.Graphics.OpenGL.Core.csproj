@@ -113,9 +113,11 @@
     <Compile Include="Enums\BlendFactorDst.cs" />
     <Compile Include="Enums\BlendFactorSrc.cs" />
     <Compile Include="Enums\BlitFramebufferFilter.cs" />
+    <Compile Include="Enums\BufferAddressRangeNV.cs" />
     <Compile Include="Enums\BufferParameters.cs" />
     <Compile Include="Enums\BufferPointerParameters.cs" />
     <Compile Include="Enums\BufferProgramTarget.cs" />
+    <Compile Include="Enums\BufferResidentAccessNV.cs" />
     <Compile Include="Enums\BufferStorageFlags.cs" />
     <Compile Include="Enums\BufferTarget.cs" />
     <Compile Include="Enums\BufferTargetBinding.cs" />
@@ -223,6 +225,11 @@
     <Compile Include="Enums\VertexAttribPointerParameters.cs" />
     <Compile Include="Enums\VertexAttribPType.cs" />
     <Compile Include="GL.cs" />
+    <Compile Include="NV\NV.cs" />
+    <Compile Include="NV\NV_draw_texture.cs" />
+    <Compile Include="NV\NV_entrypoints.autogen.cs" />
+    <Compile Include="NV\NV_shader_buffer_load.cs" />
+    <Compile Include="NV\NV_vertex_buffer_unified_memory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structs\DrawArraysIndirectCommand.cs" />
     <Compile Include="Structs\DrawElementsIndirectCommand.cs" />
@@ -231,6 +238,7 @@
     <None Include="ARB\ARB.EntryPoint.json" />
     <None Include="Core\Core.EntryPoint.json" />
     <None Include="DSA\DSA.EntryPoint.json" />
+    <None Include="NV\NV.EntryPoint.json" />
     <None Include="OpenGL.rewrite.json" />
   </ItemGroup>
   <ItemGroup />

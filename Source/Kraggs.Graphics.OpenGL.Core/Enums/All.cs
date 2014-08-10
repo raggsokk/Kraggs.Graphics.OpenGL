@@ -1377,6 +1377,22 @@ namespace Kraggs.Graphics.OpenGL
         NAMED_STRING_LENGTH_ARB = 0x8DE9,
         NAMED_STRING_TYPE_ARB = 0x8DEA,
 
+        //NV_shader_buffer_load
+        BUFFER_GPU_ADDRESS_NV = 0x8F1D,
+        GPU_ADDRESS_NV = 0x8F34,
+        MAX_SHADER_BUFFER_ADDRESS_NV = 0x8F35,
+
+        //NV_vertex_buffer_unified_memory
+        VERTEX_ATTRIB_ARRAY_UNIFIED_NV = 0x8F1E,
+        ELEMENT_ARRAY_UNIFIED_NV = 0x8F1F,
+
+        VERTEX_ATTRIB_ARRAY_ADDRESS_NV = 0x8F20,
+        //VERTEX_ARRAY_ADDRESS_NV                        0x8F21
+        ELEMENT_ARRAY_ADDRESS_NV = 0x8F29,
+
+        VERTEX_ATTRIB_ARRAY_LENGTH_NV = 0x8F2A,
+        ELEMENT_ARRAY_LENGTH_NV = 0x8F33,
+
         #endregion
     }
 }

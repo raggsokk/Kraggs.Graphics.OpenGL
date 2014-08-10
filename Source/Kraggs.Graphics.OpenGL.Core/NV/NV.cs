@@ -2,7 +2,7 @@
 
 // Kraggs.Graphics.OpenGL (github.com/raggsokk)
 //
-// Copyright (c) 2013 Jarle Hansen (github.com/raggsokk)
+// Copyright (c) 2014 Jarle Hansen (github.com/raggsokk)
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -34,19 +34,35 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum BufferParameters
+    [DebuggerNonUserCode()]
+    [SuppressUnmanagedCodeSecurity()]
+    public sealed partial class NV : absOpenTKLoaderV2
     {
-        BufferAccessIfMApped = All.BUFFER_ACCESS,
-        BufferIsMapped = All.BUFFER_MAPPED,
-        BufferSize = All.BUFFER_SIZE,
-        BufferUsage = All.BUFFER_USAGE,
+        //const string Library = "opengl32.dll";
+        private const string LIBRARY = "opengl32.dll";
 
-        ImmutableStorage = All.BUFFER_IMMUTABLE_STORAGE,
-        StorageFlags = All.BUFFER_STORAGE_FLAGS,
+        static IntPtr[] EntryPoints;
+        static byte[] EntryPointNames;
+        static int[] EntryPointNameOffsets;
 
-        /// <summary>
-        /// ONLY glGetBufferParameterui64vNV or glGetNamedBufferParameterui64vNV
-        /// </summary>
-        BufferGPUAddressNV = All.BUFFER_GPU_ADDRESS_NV,
+        public NV()
+        {
+            _EntryPointsInstance = EntryPoints;
+            _EntryPointNamesInstance = EntryPointNames;
+            _EntryPointNameOffsetsInstance = EntryPointNameOffsets;
+        }
+
+        #region Public Const
+
+        //public const ulong TIMEOUT_IGNORED = 0xFFFFFFFFFFFFFFFF;
+
+        #endregion
     }
+
+    #region Public Delegates
+
+    //public delegate void DebugMessageDelegate(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string message, IntPtr userParam);
+
+    #endregion
+
 }

@@ -1106,6 +1106,25 @@ namespace Kraggs.Graphics.OpenGL
         MaxSparseArrayTextureLayersARB = All.MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB,
         SparseTextureFullArrayCubeMipmapsARB = All.SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB,
 
+        //NV_shader_buffer_load
+        MaxShaderBufferAddressNV = All.MAX_SHADER_BUFFER_ADDRESS_NV,
+
+        //NV_vertex_buffer_unified_memory
+        /// <summary>
+        /// GetIntegerui64i_vNV ONLY
+        /// </summary>
+        VertexAttribArrayAddress = All.VERTEX_ATTRIB_ARRAY_ADDRESS_NV,
+        /// <summary>
+        /// GetIntegerui64vNV ONLY
+        /// </summary>
+        ElementArrayAddressNV = All.ELEMENT_ARRAY_ADDRESS_NV,
+        /// <summary>
+        /// GetIntegeri_vNV ONLY
+        /// </summary>
+        VertexAttribArrayLengthNV = All.VERTEX_ATTRIB_ARRAY_LENGTH_NV,
+
+        ElementArrayLengthNV = All.ELEMENT_ARRAY_LENGTH_NV,
+
         // some hacks?!
         MaxIndicesSize = MaxElementsIndices,
         MaxIndicesVertices = MaxElementsVertices,

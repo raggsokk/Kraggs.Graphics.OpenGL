@@ -1,0 +1,8 @@
+﻿{
+	"Output": "NV_entrypoints.autogen.cs",
+	"PartialClasses": [
+		"NV_draw_texture.cs",
+		"NV_shader_buffer_load.cs",
+		"NV_vertex_buffer_unified_memory.cs",
+	]
+}

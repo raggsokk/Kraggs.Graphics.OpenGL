@@ -159,5 +159,8 @@ namespace Kraggs.Graphics.OpenGL
         /// If enabled and a vertex or geometry shader is active, then the derived point size is taken from the (potentially clipped) shader builtin gl_PointSize and clamped to the implementation-dependent point size range.
         /// </summary>
         ProgramPointSize = All.PROGRAM_POINT_SIZE,
+
+        VertexAttribArrayUnifiedNV = All.VERTEX_ATTRIB_ARRAY_UNIFIED_NV,
+        ElementArrayUnifiedNV = All.ELEMENT_ARRAY_UNIFIED_NV,
     }
 }
