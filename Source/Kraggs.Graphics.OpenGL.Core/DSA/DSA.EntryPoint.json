@@ -16,5 +16,6 @@
 		"DSA_v42.cs",
 		"DSA_v43.cs",
 		"DSA_v44.cs",
+		"DSA_sparse_texture.cs",
 	]
 }

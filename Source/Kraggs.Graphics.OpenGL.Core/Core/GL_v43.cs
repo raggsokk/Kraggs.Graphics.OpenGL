@@ -814,6 +814,11 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPoint(FunctionName = "glDebugMessageInsert")]
         public static void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string buf){ throw new NotImplementedException(); }
 
+        public static void DebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, string message)
+        {
+            DebugMessageInsert(source, type, id, severity, message.Length, message);
+        }
+
         /// <summary>
         /// Defines the Debug MessageCallback Delegate and its optionally userParam.
         /// </summary>

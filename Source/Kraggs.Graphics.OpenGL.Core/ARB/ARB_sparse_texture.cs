@@ -34,20 +34,20 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    partial class GL
+    partial class ARB
     {
         #region OpenGL DLLImports
 
-        //[EntryPointSlot(1)]
-        //[DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        //private static extern void glBindTexture(TextureTarget target, uint textureid);
+        [EntryPointSlot(19)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glTexPageCommitmentARB(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit);
 
         #endregion
 
         #region Public functions
 
-        //[EntryPoint(FunctionName = "gl")]
-        //public static void BindTexture(TextureTarget target, uint textureid) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glTexPageCommitmentARB")]
+        public static void TexPageCommitmentARB(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit) { throw new NotImplementedException(); }
 
 
         #endregion

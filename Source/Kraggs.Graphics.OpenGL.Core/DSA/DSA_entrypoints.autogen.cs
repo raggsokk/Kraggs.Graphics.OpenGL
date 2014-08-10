@@ -147,6 +147,7 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 69, 88, 84, 0, // glNamedFramebufferParameteriEXT
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 80, 97, 114, 97, 109, 101, 116, 101, 114, 105, 118, 69, 88, 84, 0, // glGetNamedFramebufferParameterivEXT
 				103, 108, 78, 97, 109, 101, 100, 66, 117, 102, 102, 101, 114, 83, 116, 111, 114, 97, 103, 101, 69, 88, 84, 0, // glNamedBufferStorageEXT
+				103, 108, 84, 101, 120, 116, 117, 114, 101, 80, 97, 103, 101, 67, 111, 109, 109, 105, 116, 109, 101, 110, 116, 69, 88, 84, 0, // glTexturePageCommitmentEXT
             };
 
             EntryPointNameOffsets = new int[]
@@ -283,6 +284,7 @@ namespace Kraggs.Graphics.OpenGL
 				3540, // SlotID: 129 = glNamedFramebufferParameteriEXT
 				3572, // SlotID: 130 = glGetNamedFramebufferParameterivEXT
 				3608, // SlotID: 131 = glNamedBufferStorageEXT
+				3632, // SlotID: 132 = glTexturePageCommitmentEXT
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

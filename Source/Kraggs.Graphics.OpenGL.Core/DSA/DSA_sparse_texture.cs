@@ -2,7 +2,7 @@
 
 // Kraggs.Graphics.OpenGL (github.com/raggsokk)
 //
-// Copyright (c) 2014 Jarle Hansen (github.com/raggsokk)
+// Copyright (c) 2013 Jarle Hansen (github.com/raggsokk)
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
@@ -34,20 +34,23 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    partial class GL
+    partial class DSA
     {
+        // TODO: This might not be the best place for this function. Maybe let it be with ARB_sparse_texture instead??
+
+
         #region OpenGL DLLImports
 
-        //[EntryPointSlot(1)]
-        //[DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        //private static extern void glBindTexture(TextureTarget target, uint textureid);
+        [EntryPointSlot(132)]
+        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        private static extern void glTexturePageCommitmentEXT(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit);
 
         #endregion
 
         #region Public functions
 
-        //[EntryPoint(FunctionName = "gl")]
-        //public static void BindTexture(TextureTarget target, uint textureid) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glTexturePageCommitmentEXT")]
+        public static void TexturePageCommitmentEXT(TextureTarget target, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, bool commit) { throw new NotImplementedException(); }
 
 
         #endregion

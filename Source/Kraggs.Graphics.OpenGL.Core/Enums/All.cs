@@ -1359,6 +1359,24 @@ namespace Kraggs.Graphics.OpenGL
 
         UNSIGNED_INT64_ARB = 0x140F,
 
+        //GL_ARB_sparse_texture
+        TEXTURE_SPARSE_ARB = 0x91A6,
+        VIRTUAL_PAGE_SIZE_INDEX_ARB = 0x91A7,
+        NUM_SPARSE_LEVELS_ARB = 0x91AA,
+        NUM_VIRTUAL_PAGE_SIZES_ARB = 0x91A8,
+        VIRTUAL_PAGE_SIZE_X_ARB = 0x9195,
+        VIRTUAL_PAGE_SIZE_Y_ARB = 0x9196,
+        VIRTUAL_PAGE_SIZE_Z_ARB = 0x9197,
+        MAX_SPARSE_TEXTURE_SIZE_ARB = 0x9198,
+        MAX_SPARSE_3D_TEXTURE_SIZE_ARB = 0x9199,
+        MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB = 0x919A,
+        SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB = 0x91A9,
+
+        //ARB_shading_language_include
+        SHADER_INCLUDE_ARB = 0x8DAE,
+        NAMED_STRING_LENGTH_ARB = 0x8DE9,
+        NAMED_STRING_TYPE_ARB = 0x8DEA,
+
         #endregion
     }
 }

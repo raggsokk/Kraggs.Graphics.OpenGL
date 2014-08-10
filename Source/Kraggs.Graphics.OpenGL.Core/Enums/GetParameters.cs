@@ -1100,13 +1100,11 @@ namespace Kraggs.Graphics.OpenGL
 
         #endregion
 
-
-
-
-
-
-
-
+        //ARB_sparse_texture
+        MaxSparseTextureSizeARB = All.MAX_SPARSE_TEXTURE_SIZE_ARB,
+        MaxSparseTexture3DSizeARB = All.MAX_SPARSE_3D_TEXTURE_SIZE_ARB,
+        MaxSparseArrayTextureLayersARB = All.MAX_SPARSE_ARRAY_TEXTURE_LAYERS_ARB,
+        SparseTextureFullArrayCubeMipmapsARB = All.SPARSE_TEXTURE_FULL_ARRAY_CUBE_MIPMAPS_ARB,
 
         // some hacks?!
         MaxIndicesSize = MaxElementsIndices,

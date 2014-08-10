@@ -70,5 +70,12 @@ namespace Kraggs.Graphics.OpenGL
         /// IMAGE_FORMAT_COMPATIBILITY_BY_SIZE, IMAGE_FORMAT_COMPATIBILITY_BY_CLASS
         /// </summary>
         ImageFormatCompatibility = All.IMAGE_FORMAT_COMPATIBILITY_TYPE,
+
+        //ARB_sparse_texture
+        SparseARB = All.TEXTURE_SPARSE_ARB,
+        VirtualPageSizeIndexARB = All.VIRTUAL_PAGE_SIZE_INDEX_ARB,
+
+        NumSparseLevelsARB = All.NUM_SPARSE_LEVELS_ARB,
+
     }
 }

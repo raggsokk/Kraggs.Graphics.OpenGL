@@ -61,7 +61,10 @@
     <Compile Include="absOpenTKLoaderV2_CORE.cs" />
     <Compile Include="ARB\ARB.cs" />
     <Compile Include="ARB\ARB_bindless_texture.cs" />
+    <Compile Include="ARB\ARB_debug_output.cs" />
     <Compile Include="ARB\ARB_entrypoints.autogen.cs" />
+    <Compile Include="ARB\ARB_shading_language_include.cs" />
+    <Compile Include="ARB\ARB_sparse_texture.cs" />
     <Compile Include="Core\GL_entrypoints.autogen.cs" />
     <Compile Include="Core\GL_v11.cs" />
     <Compile Include="Core\GL_v12.cs" />
@@ -82,6 +85,7 @@
     <Compile Include="Core\GL_v45.cs" />
     <Compile Include="DSA\DSA.cs" />
     <Compile Include="DSA\DSA_entrypoints.autogen.cs" />
+    <Compile Include="DSA\DSA_sparse_texture.cs" />
     <Compile Include="DSA\DSA_v11.cs" />
     <Compile Include="DSA\DSA_v12.cs" />
     <Compile Include="DSA\DSA_v13.cs" />
@@ -143,6 +147,7 @@
     <Compile Include="Enums\GenericCompressedInternalFormat.cs" />
     <Compile Include="Enums\GetInternalformatParameters.cs" />
     <Compile Include="Enums\GetInternalformatTargets.cs" />
+    <Compile Include="Enums\GetNamedStringIndexedARB.cs" />
     <Compile Include="Enums\GetParameters.cs" />
     <Compile Include="Enums\GetPointerName.cs" />
     <Compile Include="Enums\GetProgramParameters.cs" />
@@ -157,6 +162,7 @@
     <Compile Include="Enums\MapBufferRangeAccessFlags.cs" />
     <Compile Include="Enums\MemoryBarrierFlags.cs" />
     <Compile Include="Enums\MultisampleParameters.cs" />
+    <Compile Include="Enums\NamedStringEnumARB.cs" />
     <Compile Include="Enums\PatchParameters.cs" />
     <Compile Include="Enums\PixelFormat.cs" />
     <Compile Include="Enums\PixelInternalFormat.cs" />

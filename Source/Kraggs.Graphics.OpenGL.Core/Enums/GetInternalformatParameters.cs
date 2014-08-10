@@ -116,5 +116,12 @@ namespace Kraggs.Graphics.OpenGL
         ViewCompatibilityClass = All.VIEW_COMPATIBILITY_CLASS,
 
         ClearTexure = All.CLEAR_TEXTURE,
+
+        //ARB_sparse_texture
+        NumVirtualPageSizesARB = All.NUM_VIRTUAL_PAGE_SIZES_ARB,
+        VirtualPageSizeXARB = All.VIRTUAL_PAGE_SIZE_X_ARB,
+        VirtualPageSizeYARB = All.VIRTUAL_PAGE_SIZE_Y_ARB,
+        VirtualPageSizeZARB = All.VIRTUAL_PAGE_SIZE_Z_ARB,
+
     }
 }
