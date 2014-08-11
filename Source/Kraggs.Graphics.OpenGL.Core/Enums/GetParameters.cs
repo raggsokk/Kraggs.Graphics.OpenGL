@@ -1096,7 +1096,9 @@ namespace Kraggs.Graphics.OpenGL
         MaxDebugLoggedMessages = All.MAX_DEBUG_LOGGED_MESSAGES,
         DebugLoggedMessages = All.DEBUG_LOGGED_MESSAGES,
         DebugNextLoggedMessageLength = All.DEBUG_NEXT_LOGGED_MESSAGE_LENGTH,
-        
+
+        CopyReadBufferBinding = All.COPY_READ_BUFFER_BINDING,
+        CopyWriteBufferBinding = All.COPY_WRITE_BUFFER_BINDING,
 
         #endregion
 

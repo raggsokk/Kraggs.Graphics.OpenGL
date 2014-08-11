@@ -885,13 +885,17 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="idNamespace">Namespace where name belongs.</param>
         /// <param name="name">ID or name of object.</param>
         /// <param name="Label">Label to attach to object.</param>        
-        private static void ObjectLabel(DebugNamespace idNamespace, uint name, string Label)
+        public static void ObjectLabel(DebugNamespace idNamespace, uint name, string Label)
         {
-            ObjectLabel(idNamespace, name, Label.Length, Label);
+            // null-terminated string.
+            ObjectLabel(idNamespace, name, -1, Label);
+            //ObjectLabel(idNamespace, name, Label.Length, Label);
         }
 
         [EntryPoint(FunctionName = "glGetObjectLabel")]
-        private static void GetObjectLabel(DebugNamespace idNamespace, uint name, int bufsize, out int LabelLength, StringBuilder label){ throw new NotImplementedException(); }
+        public static void GetObjectLabel(DebugNamespace idNamespace, uint name, int bufsize, out int LabelLength, IntPtr label) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetObjectLabel")]
+        public static void GetObjectLabel(DebugNamespace idNamespace, uint name, int bufsize, out int LabelLength, StringBuilder label){ throw new NotImplementedException(); }
         /// <summary>
         /// Retrives the label from a labeled object.
         /// </summary>
@@ -899,15 +903,18 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="name">ID or name of object.</param>
         /// <param name="MaxObjectLabelLength">The capacity of created stringbuilder used to retrive label.</param>
         /// <returns>Label</returns>
-        private static string GetObjectLabel(DebugNamespace idNamespace, uint name, int MaxObjectLabelLength = 64)
+        public static string GetObjectLabel(DebugNamespace idNamespace, uint name)
         {
-            var sb = new StringBuilder(MaxObjectLabelLength + 4);
-            GetObjectLabel(idNamespace, name, sb.Capacity - 2, out MaxObjectLabelLength, sb);
+            var labellenght = 0;
+            GetObjectLabel(idNamespace, name, 0, out labellenght, IntPtr.Zero);
+
+            var sb = new StringBuilder(labellenght + 4);
+            GetObjectLabel(idNamespace, name, sb.Capacity - 2, out labellenght, sb);
             return sb.ToString();
         }
 
         [EntryPoint(FunctionName = "glObjectPtrLabel")]
-        private static void ObjectPtrLabel(IntPtr ptr, int length, string label){ throw new NotImplementedException(); }
+        public static void ObjectPtrLabel(IntPtr ptr, int length, string label){ throw new NotImplementedException(); }
         /// <summary>
         /// Sets the label for an object identified by ptr.
         /// </summary>
@@ -919,7 +926,7 @@ namespace Kraggs.Graphics.OpenGL
         }
 
         [EntryPoint(FunctionName = "glGetObjectPtrLabel")]
-        private static void GetObjectPtrLabel(IntPtr ptr, int bufSize, out int length, StringBuilder label){ throw new NotImplementedException(); }
+        public static void GetObjectPtrLabel(IntPtr ptr, int bufSize, out int length, StringBuilder label){ throw new NotImplementedException(); }
 
         /// <summary>
         /// Retrives the label from a labeled object.
