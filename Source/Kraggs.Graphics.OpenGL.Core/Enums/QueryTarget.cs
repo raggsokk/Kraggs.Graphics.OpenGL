@@ -75,5 +75,8 @@ namespace Kraggs.Graphics.OpenGL
         ClippingInputPrimitives = All.CLIPPING_INPUT_PRIMITIVES_ARB,
         ClippingOutputPrimitives = All.CLIPPING_OUTPUT_PRIMITIVES_ARB,
 
+        //ARB_transform_feedback_overflow_query
+        TransformFeedbackOverflow = All.TRANSFORM_FEEDBACK_OVERFLOW_ARB,
+        TransformFeedbackStreamOverflow = All.TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB,
     }
 }
