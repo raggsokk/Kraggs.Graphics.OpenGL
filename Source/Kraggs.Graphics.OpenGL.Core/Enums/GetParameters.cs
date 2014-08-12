@@ -1135,5 +1135,9 @@ namespace Kraggs.Graphics.OpenGL
         // OpenGL 4.5
         // ARB_context_flush_control
         ContextReleaseBehavior = All.CONTEXT_RELEASE_BEHAVIOR,
+        // ARB_cull_distance
+        MaxCullDistances = All.MAX_CULL_DISTANCES,
+        MaxCombinedClipAndCullDinstances = All.MAX_COMBINED_CLIP_AND_CULL_DISTANCES,
+
     }
 }
