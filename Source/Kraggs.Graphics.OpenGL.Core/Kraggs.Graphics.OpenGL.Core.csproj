@@ -68,6 +68,7 @@
     <Compile Include="ARB\ARB_debug_output.cs" />
     <Compile Include="ARB\ARB_entrypoints.autogen.cs" />
     <Compile Include="ARB\ARB_ES3_1_compatibility.cs" />
+    <Compile Include="ARB\ARB_get_texture_sub_image.cs" />
     <Compile Include="ARB\ARB_shading_language_include.cs" />
     <Compile Include="ARB\ARB_sparse_texture.cs" />
     <Compile Include="Core\GL_entrypoints.autogen.cs" />

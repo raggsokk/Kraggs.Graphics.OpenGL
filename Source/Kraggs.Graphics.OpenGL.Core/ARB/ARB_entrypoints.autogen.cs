@@ -43,6 +43,8 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 105, 118, 65, 82, 66, 0, // glGetNamedStringivARB
 				103, 108, 67, 108, 105, 112, 67, 111, 110, 116, 114, 111, 108, 65, 82, 66, 0, // glClipControlARB
 				103, 108, 77, 101, 109, 111, 114, 121, 66, 97, 114, 114, 105, 101, 114, 66, 121, 82, 101, 103, 105, 111, 110, 65, 82, 66, 0, // glMemoryBarrierByRegionARB
+				103, 108, 71, 101, 116, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 65, 82, 66, 0, // glGetTextureSubImageARB
+				103, 108, 71, 101, 116, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 0, // glGetCompressedTextureSubImage
             };
 
             EntryPointNameOffsets = new int[]
@@ -75,6 +77,8 @@ namespace Kraggs.Graphics.OpenGL
 				609, // SlotID: 25 = glGetNamedStringivARB
 				631, // SlotID: 26 = glClipControlARB
 				648, // SlotID: 27 = glMemoryBarrierByRegionARB
+				675, // SlotID: 28 = glGetTextureSubImageARB
+				699, // SlotID: 29 = glGetCompressedTextureSubImage
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
