@@ -8,5 +8,6 @@
 		"ARB_clip_control.cs",
 		"ARB_ES3_1_compatibility.cs",
 		"ARB_get_texture_sub_image.cs",
+		"ARB_texture_barrier.cs",
 	]
 }

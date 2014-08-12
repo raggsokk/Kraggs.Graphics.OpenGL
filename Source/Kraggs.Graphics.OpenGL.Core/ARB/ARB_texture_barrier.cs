@@ -38,23 +38,19 @@ namespace Kraggs.Graphics.OpenGL
     {
         #region OpenGL DLLImports
 
-        [EntryPointSlot(28)]
+        [EntryPointSlot(30)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glGetTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, int BufSize, IntPtr pixels);
-
-        [EntryPointSlot(29)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glGetCompressedTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int BufSize, IntPtr pixels);
+        private static extern void glTextureBarrierARB();
 
         #endregion
 
         #region Public functions
 
-        [EntryPoint(FunctionName = "glGetTextureSubImageARB")]        
-        public static void GetTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, int BufSize, IntPtr pixels) { throw new NotImplementedException(); }
-
-        [EntryPoint(FunctionName = "glGetCompressedTextureSubImageARB")]        
-        public static void GetCompressedTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int BufSize, IntPtr pixels) { throw new NotImplementedException(); }
+        /// <summary>
+        /// TextureBarrier() will guarantee that writes have completed and caches have been invalidated before subsequent Draws are executed."
+        /// </summary>
+        [EntryPoint(FunctionName = "glTextureBarrierARB")]
+        public static void TextureBarrierARB() { throw new NotImplementedException(); }
 
 
         #endregion

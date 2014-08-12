@@ -71,6 +71,7 @@
     <Compile Include="ARB\ARB_get_texture_sub_image.cs" />
     <Compile Include="ARB\ARB_shading_language_include.cs" />
     <Compile Include="ARB\ARB_sparse_texture.cs" />
+    <Compile Include="ARB\ARB_texture_barrier.cs" />
     <Compile Include="Core\GL_entrypoints.autogen.cs" />
     <Compile Include="Core\GL_v11.cs" />
     <Compile Include="Core\GL_v12.cs" />
