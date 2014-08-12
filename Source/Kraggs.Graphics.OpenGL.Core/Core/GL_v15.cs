@@ -343,6 +343,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Offset">Offset in buffer to start writing at.</param>
         /// <param name="Size">The size of buffer upload</param>
         /// <param name="data">The pointer to the data to upload.</param>
+        /// <remarks>
+        /// If the target of the operation is sparse and the range specified by <offset> and<size> includes uncommited regions, data destined for those regions is silently discarded.
+        /// </remarks>
         [EntryPoint(FunctionName = "glBufferSubData")]
         public static void BufferSubData(BufferTarget target, IntPtr Offset, IntPtr Size, IntPtr data){ throw new NotImplementedException(); }
 
@@ -353,6 +356,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="Offset">Offset in buffer to start writing at.</param>
         /// <param name="Size">The size of buffer upload</param>
         /// <param name="data">The pointer to the data to upload.</param>
+        /// <remarks>
+        /// If the target of the operation is sparse and the range specified by <offset> and<size> includes uncommited regions, data destined for those regions is silently discarded.
+        /// </remarks>
         public static void BufferSubData(BufferTarget target, long Offset, long Size, IntPtr data)
         {
             BufferSubData(target, (IntPtr)Offset, (IntPtr)Size, data);
@@ -366,6 +372,9 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="data">data to upload</param>
         /// <param name="index">index in data to upload at, default at start.</param>
         /// <param name="count">number of elements to upload, starting at index. default is data.length</param>
+        /// <remarks>
+        /// If the target of the operation is sparse and the range specified by <offset> and<size> includes uncommited regions, data destined for those regions is silently discarded.
+        /// </remarks>
         public unsafe static void BufferSubData(BufferTarget target, long Offset, byte[] data, int index = 0, int count = -1)
         {
             if (count == -1)

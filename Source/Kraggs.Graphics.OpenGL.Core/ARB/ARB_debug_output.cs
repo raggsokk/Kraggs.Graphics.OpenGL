@@ -50,9 +50,9 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPointSlot(17)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         unsafe private static extern uint glGetDebugMessageLogARB(uint count, int bufsize, DebugSource* sources, DebugType* types, uint* ids, DebugSeverity* severities, int* lengths, IntPtr messageLog);
-        [EntryPointSlot(18)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glGetPointervARB(GetPointerName pname, out IntPtr ptr);
+        //[EntryPointSlot(18)]
+        //[DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
+        //private static extern void glGetPointervARB(GetPointerName pname, out IntPtr ptr);
 
         #endregion
 
@@ -103,8 +103,8 @@ namespace Kraggs.Graphics.OpenGL
             return ret;
         }
 
-        [EntryPoint(FunctionName = "glGetPointervARB")]
-        public static void GetPointervARB(GetPointerName pname, out IntPtr ptr){ throw new NotImplementedException(); }
+        //[EntryPoint(FunctionName = "glGetPointervARB")]
+        //public static void GetPointervARB(GetPointerName pname, out IntPtr ptr){ throw new NotImplementedException(); }
 
 
         #endregion

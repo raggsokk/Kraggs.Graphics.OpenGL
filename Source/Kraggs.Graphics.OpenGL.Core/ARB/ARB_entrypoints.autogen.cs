@@ -33,7 +33,6 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 68, 101, 98, 117, 103, 77, 101, 115, 115, 97, 103, 101, 73, 110, 115, 101, 114, 116, 65, 82, 66, 0, // glDebugMessageInsertARB
 				103, 108, 68, 101, 98, 117, 103, 77, 101, 115, 115, 97, 103, 101, 67, 97, 108, 108, 98, 97, 99, 107, 65, 82, 66, 0, // glDebugMessageCallbackARB
 				103, 108, 71, 101, 116, 68, 101, 98, 117, 103, 77, 101, 115, 115, 97, 103, 101, 76, 111, 103, 65, 82, 66, 0, // glGetDebugMessageLogARB
-				103, 108, 71, 101, 116, 80, 111, 105, 110, 116, 101, 114, 118, 65, 82, 66, 0, // glGetPointervARB
 				103, 108, 84, 101, 120, 80, 97, 103, 101, 67, 111, 109, 109, 105, 116, 109, 101, 110, 116, 65, 82, 66, 0, // glTexPageCommitmentARB
 				103, 108, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glNamedStringARB
 				103, 108, 68, 101, 108, 101, 116, 101, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glDeleteNamedStringARB
@@ -41,11 +40,6 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 73, 115, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glIsNamedStringARB
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glGetNamedStringARB
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 105, 118, 65, 82, 66, 0, // glGetNamedStringivARB
-				103, 108, 67, 108, 105, 112, 67, 111, 110, 116, 114, 111, 108, 65, 82, 66, 0, // glClipControlARB
-				103, 108, 77, 101, 109, 111, 114, 121, 66, 97, 114, 114, 105, 101, 114, 66, 121, 82, 101, 103, 105, 111, 110, 65, 82, 66, 0, // glMemoryBarrierByRegionARB
-				103, 108, 71, 101, 116, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 65, 82, 66, 0, // glGetTextureSubImageARB
-				103, 108, 71, 101, 116, 67, 111, 109, 112, 114, 101, 115, 115, 101, 100, 84, 101, 120, 116, 117, 114, 101, 83, 117, 98, 73, 109, 97, 103, 101, 65, 82, 66, 0, // glGetCompressedTextureSubImageARB
-				103, 108, 84, 101, 120, 116, 117, 114, 101, 66, 97, 114, 114, 105, 101, 114, 65, 82, 66, 0, // glTextureBarrierARB
             };
 
             EntryPointNameOffsets = new int[]
@@ -68,19 +62,14 @@ namespace Kraggs.Graphics.OpenGL
 				390, // SlotID: 15 = glDebugMessageInsertARB
 				414, // SlotID: 16 = glDebugMessageCallbackARB
 				440, // SlotID: 17 = glGetDebugMessageLogARB
-				464, // SlotID: 18 = glGetPointervARB
-				481, // SlotID: 19 = glTexPageCommitmentARB
-				504, // SlotID: 20 = glNamedStringARB
-				521, // SlotID: 21 = glDeleteNamedStringARB
-				544, // SlotID: 22 = glCompileShaderIncludeARB
-				570, // SlotID: 23 = glIsNamedStringARB
-				589, // SlotID: 24 = glGetNamedStringARB
-				609, // SlotID: 25 = glGetNamedStringivARB
-				631, // SlotID: 26 = glClipControlARB
-				648, // SlotID: 27 = glMemoryBarrierByRegionARB
-				675, // SlotID: 28 = glGetTextureSubImageARB
-				699, // SlotID: 29 = glGetCompressedTextureSubImageARB
-				733, // SlotID: 30 = glTextureBarrierARB
+				0, // SlotID: 18 is Empty
+				464, // SlotID: 19 = glTexPageCommitmentARB
+				487, // SlotID: 20 = glNamedStringARB
+				504, // SlotID: 21 = glDeleteNamedStringARB
+				527, // SlotID: 22 = glCompileShaderIncludeARB
+				553, // SlotID: 23 = glIsNamedStringARB
+				572, // SlotID: 24 = glGetNamedStringARB
+				592, // SlotID: 25 = glGetNamedStringivARB
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

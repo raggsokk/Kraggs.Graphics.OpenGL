@@ -1139,5 +1139,7 @@ namespace Kraggs.Graphics.OpenGL
         MaxCullDistances = All.MAX_CULL_DISTANCES,
         MaxCombinedClipAndCullDinstances = All.MAX_COMBINED_CLIP_AND_CULL_DISTANCES,
 
+        //ARB_sparse_buffer
+        SparseBufferPageSize = All.SPARSE_BUFFER_PAGE_SIZE_ARB,
     }
 }

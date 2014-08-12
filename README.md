@@ -51,6 +51,10 @@ In order to create smaller code deployments, use the same solution as OpenTK use
 
 ### Kraggs.Graphics.OpenGL.Core
 This is the OpenGL library which implements the OpenGL Core v4.4 functions. It also contains ARB, DSA, NV and some AMD functions relevant to the core context.
+A litte note from the OpenGL Wiki about Core ARB Extensions:
+>Core Extensions
+>OpenGL version 3.0 added a 4th general group of extension: core extensions. Their purpose is to expose core features from higher versions in lower versions, which is particularly useful if those core features are hardware-based.
+>Core extensions all have the GL_ARB prefix, but their functions and enumerations do not end with ARB. This way, they exactly mimic the way the core functions and enumerations look; this allows code written to use them to be updated to higher GL versions without modifications. The behavior of core extensions is exactly the same as the corresponding core functionality.
 
 ### Kraggs.Graphics.OpenGL.ES
 This is the OpenGL ES library, implementing v3.x of spec.

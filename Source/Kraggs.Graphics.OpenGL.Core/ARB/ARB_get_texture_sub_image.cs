@@ -34,33 +34,21 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    partial class GL
+    partial class ARB
     {
-        #region OpenGL DLLImports
+        /* 
+        
+        Core Extensions
+        
+        OpenGL version 3.0 added a 4th general group of extension: core extensions. Their purpose is
+        to expose core features from higher versions in lower versions, which is particularly useful 
+        if those core features are hardware-based.
 
-        [EntryPointSlot(28)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glGetTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, int BufSize, IntPtr pixels);
+        Core extensions all have the GL_ARB prefix, but their functions and enumerations do not end 
+        with ARB. This way, they exactly mimic the way the core functions and enumerations look; 
+        this allows code written to use them to be updated to higher GL versions without modifications. 
+        The behavior of core extensions is exactly the same as the corresponding core functionality.
 
-        [EntryPointSlot(29)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glGetCompressedTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int BufSize, IntPtr pixels);
-
-        #endregion
-
-        #region Public functions
-
-        [EntryPoint(FunctionName = "glGetTextureSubImageARB")]        
-        public static void GetTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, PixelFormat format, PixelType type, int BufSize, IntPtr pixels) { throw new NotImplementedException(); }
-
-        [EntryPoint(FunctionName = "glGetCompressedTextureSubImageARB")]        
-        public static void GetCompressedTextureSubImageARB(uint texture, int level, int xoffset, int yoffset, int zoffset, int width, int height, int depth, int BufSize, IntPtr pixels) { throw new NotImplementedException(); }
-
-
-        #endregion
-
-        #region Public Helper Functions
-
-        #endregion
+        */
     }
 }

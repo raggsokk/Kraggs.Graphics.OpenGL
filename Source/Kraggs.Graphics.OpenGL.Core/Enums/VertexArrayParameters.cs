@@ -23,32 +23,11 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-using System.Security;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
-
 namespace Kraggs.Graphics.OpenGL
 {
-    partial class ARB
+    public enum VertexArrayParameters
     {
-        /* 
-        
-        Core Extensions
-        
-        OpenGL version 3.0 added a 4th general group of extension: core extensions. Their purpose is
-        to expose core features from higher versions in lower versions, which is particularly useful 
-        if those core features are hardware-based.
-
-        Core extensions all have the GL_ARB prefix, but their functions and enumerations do not end 
-        with ARB. This way, they exactly mimic the way the core functions and enumerations look; 
-        this allows code written to use them to be updated to higher GL versions without modifications. 
-        The behavior of core extensions is exactly the same as the corresponding core functionality.
-
-        */
+        ElementArray = All.ELEMENT_ARRAY_BUFFER_BINDING,
+        IndicesArray = ElementArray,
     }
 }

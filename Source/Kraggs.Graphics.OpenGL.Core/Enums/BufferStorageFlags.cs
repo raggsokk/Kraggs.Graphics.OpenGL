@@ -43,5 +43,11 @@ namespace Kraggs.Graphics.OpenGL
         MapCoherent = All.MAP_COHERENT_BIT,
         DynamicStorage = All.DYNAMIC_STORAGE_BIT,
         ClientStorage = All.CLIENT_STORAGE_BIT,
+        //ARB_sparse_buffer
+        /// <summary>
+        /// If <flags> contains SPARSE_STORAGE_BIT_ARB, then it may not also contain any combination of MAP_READ_BIT or MAP_WRITE_BIT.
+        /// SPARSE_STORAGE_BIT_ARB The data store of the buffer object is sparse, consisting only of a virtual allocation. Physical storage for buffer contents may be later allocated and assigned using BufferPageCommitmentARB. Initially, the entire data store is uncommitted.As a side effect, the data specified in the<data> parameter is discarded, although the GL may still acces the client's address space within the specified region.
+        /// </summary>
+        SparseStorage = All.SPARSE_STORAGE_BIT_ARB,
     }
 }
