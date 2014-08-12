@@ -1131,5 +1131,9 @@ namespace Kraggs.Graphics.OpenGL
         MaxIndicesSize = MaxElementsIndices,
         MaxIndicesVertices = MaxElementsVertices,
         IndicesArrayBufferBinding = ElementArrayBufferBinding,
+
+        // OpenGL 4.5
+        // ARB_context_flush_control
+        ContextReleaseBehavior = All.CONTEXT_RELEASE_BEHAVIOR,
     }
 }
