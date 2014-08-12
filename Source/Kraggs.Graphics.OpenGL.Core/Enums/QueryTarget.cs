@@ -61,5 +61,19 @@ namespace Kraggs.Graphics.OpenGL
         /// If target is GL_TIME_ELAPSED, id must be an unused name, or the name of an existing timer query object previously bound to the GL_TIME_ELAPSED query binding. When glBeginQueryIndexed is executed, the query object's time counter is reset to 0. When glEndQueryIndexed is executed, the elapsed server time that has passed since the call to glBeginQueryIndexed is written into the query object's time counter. This value can be queried by calling glGetQueryObject with pname GL_QUERY_RESULT. When target is GL_TIME_ELAPSED, index must be zero.
         /// </summary>
         TimeElapsed = All.TIME_ELAPSED,
+
+        //ARB_pipeline_statistics_query
+        VerticesSubmitted = All.VERTICES_SUBMITTED_ARB,
+        PrimitivesSubmitted = All.PRIMITIVES_SUBMITTED_ARB,
+        VertexShaderInvocations = All.VERTEX_SHADER_INVOCATIONS_ARB,
+        TessControlShaderPatches = All.TESS_CONTROL_SHADER_PATCHES_ARB,
+        TessEvaluationShaderInvocations = All.TESS_EVALUATION_SHADER_INVOCATIONS_ARB,
+        GeometryShaderInvocations = All.GEOMETRY_SHADER_INVOCATIONS,
+        GeometryShaderPrimitivesEmitted = All.GEOMETRY_SHADER_PRIMITIVES_EMITTED_ARB,
+        FragmentShaderInvocations = All.FRAGMENT_SHADER_INVOCATIONS_ARB,
+        ComputeShaderInvocations = All.COMPUTE_SHADER_INVOCATIONS_ARB,
+        ClippingInputPrimitives = All.CLIPPING_INPUT_PRIMITIVES_ARB,
+        ClippingOutputPrimitives = All.CLIPPING_OUTPUT_PRIMITIVES_ARB,
+
     }
 }
