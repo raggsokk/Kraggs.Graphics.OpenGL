@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
+using System.UInt64;
 
 
 namespace Kraggs.Graphics.OpenGL
@@ -41,6 +42,7 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 73, 115, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glIsNamedStringARB
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glGetNamedStringARB
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 105, 118, 65, 82, 66, 0, // glGetNamedStringivARB
+				103, 108, 67, 108, 105, 112, 67, 111, 110, 116, 114, 111, 108, 65, 82, 66, 0, // glClipControlARB
             };
 
             EntryPointNameOffsets = new int[]
@@ -71,6 +73,7 @@ namespace Kraggs.Graphics.OpenGL
 				570, // SlotID: 23 = glIsNamedStringARB
 				589, // SlotID: 24 = glGetNamedStringARB
 				609, // SlotID: 25 = glGetNamedStringivARB
+				631, // SlotID: 26 = glClipControlARB
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
