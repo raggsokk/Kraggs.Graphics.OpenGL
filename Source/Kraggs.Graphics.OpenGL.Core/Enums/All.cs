@@ -1412,15 +1412,15 @@ namespace Kraggs.Graphics.OpenGL
         //Reuse GL_ARB_clip_control
         //LOWER_LEFT= 0x8CA1,
         //UPPER_LEFT=0x8CA2,
-        NEGATIVE_ONE_TO_ONE=0x935E,
-        ZERO_TO_ONE=0x935F,
-        CLIP_ORIGIN=0x935C,
-        CLIP_DEPTH_MODE=0x935D,
+        NEGATIVE_ONE_TO_ONE = 0x935E,
+        ZERO_TO_ONE = 0x935F,
+        CLIP_ORIGIN = 0x935C,
+        CLIP_DEPTH_MODE = 0x935D,
         //Reuse GL_ARB_conditional_render_inverted
-        QUERY_WAIT_INVERTED0x8E17,
-        QUERY_NO_WAIT_INVERTED0x8E18,
-        QUERY_BY_REGION_WAIT_INVERTED0x8E19,
-        QUERY_BY_REGION_NO_WAIT_INVERTED0x8E1A,
+        QUERY_WAIT_INVERTED = 0x8E17,
+        QUERY_NO_WAIT_INVERTED = 0x8E18,
+        QUERY_BY_REGION_WAIT_INVERTED = 0x8E19,
+        QUERY_BY_REGION_NO_WAIT_INVERTED = 0x8E1A,
         //Reuse GL_ARB_cull_distance
         MAX_CULL_DISTANCES = 0x82F9, 
         MAX_COMBINED_CLIP_AND_CULL_DISTANCES = 0x82FA,

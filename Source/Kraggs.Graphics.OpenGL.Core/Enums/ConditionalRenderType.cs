@@ -40,5 +40,11 @@ namespace Kraggs.Graphics.OpenGL
         QueryByRegionWait = All.QUERY_BY_REGION_WAIT,
         QueryNoWait = All.QUERY_NO_WAIT,
         QueryWait = All.QUERY_WAIT,
+
+        //ARB_conditional_render_inverted
+        QueryWaitInverted = All.QUERY_WAIT_INVERTED,
+        QueryNoWaitInverted = All.QUERY_NO_WAIT_INVERTED,
+        QueryByRegionWaitInverted = All.QUERY_BY_REGION_WAIT_INVERTED,
+        QueryByRegionNoWaitInverted = All.QUERY_BY_REGION_NO_WAIT_INVERTED,
     }
 }
