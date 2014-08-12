@@ -64,8 +64,10 @@
     <Compile Include="AMD\AMD_entrypoints.autogen.cs" />
     <Compile Include="ARB\ARB.cs" />
     <Compile Include="ARB\ARB_bindless_texture.cs" />
+    <Compile Include="ARB\ARB_clip_control.cs" />
     <Compile Include="ARB\ARB_debug_output.cs" />
     <Compile Include="ARB\ARB_entrypoints.autogen.cs" />
+    <Compile Include="ARB\ARB_ES3_1_compatibility.cs" />
     <Compile Include="ARB\ARB_shading_language_include.cs" />
     <Compile Include="ARB\ARB_sparse_texture.cs" />
     <Compile Include="Core\GL_entrypoints.autogen.cs" />
@@ -132,8 +134,11 @@
     <Compile Include="Enums\ClearBufferDataFormat.cs" />
     <Compile Include="Enums\ClearBufferFlags.cs" />
     <Compile Include="Enums\ClientWaitSyncStatus.cs" />
+    <Compile Include="Enums\ClipControlDepth.cs" />
+    <Compile Include="Enums\ClipControlOrigin.cs" />
     <Compile Include="Enums\CompressedInternalFormat.cs" />
     <Compile Include="Enums\ConditionalRenderType.cs" />
+    <Compile Include="Enums\ContextReleaseBehaviorEnum.cs" />
     <Compile Include="Enums\CopyImageTargetNV.cs" />
     <Compile Include="Enums\CullMode.cs" />
     <Compile Include="Enums\DebugCategoryAMD.cs" />
@@ -167,6 +172,7 @@
     <Compile Include="Enums\LogicOpEnum.cs" />
     <Compile Include="Enums\MapBufferAccess.cs" />
     <Compile Include="Enums\MapBufferRangeAccessFlags.cs" />
+    <Compile Include="Enums\MemoryBarrierByRegionFlags.cs" />
     <Compile Include="Enums\MemoryBarrierFlags.cs" />
     <Compile Include="Enums\MultisampleParameters.cs" />
     <Compile Include="Enums\NamedStringEnumARB.cs" />

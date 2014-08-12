@@ -38,16 +38,16 @@ namespace Kraggs.Graphics.OpenGL
     {
         #region OpenGL DLLImports
 
-        [EntryPointSlot(26)]
+        [EntryPointSlot(27)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glClipControlARB(ClipControlOrigin origin, ClipControlDepth depth);
+        private static extern void glMemoryBarrierByRegionARB(MemoryBarrierByRegionFlags barriers);
 
         #endregion
 
         #region Public functions
 
-        [EntryPoint(FunctionName = "glClipControlARB")]
-        public static void ClipControl(ClipControlOrigin origin, ClipControlDepth depth) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glMemoryBarrierByRegionARB")]
+        public static void MemoryBarrierByRegionARB(MemoryBarrierByRegionFlags barriers) { throw new NotImplementedException(); }
 
 
         #endregion

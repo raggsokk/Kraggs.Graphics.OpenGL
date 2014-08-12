@@ -23,37 +23,15 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-using System.Security;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
-
 namespace Kraggs.Graphics.OpenGL
 {
-    partial class ARB
+    public enum MemoryBarrierByRegionFlags
     {
-        #region OpenGL DLLImports
-
-        [EntryPointSlot(26)]
-        [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glClipControlARB(ClipControlOrigin origin, ClipControlDepth depth);
-
-        #endregion
-
-        #region Public functions
-
-        [EntryPoint(FunctionName = "glClipControlARB")]
-        public static void ClipControl(ClipControlOrigin origin, ClipControlDepth depth) { throw new NotImplementedException(); }
-
-
-        #endregion
-
-        #region Public Helper Functions
-
-        #endregion
+        AtomicCounter = All.ATOMIC_COUNTER_BARRIER_BIT,
+        Framebuffer = All.FRAMEBUFFER_BARRIER_BIT,
+        ShaderImageAccess = All.SHADER_IMAGE_ACCESS_BARRIER_BIT,
+        ShaderStorage = All.SHADER_STORAGE_BARRIER_BIT,
+        TextureFetch = All.TEXTURE_FETCH_BARRIER_BIT,
+        Uniform = All.UNIFORM_BARRIER_BIT,
     }
 }

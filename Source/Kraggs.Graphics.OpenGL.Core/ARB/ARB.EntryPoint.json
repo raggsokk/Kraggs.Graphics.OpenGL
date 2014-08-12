@@ -6,5 +6,6 @@
 		"ARB_sparse_texture.cs",
 		"ARB_shading_language_include.cs",
 		"ARB_clip_control.cs",
+		"ARB_ES3_1_compatibility.cs",
 	]
 }
