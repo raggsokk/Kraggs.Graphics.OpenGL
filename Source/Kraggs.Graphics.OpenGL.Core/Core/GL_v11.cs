@@ -749,7 +749,8 @@ namespace Kraggs.Graphics.OpenGL
         /// Vendor-specific information may follow the version number. Its format depends on the implementation, but a space always separates the version number and the vendor-specific information.
         /// </remarks>
         [EntryPoint(FunctionName = "glGetString")]
-        private static IntPtr GetStringPtr(StringName name){ throw new NotImplementedException(); }
+        //private static IntPtr GetStringPtr(StringName name){ throw new NotImplementedException(); }
+        public static string GetString(StringName name) { throw new NotImplementedException(); }
 
         /// <summary>
         /// Retrives from the current bound texture, the specified mipmap image data.
@@ -1332,23 +1333,23 @@ namespace Kraggs.Graphics.OpenGL
             }
         }
 
-        /// return a string describing the current GL connection
-        /// glGetString returns a pointer to a static string describing some aspect of the current GL connection.
-        /// </summary>
-        /// <param name="name">Specifies a symbolic constant, one of GL_VENDOR, GL_RENDERER, GL_VERSION, or GL_SHADING_LANGUAGE_VERSION. Additionally, glGetStringi accepts the GL_EXTENSIONS token.</param>
-        /// <returns></returns>
-        /// <remarks>
-        /// Strings GL_VENDOR and GL_RENDERER together uniquely specify a platform. They do not change from release to release and should be used by platform-recognition algorithms.
-        /// 
-        /// The GL_VERSION and GL_SHADING_LANGUAGE_VERSION strings begin with a version number. The version number uses one of these forms:
-        /// major_number.minor_number major_number.minor_number.release_number
-        /// Vendor-specific information may follow the version number. Its format depends on the implementation, but a space always separates the version number and the vendor-specific information.
-        /// </remarks>
-        public static string GetString(StringName name)
-        {
-            var ptr = GetStringPtr(name);
-            return Marshal.PtrToStringAnsi(ptr);
-        }
+        ///// return a string describing the current GL connection
+        ///// glGetString returns a pointer to a static string describing some aspect of the current GL connection.
+        ///// </summary>
+        ///// <param name="name">Specifies a symbolic constant, one of GL_VENDOR, GL_RENDERER, GL_VERSION, or GL_SHADING_LANGUAGE_VERSION. Additionally, glGetStringi accepts the GL_EXTENSIONS token.</param>
+        ///// <returns></returns>
+        ///// <remarks>
+        ///// Strings GL_VENDOR and GL_RENDERER together uniquely specify a platform. They do not change from release to release and should be used by platform-recognition algorithms.
+        ///// 
+        ///// The GL_VERSION and GL_SHADING_LANGUAGE_VERSION strings begin with a version number. The version number uses one of these forms:
+        ///// major_number.minor_number major_number.minor_number.release_number
+        ///// Vendor-specific information may follow the version number. Its format depends on the implementation, but a space always separates the version number and the vendor-specific information.
+        ///// </remarks>
+        //public static string GetString(StringName name)
+        //{
+        //    var ptr = GetStringPtr(name);
+        //    return Marshal.PtrToStringAnsi(ptr);
+        //}
 
         //unsafe public static void TexParameteriv(TextureTarget target, TextureParameters pname, int param)
         //{

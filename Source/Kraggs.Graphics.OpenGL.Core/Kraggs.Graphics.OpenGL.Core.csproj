@@ -156,6 +156,7 @@
     <Compile Include="Enums\EnableStateIndexed.cs" />
     <Compile Include="Enums\ErrorCode.cs" />
     <Compile Include="Enums\FramebufferAttachmentType.cs" />
+    <Compile Include="Enums\FramebufferObjectDrawBuffer.cs" />
     <Compile Include="Enums\FramebufferParameters.cs" />
     <Compile Include="Enums\FramebufferStatus.cs" />
     <Compile Include="Enums\FramebufferTarget.cs" />

@@ -77,5 +77,16 @@ namespace Kraggs.Graphics.OpenGL
 
         NumSparseLevelsARB = All.NUM_SPARSE_LEVELS_ARB,
 
+        //EXT_texture_filter_anisotropic
+        /// <summary>
+        /// TEXTURE_MAX_ANISOTROPY_EXT
+        /// </summary>
+        AnisotropyEXT = All.TEXTURE_MAX_ANISOTROPY_EXT,
+
+        //AMD_seamless_cubemap_per_texture
+        /// <summary>
+        /// AMD_seamless_cubemap_per_texture
+        /// </summary>
+        SeamlessCubemap = All.TEXTURE_CUBE_MAP_SEAMLESS,
     }
 }

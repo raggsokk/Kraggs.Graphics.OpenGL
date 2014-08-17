@@ -815,7 +815,7 @@ namespace Kraggs.Graphics.OpenGL
         /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
         /// </remarks>        
         [EntryPoint(FunctionName = "glGetQueryObjectiv")]
-        public static void GetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname, out int result) { throw new NotImplementedException(); }
+        public static void GetQueryObjectiv(uint QueryID, GetQueryObjectParameters pname, ref int result) { throw new NotImplementedException(); }
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
         /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
@@ -886,7 +886,7 @@ namespace Kraggs.Graphics.OpenGL
         /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
         /// </remarks>        
         [EntryPoint(FunctionName = "glGetQueryObjectuiv")]
-        public static void GetQueryObjectuiv(uint QueryID, GetQueryObjectParameters pname, out uint result) { throw new NotImplementedException(); }
+        public static void GetQueryObjectuiv(uint QueryID, GetQueryObjectParameters pname, ref uint result) { throw new NotImplementedException(); }
 
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.

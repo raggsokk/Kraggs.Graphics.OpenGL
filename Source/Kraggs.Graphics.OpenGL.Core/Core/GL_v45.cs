@@ -555,7 +555,7 @@ namespace Kraggs.Graphics.OpenGL
         public static void GetTransformFeedbacki64_v(uint xfb, TransformFeedbackParameters pname, uint index, long[] param) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glGetTransformFeedbacki64_v")]
         public static void GetTransformFeedbacki64_v(uint xfb, TransformFeedbackParameters pname, uint index, ref long param) { throw new NotImplementedException(); }
-        [EntryPoint(FunctionName = "glGetTransformFeedbacki64_v")]
+        
         public static long[] GetTransformFeedbacki64_v(uint xfb, TransformFeedbackParameters pname, uint index, int ResultArraySize = 1)
         {
             var result = new long[ResultArraySize];
@@ -968,7 +968,7 @@ namespace Kraggs.Graphics.OpenGL
         public static void NamedFramebufferTextureLayer(uint framebuffer, FramebufferAttachmentType attachment, uint texture, int level = 0, int layer = 0){ throw new NotImplementedException(); }
         
         [EntryPoint(FunctionName = "glNamedFramebufferDrawBuffer")]
-        public static void NamedFramebufferDrawBuffer(uint framebuffer, FramebufferTarget mode){ throw new NotImplementedException(); }
+        public static void NamedFramebufferDrawBuffer(uint framebuffer, DrawBufferTarget buffer){ throw new NotImplementedException(); }
         
         [EntryPoint(FunctionName = "glNamedFramebufferDrawBuffers")]
         unsafe public static void NamedFramebufferDrawBuffers(uint framebuffer, int n, DrawBufferTarget* bufs){ throw new NotImplementedException(); }
@@ -986,7 +986,7 @@ namespace Kraggs.Graphics.OpenGL
         }
 
         [EntryPoint(FunctionName = "glNamedFramebufferReadBuffer")]
-        public static void NamedFramebufferReadBuffer(uint framebuffer, FramebufferTarget mode){ throw new NotImplementedException(); }
+        public static void NamedFramebufferReadBuffer(uint framebuffer, DrawBufferTarget buffer){ throw new NotImplementedException(); }
         
         [EntryPoint(FunctionName = "glInvalidateNamedFramebufferData")]
         unsafe public static void InvalidateNamedFramebufferData(uint framebuffer, int numAttachments, FramebufferAttachmentType* attachments){ throw new NotImplementedException(); }

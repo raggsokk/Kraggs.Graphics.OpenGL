@@ -173,7 +173,7 @@ namespace Kraggs.Graphics.OpenGL
         public unsafe static extern void glDebugMessageControl(DebugSource source, DebugType type, DebugSeverity severity, int Count, uint* ids, bool Enabled);
         [EntryPointSlot(447)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern void glDebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, string buf);
+        public static extern void glDebugMessageInsert(DebugSource source, DebugType type, uint id, DebugSeverity severity, int length, IntPtr buf);
         [EntryPointSlot(448)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern void glDebugMessageCallback(DebugMessageDelegate callback, IntPtr userParam);
@@ -187,13 +187,13 @@ namespace Kraggs.Graphics.OpenGL
         //KHR_debug / ARB_debug_label
         [EntryPointSlot(451)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern void glObjectLabel(DebugNamespace idNamespace, uint name, int LabelLength, string Label);
+        public static extern void glObjectLabel(DebugNamespace idNamespace, uint name, int LabelLength, IntPtr Label);
         [EntryPointSlot(452)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern void glGetObjectLabel(DebugNamespace idNamespace, uint name, int bufsize, out int LabelLength, IntPtr label);
         [EntryPointSlot(453)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern void glObjectPtrLabel(IntPtr ptr, int length, string label);
+        public static extern void glObjectPtrLabel(IntPtr ptr, int length, IntPtr label);
         [EntryPointSlot(454)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern void glGetObjectPtrLabel(IntPtr ptr, int bufSize, out int length, IntPtr label);
@@ -893,7 +893,7 @@ namespace Kraggs.Graphics.OpenGL
         }
 
         [EntryPoint(FunctionName = "glGetObjectLabel")]
-        public static void GetObjectLabel(DebugNamespace idNamespace, uint name, int bufsize, out int LabelLength, IntPtr label) { throw new NotImplementedException(); }
+        private static void GetObjectLabel(DebugNamespace idNamespace, uint name, int bufsize, out int LabelLength, IntPtr label) { throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glGetObjectLabel")]
         public static void GetObjectLabel(DebugNamespace idNamespace, uint name, int bufsize, out int LabelLength, StringBuilder label){ throw new NotImplementedException(); }
         /// <summary>
@@ -903,18 +903,42 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="name">ID or name of object.</param>
         /// <param name="MaxObjectLabelLength">The capacity of created stringbuilder used to retrive label.</param>
         /// <returns>Label</returns>
-        public static string GetObjectLabel(DebugNamespace idNamespace, uint name)
+        public static string GetObjectLabel(DebugNamespace idNamespace, uint name, int MaxObjectLabelLength = -1)
         {
-            var labellenght = 0;
-            GetObjectLabel(idNamespace, name, 0, out labellenght, IntPtr.Zero);
+            var labelLength = 0;
+            if (MaxObjectLabelLength != -1)
+                labelLength = MaxObjectLabelLength;
+            else
+            {
+                // retriving the length of the label.
+                GetObjectLabel(idNamespace, name, 0, out labelLength, IntPtr.Zero);
+                //GetObjectLabel(idNamespace, name, 0, out labellength, null);
+            }
 
-            var sb = new StringBuilder(labellenght + 4);
-            GetObjectLabel(idNamespace, name, sb.Capacity - 2, out labellenght, sb);
+            var sb = new StringBuilder(labelLength + 4);
+            GetObjectLabel(idNamespace, name, sb.Capacity - 2, out labelLength, sb);
             return sb.ToString();
+        }
+        /// <summary>
+        /// Retrives the object label from a labeled object into a preallocated stringbuilder.
+        /// Instead of dynacally create a new stringbuilder for each objectlabel retrival, this function makes it possible to reuse one.
+        /// </summary>
+        /// <param name="idNamespace">Object ID Namespace</param>
+        /// <param name="name">Object ID</param>
+        /// <param name="PreAllocatedResultBuffer">Preallocated Stringbuilder suitable to retrive label.</param>
+        /// <returns></returns>
+        public static int GetObjectLabel(DebugNamespace idNamespace, uint name, StringBuilder PreAllocatedResultBuffer)
+        {
+            int labellength = 0;
+            if (PreAllocatedResultBuffer != null)
+                GetObjectLabel(idNamespace, name, PreAllocatedResultBuffer.Capacity, out labellength, PreAllocatedResultBuffer);
+            else
+                GetObjectLabel(idNamespace, name, 0, out labellength, IntPtr.Zero);
+            return labellength;
         }
 
         [EntryPoint(FunctionName = "glObjectPtrLabel")]
-        public static void ObjectPtrLabel(IntPtr ptr, int length, string label){ throw new NotImplementedException(); }
+        private static void ObjectPtrLabel(IntPtr ptr, int length, string label){ throw new NotImplementedException(); }
         /// <summary>
         /// Sets the label for an object identified by ptr.
         /// </summary>
@@ -922,8 +946,13 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="label">Text Label to attach.</param>
         public static void ObjectPtrLabel(IntPtr ptr, string label)
         {
-            ObjectPtrLabel(ptr, label.Length, label);
+            //ObjectPtrLabel(ptr, label.Length, label);
+            // nullterminated string.
+            ObjectPtrLabel(ptr, -1, label);
         }
+
+        [EntryPoint(FunctionName = "glGetObjectPtrLabel")]
+        public static void GetObjectPtrLabel(IntPtr ptr, int bufSize, out int length, IntPtr label) { throw new NotImplementedException(); }
 
         [EntryPoint(FunctionName = "glGetObjectPtrLabel")]
         public static void GetObjectPtrLabel(IntPtr ptr, int bufSize, out int length, StringBuilder label){ throw new NotImplementedException(); }
@@ -934,12 +963,32 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="ptr">ptr/id/name of object.</param>
         /// <param name="MaxObjectPtrLabelLength">The capacity of the temporarily created stringbuilder used to retrive label.</param>
         /// <returns></returns>
-        private static string GetObjectPtrLabel(IntPtr ptr, int MaxObjectPtrLabelLength = 64)
+        public static string GetObjectPtrLabel(IntPtr ptr, int MaxObjectPtrLabelLength = -1)
         {
-            var sb = new StringBuilder(MaxObjectPtrLabelLength + 4);
-            GetObjectPtrLabel(ptr, sb.Capacity - 2, out MaxObjectPtrLabelLength, sb);
+            var labelPtrLength = 0;
+            if (MaxObjectPtrLabelLength != -1)
+                labelPtrLength = MaxObjectPtrLabelLength;
+            else
+            {
+                // retrive length.
+                //GetObjectPtrLabel(ptr, 0, out labelptrlength, null);
+                GetObjectPtrLabel(ptr, 0, out labelPtrLength, IntPtr.Zero);
+            }
+
+            var sb = new StringBuilder(labelPtrLength + 4);
+            GetObjectPtrLabel(ptr, sb.Capacity - 2, out labelPtrLength, sb);
             return sb.ToString();
         }
+        private static int GetObjectPtrLabel(IntPtr ptr, StringBuilder PreAllocatedResultBuffer)
+        {
+            int labelPtrLength = 0;
+            if (PreAllocatedResultBuffer != null)
+                GetObjectPtrLabel(ptr, PreAllocatedResultBuffer.Capacity, out labelPtrLength, PreAllocatedResultBuffer);
+            else
+                GetObjectPtrLabel(ptr, 0, out labelPtrLength, IntPtr.Zero);
+            return labelPtrLength;
+        }
+
         //KHR_debug / ARB_debug_group
 
         [EntryPoint(FunctionName = "glPushDebugGroup")]
@@ -967,7 +1016,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="source"></param>
         /// <param name="id">User Specified id</param>
         /// <param name="message">Message to </param>
-        private static void PushDebugGroup(DebugSource source, uint id, string message)
+        public static void PushDebugGroup(DebugSource source, uint id, string message)
         {
             PushDebugGroup(source, id, message.Length, message);
         }

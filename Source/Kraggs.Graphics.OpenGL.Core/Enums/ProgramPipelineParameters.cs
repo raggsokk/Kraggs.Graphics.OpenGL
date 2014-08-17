@@ -37,5 +37,13 @@ namespace Kraggs.Graphics.OpenGL
     public enum ProgramPipelineParameters
     {
         ActiveProgram = All.ACTIVE_PROGRAM,
+        Validate = All.VALIDATE_STATUS,
+        InfoLogLength = All.INFO_LOG_LENGTH,
+
+        VertexShader = All.VERTEX_SHADER,
+        FragmentShader = All.FRAGMENT_SHADER,
+        GeometryShader = All.GEOMETRY_SHADER,
+        TessControl = All.TESS_CONTROL_SHADER,
+        TessEval = All.TESS_EVALUATION_SHADER,
     }
 }

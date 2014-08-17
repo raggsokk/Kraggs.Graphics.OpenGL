@@ -848,8 +848,21 @@ namespace Kraggs.Graphics.OpenGL
 
         [EntryPoint(FunctionName = "glGetBooleani_v")]
         unsafe public static void GetBooleani_v(GetParameters pname, uint index, bool* data){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetBooleani_v")]
+        unsafe public static void GetBooleani_v(GetParameters pname, uint index, bool[] data) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetBooleani_v")]
+        unsafe public static void GetBooleani_v(GetParameters pname, uint index, ref bool data) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetBooleani_v")]
+        unsafe public static bool GetBooleani_v(GetParameters pname, uint index) { throw new NotImplementedException(); }
+
         [EntryPoint(FunctionName = "glGetIntegeri_v")]
         unsafe public static void GetIntegeri_v(GetParameters pname, uint index, int* data){ throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetIntegeri_v")]
+        public static void GetIntegeri_v(GetParameters pname, uint index, int[] data) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetIntegeri_v")]
+        public static void GetIntegeri_v(GetParameters pname, uint index, ref int data) { throw new NotImplementedException(); }
+        [EntryPoint(FunctionName = "glGetIntegeri_v")]
+        public static int GetIntegeri_v(GetParameters pname, uint index){ throw new NotImplementedException(); }
 
         /// <summary>
         /// Retrives the indexed state of cap.

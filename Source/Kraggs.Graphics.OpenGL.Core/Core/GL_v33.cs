@@ -41,10 +41,10 @@ namespace Kraggs.Graphics.OpenGL
         //ARB_timer_query
         [EntryPointSlot(255)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        unsafe private static extern void glGetQueryObjecti64v(uint id, GetQueryObjectParameters pname, int* result);
+        unsafe private static extern void glGetQueryObjecti64v(uint id, GetQueryObjectParameters pname, long* result);
         [EntryPointSlot(256)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        unsafe private static extern void glGetQueryObjectui64v(uint id, GetQueryObjectParameters pname, uint* result);
+        unsafe private static extern void glGetQueryObjectui64v(uint id, GetQueryObjectParameters pname, ulong* result);
         [EntryPointSlot(257)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         private static extern void glQueryCounter(uint id, QueryCounterTarget target);
@@ -144,7 +144,7 @@ namespace Kraggs.Graphics.OpenGL
         /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
         /// </remarks>
         [EntryPoint(FunctionName = "glGetQueryObjecti64v")]
-        unsafe public static void GetQueryObjecti64v(uint id, GetQueryObjectParameters pname, int* result){ throw new NotImplementedException(); }
+        unsafe public static void GetQueryObjecti64v(uint id, GetQueryObjectParameters pname, long* result){ throw new NotImplementedException(); }
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
         /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
@@ -162,7 +162,7 @@ namespace Kraggs.Graphics.OpenGL
         /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
         /// </remarks>
         [EntryPoint(FunctionName = "glGetQueryObjecti64v")]
-        public static void GetQueryObjecti64v(uint id, GetQueryObjectParameters pname, int[] result) { throw new NotImplementedException(); }
+        public static void GetQueryObjecti64v(uint id, GetQueryObjectParameters pname, long[] result) { throw new NotImplementedException(); }
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
         /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
@@ -180,7 +180,7 @@ namespace Kraggs.Graphics.OpenGL
         /// The GL_QUERY_RESULT_BUFFER target is available only if the GL version is 4.4 or higher. On earlier versions of the GL, params is always an address in client memory.
         /// </remarks>
         [EntryPoint(FunctionName = "glGetQueryObjecti64v")]
-        public static void GetQueryObjecti64v(uint id, GetQueryObjectParameters pname, ref int result) { throw new NotImplementedException(); }
+        public static void GetQueryObjecti64v(uint id, GetQueryObjectParameters pname, ref long result) { throw new NotImplementedException(); }
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
         /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
@@ -189,7 +189,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
         /// <returns></returns>
         [EntryPoint(FunctionName = "glGetQueryObjecti64v")]
-        public static int GetQueryObjecti64v(uint id, GetQueryObjectParameters pname) { throw new NotImplementedException(); }
+        public static long GetQueryObjecti64v(uint id, GetQueryObjectParameters pname) { throw new NotImplementedException(); }
 
 
         /// <summary>
@@ -200,7 +200,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
         /// <param name="params"></param>
         [EntryPoint(FunctionName = "glGetQueryObjectui64v")]
-        unsafe public static void GetQueryObjectui64v(uint id, GetQueryObjectParameters pname, uint* result){ throw new NotImplementedException(); }
+        unsafe public static void GetQueryObjectui64v(uint id, GetQueryObjectParameters pname, ulong* result){ throw new NotImplementedException(); }
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
         /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
@@ -209,7 +209,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
         /// <param name="params"></param>
         [EntryPoint(FunctionName = "glGetQueryObjectui64v")]
-        public static void GetQueryObjectui64v(uint id, GetQueryObjectParameters pname, uint[] result) { throw new NotImplementedException(); }
+        public static void GetQueryObjectui64v(uint id, GetQueryObjectParameters pname, ulong[] result) { throw new NotImplementedException(); }
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
         /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
@@ -218,7 +218,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
         /// <param name="params"></param>
         [EntryPoint(FunctionName = "glGetQueryObjectui64v")]
-        public static void GetQueryObjectui64v(uint id, GetQueryObjectParameters pname, ref uint result) { throw new NotImplementedException(); }
+        public static void GetQueryObjectui64v(uint id, GetQueryObjectParameters pname, ref ulong result) { throw new NotImplementedException(); }
         /// <summary>
         /// glGetQueryObject returns in params a selected parameter of the query object specified by id.
         /// glGetQueryObject implicitly flushes the GL pipeline so that any incomplete rendering delimited by the occlusion query completes in finite time.
@@ -227,7 +227,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="pname">Specifies the symbolic name of a query object parameter. Accepted values are GL_QUERY_RESULT or GL_QUERY_RESULT_AVAILABLE.</param>
         /// <returns></returns>
         [EntryPoint(FunctionName = "glGetQueryObjectui64v")]
-        public static uint GetQueryObjectui64v(uint id, GetQueryObjectParameters pname) { throw new NotImplementedException(); }
+        public static ulong GetQueryObjectui64v(uint id, GetQueryObjectParameters pname) { throw new NotImplementedException(); }
 
         /// <summary>
         /// record the GL time into a query object after all previous commands have reached the GL server but have not yet necessarily executed.

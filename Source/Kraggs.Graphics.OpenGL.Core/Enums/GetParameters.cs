@@ -1141,5 +1141,11 @@ namespace Kraggs.Graphics.OpenGL
 
         //ARB_sparse_buffer
         SparseBufferPageSize = All.SPARSE_BUFFER_PAGE_SIZE_ARB,
+
+        //EXT_texture_filter_anisotropic
+        /// <summary>
+        /// MAX_TEXTURE_MAX_ANISOTROPY_EXT
+        /// </summary>
+        MaxTextureAnisotropyEXT = All.MAX_TEXTURE_MAX_ANISOTROPY_EXT,
     }
 }

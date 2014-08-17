@@ -613,6 +613,7 @@ namespace Kraggs.Graphics.OpenGL
         PROXY_TEXTURE_CUBE_MAP = 0x851B,
         MAX_CUBE_MAP_TEXTURE_SIZE = 0x851C,
         SRC1_ALPHA = 0x8589,
+        VERTEX_ARRAY = 0x8074,
         VERTEX_ARRAY_BINDING = 0x85B5,
         VERTEX_ATTRIB_ARRAY_ENABLED = 0x8622,
         VERTEX_ATTRIB_ARRAY_SIZE = 0x8623,
@@ -1475,6 +1476,10 @@ namespace Kraggs.Graphics.OpenGL
         // ARB_transform_feedback_overflow_query
         TRANSFORM_FEEDBACK_OVERFLOW_ARB=0x82EC,
         TRANSFORM_FEEDBACK_STREAM_OVERFLOW_ARB=0x82ED,
+
+        //EXT_texture_filter_anisotropic
+        TEXTURE_MAX_ANISOTROPY_EXT = 0x84FE,
+        MAX_TEXTURE_MAX_ANISOTROPY_EXT = 0x84FF,
 
         #endregion
     }

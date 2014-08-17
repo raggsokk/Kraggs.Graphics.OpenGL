@@ -23,40 +23,26 @@
 
 #endregion
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-using System.Security;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
-
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum SamplerParameters
+    public enum FramebufferObjectDrawBuffer
     {
-        WrapS = All.TEXTURE_WRAP_S,
-        WrapT = All.TEXTURE_WRAP_T,
-        WrapR = All.TEXTURE_WRAP_R,
-        MinFilter = All.TEXTURE_MIN_FILTER,
-        MagFilter = All.TEXTURE_MAG_FILTER,
-        MinLod = All.TEXTURE_MIN_LOD,
-        MaxLod = All.TEXTURE_MAX_LOD,
-        BorderColor = All.TEXTURE_BORDER_COLOR,
-        LodBias = All.TEXTURE_LOD_BIAS,
-        CompareMode = All.TEXTURE_COMPARE_MODE,
-        CompareFunc = All.TEXTURE_COMPARE_FUNC,
-
-        //EXT_texture_filter_anisotropic
-        /// <summary>
-        /// TEXTURE_MAX_ANISOTROPY_EXT
-        /// </summary>
-        AnisotropyEXT = All.TEXTURE_MAX_ANISOTROPY_EXT,
-        //AMD_seamless_cubemap_per_texture
-        /// <summary>
-        /// AMD_seamless_cubemap_per_texture
-        /// </summary>
-        SeamlessCubemap = All.TEXTURE_CUBE_MAP_SEAMLESS,         
+        None = All.NONE,
+        ColorAttachment0 = All.COLOR_ATTACHMENT0,
+        ColorAttachment1 = All.COLOR_ATTACHMENT1,
+        ColorAttachment2 = All.COLOR_ATTACHMENT2,
+        ColorAttachment3 = All.COLOR_ATTACHMENT3,
+        ColorAttachment4 = All.COLOR_ATTACHMENT4,
+        ColorAttachment5 = All.COLOR_ATTACHMENT5,
+        ColorAttachment6 = All.COLOR_ATTACHMENT6,
+        ColorAttachment7 = All.COLOR_ATTACHMENT7,
+        ColorAttachment8 = All.COLOR_ATTACHMENT8,
+        ColorAttachment9 = All.COLOR_ATTACHMENT9,
+        ColorAttachment10 = All.COLOR_ATTACHMENT10,
+        ColorAttachment11 = All.COLOR_ATTACHMENT11,
+        ColorAttachment12 = All.COLOR_ATTACHMENT12,
+        ColorAttachment13 = All.COLOR_ATTACHMENT13,
+        ColorAttachment14 = All.COLOR_ATTACHMENT14,
+        ColorAttachment15 = All.COLOR_ATTACHMENT15,
     }
 }

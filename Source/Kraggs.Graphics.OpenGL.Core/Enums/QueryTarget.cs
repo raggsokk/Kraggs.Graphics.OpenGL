@@ -62,6 +62,11 @@ namespace Kraggs.Graphics.OpenGL
         /// </summary>
         TimeElapsed = All.TIME_ELAPSED,
 
+        /// <summary>
+        /// QueryCounter ONLY?
+        /// </summary>
+        Timestamp = All.TIMESTAMP,
+
         //ARB_pipeline_statistics_query
         VerticesSubmitted = All.VERTICES_SUBMITTED_ARB,
         PrimitivesSubmitted = All.PRIMITIVES_SUBMITTED_ARB,

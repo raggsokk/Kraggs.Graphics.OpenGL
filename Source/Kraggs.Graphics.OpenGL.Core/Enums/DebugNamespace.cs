@@ -46,6 +46,7 @@ namespace Kraggs.Graphics.OpenGL
         Shader = All.SHADER,
         Texture = All.TEXTURE,
         TransformFeedback = All.TRANSFORM_FEEDBACK,
-        VertexArray = All.VERTEX_ARRAY_BINDING,
+        //VertexArray = All.VERTEX_ARRAY_BINDING,
+        VertexArray = All.VERTEX_ARRAY,
     }
 }

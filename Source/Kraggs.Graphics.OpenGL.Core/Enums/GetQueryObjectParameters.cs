@@ -37,6 +37,11 @@ namespace Kraggs.Graphics.OpenGL
     public enum GetQueryObjectParameters
     {
         /// <summary>
+        /// Returns the QueryTarget of the specified QueryID.
+        /// </summary>
+        QueryTarget = All.QUERY_TARGET,
+
+        /// <summary>
         /// params returns the value of the query object's passed samples counter. The initial value is 0.
         /// </summary>
         Result = All.QUERY_RESULT,
