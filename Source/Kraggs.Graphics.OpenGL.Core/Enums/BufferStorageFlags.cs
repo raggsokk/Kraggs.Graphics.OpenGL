@@ -37,6 +37,10 @@ namespace Kraggs.Graphics.OpenGL
     [Flags]
     public enum BufferStorageFlags
     {
+        /// <summary>
+        /// Immutable, nonmappable buffer storage.
+        /// </summary>
+        None = All.NONE,
         MapRead = All.MAP_READ_BIT,
         MapWrite = All.MAP_WRITE_BIT,
         MapPersistent = All.MAP_PERSISTENT_BIT,

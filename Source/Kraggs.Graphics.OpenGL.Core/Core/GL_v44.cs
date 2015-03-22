@@ -333,8 +333,7 @@ namespace Kraggs.Graphics.OpenGL
         /// TextureTarget used is the first texturetarget used to bind after texture id generation.
         /// </summary>
         /// <param name="first">First Texture unit to bind textures[0] to..</param>
-        /// <param name="textures">Array of texture ids to bind. Texture target used is the target specified when the texture object was created.</param>
-        [EntryPoint("glBindTextures")]
+        /// <param name="textures">Array of texture ids to bind. Texture target used is the target specified when the texture object was created.</param>        
         public static void BindTextures(uint first, uint[] textures)
         {
             BindTextures(first, textures.Length, ref textures[0]);

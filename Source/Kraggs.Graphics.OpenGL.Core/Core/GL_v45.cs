@@ -1019,9 +1019,9 @@ namespace Kraggs.Graphics.OpenGL
         }
 
         [EntryPoint(FunctionName = "glClearNamedFramebufferiv")]
-        unsafe public static void ClearNamedFramebufferiv(uint framebuffer, ClearBuffer buffer, DrawBufferTarget drawbuffer, int* value){ throw new NotImplementedException(); }
+        unsafe public static void ClearNamedFramebufferiv(uint framebuffer, ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, int* value){ throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glClearNamedFramebufferiv")]
-        public static void ClearNamedFramebufferiv(uint framebuffer, ClearBuffer buffer, DrawBufferTarget drawbuffer, ref int value) { throw new NotImplementedException(); }
+        public static void ClearNamedFramebufferiv(uint framebuffer, ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, ref int value) { throw new NotImplementedException(); }
         /// <summary>
         /// Clears the stencil buffer to a signed value.
         /// </summary>
@@ -1029,15 +1029,15 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="value"></param>
         /// <param name="buffer"></param>
         /// <param name="drawbuffer"></param>
-        public static void ClearNamedFramebufferiv(uint framebuffer, ref int value, ClearBuffer buffer = ClearBuffer.Stencil, DrawBufferTarget drawbuffer = DrawBufferTarget.None)
+        public static void ClearNamedFramebufferiv(uint framebuffer, ref int value, ClearBuffer buffer = ClearBuffer.Stencil, ClearBufferDrawbuffer drawbuffer = ClearBufferDrawbuffer.None)
         {
             ClearNamedFramebufferiv(framebuffer, buffer, drawbuffer, ref value);
         }
 
         [EntryPoint(FunctionName = "glClearNamedFramebufferuiv")]
-        unsafe public static void ClearNamedFramebufferuiv(uint framebuffer, ClearBuffer buffer, DrawBufferTarget drawbuffer, uint* value){ throw new NotImplementedException(); }
+        unsafe public static void ClearNamedFramebufferuiv(uint framebuffer, ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, uint* value){ throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glClearNamedFramebufferuiv")]
-        public static void ClearNamedFramebufferuiv(uint framebuffer, ClearBuffer buffer, DrawBufferTarget drawbuffer, ref uint value) { throw new NotImplementedException(); }
+        public static void ClearNamedFramebufferuiv(uint framebuffer, ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, ref uint value) { throw new NotImplementedException(); }
         /// <summary>
         /// Clears the stencil buffer to an unsigned value.
         /// </summary>
@@ -1045,15 +1045,15 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="value"></param>
         /// <param name="buffer"></param>
         /// <param name="drawbuffer"></param>
-        public static void ClearNamedFramebufferuiv(uint framebuffer, ref uint value, ClearBuffer buffer = ClearBuffer.Stencil, DrawBufferTarget drawbuffer = DrawBufferTarget.None)
+        public static void ClearNamedFramebufferuiv(uint framebuffer, ref uint value, ClearBuffer buffer = ClearBuffer.Stencil, ClearBufferDrawbuffer drawbuffer = ClearBufferDrawbuffer.None)
         {
             ClearNamedFramebufferuiv(framebuffer, buffer, drawbuffer, ref value);
         }
 
         [EntryPoint(FunctionName = "glClearNamedFramebufferfv")]
-        unsafe public static void ClearNamedFramebufferfv(uint framebuffer, ClearBuffer buffer, DrawBufferTarget drawbuffer, float* value){ throw new NotImplementedException(); }
+        unsafe public static void ClearNamedFramebufferfv(uint framebuffer, ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, float* value){ throw new NotImplementedException(); }
         [EntryPoint(FunctionName = "glClearNamedFramebufferfv")]
-        public static void ClearNamedFramebufferfv(uint framebuffer, ClearBuffer buffer, DrawBufferTarget drawbuffer, ref float value) { throw new NotImplementedException(); }
+        public static void ClearNamedFramebufferfv(uint framebuffer, ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, ref float value) { throw new NotImplementedException(); }
 
         /// <summary>
         /// Clears the depth buffer.
@@ -1062,15 +1062,15 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="value"></param>
         /// <param name="buffer"></param>
         /// <param name="drawbuffer"></param>
-        public static void ClearNamedFramebufferfv(uint framebuffer, ref float value, ClearBuffer buffer = ClearBuffer.Depth, DrawBufferTarget drawbuffer = DrawBufferTarget.None)
+        public static void ClearNamedFramebufferfv(uint framebuffer, ref float value, ClearBuffer buffer = ClearBuffer.Depth, ClearBufferDrawbuffer drawbuffer = ClearBufferDrawbuffer.None)
         {
             ClearNamedFramebufferfv(framebuffer, buffer, drawbuffer, ref value);
         }
 
         [EntryPoint(FunctionName = "glClearNamedFramebufferfi")]
-        public static void ClearNamedFramebufferfi(uint framebuffer, ClearBuffer buffer, DrawBufferTarget drawbuffer, float depth, int stencil){ throw new NotImplementedException(); }
+        public static void ClearNamedFramebufferfi(uint framebuffer, ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, float depth, int stencil){ throw new NotImplementedException(); }
         
-        public static void ClearNamedFramebufferfi(uint framebuffer, float depth, int stencil, ClearBuffer buffer = ClearBuffer.DepthStencil, DrawBufferTarget drawbuffer = DrawBufferTarget.None)
+        public static void ClearNamedFramebufferfi(uint framebuffer, float depth, int stencil, ClearBuffer buffer = ClearBuffer.DepthStencil, ClearBufferDrawbuffer drawbuffer = ClearBufferDrawbuffer.None)
         {
             ClearNamedFramebufferfi(framebuffer, buffer, drawbuffer, depth, stencil);
         }
@@ -1362,8 +1362,13 @@ namespace Kraggs.Graphics.OpenGL
         [EntryPoint(FunctionName = "glGenerateTextureMipmap")]
         public static void GenerateTextureMipmap(uint texture){ throw new NotImplementedException(); }
         
+        /// <summary>
+        /// Binds a texture as current on specified texture unit
+        /// </summary>
+        /// <param name="unit">zero based texture unit. aka TextureUnit0 = 0</param>
+        /// <param name="texture">texture to bind. Texture target is from textureid</param>
         [EntryPoint(FunctionName = "glBindTextureUnit")]
-        public static void BindTextureUnit(TextureUnit unit, uint texture){ throw new NotImplementedException(); }
+        public static void BindTextureUnit(uint unit, uint texture){ throw new NotImplementedException(); }
         
         [EntryPoint(FunctionName = "glGetTextureImage")]
         public static void GetTextureImage(uint texture, int level, PixelFormat format, PixelType type, int bufSize, IntPtr pixels){ throw new NotImplementedException(); }

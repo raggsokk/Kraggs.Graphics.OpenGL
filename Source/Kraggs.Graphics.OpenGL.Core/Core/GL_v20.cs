@@ -129,7 +129,7 @@ namespace Kraggs.Graphics.OpenGL
         unsafe private static extern void glGetActiveUniformsiv(uint Program, int UniformCount, int* UniformIndices, UniformParameters pname, int* result);
         [EntryPointSlot(128)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern int glGetUniformLocation(uint Program, string Name);
+        private static extern int glGetUniformLocation(uint Program, IntPtr Name);
         [EntryPointSlot(129)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         unsafe private static extern void glGetUniformfv(uint Program, int Location, float* result);
@@ -219,14 +219,14 @@ namespace Kraggs.Graphics.OpenGL
 
         [EntryPointSlot(154)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindAttribLocation(uint Program, uint aIndex, string Name);
+        private static extern void glBindAttribLocation(uint Program, uint aIndex, IntPtr Name);
         [EntryPointSlot(155)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern int glGetAttribLocation(uint Program, string Name);
+        private static extern int glGetAttribLocation(uint Program, IntPtr Name);
 
         [EntryPointSlot(156)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glGetActiveAttrib(uint Program, uint index, int bufSize, out int Length, out int Size, out AttributeType type, StringBuilder name);
+        private static extern void glGetActiveAttrib(uint Program, uint index, int bufSize, out int Length, out int Size, out AttributeType type, IntPtr name);
 
         [EntryPointSlot(157)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]

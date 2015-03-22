@@ -99,13 +99,13 @@ namespace Kraggs.Graphics.OpenGL
         unsafe public static extern void glGetProgramInterfaceiv(uint Program, ProgramInterface programInterface, ProgramInterfaceParameters pname, int* result);
         [EntryPointSlot(428)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern uint glGetProgramResourceIndex(uint Program, ProgramInterface programInterface, string Name);
+        public static extern uint glGetProgramResourceIndex(uint Program, ProgramInterface programInterface, IntPtr Name);
         [EntryPointSlot(429)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern int glGetProgramResourceLocation(uint Program, ProgramInterface programInterface, string Name);
+        public static extern int glGetProgramResourceLocation(uint Program, ProgramInterface programInterface, IntPtr Name);
         [EntryPointSlot(430)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern int glGetProgramResourceLocationIndex(uint Program, ProgramInterface programInterface, string Name);
+        public static extern int glGetProgramResourceLocationIndex(uint Program, ProgramInterface programInterface, IntPtr Name);
         [EntryPointSlot(431)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern void glGetProgramResourceName(uint Program, ProgramInterface programInterface, uint index, int bufSize, out int Lenght, IntPtr Name);
@@ -201,7 +201,7 @@ namespace Kraggs.Graphics.OpenGL
         //KHR_debug / ARB_debug_group
         [EntryPointSlot(455)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        public static extern void glPushDebugGroup(DebugSource source, uint id, int length, string message);
+        public static extern void glPushDebugGroup(DebugSource source, uint id, int length, IntPtr message);
         [EntryPointSlot(456)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         public static extern void glPopDebugGroup();
@@ -1047,7 +1047,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferfv")]
-        unsafe public static void ClearBufferfv(ClearBuffer buffer, DrawBufferTarget drawbuffer, float* values){ throw new NotImplementedException(); }
+        unsafe public static void ClearBufferfv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, float* values){ throw new NotImplementedException(); }
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
         /// ClearBufferfv should be used to clear fixed- and floating-point buffers.
@@ -1064,7 +1064,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferfv")]
-        public static void ClearBufferfv(ClearBuffer buffer, DrawBufferTarget drawbuffer, float[] values) { throw new NotImplementedException(); }
+        public static void ClearBufferfv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, float[] values) { throw new NotImplementedException(); }
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
         /// ClearBufferfv should be used to clear fixed- and floating-point buffers.
@@ -1081,7 +1081,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferfv")]
-        public static void ClearBufferfv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref float values) { throw new NotImplementedException(); }
+        public static void ClearBufferfv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, ref float values) { throw new NotImplementedException(); }
 
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
@@ -1099,7 +1099,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferiv")]
-        unsafe public static void ClearBufferiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, int* values){ throw new NotImplementedException(); }
+        unsafe public static void ClearBufferiv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, int* values){ throw new NotImplementedException(); }
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
         /// ClearBufferiv should be used to clear signed integer buffers.
@@ -1116,7 +1116,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferiv")]
-        public static void ClearBufferiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, int[] values) { throw new NotImplementedException(); }
+        public static void ClearBufferiv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, int[] values) { throw new NotImplementedException(); }
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
         /// ClearBufferiv should be used to clear signed integer buffers.
@@ -1133,7 +1133,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferiv")]
-        public static void ClearBufferiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref int values) { throw new NotImplementedException(); }
+        public static void ClearBufferiv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, ref int values) { throw new NotImplementedException(); }
 
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
@@ -1151,7 +1151,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferuiv")]
-        unsafe public static void ClearBufferuiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, uint* values){ throw new NotImplementedException(); }
+        unsafe public static void ClearBufferuiv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, uint* values){ throw new NotImplementedException(); }
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
         /// ClearBufferuiv should be used to clear unsigned integer buffers.
@@ -1168,7 +1168,7 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferuiv")]
-        public static void ClearBufferuiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, uint[] values) { throw new NotImplementedException(); }
+        public static void ClearBufferuiv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, uint[] values) { throw new NotImplementedException(); }
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
         /// ClearBufferuiv should be used to clear unsigned integer buffers.
@@ -1185,10 +1185,10 @@ namespace Kraggs.Graphics.OpenGL
         /// Only ClearBufferfi accepts buffer = DEPTH_STENCIL
         /// </remarks>
         [EntryPoint(FunctionName = "glClearBufferuiv")]
-        public static void ClearBufferuiv(ClearBuffer buffer, DrawBufferTarget drawbuffer, ref uint values) { throw new NotImplementedException(); }
+        public static void ClearBufferuiv(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, ref uint values) { throw new NotImplementedException(); }
 
         [EntryPoint(FunctionName = "glClearBufferfi")]
-        public static void ClearBufferfi(ClearBuffer buffer, DrawBufferTarget drawbuffer, float depth, int stencil){ throw new NotImplementedException(); }
+        public static void ClearBufferfi(ClearBuffer buffer, ClearBufferDrawbuffer drawbuffer, float depth, int stencil){ throw new NotImplementedException(); }
 
         /// <summary>
         /// Individual buffers of the currently bound draw framebuffer may be cleared with the command
@@ -1198,7 +1198,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="stencil">depth and sten-cil are the values to clear the depth and stencil buffers to, respectively</param>
         /// <param name="buffer">buffer must be DEPTH_STENCIL</param>
         /// <param name="drawbuffer">drawbuffer must be zero/NONE.</param>
-        public static void ClearBufferfi(float depth, int stencil, ClearBuffer buffer = ClearBuffer.DepthStencil, DrawBufferTarget drawbuffer = DrawBufferTarget.None)
+        public static void ClearBufferfi(float depth, int stencil, ClearBuffer buffer = ClearBuffer.DepthStencil, ClearBufferDrawbuffer drawbuffer = ClearBufferDrawbuffer.None)
         {
             ClearBufferfi(buffer, drawbuffer, depth, stencil);
         }
@@ -1209,7 +1209,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="depth"></param>
         public static void ClearBufferDepth(float depth)
         {
-            ClearBufferfv(ClearBuffer.Depth, (DrawBufferTarget)0, ref depth);
+            ClearBufferfv(ClearBuffer.Depth, (ClearBufferDrawbuffer)0, ref depth);
         }
         /// <summary>
         /// Clears the stencil buffer. Overload of glClearBufferiv with correct settings.
@@ -1217,7 +1217,7 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="stencil"></param>
         public static void ClearBufferStencil(int stencil)
         {
-            ClearBufferiv(ClearBuffer.Stencil, (DrawBufferTarget)0, ref stencil);
+            ClearBufferiv(ClearBuffer.Stencil, (ClearBufferDrawbuffer)0, ref stencil);
         }
 
         #endregion

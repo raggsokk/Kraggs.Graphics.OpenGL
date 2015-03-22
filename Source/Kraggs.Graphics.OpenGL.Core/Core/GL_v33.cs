@@ -81,7 +81,8 @@ namespace Kraggs.Graphics.OpenGL
         unsafe private static extern void glGenSamplers(int Count, uint* Samplers);
         [EntryPointSlot(262)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glBindSampler(TextureUnit texUnit, uint Sampler);
+        private static extern void glBindSampler(uint texUnit, uint Sampler);
+        //private static extern void glBindSampler(TextureUnit texUnit, uint Sampler);
         [EntryPointSlot(263)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
         private static extern void glSamplerParameteri(uint Sampler, SamplerParameters pname, int param);
@@ -341,7 +342,8 @@ namespace Kraggs.Graphics.OpenGL
         /// <param name="texUnit">Texture unit to bind sampler to.</param>
         /// <param name="Sampler">Id of sampler to bind.</param>
         [EntryPoint(FunctionName = "glBindSampler")]
-        public static void BindSampler(TextureUnit texUnit, uint Sampler){ throw new NotImplementedException(); }
+        public static void BindSampler(uint texUnit, uint Sampler) { throw new NotImplementedException(); }
+        //public static void BindSampler(TextureUnit texUnit, uint Sampler){ throw new NotImplementedException(); }
 
         /// <summary>
         /// Sets the parameter of a sampler object.
