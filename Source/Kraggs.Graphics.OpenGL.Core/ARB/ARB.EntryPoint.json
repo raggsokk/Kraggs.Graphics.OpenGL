@@ -5,6 +5,7 @@
 		"ARB_debug_output.cs",
 		"ARB_sparse_texture.cs",
 		"ARB_sample_locations.cs",
-		"ARB_shading_language_include.cs",		
+		"ARB_parallel_shader_compile.cs",
+		"ARB_shading_language_include.cs",
 	]
 }

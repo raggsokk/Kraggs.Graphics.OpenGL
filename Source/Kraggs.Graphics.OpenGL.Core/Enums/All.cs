@@ -1501,6 +1501,12 @@ namespace Kraggs.Graphics.OpenGL
         FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_ARB = 0x9342,
         FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_ARB = 0x9343,
 
+        //ARB_parallel_shader_compile
+        MAX_SHADER_COMPILER_THREADS_ARB = 0x91B0,
+        COMPLETION_STATUS_ARB = 0x91B1,
+
+
+
         #endregion
 
         #endregion

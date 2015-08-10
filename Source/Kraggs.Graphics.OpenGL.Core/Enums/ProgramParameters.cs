@@ -38,5 +38,8 @@ namespace Kraggs.Graphics.OpenGL
     {
         ProgramSeparable = All.PROGRAM_SEPARABLE,
         ProgramBinaryRetrievableHint = All.PROGRAM_BINARY_RETRIEVABLE_HINT,
+
+        //ARB_parallel_shader_compile
+        CompletionStatus = All.COMPLETION_STATUS_ARB,
     }
 }

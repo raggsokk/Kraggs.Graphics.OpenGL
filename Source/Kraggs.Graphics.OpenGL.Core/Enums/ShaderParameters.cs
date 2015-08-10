@@ -48,5 +48,8 @@ namespace Kraggs.Graphics.OpenGL
         CompileStatus = All.COMPILE_STATUS,
         ComputeShader = All.COMPUTE_SHADER,
         ShaderSourceLength = All.SHADER_SOURCE_LENGTH,
+
+        //ARB_parallel_shader_compile
+        CompletionStatus = All.COMPLETION_STATUS_ARB,
     }
 }

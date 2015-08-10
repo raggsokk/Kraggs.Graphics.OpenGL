@@ -1156,6 +1156,9 @@ namespace Kraggs.Graphics.OpenGL
         SampleLocationPixelGridHeight = All.SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_ARB,
         ProgrammableSampleLocationTableSize = All.PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_ARB,
 
+        //ARB_parallel_shader_compile
+        MaxShaderCompilerThreads = All.MAX_SHADER_COMPILER_THREADS_ARB,
+
         #endregion
     }
 }
