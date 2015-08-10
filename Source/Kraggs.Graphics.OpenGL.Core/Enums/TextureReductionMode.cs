@@ -34,36 +34,14 @@ using System.Runtime.CompilerServices;
 
 namespace Kraggs.Graphics.OpenGL
 {
-    public enum SamplerParameters
+    /// <summary>
+    /// ARB_texture_filter_minmax
+    /// Accepted by the <param> or <params> parameter to SamplerParameter{i f}{v}, SamplerParameterI{u}iv, TexParameter{i f}{v}, TexParameterI{u}iv, TextureParameter{i f}{v}, and TextureParameterI { u }iv when<pname> is TEXTURE_REDUCTION_MODE_ARB:
+    /// </summary>
+    public enum TextureReductionMode
     {
-        WrapS = All.TEXTURE_WRAP_S,
-        WrapT = All.TEXTURE_WRAP_T,
-        WrapR = All.TEXTURE_WRAP_R,
-        MinFilter = All.TEXTURE_MIN_FILTER,
-        MagFilter = All.TEXTURE_MAG_FILTER,
-        MinLod = All.TEXTURE_MIN_LOD,
-        MaxLod = All.TEXTURE_MAX_LOD,
-        BorderColor = All.TEXTURE_BORDER_COLOR,
-        LodBias = All.TEXTURE_LOD_BIAS,
-        CompareMode = All.TEXTURE_COMPARE_MODE,
-        CompareFunc = All.TEXTURE_COMPARE_FUNC,
-
-        //EXT_texture_filter_anisotropic
-        /// <summary>
-        /// TEXTURE_MAX_ANISOTROPY_EXT
-        /// </summary>
-        AnisotropyEXT = All.TEXTURE_MAX_ANISOTROPY_EXT,
-        //AMD_seamless_cubemap_per_texture
-        /// <summary>
-        /// AMD_seamless_cubemap_per_texture
-        /// </summary>
-        SeamlessCubemap = All.TEXTURE_CUBE_MAP_SEAMLESS,
-
-        //ARB_texture_filter_minmax
-        /// <summary>
-        /// ARB_texture_filter_minmax
-        /// Gets or sets TextureReductionMode
-        /// </summary>
-        ReductionMode = All.TEXTURE_REDUCTION_MODE_ARB,
+        WeightedAverage = All.WEIGHTED_AVERAGE_ARB,
+        Min = All.MIN,
+        Max = All.MAX,
     }
 }

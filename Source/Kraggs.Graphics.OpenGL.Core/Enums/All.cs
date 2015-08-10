@@ -1481,6 +1481,16 @@ namespace Kraggs.Graphics.OpenGL
         TEXTURE_MAX_ANISOTROPY_EXT = 0x84FE,
         MAX_TEXTURE_MAX_ANISOTROPY_EXT = 0x84FF,
 
+        #region GL 2015 Extensions
+
+        //ARB_texture_filter_minmax
+        TEXTURE_REDUCTION_MODE_ARB = 0x9366,
+        WEIGHTED_AVERAGE_ARB = 0x9367,
+        MIN = 0x8007,
+        MAX = 0x8008,
+
+        #endregion
+
         #endregion
     }
 }

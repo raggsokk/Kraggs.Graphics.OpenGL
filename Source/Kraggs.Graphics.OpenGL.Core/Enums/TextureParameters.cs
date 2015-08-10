@@ -88,5 +88,12 @@ namespace Kraggs.Graphics.OpenGL
         /// AMD_seamless_cubemap_per_texture
         /// </summary>
         SeamlessCubemap = All.TEXTURE_CUBE_MAP_SEAMLESS,
+
+        //ARB_texture_filter_minmax
+        /// <summary>
+        /// ARB_texture_filter_minmax
+        /// Gets or sets TextureReductionMode
+        /// </summary>
+        ReductionMode =  All.TEXTURE_REDUCTION_MODE_ARB,
     }
 }
