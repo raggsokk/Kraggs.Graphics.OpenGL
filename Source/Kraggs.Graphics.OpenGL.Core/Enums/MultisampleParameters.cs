@@ -37,5 +37,13 @@ namespace Kraggs.Graphics.OpenGL
     public enum MultisampleParameters
     {
         SamplePosition = All.SAMPLE_POSITION,
+
+        //ARB_sample_locations
+        /// <summary>
+        /// // Alias of SAMPLE_POSITION. Before NV_expms, the spec used "location".
+        /// </summary>
+        SampleLocation = All.SAMPLE_LOCATION_ARB,
+        ProgrammableSampleLocation = All.PROGRAMMABLE_SAMPLE_LOCATION_ARB,
+        
     }
 }

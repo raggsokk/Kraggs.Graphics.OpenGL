@@ -4,6 +4,7 @@
 		"ARB_bindless_texture.cs",
 		"ARB_debug_output.cs",
 		"ARB_sparse_texture.cs",
-		"ARB_shading_language_include.cs",
+		"ARB_sample_locations.cs",
+		"ARB_shading_language_include.cs",		
 	]
 }

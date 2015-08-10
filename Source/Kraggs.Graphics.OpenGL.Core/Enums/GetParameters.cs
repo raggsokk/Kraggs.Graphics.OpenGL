@@ -1147,5 +1147,15 @@ namespace Kraggs.Graphics.OpenGL
         /// MAX_TEXTURE_MAX_ANISOTROPY_EXT
         /// </summary>
         MaxTextureAnisotropyEXT = All.MAX_TEXTURE_MAX_ANISOTROPY_EXT,
+
+        #region OpenGL 2015
+
+        //ARB_sample_locations
+        SampleLocationSubPixelBits = All.SAMPLE_LOCATION_SUBPIXEL_BITS_ARB,
+        SampleLocationPixelGridWidth = All.SAMPLE_LOCATION_PIXEL_GRID_WIDTH_ARB,
+        SampleLocationPixelGridHeight = All.SAMPLE_LOCATION_PIXEL_GRID_HEIGHT_ARB,
+        ProgrammableSampleLocationTableSize = All.PROGRAMMABLE_SAMPLE_LOCATION_TABLE_SIZE_ARB,
+
+        #endregion
     }
 }

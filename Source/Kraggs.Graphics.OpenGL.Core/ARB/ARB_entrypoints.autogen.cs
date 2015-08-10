@@ -40,6 +40,9 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 73, 115, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glIsNamedStringARB
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 65, 82, 66, 0, // glGetNamedStringARB
 				103, 108, 71, 101, 116, 78, 97, 109, 101, 100, 83, 116, 114, 105, 110, 103, 105, 118, 65, 82, 66, 0, // glGetNamedStringivARB
+				103, 108, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 83, 97, 109, 112, 108, 101, 76, 111, 99, 97, 116, 105, 111, 110, 115, 102, 118, 65, 82, 66, 0, // glFramebufferSampleLocationsfvARB
+				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 83, 97, 109, 112, 108, 101, 76, 111, 99, 97, 116, 105, 111, 110, 115, 102, 118, 65, 82, 66, 0, // glNamedFramebufferSampleLocationsfvARB
+				103, 108, 69, 118, 97, 108, 117, 97, 116, 101, 68, 101, 112, 116, 104, 86, 97, 108, 117, 101, 115, 65, 82, 66, 0, // glEvaluateDepthValuesARB
             };
 
             EntryPointNameOffsets = new int[]
@@ -70,6 +73,9 @@ namespace Kraggs.Graphics.OpenGL
 				553, // SlotID: 23 = glIsNamedStringARB
 				572, // SlotID: 24 = glGetNamedStringARB
 				592, // SlotID: 25 = glGetNamedStringivARB
+				614, // SlotID: 26 = glFramebufferSampleLocationsfvARB
+				648, // SlotID: 27 = glNamedFramebufferSampleLocationsfvARB
+				687, // SlotID: 28 = glEvaluateDepthValuesARB
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

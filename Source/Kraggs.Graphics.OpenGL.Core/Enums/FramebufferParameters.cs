@@ -46,5 +46,8 @@ namespace Kraggs.Graphics.OpenGL
         DefaultSamples = All.FRAMEBUFFER_DEFAULT_SAMPLES,
         DefaultFixedSampleLocations = All.FRAMEBUFFER_DEFAULT_FIXED_SAMPLE_LOCATIONS,
 
+        //ARB_sample_locations
+        ProgrammableSampleLocations = All.FRAMEBUFFER_PROGRAMMABLE_SAMPLE_LOCATIONS_ARB,
+        SampleLocationPixelGrid = All.FRAMEBUFFER_SAMPLE_LOCATION_PIXEL_GRID_ARB,
     }
 }
