@@ -1505,7 +1505,17 @@ namespace Kraggs.Graphics.OpenGL
         MAX_SHADER_COMPILER_THREADS_ARB = 0x91B0,
         COMPLETION_STATUS_ARB = 0x91B1,
 
+        //ARB_gpu_shader_int64
+        INT64_ARB = 0x140E,
+        // this is already defined above.
+        //UNSIGNED_INT64_ARB = 0x140F,
 
+        INT64_VEC2_ARB = 0x8FE9,
+        INT64_VEC3_ARB = 0x8FEA,
+        INT64_VEC4_ARB = 0x8FEB,
+        UNSIGNED_INT64_VEC2_ARB = 0x8FF5,
+        UNSIGNED_INT64_VEC3_ARB = 0x8FF6,
+        UNSIGNED_INT64_VEC4_ARB = 0x8FF7,
 
         #endregion
 

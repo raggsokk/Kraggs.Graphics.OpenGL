@@ -70,6 +70,7 @@
     <Compile Include="ARB\ARB_entrypoints.autogen.cs" />
     <Compile Include="ARB\ARB_ES3_1_compatibility.cs" />
     <Compile Include="ARB\ARB_get_texture_sub_image.cs" />
+    <Compile Include="ARB\ARB_gpu_shader_int64.cs" />
     <Compile Include="ARB\ARB_parallel_shader_compile.cs" />
     <Compile Include="ARB\ARB_sample_locations.cs" />
     <Compile Include="ARB\ARB_shading_language_include.cs" />

@@ -84,5 +84,18 @@ namespace Kraggs.Graphics.OpenGL
         Mat4x2f = All.FLOAT_MAT4x2,
         Mat4x3f = All.FLOAT_MAT4x3,
 
+        //ARB_gpu_shader_int64
+        //Int64 = All.INT64_ARB,
+
+        Long = All.INT64_ARB,
+        ULong = All.UNSIGNED_INT64_ARB,
+
+        Vec2l = All.INT64_VEC2_ARB,
+        Vec3l = All.INT64_VEC3_ARB,
+        Vec4l = All.INT64_VEC4_ARB,
+
+        Vec2ul = All.UNSIGNED_INT64_VEC2_ARB,
+        Vec3ul = All.UNSIGNED_INT64_VEC3_ARB,
+        Vec4ul = All.UNSIGNED_INT64_VEC4_ARB,
     }
 }

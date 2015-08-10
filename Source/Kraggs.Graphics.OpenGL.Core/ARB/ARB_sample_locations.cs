@@ -40,11 +40,11 @@ namespace Kraggs.Graphics.OpenGL
 
         [EntryPointSlot(26)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glFramebufferSampleLocationsfvARB(FramebufferTarget target, uint start, IntPtr count, ref float v);
+        private static extern void glFramebufferSampleLocationsfvARB(FramebufferTarget target, uint start, int count, ref float v);
 
         [EntryPointSlot(27)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
-        private static extern void glNamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, IntPtr count, ref float v);
+        private static extern void glNamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, ref float v);
 
         [EntryPointSlot(28)]
         [DllImport(LIBRARY, ExactSpelling = true, CallingConvention = CallingConvention.Winapi)]
@@ -55,10 +55,10 @@ namespace Kraggs.Graphics.OpenGL
         #region Public functions
 
         [EntryPoint(FunctionName = "glFramebufferSampleLocationsfvARB")]
-        public static void FramebufferSampleLocationsfvARB(FramebufferTarget target, uint start, IntPtr count, ref float v) { throw new NotImplementedException(); }
+        public static void FramebufferSampleLocationsfvARB(FramebufferTarget target, uint start, int count, ref float v) { throw new NotImplementedException(); }
 
         [EntryPoint(FunctionName = "glNamedFramebufferSampleLocationsfvARB")]
-        public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, IntPtr count, ref float v) { throw new NotImplementedException(); }
+        public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, int count, ref float v) { throw new NotImplementedException(); }
 
         [EntryPoint(FunctionName = "glEvaluateDepthValuesARB")]
         public static void EvaluateDepthValuesARB() { throw new NotImplementedException(); }
@@ -68,15 +68,15 @@ namespace Kraggs.Graphics.OpenGL
 
         #region Public Helper Functions
 
-        public static void FramebufferSampleLocationsfvARB(FramebufferTarget target, uint start, long count, ref float v)
-        {
-            FramebufferSampleLocationsfvARB(target, start, (IntPtr)count, ref v);
-        }
+        //public static void FramebufferSampleLocationsfvARB(FramebufferTarget target, uint start, long count, ref float v)
+        //{
+        //    FramebufferSampleLocationsfvARB(target, start, (IntPtr)count, ref v);
+        //}
 
-        public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, long count, ref float v)
-        {
-            NamedFramebufferSampleLocationsfvARB(framebuffer, start, (IntPtr)count, ref v);
-        }
+        //public static void NamedFramebufferSampleLocationsfvARB(uint framebuffer, uint start, long count, ref float v)
+        //{
+        //    NamedFramebufferSampleLocationsfvARB(framebuffer, start, (IntPtr)count, ref v);
+        //}
 
         #endregion
 

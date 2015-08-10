@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
-using System.UInt64;
 
 
 namespace Kraggs.Graphics.OpenGL
@@ -45,6 +44,42 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 78, 97, 109, 101, 100, 70, 114, 97, 109, 101, 98, 117, 102, 102, 101, 114, 83, 97, 109, 112, 108, 101, 76, 111, 99, 97, 116, 105, 111, 110, 115, 102, 118, 65, 82, 66, 0, // glNamedFramebufferSampleLocationsfvARB
 				103, 108, 69, 118, 97, 108, 117, 97, 116, 101, 68, 101, 112, 116, 104, 86, 97, 108, 117, 101, 115, 65, 82, 66, 0, // glEvaluateDepthValuesARB
 				103, 108, 77, 97, 120, 83, 104, 97, 100, 101, 114, 67, 111, 109, 112, 105, 108, 101, 114, 84, 104, 114, 101, 97, 100, 115, 65, 82, 66, 0, // glMaxShaderCompilerThreadsARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 105, 54, 52, 65, 82, 66, 0, // glUniform1i64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 105, 54, 52, 65, 82, 66, 0, // glUniform2i64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 105, 54, 52, 65, 82, 66, 0, // glUniform3i64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 105, 54, 52, 65, 82, 66, 0, // glUniform4i64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform1i64vARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform2i64vARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform3i64vARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform4i64vARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 117, 105, 54, 52, 65, 82, 66, 0, // glUniform1ui64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 117, 105, 54, 52, 65, 82, 66, 0, // glUniform2ui64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 117, 105, 54, 52, 65, 82, 66, 0, // glUniform3ui64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 117, 105, 54, 52, 65, 82, 66, 0, // glUniform4ui64ARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 49, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform1ui64vARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 50, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform2ui64vARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 51, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform3ui64vARB
+				103, 108, 85, 110, 105, 102, 111, 114, 109, 52, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glUniform4ui64vARB
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 105, 54, 52, 118, 65, 82, 66, 0, // glGetUniformi64vARB
+				103, 108, 71, 101, 116, 85, 110, 105, 102, 111, 114, 109, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glGetUniformui64vARB
+				103, 108, 71, 101, 116, 110, 85, 110, 105, 102, 111, 114, 109, 105, 54, 52, 118, 65, 82, 66, 0, // glGetnUniformi64vARB
+				103, 108, 71, 101, 116, 110, 85, 110, 105, 102, 111, 114, 109, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glGetnUniformui64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 49, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform1i64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 50, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform2i64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 51, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform3i64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 52, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform4i64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 49, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform1i64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 50, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform2i64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 51, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform3i64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 52, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform4i64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 49, 117, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform1ui64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 50, 117, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform2ui64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 51, 117, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform3ui64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 52, 117, 105, 54, 52, 65, 82, 66, 0, // glProgramUniform4ui64ARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 49, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform1ui64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 50, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform2ui64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 51, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform3ui64vARB
+				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 52, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform4ui64vARB
             };
 
             EntryPointNameOffsets = new int[]
@@ -79,6 +114,42 @@ namespace Kraggs.Graphics.OpenGL
 				648, // SlotID: 27 = glNamedFramebufferSampleLocationsfvARB
 				687, // SlotID: 28 = glEvaluateDepthValuesARB
 				712, // SlotID: 29 = glMaxShaderCompilerThreadsARB
+				742, // SlotID: 30 = glUniform1i64ARB
+				759, // SlotID: 31 = glUniform2i64ARB
+				776, // SlotID: 32 = glUniform3i64ARB
+				793, // SlotID: 33 = glUniform4i64ARB
+				810, // SlotID: 34 = glUniform1i64vARB
+				828, // SlotID: 35 = glUniform2i64vARB
+				846, // SlotID: 36 = glUniform3i64vARB
+				864, // SlotID: 37 = glUniform4i64vARB
+				882, // SlotID: 38 = glUniform1ui64ARB
+				900, // SlotID: 39 = glUniform2ui64ARB
+				918, // SlotID: 40 = glUniform3ui64ARB
+				936, // SlotID: 41 = glUniform4ui64ARB
+				954, // SlotID: 42 = glUniform1ui64vARB
+				973, // SlotID: 43 = glUniform2ui64vARB
+				992, // SlotID: 44 = glUniform3ui64vARB
+				1011, // SlotID: 45 = glUniform4ui64vARB
+				1030, // SlotID: 46 = glGetUniformi64vARB
+				1050, // SlotID: 47 = glGetUniformui64vARB
+				1071, // SlotID: 48 = glGetnUniformi64vARB
+				1092, // SlotID: 49 = glGetnUniformui64vARB
+				1114, // SlotID: 50 = glProgramUniform1i64ARB
+				1138, // SlotID: 51 = glProgramUniform2i64ARB
+				1162, // SlotID: 52 = glProgramUniform3i64ARB
+				1186, // SlotID: 53 = glProgramUniform4i64ARB
+				1210, // SlotID: 54 = glProgramUniform1i64vARB
+				1235, // SlotID: 55 = glProgramUniform2i64vARB
+				1260, // SlotID: 56 = glProgramUniform3i64vARB
+				1285, // SlotID: 57 = glProgramUniform4i64vARB
+				1310, // SlotID: 58 = glProgramUniform1ui64ARB
+				1335, // SlotID: 59 = glProgramUniform2ui64ARB
+				1360, // SlotID: 60 = glProgramUniform3ui64ARB
+				1385, // SlotID: 61 = glProgramUniform4ui64ARB
+				1410, // SlotID: 62 = glProgramUniform1ui64vARB
+				1436, // SlotID: 63 = glProgramUniform2ui64vARB
+				1462, // SlotID: 64 = glProgramUniform3ui64vARB
+				1488, // SlotID: 65 = glProgramUniform4ui64vARB
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       
