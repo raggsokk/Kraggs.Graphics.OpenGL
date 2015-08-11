@@ -7,6 +7,7 @@
 		"ARB_sample_locations.cs",
 		"ARB_parallel_shader_compile.cs",
 		"ARB_gpu_shader_int64.cs",
+		"ARB_ES3_2_compatibility.cs",
 		"ARB_shading_language_include.cs",
 	]
 }

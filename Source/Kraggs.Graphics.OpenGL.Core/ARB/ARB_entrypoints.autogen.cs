@@ -80,6 +80,8 @@ namespace Kraggs.Graphics.OpenGL
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 50, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform2ui64vARB
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 51, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform3ui64vARB
 				103, 108, 80, 114, 111, 103, 114, 97, 109, 85, 110, 105, 102, 111, 114, 109, 52, 117, 105, 54, 52, 118, 65, 82, 66, 0, // glProgramUniform4ui64vARB
+				103, 108, 80, 114, 105, 109, 105, 116, 105, 118, 101, 66, 111, 117, 110, 100, 105, 110, 103, 66, 111, 120, 65, 82, 66, 0, // glPrimitiveBoundingBoxARB
+				103, 108, 66, 108, 101, 110, 100, 66, 97, 114, 114, 105, 101, 114, 75, 72, 82, 0, // glBlendBarrierKHR
             };
 
             EntryPointNameOffsets = new int[]
@@ -150,6 +152,8 @@ namespace Kraggs.Graphics.OpenGL
 				1436, // SlotID: 63 = glProgramUniform2ui64vARB
 				1462, // SlotID: 64 = glProgramUniform3ui64vARB
 				1488, // SlotID: 65 = glProgramUniform4ui64vARB
+				1514, // SlotID: 66 = glPrimitiveBoundingBoxARB
+				1540, // SlotID: 67 = glBlendBarrierKHR
             };
      
             EntryPoints = new IntPtr[EntryPointNameOffsets.Length];       

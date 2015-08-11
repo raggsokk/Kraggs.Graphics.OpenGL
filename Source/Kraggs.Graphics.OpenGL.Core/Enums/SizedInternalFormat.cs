@@ -124,5 +124,7 @@ namespace Kraggs.Graphics.OpenGL
         DepthComponent32F = All.DEPTH_COMPONENT32F,
         Depth24Stencil8 = All.DEPTH24_STENCIL8,
         Depth32FStencil8 = All.DEPTH32F_STENCIL8,
+
+
     }
 }

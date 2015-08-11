@@ -36,6 +36,70 @@ namespace Kraggs.Graphics.OpenGL
 {
     public enum BlendEquationMode
     {
-        NoneAddedYet,
+        //NoneAddedYet,
+
+        //KHR_blend_equation_advanced - part of ARB_ES3_2_compatibility
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        Multiply = All.MULTIPLY_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        Screen = All.SCREEN_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        Overlay = All.OVERLAY_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        Darken = All.DARKEN_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        Lighten = All.LIGHTEN_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        ColorDodge = All.COLORDODGE_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        ColorBurn = All.COLORBURN_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        HardLight = All.HARDLIGHT_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        SoftLight = All.SOFTLIGHT_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        Difference = All.DIFFERENCE_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        Exclusion = All.EXCLUSION_KHR,
+
+        // not completely satisified with these names.
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        HSLHue = All.HSL_HUE_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        HSLSaturation = All.HSL_SATURATION_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        HSLColor = All.HSL_COLOR_KHR,
+        /// <summary>
+        /// These enums are not accepted by the [modeRGB] or [modeAlpha] parameters of BlendEquationSeparate or BlendEquationSeparatei.
+        /// </summary>
+        HSLLuminosity = All.HSL_LUMINOSITY_KHR,
     }
 }

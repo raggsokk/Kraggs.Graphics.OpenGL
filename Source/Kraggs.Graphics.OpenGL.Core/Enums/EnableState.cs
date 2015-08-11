@@ -162,5 +162,13 @@ namespace Kraggs.Graphics.OpenGL
 
         VertexAttribArrayUnifiedNV = All.VERTEX_ATTRIB_ARRAY_UNIFIED_NV,
         ElementArrayUnifiedNV = All.ELEMENT_ARRAY_UNIFIED_NV,
+
+        //KHR_blend_equation_advanced - part of ARB_ES3_2_compatibility
+        /// <summary>
+        /// The BLEND_ADVANCED_COHERENT_KHR enable is provided if and only if the KHR_blend_equation_advanced_coherent extension is supported.  On implementations supporting only KHR_blend_equation_advanced, this enable is considered not to exist.
+        /// </summary>
+        BlendAdvancedCoherent = All.BLEND_ADVANCED_COHERENT_KHR,
+        //CoherentAdvancedBlend?
+
     }
 }

@@ -69,6 +69,7 @@
     <Compile Include="ARB\ARB_direct_state_access.cs" />
     <Compile Include="ARB\ARB_entrypoints.autogen.cs" />
     <Compile Include="ARB\ARB_ES3_1_compatibility.cs" />
+    <Compile Include="ARB\ARB_ES3_2_compatibility.cs" />
     <Compile Include="ARB\ARB_get_texture_sub_image.cs" />
     <Compile Include="ARB\ARB_gpu_shader_int64.cs" />
     <Compile Include="ARB\ARB_parallel_shader_compile.cs" />
