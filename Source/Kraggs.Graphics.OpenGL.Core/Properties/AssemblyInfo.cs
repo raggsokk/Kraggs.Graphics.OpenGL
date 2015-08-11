@@ -59,8 +59,8 @@ using Kraggs.Graphics;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("5.4.*")]
-[assembly: AssemblyFileVersion("5.4.9.0")]
+[assembly: AssemblyVersion("5.5.*")]
+[assembly: AssemblyFileVersion("5.5.0.0")]
 
 //[assembly: AssemblyKeyFile("..\\Kraggs.Graphics.OpenGL.snk")]
 

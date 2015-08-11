@@ -3,7 +3,8 @@ Kraggs.Graphics.OpenGL
 
 # OpenGL (and OpenGL ES) Wrapper Libraries.
 
-A collection of manually created wrapper libraries for OpenGL 4.4 core context and OpenGL ES 3.x.
+A collection of manually created wrapper libraries for OpenGL 4.5 core context and OpenGL ES 3.x.
+This wrapper is also updated with the OpenGL 2015 ARB Extensions release, including ARB_ES3_2_compatibility.
 The GL Function Pointers are loaded by code from the excellent [OpenTK Project](http://www.opentk.com).
 Note this library is not for creating an OpenGL Context. Other excellent project exists for that. (OpenTK, SDL2, GLFW3)
 
